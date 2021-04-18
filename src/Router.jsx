@@ -3,7 +3,6 @@ import { Router, Switch, Route } from 'react-router-dom';
 import history from './utils/history';
 // components
 import ToDoListPage from './pages/ListTour';
-import TaskDetailPage from './pages/TaskDetail';
 import HomePage from './pages/Home';
 
 function BrowserRouter() {
