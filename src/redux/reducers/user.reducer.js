@@ -26,7 +26,6 @@ export default function userReducer(state = initialState, action) {
     }
     case 'LOGIN_SUCCESS': {
       const { data } = action.payload;
-      console.log("🚀 ~ file: user.reducer.js ~ line 88 ~ userReducer ~ LOGIN_SUCCESS")
       return {
         ...state,
         userInfo: {
@@ -47,6 +46,40 @@ export default function userReducer(state = initialState, action) {
         },
       }
     }
+
+    case 'REGISTER_REQUEST': {
+      return {
+        ...state,
+        userInfo: {
+          ...state.userInfo,
+          load: true,
+        },
+      }
+    }
+    case 'REGISTER_SUCCESS': {
+      const { data } = action.payload;
+      return {
+        ...state,
+        userInfo: {
+          ...state.userInfo,
+          data: data,
+          load: false,
+        },
+      }
+    }
+    case 'REGISTER_FAIL': {
+      const { error } = action.payload;
+      return {
+        ...state,
+        userInfo: {
+          ...state.userInfo,
+          load: false,
+          error: error,
+        },
+      }
+    }
+
+    
 
     case 'LOGOUT_REQUEST': {
       localStorage.clear();

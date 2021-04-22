@@ -5,7 +5,6 @@ import history from '../../utils/history';
 function* loginSaga(action) {
   try {
     const { email, password } = action.payload;
-    console.log("🚀 ~ file: user.saga.js ~ line 8 ~ function*loginSaga ~ payload", action.payload)
     const result = yield axios({
       method: 'GET',
       url: 'http://localhost:3001/users',
@@ -16,7 +15,6 @@ function* loginSaga(action) {
     });
     if (result.data.length > 0) {
       localStorage.setItem('userInfo', JSON.stringify(result.data[0]));
-      console.log("🚀 ~ file: user.saga.js ~ line 67 ~ function*userSaga ~ loginsaga")
       yield put({
         type: "LOGIN_SUCCESS",
         payload: {
@@ -36,6 +34,32 @@ function* loginSaga(action) {
   } catch (e) {
     yield put({
       type: "LOGIN_FAIL",
+      payload: {
+        error: e.error
+      },
+    });
+  }
+}
+
+function* registerSaga(action) {
+  try {
+    const { email, password, name } = action.payload;
+    console.log("🚀 ~ file: user.saga.js ~ line 47 ~ function*registerSaga ~ email", email)
+    const result = yield axios({
+      method: 'POST',
+      url: 'http://localhost:3001/users',
+      data: { email, password, name: name, }
+    });
+    yield put({
+      type: "REGISTER_SUCCESS",
+      payload: {
+        data: result.data[0],
+      },
+    });
+    window.location.reload();
+  } catch(e) {
+    yield put({
+      type: "REGISTER_FAIL",
       payload: {
         error: e.error
       },
@@ -65,5 +89,6 @@ function* getUserInfoSaga(action) {
 
 export default function* userSaga() {
   yield takeEvery('LOGIN_REQUEST', loginSaga);
+  yield takeEvery('REGISTER_REQUEST', registerSaga);
   yield takeEvery('GET_USER_INFO_REQUEST', getUserInfoSaga);
 }

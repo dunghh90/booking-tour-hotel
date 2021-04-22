@@ -5,6 +5,13 @@ export function loginAction(params) {
   }
 }
 
+export function registerAction(params) {
+  return {
+    type: 'REGISTER_REQUEST',
+    payload: params,
+  }
+}
+
 export function logoutAction(params) {
   return {
     type: 'LOGOUT_REQUEST',

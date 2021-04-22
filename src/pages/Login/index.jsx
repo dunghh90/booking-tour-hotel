@@ -8,12 +8,8 @@ import { Form, Input, Button, Checkbox, Space ,
 import { connect } from 'react-redux';
 
 import history from '../../utils/history';
-import { loginAction } from '../../redux/actions';
+import { loginAction, registerAction } from '../../redux/actions';
 import './styleLogin.css';
-
-// import { Tabs } from 'antd';
-
-// const { TabPane } = Tabs;
 
 import { Tabs } from 'antd';
 
@@ -46,7 +42,7 @@ const tailFormItemLayout = {
   },
 };
 
-function LoginPage({ login }) {
+function LoginPage(props) {
   const layout = {
     labelCol: { span: 8 },
     wrapperCol: { span: 16 },
@@ -57,6 +53,8 @@ function LoginPage({ login }) {
   const onCancel = () => {
     history.push('/');
   };
+
+  const { login, register } = props;
 
   return (
     <div class="register-bg-container">
@@ -109,7 +107,7 @@ function LoginPage({ login }) {
               {...formItemLayout}
               // form={form}
               name="register"
-              onFinish={(values) => login(values)}
+              onFinish={(values) => register(values)}
               initialValues={{
                 // residence: ['zhejiang', 'hangzhou', 'xihu'],
                 // prefix: '86',
@@ -171,7 +169,7 @@ function LoginPage({ login }) {
               </Form.Item>
 
               <Form.Item
-                name="nickname"
+                name="name"
                 label={<label style={{ color: "white" }}>Nickname</label>}
                 tooltip="Nhập tên gọi khác của bạn!"
                 rules={[{ required: true, message: 'Nickname chưa được nhập!', whitespace: true }]}
@@ -220,7 +218,7 @@ function LoginPage({ login }) {
                 {...tailFormItemLayout}
               >
                 <Checkbox style={{color: "white"}}>
-                  Tôi đã đọc <a href="">nội quy</a>
+                  Tôi đồng ý tất cả <a href="">điều kiện & điều khoản</a>
                 </Checkbox>
               </Form.Item>
               <Form.Item {...tailFormItemLayout}>
@@ -247,6 +245,7 @@ function LoginPage({ login }) {
 const mapDispatchToProps = (dispatch) => {
   return {
     login: (params) => dispatch(loginAction(params)),
+    register: (params) => dispatch(registerAction(params)),
   };
 }
 

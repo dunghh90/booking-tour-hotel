@@ -1,19 +1,37 @@
 {
   "users": [
     {
-      "id" : 1,
-      "email" : "dung@gmail.com",
-      "password" : "1234",
-      "name" : "Dung"
+      "id": 1,
+      "email": "dung@gmail.com",
+      "password": "1234",
+      "name": "Dung"
     },
     {
-      "id" : 2,
-      "email" : "minh@gmail.com",
-      "password" : "1234",
-      "name" : "Minh"
+      "id": 2,
+      "email": "minh@gmail.com",
+      "password": "1234",
+      "name": "Minh"
+    },
+    {
+      "email": "test@gmail.com",
+      "password": "123",
+      "nickname": "Dung Hoang",
+      "id": 3
+    },
+    {
+      "email": "test1@gmail.com",
+      "password": "123",
+      "name": "test",
+      "id": 4
+    },
+    {
+      "email": "test2@gmail.com",
+      "password": "123",
+      "name": "Hoang Huu",
+      "id": 5
     }
   ],
-  "tours" : [
+  "tours": [
     {
       "id": 1,
       "name": "Tour Đảo Lý Sơn 4N3D"
