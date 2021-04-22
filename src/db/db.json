@@ -1,0 +1,30 @@
+{
+  "users": [
+    {
+      "id" : 1,
+      "email" : "dung@gmail.com",
+      "password" : "1234",
+      "name" : "Dung"
+    },
+    {
+      "id" : 2,
+      "email" : "minh@gmail.com",
+      "password" : "1234",
+      "name" : "Minh"
+    }
+  ],
+  "tours" : [
+    {
+      "id": 1,
+      "name": "Tour Đảo Lý Sơn 4N3D"
+    },
+    {
+      "id": 2,
+      "name": "Tour Đà Nẵng 4N3D"
+    },
+    {
+      "id": 3,
+      "name": "Tour Miền Trung 4N3D"
+    }
+  ]
+}
