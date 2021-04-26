@@ -1,9 +1,4 @@
 import { Form, Input, Button, Checkbox, Space ,
-  Cascader,
-  Select,
-  Row,
-  Col,
-  AutoComplete,
 } from 'antd';
 import { connect } from 'react-redux';
 
@@ -14,10 +9,6 @@ import './styleLogin.css';
 import { Tabs } from 'antd';
 
 const { TabPane } = Tabs;
-
-function callback(key) {
-  console.log(key);
-}
 
 const formItemLayout = {
   labelCol: {
@@ -59,13 +50,11 @@ function LoginPage(props) {
   return (
     <div class="register-bg-container">
       <div class="register-form-container">
-        {/* <Tabs onChange={callback} type="card"> */}
         <Tabs defaultActiveKey="1">
           <TabPane tab={<label style={{ color: "white" }}>Login</label>} key="1">
             <Form
               {...layout}
               name="basic"
-
               initialValues={{ remember: true }}
               onFinish={(values) => login(values)}
             >
@@ -218,7 +207,7 @@ function LoginPage(props) {
                 {...tailFormItemLayout}
               >
                 <Checkbox style={{color: "white"}}>
-                  Tôi đồng ý tất cả <a href="">điều kiện & điều khoản</a>
+                  Tôi đồng ý tất cả <a href="google.com.vn">điều kiện & điều khoản</a>
                 </Checkbox>
               </Form.Item>
               <Form.Item {...tailFormItemLayout}>
@@ -233,7 +222,6 @@ function LoginPage(props) {
               </Form.Item>
             </Form>
           </TabPane>
-
         </Tabs>
 
 

@@ -1,4 +1,4 @@
-import { Router, Switch, Route } from 'react-router-dom';
+import { Router, Switch } from 'react-router-dom';
 // utils
 import history from './utils/history';
 // components

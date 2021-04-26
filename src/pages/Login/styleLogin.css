@@ -13,7 +13,7 @@ body, p, h1, h2, h3 ,h4, h5, h6 {
   align-items: center;
   width: 100%;
   height: 100vh;
-  background-image: url(../../img/login-bg.jpg);
+  background-image: url(../../img/londonEye.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -25,9 +25,21 @@ body, p, h1, h2, h3 ,h4, h5, h6 {
   align-items: center;
   justify-content: center;
   padding: 24px;
-  width: 500px;
+  width: 600px;
   border-radius: 4px;
   background-color: rgba(0, 0, 0, 0.75);
   color: white;
   
 }
+
+.ant-form {
+  width: 450px;
+  color: white;
+}
+
+.ant-tabs-nav-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

@@ -14,7 +14,7 @@ function App({getUserInfo}) {
   }, []);
 
   return (
-    <div>
+    <div style={{backgroundColor:"#ecf0f5"}}>
       <Router />
     </div>
   );
