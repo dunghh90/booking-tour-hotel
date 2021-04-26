@@ -23,7 +23,7 @@ function SearchTourPage(props) {
 
   const [searchKey, setSearchKey] = useState({});
   function checkDateStart(param) {
-    return item.dateStart.trim().format("DD/MM/YYYY") === param.placeTravel.trim().toLowerCase())
+    // return item.dateStart.trim().format("DD/MM/YYYY") === param.trim().format("DD/MM/YYYY");
   }
 
   function searchTour(params){

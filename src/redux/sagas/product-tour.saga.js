@@ -10,6 +10,10 @@ function* getProductTourListSaga(action) {
       params: {
         _page: page,
         _limit: limit,
+        // ...catagoryId && { catagoryId },// categoryId: categoryId -> null, truyen Id khi ton taij'
+        // ...searchkey && { q: searchkey },
+        // _sort: 'price',
+        // _order: 'dest',
       }
     });
     yield put({

@@ -7,6 +7,7 @@ import DefaultLayout from './components/layouts/DefaultLayout';
 
 import ProductTourListPage from './pages/ProductTourList';
 import LoginPage from './pages/Login';
+import TourHomePage from './pages/ProductTourListHome';
 
 function BrowserRouter() {
   return (
@@ -14,6 +15,7 @@ function BrowserRouter() {
       <Switch>
         <DefaultLayout exact path="/" component={ProductTourListPage} />
         <LoginLayout exact path="/login" component={LoginPage} />
+        <LoginLayout exact path="/Homee" component={TourHomePage} />
       </Switch>
     </Router>
   );

@@ -7,7 +7,7 @@ import { getProductTourListAction } from '../../redux/actions';
 import SearchTourPage from '../SearchTour';
 import ItemTour from './components/ItemTour'
 
-function ProductTourListPage({ getProductTourList, productTourList }) {
+function TourHomePage({ getProductTourList, productTourList }) {
   useEffect(() => {
     getProductTourList({
       page: 1,
@@ -60,6 +60,6 @@ const mapDispatchToProps = (dispatch) => {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProductTourListPage);
+export default connect(mapStateToProps, mapDispatchToProps)(TourHomePage);
   
   

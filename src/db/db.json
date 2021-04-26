@@ -71,7 +71,8 @@
       "rate":{},
       "dateStart": "2021-04-26",
       "description": ["Bay Hãng Hàng Không VNA", "Chứng Tích Mỹ Lai", "Ngắm Hoàng Hôn Cổng Tò Vò"],
-      "price": "5.190.000 VND"
+      "price": "5.190.000 VND",
+      "categoryId": 3
     },
     {
       "id": 2,
@@ -82,7 +83,8 @@
       "rate":{},
       "dateStart": "2021-04-26",
       "description": ["Khu Du Lịch Bà Nà Núi Chúa", "Tham Quan Động Phong Nha", "Phố Cổ Hội An"],
-      "price": "4.690.000 VND"
+      "price": "4.690.000 VND",
+      "categoryId": 2
       
     },
     {
@@ -94,7 +96,8 @@
       "rate":{},
       "dateStart": "2021-04-26",
       "description": ["Bán Đảo Phương Mai", "Hải Đăng - Mũi Điện", "Kiệt Tác Thiên Nhiên Gành Đá Đĩa"],
-      "price": "4.988.000 VND"
+      "price": "4.988.000 VND",
+      "categoryId": 1
     }
     ,
     {
@@ -106,7 +109,8 @@
       "rate":{},
       "dateStart": "2021-04-26",
       "description": ["Bán Đảo Phương Mai", "Hải Đăng - Mũi Điện", "Kiệt Tác Thiên Nhiên Gành Đá Đĩa"],
-      "price": "4.988.000 VND"
+      "price": "4.988.000 VND",
+      "categoryId": 2
     }
     ,
     {
@@ -118,7 +122,8 @@
       "rate":{},
       "dateStart": "2021-04-26",
       "description": ["Bán Đảo Phương Mai", "Hải Đăng - Mũi Điện", "Kiệt Tác Thiên Nhiên Gành Đá Đĩa"],
-      "price": "4.988.000 VND"
+      "price": "4.988.000 VND",
+      "categoryId": 1
     }
   ],
   "hotels": [
@@ -136,6 +141,34 @@
       "id": 3,
       "name": "C",
       "danhGia": 1
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "miền trung"
+    },
+    {
+      "id": 2,
+      "name": "miền bắc"
+    },
+    {
+      "id": 3,
+      "name": "miền nam"
+    },
+    {
+      "id": 4,
+      "name": "nước ngoài"
+    }
+  ],
+  "productOptions": [
+    {
+      "id": 1,
+      "name": "trọn gói"
+    },
+    {
+      "id": 2,
+      "name": "tour land"
     }
   ]
 }
