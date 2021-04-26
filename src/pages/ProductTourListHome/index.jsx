@@ -21,7 +21,7 @@ function TourHomePage({ getProductTourList, productTourList }) {
     return (
       <Content className="site-layout" style={{ padding: '0 50px', marginTop: 64 }}>
       <SearchTourPage />
-      <Row gutter={24}>
+      <Row gutter={[24, 24]}>
         {
           productTourList.data.map((item, index) => {
             return (
@@ -31,6 +31,7 @@ function TourHomePage({ getProductTourList, productTourList }) {
                 link={item.link}
                 description={item.description}
                 price={item.price}
+                time={item.time}
               />
             )
           })

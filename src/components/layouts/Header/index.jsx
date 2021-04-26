@@ -1,20 +1,24 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
 import { UserOutlined } from '@ant-design/icons';
-import { Input, Layout, Row, Col, Button } from 'antd';
+import { Input, Layout, Row, Col, Button, Space } from 'antd';
 
 import 'antd/dist/antd.css';
 import { Link}   from 'react-router-dom';
 import './Header.css'
 
 import { ROUTERS } from '../../../constants/router';
+import history from '../../../utils/history';
+import { logoutAction } from '../../../redux/actions';
 
 
 const { Header } = Layout;
 const onSearch = value => console.log(value);
 
 
-function HeaderPage() {
+function HeaderPage(props) {
     // const [seachKey,setSeachkey]= useState('')
+    const { userInfo, logout } = props;
     return (
         <>
                 <Header className="headers">
@@ -37,7 +41,7 @@ function HeaderPage() {
                                               <Link to ={ROUTERS.HOME}>Khách sạn</Link>
                                           </li>
                                           <li className="menu1">
-                                              <Link to={ROUTERS.LOGIN}>Tour</Link>
+                                              <Link to={ROUTERS.TOUR}>Tour</Link>
                                           </li>
                                           <li className="menu1">
                                               <Link to={ROUTERS.REVIEW} >Giới thiệu</Link>
@@ -46,8 +50,18 @@ function HeaderPage() {
                                 </div>
                             </Col>
                             <Col span={4}>
-                                      <Button>Tài khoản</Button>
-                                      </Col>
+                                    <div>
+                                        {userInfo.data.id 
+                                            ? (
+                                            <Space>
+                                                <p>{`Tên đăng nhập: ${userInfo.data.name}`}</p>
+                                                <Button onClick={() => logout()}>Đăng xuất</Button>
+                                            </Space>
+                                            )
+                                            : <Button onClick={() => history.push('/login')}>Đăng nhập</Button>
+                                        }
+                                    </div>
+                            </Col>
                         </Row>
                     </div>
                 </Header>
@@ -58,4 +72,18 @@ function HeaderPage() {
 
 }
 
-export default  HeaderPage;
+const mapDispatchToProps = (dispatch) => {
+    return {
+      logout: (params) => dispatch(logoutAction(params)),
+    };
+  }
+  
+  const mapStateToProps = (state) => {
+    const { userInfo } = state.userReducer;
+    // console.log('🚀 ~ file: index.jsx ~ line 13 ~ mapStateToProps ~ userInfo', userInfo);
+    return {
+      userInfo,
+    }
+  };
+  
+  export default connect(mapStateToProps, mapDispatchToProps)(HeaderPage);

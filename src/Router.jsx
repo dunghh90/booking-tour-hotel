@@ -15,13 +15,12 @@ import reViewPage from './pages/Review';
 
 function BrowserRouter(props) {
   const { productList } = props;
-  console.log("🚀 ~ file: Router.jsx ~ line 18 ~ BrowserRouter ~ productList", productList)
   return (
     <Router history={history}>
       <Switch>
-        {/* <DefaultLayout exact path="/" component={ProductTourListPage} /> */}
+        <DefaultLayout exact path="/homeTour" component={TourHomePage} />
         <LoginLayout exact path="/login" component={LoginPage} />
-        <LoginLayout exact path="/Homee" component={TourHomePage} />
+        <DefaultLayout exact path="/listTour" component={ProductTourListPage} />
         <DefaultLayout
           exact
           path={ROUTERS.HOME}

@@ -3,4 +3,5 @@ export const ROUTERS = {
   LOGIN: '/login',
   PRODUCT_DETAIL: '/product/:id',
   REVIEW:'/review',
+  TOUR: '/homeTour',
 }
