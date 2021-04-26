@@ -1,5 +1,5 @@
 import { Route } from 'react-router-dom';
-import Header from '../Header/indexold';
+import Header from '../Header';
 
 function DefaultLayout(props) {
   const { exact, path, component: Component, ...other } = props;
