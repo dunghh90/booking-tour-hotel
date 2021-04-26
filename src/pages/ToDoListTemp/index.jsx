@@ -1,36 +1,27 @@
-
+import { useState } from 'react';
 import { Row, Col, Card, Form, Input, Button } from 'antd';
 import { connect } from 'react-redux';
 
-import Item from '../../pages/Todolist/item';
+import Item from './components/Item';
 
 import {
   addTaskAction,
   editTaskAction,
   deleteTaskAction,
-} from '../../pages/redux/action';
-// import { useState } from 'react';
+} from '../../redux/actions';
 
 function ToDoListPage(props) {
-  const [form] =Form.useForm();
-  const { toDoList ,addTask, editTask, deleteTask } = props;
-//   const [searchKey,  setSearchKey] = useState('')
+  const { toDoList, addTask, editTask, deleteTask } = props;
 
- 
+  const [searchKey, setSearchKey] = useState('');
 
   const filterToDoList = toDoList.filter((item) => {
-    // return item.title.trim().toLowerCase().indexOf(searchKey.trim().toLowerCase()) !== -1;
-    console.log(toDoList)
+    return item.title.trim().toLowerCase().indexOf(searchKey.trim().toLowerCase()) !== -1;
   });
- 
-  
 
   function handleAddTask(values) {
     addTask(values);
-    form.resetFields();
-    
   }
-  
 
   function handleEditTask(values, index) {
     editTask({ ...values, index: index })
@@ -46,7 +37,7 @@ function ToDoListPage(props) {
         <Item
           key={index}
           title={item.title}
-          description={item.detail}
+          description={item.description}
           index={index}
           editTask={handleEditTask}
           deleteTask={handleDeleteTask}
@@ -58,38 +49,40 @@ function ToDoListPage(props) {
   return (
     <Row gutter={24} style={{ maxWidth: 1000, width: '100%', margin: '16px auto 0' }}>
       <Col span={8}>
-        
+        <Card title="Add task" size="small">
           <Form
-            form ={form}
             layout="vertical"
             name="addTask"
-            initialValues={{ title: '' }}
+            initialValues={{ title: '', description: '' }}
             onFinish={(values) => handleAddTask(values)}
-           
-           
           >
             <Form.Item
               label="Title"
               name="title"
               rules={[{ required: true, message: 'Please input your title!' }]}
             >
-              <Input.TextArea />
+              <Input />
             </Form.Item>
 
+            <Form.Item
+              label="Description"
+              name="description"
+              rules={[{ required: true, message: 'Please input your description!' }]}
+            >
+              <Input />
+            </Form.Item>
 
-            <Button type="primary" htmlType="submit" block >
+            <Button type="primary" htmlType="submit" block>
               Add
             </Button>
-        
-      
           </Form>
-       
+        </Card>
       </Col>
       <Col span={16}>
-        {/* <Input.Search
+        <Input.Search
           onChange={(e) => setSearchKey(e.target.value)}
           placeholder="Search..."
-        /> */}
+        />
         {renderToDoList()}
       </Col>
     </Row>
@@ -97,14 +90,11 @@ function ToDoListPage(props) {
 }
 
 const mapStateToProps = (state) => {
-  const  toDoList  = state.taskReducer.toDoList;
+  const { toDoList } = state.taskReducer;
   return {
     toDoList: toDoList,
   }
 };
-
- 
-
 
 const mapDispatchToProps = (dispatch) => {
   return {
