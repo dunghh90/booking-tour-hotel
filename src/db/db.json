@@ -59,6 +59,12 @@
       "password": "123",
       "name": "hahaha",
       "id": 10
+    },
+    {
+      "email": "nhominh193@gmail.com",
+      "password": "1234",
+      "name": "minh",
+      "id": 11
     }
   ],
   "tours": [
@@ -68,9 +74,13 @@
       "link": "https://cdn2.ivivu.com/2021/03/25/15/ivivu-ly-son-quang-ngai-bia-360x225.gif",
       "linkList": "https://cdn2.ivivu.com/2021/03/25/15/ivivu-ly-son-quang-ngai-bia-240x153.gif",
       "time": "4 Ngày 3 Đêm",
-      "rate":{},
+      "rate": {},
       "dateStart": "2021-04-26",
-      "description": ["Bay Hãng Hàng Không VNA", "Chứng Tích Mỹ Lai", "Ngắm Hoàng Hôn Cổng Tò Vò"],
+      "description": [
+        "Bay Hãng Hàng Không VNA",
+        "Chứng Tích Mỹ Lai",
+        "Ngắm Hoàng Hôn Cổng Tò Vò"
+      ],
       "price": "5.190.000 VND",
       "categoryId": 3
     },
@@ -80,48 +90,61 @@
       "link": "https://cdn2.ivivu.com/2019/04/04/10/tour-da-nangba-na-hill-cau-vang-360x225.jpg",
       "linkList": "https://cdn2.ivivu.com/2019/04/04/10/tour-da-nangba-na-hill-cau-vang-204x153.jpg",
       "time": "4 Ngày 3 Đêm",
-      "rate":{},
+      "rate": {},
       "dateStart": "2021-04-26",
-      "description": ["Khu Du Lịch Bà Nà Núi Chúa", "Tham Quan Động Phong Nha", "Phố Cổ Hội An"],
+      "description": [
+        "Khu Du Lịch Bà Nà Núi Chúa",
+        "Tham Quan Động Phong Nha",
+        "Phố Cổ Hội An"
+      ],
       "price": "4.690.000 VND",
       "categoryId": 2
-      
     },
     {
       "id": 3,
       "name": "Tour Miền Trung 4N3D: Sài Gòn - Quy Nhơn - Phú Yên",
-      "link":"https://cdn2.ivivu.com/2021/04/08/13/ivivu-bai-xep-bia-360x225.gif",
-      "linkList":"https://cdn2.ivivu.com/2021/04/08/13/ivivu-bai-xep-bia-240x153.gif",
+      "link": "https://cdn2.ivivu.com/2021/04/08/13/ivivu-bai-xep-bia-360x225.gif",
+      "linkList": "https://cdn2.ivivu.com/2021/04/08/13/ivivu-bai-xep-bia-240x153.gif",
       "time": "4 Ngày 3 Đêm",
-      "rate":{},
+      "rate": {},
       "dateStart": "2021-04-26",
-      "description": ["Bán Đảo Phương Mai", "Hải Đăng - Mũi Điện", "Kiệt Tác Thiên Nhiên Gành Đá Đĩa"],
+      "description": [
+        "Bán Đảo Phương Mai",
+        "Hải Đăng - Mũi Điện",
+        "Kiệt Tác Thiên Nhiên Gành Đá Đĩa"
+      ],
       "price": "4.988.000 VND",
       "categoryId": 1
-    }
-    ,
+    },
     {
       "id": 4,
       "name": "Tour Miền Trung 4N3D: Sài Gòn - Quy Nhơn - Phú Yên",
-      "link":"https://cdn2.ivivu.com/2021/03/09/15/ivivu-du-lich-tanyoli-bia-360x225.gif",
-      "linkList":"https://cdn2.ivivu.com/2021/03/09/15/ivivu-du-lich-tanyoli-bia-240x153.gif",
+      "link": "https://cdn2.ivivu.com/2021/03/09/15/ivivu-du-lich-tanyoli-bia-360x225.gif",
+      "linkList": "https://cdn2.ivivu.com/2021/03/09/15/ivivu-du-lich-tanyoli-bia-240x153.gif",
       "time": "4 Ngày 3 Đêm",
-      "rate":{},
+      "rate": {},
       "dateStart": "2021-04-26",
-      "description": ["Bán Đảo Phương Mai", "Hải Đăng - Mũi Điện", "Kiệt Tác Thiên Nhiên Gành Đá Đĩa"],
+      "description": [
+        "Bán Đảo Phương Mai",
+        "Hải Đăng - Mũi Điện",
+        "Kiệt Tác Thiên Nhiên Gành Đá Đĩa"
+      ],
       "price": "4.988.000 VND",
       "categoryId": 2
-    }
-    ,
+    },
     {
       "id": 5,
       "name": "Tour Miền Trung 4N3D: Sài Gòn - Quy Nhơn - Phú Yên",
-      "link":"https://cdn2.ivivu.com/2021/04/15/11/ivivu-du-lich-tanyoli-nt-360x225.gif",
-      "linkList":"https://cdn2.ivivu.com/2021/04/15/11/ivivu-du-lich-tanyoli-nt-240x153.gif",
+      "link": "https://cdn2.ivivu.com/2021/04/15/11/ivivu-du-lich-tanyoli-nt-360x225.gif",
+      "linkList": "https://cdn2.ivivu.com/2021/04/15/11/ivivu-du-lich-tanyoli-nt-240x153.gif",
       "time": "4 Ngày 3 Đêm",
-      "rate":{},
+      "rate": {},
       "dateStart": "2021-04-26",
-      "description": ["Bán Đảo Phương Mai", "Hải Đăng - Mũi Điện", "Kiệt Tác Thiên Nhiên Gành Đá Đĩa"],
+      "description": [
+        "Bán Đảo Phương Mai",
+        "Hải Đăng - Mũi Điện",
+        "Kiệt Tác Thiên Nhiên Gành Đá Đĩa"
+      ],
       "price": "4.988.000 VND",
       "categoryId": 1
     }
@@ -130,7 +153,7 @@
     {
       "id": 1,
       "name": "Sapa",
-      "img":"//cdn1.ivivu.com/iVivu/2019/09/18/16/sa-pa-370x190.png"
+      "img": "//cdn1.ivivu.com/iVivu/2019/09/18/16/sa-pa-370x190.png"
     }
   ],
   "categories": [
