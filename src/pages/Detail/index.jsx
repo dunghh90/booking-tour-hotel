@@ -21,8 +21,7 @@ function DetailPage({
 
   useEffect(() => {
     if (productHotelDetail.data.id) {
-      console.log("🚀 ~ file: index.jsx ~ line 24 ~ useEffect ~ productHotelDetail.data", productHotelDetail.data)
-      // setOptionSelected(productHotelDetail.data.productOptionsHotel[0] || {})
+      setOptionSelected(productHotelDetail.data.productOptionsHotel[0] || {})
     }
   }, [productHotelDetail.data])
 
@@ -37,18 +36,30 @@ function DetailPage({
   // }
 
   return (
+    <>
     <Card title={productHotelDetail.data.name}>
       <p> {productHotelDetail.data.name}</p>
+
+      {
+      productHotelDetail.data.productOptionsHotel.map((item, index) => {
+        return (
+          <div>
+            {item.name}
+          </div>
+        )
+      })
+    }
       {/* <Radio.Group
         onChange={(e) => setOptionSelected(e.target.value)}
         value={optionSelected}
       > */}
         {/* {renderProductOptions()} */}
       {/* </Radio.Group> */}
-      <p>
-        {productHotelDetail.data.price + (optionSelected.price || 0)}
-      </p>
+      {/* {productHotelDetail.data.price + (optionSelected.price || 0)} */}
+        
+        
     </Card>
+    </>
   );
 }
 

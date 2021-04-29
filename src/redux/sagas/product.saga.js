@@ -48,10 +48,10 @@ function* getProductHotelDetailSaga(action) {
       method: 'GET',
       url: `http://localhost:3001/hotels/${id}`,
       params: {
-        _embed: 'hotels',
-        _expand: 'productOptionsHotel'
+        _embed: 'productOptionsHotel',
       }
     });
+    console.log("🚀 ~ file: product.saga.js ~ line 55 ~ function*getProductHotelDetailSaga ~ result", result)
     yield put({
       type: "GET_PRODUCT_HOTEL_DETAIL_SUCCESS",
       payload: {
