@@ -4,4 +4,9 @@ export function getProductHotelListAction(params) {
       payload: params,
     }
   }
-  
+  export function getProductDetailAction(params) {
+    return {
+      type: 'GET_PRODUCT_HOTEL_DETAIL_REQUEST',
+      payload: params,
+    }
+  }
