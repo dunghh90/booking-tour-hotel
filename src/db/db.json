@@ -235,56 +235,56 @@
   "productOptionsHotel": [
     {
       "id": 1,
-      "hotelsid":1,
+      "hotelId":1,
       "name":"Hotel Hà Nội Godel",
       "Title": "Đường Trần Duy Hưng",
       "Price": 500
     },
     {
       "id": 2,
-      "hotelsid":1,
+      "hotelId":1,
       "name":"Hotel Sapa Nhật Minh Hill",
       "Title": "Đường Hoa Thông Thị Trấn Sapa",
       "Price": 600
     },
     {
       "id": 3,
-      "hotelsid":1,
+      "hotelId":1,
       "name":"Hotel Nhật Linh ",
       "Title": "Đường Mường Hoa Thị Trấn Sapa",
       "Price": 500
     },
     {
       "id": 4,
-      "hotelsid":1,
+      "hotelId":1,
       "name":"Hotel Mường Thanh",
       "Title": "Đường Hoa Thị Thị Trấn Sapa",
       "Price": 600
     },
     {
       "id": 5,
-      "hotelsid":1,
+      "hotelId":1,
       "name":"Hotel Sapa Godel",
       "Title": "Đường Thác Bạc Thị Trấn Sapa",
       "Price": 500
     },
     {
       "id": 6,
-      "hotelsid":1,
+      "hotelId":1,
       "name":"Hotel Sapa Nhật Minh Hill",
       "Title": "Đường Thác Bạc Thị Trấn Sapa",
       "Price": 600
     },
     {
       "id": 7,
-      "hotelsid":1,
+      "hotelId":1,
       "name":"Hotel Sapa Jude Hill",
       "Title": "Đường Đồng lợi Thị Trấn Sapa",
       "Price": 500
     },
     {
       "id": 8,
-      "hotelsid":1,
+      "hotelId":1,
       "name":"Hotel Sapa Nhật Minh Hill",
       "Title": "Đường Đồng Lợi Thị Trấn Sapa",
       "Price": 600
@@ -292,56 +292,56 @@
 
 
    { "id": 1,
-      "hotelsid":2,
+      "hotelId":2,
       "name":"Hotel Hà Nội Godel",
       "Title": "Đường Trần Duy Hưng",
       "Price": 500
     },
     {
       "id": 2,
-      "hotelsid":2,
+      "hotelId":2,
       "name":"Hotel HAGL",
       "Title": "Đường Tô Hiệu",
       "Price": 600
     },
     {
       "id": 3,
-      "hotelsid":2,
+      "hotelId":2,
       "name":"Hotel BigCen ",
       "Title": "Đường Bạch Mã",
       "Price": 500
     },
     {
       "id": 4,
-      "hotelsid":2,
+      "hotelId":2,
       "name":"Hotel Mường Thanh",
       "Title": "Đường Phan Tế",
       "Price": 600
     },
     {
       "id": 5,
-      "hotelsid":2,
+      "hotelId":2,
       "name":"Hotel Xuân Linh Godel",
       "Title": "Đường Trần Duy Hưng",
       "Price": 500
     },
     {
       "id": 6,
-      "hotelsid":2,
+      "hotelId":2,
       "name":"Hotel  Nhật Minh Hill",
       "Title": "Đường Thạc Gián",
       "Price": 600
     },
     {
       "id": 7,
-      "hotelsid":2,
+      "hotelId":2,
       "name":"Hotel Đồng Tiến",
       "Title": "Đường Tiền Đống",
       "Price": 500
     },
     {
       "id": 8,
-      "hotelsid":2,
+      "hotelId":2,
       "name":"Hotel Sóc Sơn",
       "Title": "Đường Hai Bà Trưng",
       "Price": 600

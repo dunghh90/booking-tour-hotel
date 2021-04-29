@@ -32,12 +32,34 @@ function* getProductHotelListSaga(action) {
   }
 }
 
+// sủa lại hàm này get data detail
 function* getProductHotelDetailSaga(action) {
+  // [Dung] Cái này không cần thiết, data trong json viết sai hotelsid -> hotelId
+  // try {
+  //   //  const user = yield call(Api.fetchUser, action.payload.userId);
+  //   yield put({type: "GET_PRODUCT_HOTEL_DETAIL_SUCCESS", user: 'user'});
+  // } catch (e) {
+  //   yield put({type: "GET_PRODUCT_hotel_DETAIL_FAIL", message: e.message});
+  // }
+
   try {
-    //  const user = yield call(Api.fetchUser, action.payload.userId);
-    yield put({type: "GET_PRODUCT_HOTEL_DETAIL_SUCCESS", user: 'user'});
+    const { id } = action.payload;
+    const result = yield axios({
+      method: 'GET',
+      url: `http://localhost:3001/hotels/${id}`,
+      params: {
+        _embed: 'hotels',
+        _expand: 'productOptionsHotel'
+      }
+    });
+    yield put({
+      type: "GET_PRODUCT_HOTEL_DETAIL_SUCCESS",
+      payload: {
+        data: result.data,
+      },
+    });
   } catch (e) {
-    yield put({type: "GET_PRODUCT_hotel_DETAIL_FAIL", message: e.message});
+    yield put({type: "GET_PRODUCT_HOTEL_DETAIL_FAIL", message: e.message});
   }
 }
 

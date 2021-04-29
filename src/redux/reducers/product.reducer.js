@@ -46,6 +46,40 @@ const initialState = {
           },
         }
       }
+
+      // [Dung] Thiếu reducer cho Hotel detail
+      case 'GET_PRODUCT_HOTEL_DETAIL_REQUEST': {
+        return {
+          ...state,
+          productHotelDetail: {
+            ...state.productHotelDetail,
+            load: true,
+          },
+        }
+      }
+      case 'GET_PRODUCT_HOTEL_DETAIL_SUCCESS': {
+        const { data } = action.payload;
+        console.log("🚀 ~ file: product.reducer.js ~ line 62 ~ productHotelReducer ~ data", data)
+        return {
+          ...state,
+          productHotelDetail: {
+            ...state.productHotelDetail,
+            data: data,
+            load: false,
+          },
+        }
+      }
+      case 'GET_PRODUCT_HOTEL_DETAIL_FAIL': {
+        const { error } = action.payload;
+        return {
+          ...state,
+          productHotelDetail: {
+            ...state.productHotelDetail,
+            load: false,
+            error: error,
+          },
+        }
+      }
       default: {
         return state;
       }

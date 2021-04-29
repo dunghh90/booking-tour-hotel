@@ -21,7 +21,8 @@ function DetailPage({
 
   useEffect(() => {
     if (productHotelDetail.data.id) {
-      setOptionSelected(productHotelDetail.data.productOptionsHotel[0] || {})
+      console.log("🚀 ~ file: index.jsx ~ line 24 ~ useEffect ~ productHotelDetail.data", productHotelDetail.data)
+      // setOptionSelected(productHotelDetail.data.productOptionsHotel[0] || {})
     }
   }, [productHotelDetail.data])
 
