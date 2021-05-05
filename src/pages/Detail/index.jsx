@@ -32,6 +32,7 @@ function DetailPage({
 
   function renderProductOptions() {
     return productHotelDetail.data.productOptionsHotels.map((item, index) => {
+      console.log("🚀 ~ file: index.jsx ~ line 35 ~ returnproductHotelDetail.data.productOptionsHotels.map ~ item", item);
       return (
         <>
         
@@ -41,25 +42,13 @@ function DetailPage({
           >
             <div className="optiondetail">
               <img className="img1" src={item.img} alt="" />
-
                 <div className="option">
                     <h2> {item.name} </h2>
                     <Rate disabled defaultValue={item.rate} />
                     <h5><ThunderboltOutlined />.{item.Title}</h5>
-                    <span>{item.Price} USD</span>
+                    <span className="price">{item.Price} USD</span>
                 </div>
             </div>
-
-
-
-            {/* <Radio.Group
-        onChange={(e) => setOptionSelected(e.target.value)}
-        value={optionSelected}
-      > */}
-            {/* {renderProductOptions()} */}
-            {/* </Radio.Group> */}
-            {/* {productHotelDetail.data.price + (optionSelected.price || 0)} */}
-
 
           </Card>
         </Col>

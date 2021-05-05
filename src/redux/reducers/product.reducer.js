@@ -11,6 +11,13 @@ const initialState = {
       load: false,
       error: '',
     },
+    productHotelRoom:{
+      data: {
+        Room: [],
+      },
+      load: false,
+      error: '',
+    }
   };
   
   export default function productHotelReducer(state = initialState, action) {
@@ -48,7 +55,7 @@ const initialState = {
       }
 
       // [Dung] Thiếu reducer cho Hotel detail
-      case 'GET_PRODUCT_HOTEL_DETAIL_REQUEST': {
+      case 'GET_PRODUCT_ROOM_REQUEST': {
         return {
           ...state,
           productHotelDetail: {
@@ -57,9 +64,8 @@ const initialState = {
           },
         }
       }
-      case 'GET_PRODUCT_HOTEL_DETAIL_SUCCESS': {
+      case 'GET_PRODUCT_ROOM_SUCCESS': {
         const { data } = action.payload;
-        console.log("🚀 ~ file: product.reducer.js ~ line 62 ~ productHotelReducer ~ data", data)
         return {
           ...state,
           productHotelDetail: {
@@ -69,12 +75,44 @@ const initialState = {
           },
         }
       }
-      case 'GET_PRODUCT_HOTEL_DETAIL_FAIL': {
+      case 'GET_PRODUCT_ROOM_FAIL': {
         const { error } = action.payload;
         return {
           ...state,
           productHotelDetail: {
             ...state.productHotelDetail,
+            load: false,
+            error: error,
+          },
+        }
+      }
+      // Room
+      case 'GET_PRODUCT_ROOM_REQUEST': {
+        return {
+          ...state,
+         productHotelRoom: {
+            ...state. productHotelRoom,
+            load: true,
+          },
+        }
+      }
+      case 'GET_PRODUCT_ROOM_SUCCESS': {
+        const { data } = action.payload;
+        return {
+          ...state,
+         productHotelRoom: {
+            ...state. productHotelRoom,
+            data: data,
+            load: false,
+          },
+        }
+      }
+      case 'GET_PRODUCT_ROOM_FAIL': {
+        const { error } = action.payload;
+        return {
+          ...state,
+         productHotelRoom: {
+            ...state. productHotelRoom,
             load: false,
             error: error,
           },

@@ -10,3 +10,10 @@ export function getProductHotelListAction(params) {
       payload: params,
     }
   }
+
+  export function getProductRoomAction(params) {
+    return {
+      type: 'GET_PRODUCT_Room_REQUEST',
+      payload: params,
+    }
+  }

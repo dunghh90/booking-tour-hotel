@@ -62,8 +62,33 @@ function* getProductHotelDetailSaga(action) {
     yield put({type: "GET_PRODUCT_HOTEL_DETAIL_FAIL", message: e.message});
   }
 }
+function* getProductHotelRoomSaga(action) {
+ 
+
+  try {
+    const { id } = action.payload;
+    const result = yield axios({
+      method: 'GET',
+      url: `http://localhost:3001/Room/${id}`,
+      params: {
+        _embed: 'Room',
+      }
+    });
+    console.log("🚀 ~ file: product.saga.js ~ line 55 ~ function*getProductHotelDetailSaga ~ result", result)
+    yield put({
+      type: "GET_PRODUCT_ROOM_SUCCESS",
+      payload: {
+        data: result.data,
+      },
+    });
+  } catch (e) {
+    yield put({type: "GET_PRODUCT_ROOM_FAIL", message: e.message});
+  }
+}
+
 
 export default function* productHotelSaga() {
   yield takeEvery('GET_PRODUCT_HOTEL_LIST_REQUEST', getProductHotelListSaga);
   yield takeEvery('GET_PRODUCT_HOTEL_DETAIL_REQUEST', getProductHotelDetailSaga);
+  yield takeEvery('GET_PRODUCT_ROOM_REQUEST', getProductHotelRoomSaga);
 }
