@@ -7,7 +7,7 @@ function* loginSaga(action) {
     const { email, password } = action.payload;
     const result = yield axios({
       method: 'GET',
-      url: 'http://localhost:3001/users',
+      url: 'http://localhost:3002/users',
       params: {
         email,
         password,
@@ -47,7 +47,7 @@ function* registerSaga(action) {
     console.log("🚀 ~ file: user.saga.js ~ line 47 ~ function*registerSaga ~ email", email)
     const result = yield axios({
       method: 'POST',
-      url: 'http://localhost:3001/users',
+      url: 'http://localhost:3002/users',
       data: { email, password, name: name, }
     });
     yield put({
@@ -70,7 +70,7 @@ function* registerSaga(action) {
 function* getUserInfoSaga(action) {
   try {
     const { id } = action.payload;
-    const result = yield axios.get(`http://localhost:3001/users/${id}`);
+    const result = yield axios.get(`http://localhost:3002/users/${id}`);
     yield put({
       type: "GET_USER_INFO_SUCCESS",
       payload: {

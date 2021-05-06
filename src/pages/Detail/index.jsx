@@ -40,7 +40,7 @@ function DetailPage({
     <Card title={productHotelDetail.data.name}>
       <p> {productHotelDetail.data.name}</p>
 
-      {
+      {/* {
       productHotelDetail.data.productOptionsHotel.map((item, index) => {
         return (
           <div>
@@ -48,7 +48,9 @@ function DetailPage({
           </div>
         )
       })
-    }
+    } */}
+
+
       {/* <Radio.Group
         onChange={(e) => setOptionSelected(e.target.value)}
         value={optionSelected}

@@ -11,6 +11,11 @@ const initialState = {
       load: false,
       error: '',
     },
+    categoryList: {
+      data: [],
+      load: false,
+      error: '',
+    },
   };
   
   export default function productHotelReducer(state = initialState, action) {
@@ -59,7 +64,6 @@ const initialState = {
       }
       case 'GET_PRODUCT_HOTEL_DETAIL_SUCCESS': {
         const { data } = action.payload;
-        console.log("🚀 ~ file: product.reducer.js ~ line 62 ~ productHotelReducer ~ data", data)
         return {
           ...state,
           productHotelDetail: {
@@ -75,6 +79,37 @@ const initialState = {
           ...state,
           productHotelDetail: {
             ...state.productHotelDetail,
+            load: false,
+            error: error,
+          },
+        }
+      }
+      case 'GET_CATEGORY_LIST_REQUEST': {
+        return {
+          ...state,
+          categoryList: {
+            ...state.categoryList,
+            load: true,
+          },
+        }
+      }
+      case 'GET_CATEGORY_LIST_SUCCESS': {
+        const { data } = action.payload;
+        return {
+          ...state,
+          categoryList: {
+            ...state.categoryList,
+            data: data,
+            load: false,
+          },
+        }
+      }
+      case 'GET_CATEGORY_LIST_FAIL': {
+        const { error } = action.payload;
+        return {
+          ...state,
+          categoryList: {
+            ...state.categoryList,
             load: false,
             error: error,
           },

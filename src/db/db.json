@@ -152,29 +152,50 @@
   "categories": [
     {
       "id": 1,
-      "name": "miền trung"
+      "name": "Miền Tây"
     },
     {
       "id": 2,
-      "name": "miền bắc"
+      "name": "Hà Nội"
     },
     {
       "id": 3,
-      "name": "miền nam"
+      "name": "Hạ Long"
     },
     {
       "id": 4,
-      "name": "nước ngoài"
+      "name": "Sapa"
+    },
+    {
+      "id": 5,
+      "name": "Phú Quốc"
+    },
+    {
+      "id": 6,
+      "name": "Nha Trang"
+    },
+    {
+      "id": 7,
+      "name": "Đà Lạt"
+    }
+    ,
+    {
+      "id": 8,
+      "name": "Đà Nẵng"
     }
   ],
   "productOptions": [
     {
       "id": 1,
-      "name": "trọn gói"
+      "name": "Trọn gói"
     },
     {
       "id": 2,
-      "name": "tour land"
+      "name": "Tour land"
+    },
+    {
+      "id": 3,
+      "name": "Daily tours"
     }
   ],
 

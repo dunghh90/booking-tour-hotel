@@ -10,3 +10,11 @@ export function getProductHotelListAction(params) {
       payload: params,
     }
   }
+
+  export function getCategoryListAction(params) {
+    console.log("🚀 ~ file: product.action.js ~ line 15 ~ getCategoryListAction ~ params", params)
+    return {
+      type: 'GET_CATEGORY_LIST_REQUEST',
+      payload: params,
+    }
+  }

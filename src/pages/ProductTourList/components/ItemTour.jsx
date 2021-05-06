@@ -7,7 +7,7 @@ import { IoAirplaneOutline, IoCarOutline } from "react-icons/io5";
 import history from '../../../utils/history';
 
 function ItemTour(props) {
-  const { title, link, description, price, time } = props;
+  const { title, link, description, price, time, id } = props;
 
   // const [isEdit, setIsEdit] = useState(false);
   // const [isShowDescription, setIsShowDescription] = useState(false);
@@ -45,7 +45,7 @@ function ItemTour(props) {
             href="google.com"
             style={{width:204}}
             onClick={() => {
-              history.push("./login")
+              history.push(`/tours/${id}`)
             }}
           />
         </Col>

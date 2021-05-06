@@ -6,7 +6,7 @@ function* getProductHotelListSaga(action) {
     const { page, limit } = action.payload;
     const result = yield axios({
       method: 'GET',
-      url: 'http://localhost:3001/hotels',
+      url: 'http://localhost:3002/hotels',
       params: {
         _page: page,
         _limit: limit,
@@ -46,7 +46,7 @@ function* getProductHotelDetailSaga(action) {
     const { id } = action.payload;
     const result = yield axios({
       method: 'GET',
-      url: `http://localhost:3001/hotels/${id}`,
+      url: `http://localhost:3002/hotels/${id}`,
       params: {
         _embed: 'productOptionsHotel',
       }
@@ -63,7 +63,31 @@ function* getProductHotelDetailSaga(action) {
   }
 }
 
+function* getCategoryListSaga(action) {
+  try {
+    const result = yield axios({
+      method: 'GET',
+      url: 'http://localhost:3002/categories',
+    });
+    console.log("🚀 ~ file: product.saga.js ~ line 73 ~ function*getCategoryListSaga ~ result", result)
+    yield put({
+      type: "GET_CATEGORY_LIST_SUCCESS",
+      payload: {
+        data: result.data,
+      },
+    });
+  } catch (e) {
+    yield put({
+      type: "GET_CATEGORY_LIST_FAIL",
+      payload: {
+        error: e.error
+      },
+    });
+  }
+}
+
 export default function* productHotelSaga() {
   yield takeEvery('GET_PRODUCT_HOTEL_LIST_REQUEST', getProductHotelListSaga);
   yield takeEvery('GET_PRODUCT_HOTEL_DETAIL_REQUEST', getProductHotelDetailSaga);
+  yield takeEvery('GET_CATEGORY_LIST_REQUEST', getCategoryListSaga);
 }

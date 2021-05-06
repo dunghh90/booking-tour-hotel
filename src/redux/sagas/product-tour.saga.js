@@ -3,13 +3,14 @@ import axios from 'axios';
 
 function* getProductTourListSaga(action) {
   try {
-    const { page, limit } = action.payload;
+    const { page, limit, categoryId } = action.payload;
     const result = yield axios({
       method: 'GET',
-      url: 'http://localhost:3001/tours',
+      url: 'http://localhost:3002/tours',
       params: {
         _page: page,
         _limit: limit,
+        ...categoryId && { categoryId }
         // ...catagoryId && { catagoryId },// categoryId: categoryId -> null, truyen Id khi ton taij'
         // ...searchkey && { q: searchkey },
         // _sort: 'price',
