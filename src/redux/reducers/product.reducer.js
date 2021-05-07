@@ -63,7 +63,7 @@ const initialState = {
       }
 
       // [Dung] Thiếu reducer cho Hotel detail
-      case 'GET_PRODUCT_ROOM_REQUEST': {
+      case 'GET_PRODUCT_HOTEL_DETAIL_REQUEST': {
         return {
           ...state,
           productHotelDetail: {
@@ -72,7 +72,7 @@ const initialState = {
           },
         }
       }
-      case 'GET_PRODUCT_ROOM_SUCCESS': {
+      case 'GET_PRODUCT_HOTEL_DETAIL_SUCCESS': {
         const { data } = action.payload;
         return {
           ...state,
@@ -83,7 +83,7 @@ const initialState = {
           },
         }
       }
-      case 'GET_PRODUCT_ROOM_FAIL': {
+      case 'GET_PRODUCT_HOTEL_DETAIL_FAIL': {
         const { error } = action.payload;
         return {
           ...state,
@@ -166,5 +166,5 @@ const initialState = {
       default: {
         return state;
       }
-    }
+   }
   }

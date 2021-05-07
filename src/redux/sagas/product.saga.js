@@ -48,10 +48,12 @@ function* getProductHotelDetailSaga(action) {
       method: 'GET',
       url: `http://localhost:3002/hotels/${id}`,
       params: {
+        __expand:"hotels",
         _embed: 'productOptionsHotels',
       }
     });
     console.log("🚀 ~ file: product.saga.js ~ line 55 ~ function*getProductHotelDetailSaga ~ result", result)
+   
     yield put({
       type: "GET_PRODUCT_HOTEL_DETAIL_SUCCESS",
       payload: {
@@ -69,12 +71,12 @@ function* getProductHotelRoomSaga(action) {
     const { id } = action.payload;
     const result = yield axios({
       method: 'GET',
-      url: `http://localhost:3001/Room/${id}`,
+      url: `http://localhost:3001/hotels/productOptionsHotelsId/${id}`,
       params: {
         _embed: 'Room',
       }
     });
-    console.log("🚀 ~ file: product.saga.js ~ line 55 ~ function*getProductHotelDetailSaga ~ result", result)
+ 
     yield put({
       type: "GET_PRODUCT_ROOM_SUCCESS",
       payload: {

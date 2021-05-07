@@ -13,7 +13,7 @@ export function getProductHotelListAction(params) {
 
   export function getProductRoomAction(params) {
     return {
-      type: 'GET_PRODUCT_Room_REQUEST',
+      type: 'GET_PRODUCT_ROOM_REQUEST',
       payload: params,
     }
   }
