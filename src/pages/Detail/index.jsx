@@ -33,9 +33,9 @@ function DetailPage({
   function renderProductOptions() {
     return productHotelDetail.data.productOptionsHotels.map((item, index) => {
       console.log("🚀 ~ file: index.jsx ~ line 35 ~ returnproductHotelDetail.data.productOptionsHotels.map ~ item", item);
+
       return (
         <>
-        
         <Col span={16}>
           <Card title={productHotelDetail.data.name}
             onClick={() => history.push(ROUTERS.REVIEW)}

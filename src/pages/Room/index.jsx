@@ -1,15 +1,13 @@
 import { Card, Col, Row } from 'antd';
-import { Radio } from 'antd';
+
 import { connect } from 'react-redux';
-import { getProductDetailAction } from '../../redux/actions';
+
 import { useEffect, useState } from 'react';
 import history from '../../utils/history';
 import { Rate } from 'antd';
 import './styles.css';
 import { ThunderboltOutlined } from '@ant-design/icons';
-import SearchTourPage from '../SearchTour';
-import { ROUTERS } from '../../constants/router';
-import Siderba from '../../components/Siderba';
+
 
 
 function RoomPage({
@@ -70,7 +68,6 @@ function RoomPage({
   return (
     <>
       <Row gutter={[8, 8]} justify="center">
-      
         {renderProductRoom()}
       </Row>
     </>

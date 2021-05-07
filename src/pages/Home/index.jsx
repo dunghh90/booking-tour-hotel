@@ -23,8 +23,7 @@ function HomePage({getProductHotelList, productHotelList}) {
   
   function renderProductHotelList() {
     return productHotelList.data.map((item, index) => {
-    
-      
+     
       return (
         <>
           <Col span='8'
