@@ -11,11 +11,14 @@ const initialState = {
       load: false,
       error: '',
     },
+<<<<<<< HEAD
     categoryList: {
       data: [],
       load: false,
       error: '',
     },
+=======
+>>>>>>> e16dc6b (e moi lam them room)
     productHotelRoom:{
       data: {
         Room: [],
@@ -91,6 +94,7 @@ const initialState = {
           },
         }
       }
+<<<<<<< HEAD
       case 'GET_CATEGORY_LIST_REQUEST': {
         return {
           ...state,
@@ -100,6 +104,8 @@ const initialState = {
           },
         }
       }
+=======
+>>>>>>> e16dc6b (e moi lam them room)
       // Room
       case 'GET_PRODUCT_ROOM_REQUEST': {
         return {
@@ -110,6 +116,7 @@ const initialState = {
           },
         }
       }
+<<<<<<< HEAD
       case 'GET_CATEGORY_LIST_SUCCESS': {
         const { data } = action.payload;
         return {
@@ -121,6 +128,8 @@ const initialState = {
           },
         }
       }
+=======
+>>>>>>> e16dc6b (e moi lam them room)
       case 'GET_PRODUCT_ROOM_SUCCESS': {
         const { data } = action.payload;
         return {
