@@ -22,6 +22,7 @@ function HomePage({getProductHotelList, productHotelList}) {
   },[]);
   
   function renderProductHotelList() {
+    console.log("🚀 ~ file: index.jsx ~ line 26 ~ returnproductHotelList.data.map ~ productHotelList", productHotelList)
     return productHotelList.data.map((item, index) => {
      
       return (
@@ -30,7 +31,7 @@ function HomePage({getProductHotelList, productHotelList}) {
           key={index}>
           <img className="item" src={item.img}
           
-          onClick={() => history.push(`/product/${item.Id}`)}/>
+          onClick={() => history.push(`/product/${item.id}`)}/>
           <h2 className="thongtin">{item.name}</h2>
           </Col>
         </>
@@ -62,7 +63,6 @@ function HomePage({getProductHotelList, productHotelList}) {
  
 }
 const mapStateToProps = (state) => {
-console.log("🚀 ~ file: index.jsx ~ line 64 ~ mapStateToProps ~ state", state)
   const { productHotelList } = state.productHotelReducer;
   return {
     productHotelList: productHotelList,
