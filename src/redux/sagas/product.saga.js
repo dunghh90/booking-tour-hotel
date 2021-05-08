@@ -48,7 +48,7 @@ function* getProductHotelDetailSaga(action) {
       method: 'GET',
       url: `http://localhost:3002/hotels/${id}`,
       params: {
-        _embed: 'productOptionsHotel',
+        _embed: 'productOptionsHotels',
       }
     });
     console.log("🚀 ~ file: product.saga.js ~ line 55 ~ function*getProductHotelDetailSaga ~ result", result)

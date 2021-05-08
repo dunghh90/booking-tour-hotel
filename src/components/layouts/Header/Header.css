@@ -17,3 +17,9 @@
 .ant-col-4{
     padding-left: 125px;
 }
+p{
+    display: none;
+}
+.logout{
+    margin-bottom: 35px;
+}

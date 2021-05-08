@@ -10,6 +10,11 @@ import './Header.css'
 import { ROUTERS } from '../../../constants/router';
 import history from '../../../utils/history';
 import { logoutAction } from '../../../redux/actions';
+import { createFromIconfontCN,ImportOutlined } from '@ant-design/icons';
+
+const IconFont = createFromIconfontCN({
+  scriptUrl: '//at.alicdn.com/t/font_8d5l8fzk5b87iudi.js',
+});
 
 
 const { Header } = Layout;
@@ -55,10 +60,15 @@ function HeaderPage(props) {
                                             ? (
                                             <Space>
                                                 <p>{`Tên đăng nhập: ${userInfo.data.name}`}</p>
-                                                <Button onClick={() => logout()}>Đăng xuất</Button>
+                                                <Button className="logout" onClick={() => logout()}>Đăng xuất
+                                                <IconFont type="icon-tuichu" />
+                                                </Button>
                                             </Space>
                                             )
-                                            : <Button onClick={() => history.push('/login')}>Đăng nhập</Button>
+                                            : <Button onClick={() => history.push('/login')}> 
+                                                Đăng nhập
+                                                <ImportOutlined />
+                                                </Button>
                                         }
                                     </div>
                             </Col>

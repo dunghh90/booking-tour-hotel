@@ -6,7 +6,7 @@ const initialState = {
     },
     productHotelDetail: {
       data: {
-        productOptions: [],
+        productOptionsHotels: [],
       },
       load: false,
       error: '',
