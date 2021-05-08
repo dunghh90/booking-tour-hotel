@@ -16,6 +16,13 @@ const initialState = {
       load: false,
       error: '',
     },
+    productHotelRoom:{
+      data: {
+        Room: [],
+      },
+      load: false,
+      error: '',
+    }
   };
   
   export default function productHotelReducer(state = initialState, action) {
@@ -53,7 +60,7 @@ const initialState = {
       }
 
       // [Dung] Thiếu reducer cho Hotel detail
-      case 'GET_PRODUCT_HOTEL_DETAIL_REQUEST': {
+      case 'GET_PRODUCT_ROOM_REQUEST': {
         return {
           ...state,
           productHotelDetail: {
@@ -62,7 +69,7 @@ const initialState = {
           },
         }
       }
-      case 'GET_PRODUCT_HOTEL_DETAIL_SUCCESS': {
+      case 'GET_PRODUCT_ROOM_SUCCESS': {
         const { data } = action.payload;
         return {
           ...state,
@@ -73,7 +80,7 @@ const initialState = {
           },
         }
       }
-      case 'GET_PRODUCT_HOTEL_DETAIL_FAIL': {
+      case 'GET_PRODUCT_ROOM_FAIL': {
         const { error } = action.payload;
         return {
           ...state,
@@ -93,6 +100,16 @@ const initialState = {
           },
         }
       }
+      // Room
+      case 'GET_PRODUCT_ROOM_REQUEST': {
+        return {
+          ...state,
+         productHotelRoom: {
+            ...state. productHotelRoom,
+            load: true,
+          },
+        }
+      }
       case 'GET_CATEGORY_LIST_SUCCESS': {
         const { data } = action.payload;
         return {
@@ -104,12 +121,34 @@ const initialState = {
           },
         }
       }
+      case 'GET_PRODUCT_ROOM_SUCCESS': {
+        const { data } = action.payload;
+        return {
+          ...state,
+         productHotelRoom: {
+            ...state. productHotelRoom,
+            data: data,
+            load: false,
+          },
+        }
+      }
       case 'GET_CATEGORY_LIST_FAIL': {
         const { error } = action.payload;
         return {
           ...state,
           categoryList: {
             ...state.categoryList,
+            load: false,
+            error: error,
+          },
+        }
+      }
+      case 'GET_PRODUCT_ROOM_FAIL': {
+        const { error } = action.payload;
+        return {
+          ...state,
+         productHotelRoom: {
+            ...state. productHotelRoom,
             load: false,
             error: error,
           },
