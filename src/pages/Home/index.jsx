@@ -23,14 +23,14 @@ function HomePage({getProductHotelList, productHotelList}) {
   
   function renderProductHotelList() {
     return productHotelList.data.map((item, index) => {
+     
       return (
         <>
-        
           <Col span='8'
           key={index}>
           <img className="item" src={item.img}
           
-          onClick={() => history.push(`/product/${item.id}`)}/>
+          onClick={() => history.push(`/product/${item.Id}`)}/>
           <h2 className="thongtin">{item.name}</h2>
           </Col>
         </>

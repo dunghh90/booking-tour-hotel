@@ -48,10 +48,12 @@ function* getProductHotelDetailSaga(action) {
       method: 'GET',
       url: `http://localhost:3002/hotels/${id}`,
       params: {
-        _embed: 'productOptionsHotel',
+        __expand:"hotels",
+        _embed: 'productOptionsHotels',
       }
     });
     console.log("🚀 ~ file: product.saga.js ~ line 55 ~ function*getProductHotelDetailSaga ~ result", result)
+   
     yield put({
       type: "GET_PRODUCT_HOTEL_DETAIL_SUCCESS",
       payload: {
@@ -62,6 +64,37 @@ function* getProductHotelDetailSaga(action) {
     yield put({type: "GET_PRODUCT_HOTEL_DETAIL_FAIL", message: e.message});
   }
 }
+function* getProductHotelRoomSaga(action) {
+ 
+
+  try {
+    const { id } = action.payload;
+    const result = yield axios({
+      method: 'GET',
+<<<<<<< HEAD
+      url: `http://localhost:3001/Room/${id}`,
+=======
+      url: `http://localhost:3001/hotels/productOptionsHotelsId/${id}`,
+>>>>>>> 6e7fee3ea6b102ede1d4072506f129a120ec0381
+      params: {
+        _embed: 'Room',
+      }
+    });
+<<<<<<< HEAD
+=======
+ 
+>>>>>>> 6e7fee3ea6b102ede1d4072506f129a120ec0381
+    yield put({
+      type: "GET_PRODUCT_ROOM_SUCCESS",
+      payload: {
+        data: result.data,
+      },
+    });
+  } catch (e) {
+    yield put({type: "GET_PRODUCT_ROOM_FAIL", message: e.message});
+  }
+}
+
 
 function* getCategoryListSaga(action) {
   try {
@@ -90,4 +123,5 @@ export default function* productHotelSaga() {
   yield takeEvery('GET_PRODUCT_HOTEL_LIST_REQUEST', getProductHotelListSaga);
   yield takeEvery('GET_PRODUCT_HOTEL_DETAIL_REQUEST', getProductHotelDetailSaga);
   yield takeEvery('GET_CATEGORY_LIST_REQUEST', getCategoryListSaga);
+  yield takeEvery('GET_PRODUCT_ROOM_REQUEST', getProductHotelRoomSaga);
 }

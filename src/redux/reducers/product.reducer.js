@@ -6,16 +6,25 @@ const initialState = {
     },
     productHotelDetail: {
       data: {
-        productOptions: [],
+        productOptionsHotels: [],
       },
       load: false,
       error: '',
     },
+
     categoryList: {
       data: [],
       load: false,
       error: '',
     },
+
+    productHotelRoom:{
+      data: {
+        Room: [],
+      },
+      load: false,
+      error: '',
+    }
   };
   
   export default function productHotelReducer(state = initialState, action) {
@@ -84,6 +93,7 @@ const initialState = {
           },
         }
       }
+
       case 'GET_CATEGORY_LIST_REQUEST': {
         return {
           ...state,
@@ -93,12 +103,35 @@ const initialState = {
           },
         }
       }
+      // Room
+      case 'GET_PRODUCT_ROOM_REQUEST': {
+        return {
+          ...state,
+         productHotelRoom: {
+            ...state. productHotelRoom,
+            load: true,
+          },
+        }
+      }
+
       case 'GET_CATEGORY_LIST_SUCCESS': {
         const { data } = action.payload;
         return {
           ...state,
           categoryList: {
             ...state.categoryList,
+            data: data,
+            load: false,
+          },
+        }
+      }
+
+      case 'GET_PRODUCT_ROOM_SUCCESS': {
+        const { data } = action.payload;
+        return {
+          ...state,
+         productHotelRoom: {
+            ...state. productHotelRoom,
             data: data,
             load: false,
           },
@@ -115,8 +148,19 @@ const initialState = {
           },
         }
       }
+      case 'GET_PRODUCT_ROOM_FAIL': {
+        const { error } = action.payload;
+        return {
+          ...state,
+         productHotelRoom: {
+            ...state. productHotelRoom,
+            load: false,
+            error: error,
+          },
+        }
+      }
       default: {
         return state;
       }
-    }
+   }
   }

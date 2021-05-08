@@ -253,124 +253,262 @@
       "img":"//cdn1.ivivu.com/iVivu/2017/01/23/11/khu-nghi-duong-the-graden-house-phu-quoc-374x280.png"
     }
   ],
-  "productOptionsHotel": [
+  "productOptionsHotels": [
     {
       "id": 1,
       "hotelId":1,
+      "img":"//cdn1.ivivu.com/iVivu/2019/09/18/16/sa-pa-370x190.png",
       "name":"Hotel Hà Nội Godel",
+      "rate": 5,
       "Title": "Đường Trần Duy Hưng",
       "Price": 500
     },
     {
       "id": 2,
       "hotelId":1,
-      "name":"Hotel Sapa Nhật Minh Hill",
-      "Title": "Đường Hoa Thông Thị Trấn Sapa",
+      "img":"https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/12/3-khach-san-5-sao-tai-Sapa-1.jpg",
+      "name":"Hotel Royal",
+      "rate": 4,
+      "Title": "Đường Hoàng Hoa Thám",
       "Price": 600
     },
     {
       "id": 3,
       "hotelId":1,
-      "name":"Hotel Nhật Linh ",
-      "Title": "Đường Mường Hoa Thị Trấn Sapa",
+      "img":"https://travelreview.vn/wp-content/uploads/2018/10/Kha%CC%81ch-sa%CC%A3n-2-sao-%C6%A1%CC%89-Sapa-2.jpg",
+      "name":"Hotel BatMan ",
+      "rate": 4,
+      "Title": "Đường Lê Duẩn",
       "Price": 500
     },
     {
       "id": 4,
       "hotelId":1,
       "name":"Hotel Mường Thanh",
-      "Title": "Đường Hoa Thị Thị Trấn Sapa",
+      "img":"https://cf.bstatic.com/images/hotel/max1024x768/210/210656131.jpg",
+      "Title": "Đường Lê Duẩn",
+      "rate": 3,
       "Price": 600
     },
     {
       "id": 5,
       "hotelId":1,
-      "name":"Hotel Sapa Godel",
-      "Title": "Đường Thác Bạc Thị Trấn Sapa",
+      "name":"Hotel Supper Godel",
+      "img":"https://pix10.agoda.net/hotelImages/626432/-1/4e377e4b246a20370ac4a9fb2e4850be.jpg?s=1024x768",
+      "rate": 5,
+      "Title": "Đường Supper",
       "Price": 500
     },
     {
       "id": 6,
       "hotelId":1,
-      "name":"Hotel Sapa Nhật Minh Hill",
-      "Title": "Đường Thác Bạc Thị Trấn Sapa",
+      "rate": 3,
+      "img":"https://pix10.agoda.net/hotelImages/5649846/-1/ab54b6f91c343b2e68002618cdffa496.jpg?s=1024x768",
+      "name":"Hotel VinGroup",
+      "Title": "Đường Bạch Đằng",
       "Price": 600
     },
     {
       "id": 7,
       "hotelId":1,
-      "name":"Hotel Sapa Jude Hill",
-      "Title": "Đường Đồng lợi Thị Trấn Sapa",
+      "rate": 3,
+      "img":"https://cdn3.ivivu.com/2017/11/khach-san-sapa-ivivu-20.jpg",
+      "name":"Hotel Jude Hill",
+      "Title": "Đường Đồng Lợi",
       "Price": 500
     },
     {
       "id": 8,
       "hotelId":1,
-      "name":"Hotel Sapa Nhật Minh Hill",
-      "Title": "Đường Đồng Lợi Thị Trấn Sapa",
+      "img":"https://dulichkhampha24.com/wp-content/uploads/2019/05/ban-cong-khach-san-paos-sapa.jpeg",
+      "rate": 2,
+      "name":"Hotel Royal",
+      "Title": "Đường Hoạt Nam",
       "Price": 600
     },
 
 
-   { "id": 1,
+    {
+      "id": 1,
       "hotelId":2,
+      "img":"https://cdn.huongnghiepaau.com/wp-content/uploads/2019/10/khach-san-pullman-ha-noi.jpg",
       "name":"Hotel Hà Nội Godel",
+      "rate": 5,
       "Title": "Đường Trần Duy Hưng",
       "Price": 500
     },
     {
       "id": 2,
       "hotelId":2,
-      "name":"Hotel HAGL",
-      "Title": "Đường Tô Hiệu",
+      "img":"https://pix10.agoda.net/hotelImages/4885116/0/3ec7a573097742323e2f976670239467.jpg?s=1024x768",
+      "name":"Hotel Matcha",
+      "rate": 4,
+      "Title": "Đường Phạm Hùng",
       "Price": 600
     },
     {
       "id": 3,
       "hotelId":2,
-      "name":"Hotel BigCen ",
-      "Title": "Đường Bạch Mã",
+      "img":"https://toquoc.mediacdn.vn/2019/2/28/my-trieu-summit-15513252506751703394469.jpg",
+      "name":"Hotel Royal ",
+      "rate": 4,
+      "Title": "Đường Hùng Vương",
       "Price": 500
     },
     {
       "id": 4,
       "hotelId":2,
       "name":"Hotel Mường Thanh",
-      "Title": "Đường Phan Tế",
+      "img":"https://cf.bstatic.com/images/hotel/max1024x768/863/86327330.jpg",
+      "Title": "Đường Âu Cơ",
+      "rate": 3,
       "Price": 600
     },
     {
       "id": 5,
       "hotelId":2,
-      "name":"Hotel Xuân Linh Godel",
-      "Title": "Đường Trần Duy Hưng",
+      "name":"Hotel Minh Toàn",
+      "img":"https://cdnimg.vietnamplus.vn/uploaded/fsmsr/2015_11_26/movenpickhanoi.jpg",
+      "rate": 5,
+      "Title": "Đường Thác Bạc Thị ",
       "Price": 500
     },
     {
       "id": 6,
       "hotelId":2,
-      "name":"Hotel  Nhật Minh Hill",
-      "Title": "Đường Thạc Gián",
-      "Price": 600
-    },
-    {
-      "id": 7,
-      "hotelId":2,
-      "name":"Hotel Đồng Tiến",
-      "Title": "Đường Tiền Đống",
-      "Price": 500
-    },
-    {
-      "id": 8,
-      "hotelId":2,
-      "name":"Hotel Sóc Sơn",
+      "rate": 3,
+      "img":"https://bazantravel.com/cdn/medias/uploads/30/30991-khach-san-sheraton-hanoi.jpg",
+      "name":"Hotel GaLaXy",
       "Title": "Đường Hai Bà Trưng",
+      "Price": 600
+    },
+    {
+      "id": 7,
+      "hotelId":2,
+      "rate": 3,
+      "img":"https://ik.imagekit.io/tvlk/apr-asset/TzEv3ZUmG4-4Dz22hvmO9NUDzw1DGCIdWl4oPtKumOg=/hotels/1000000/530000/523600/523534/246b00cd_z.jpg?tr=q-40,c-at_max,w-740,h-500&_src=imagekit",
+      "name":"Hotel Linh Dương",
+      "Title": "Đường Trần Phú",
+      "Price": 500
+    },
+    {
+      "id": 8,
+      "hotelId":2,
+      "img":"https://baogialai.com.vn/dataimages/202009/original/images2927238_logo_img20191128112544_1_15991305286161571887111.jpg",
+      "rate": 2,
+      "name":"Hotel Lõ Hưng",
+      "Title": "Đường Phạm Hưng",
+      "Price": 600
+    },
+
+
+    {
+      "id": 1,
+      "hotelId":4,
+      "img":"https://cdn.huongnghiepaau.com/wp-content/uploads/2019/10/khach-san-pullman-ha-noi.jpg",
+      "name":"Hotel Hà Nội Godel",
+      "rate": 5,
+      "Title": "Đường Trần Duy Hưng",
+      "Price": 500
+    },
+    {
+      "id": 2,
+      "hotelId":4,
+      "img":"https://pix10.agoda.net/hotelImages/4885116/0/3ec7a573097742323e2f976670239467.jpg?s=1024x768",
+      "name":"Hotel Matcha",
+      "rate": 4,
+      "Title": "Đường Phạm Hùng",
+      "Price": 600
+    },
+    {
+      "id": 3,
+      "hotelId":4,
+      "img":"https://toquoc.mediacdn.vn/2019/2/28/my-trieu-summit-15513252506751703394469.jpg",
+      "name":"Hotel Royal ",
+      "rate": 4,
+      "Title": "Đường Hùng Vương",
+      "Price": 500
+    },
+    {
+      "id": 4,
+      "hotelId":4,
+      "name":"Hotel Mường Thanh",
+      "img":"https://cf.bstatic.com/images/hotel/max1024x768/863/86327330.jpg",
+      "Title": "Đường Âu Cơ",
+      "rate": 3,
+      "Price": 600
+    },
+    {
+      "id": 5,
+      "hotelId":4,
+      "name":"Hotel Minh Toàn",
+      "img":"https://cdnimg.vietnamplus.vn/uploaded/fsmsr/2015_11_26/movenpickhanoi.jpg",
+      "rate": 5,
+      "Title": "Đường Thác Bạc Thị ",
+      "Price": 500
+    },
+    {
+      "id": 6,
+      "hotelId":4,
+      "rate": 3,
+      "img":"https://bazantravel.com/cdn/medias/uploads/30/30991-khach-san-sheraton-hanoi.jpg",
+      "name":"Hotel GaLaXy",
+      "Title": "Đường Hai Bà Trưng",
+      "Price": 600
+    },
+    {
+      "id": 7,
+      "hotelId":4,
+      "rate": 3,
+      "img":"https://ik.imagekit.io/tvlk/apr-asset/TzEv3ZUmG4-4Dz22hvmO9NUDzw1DGCIdWl4oPtKumOg=/hotels/1000000/530000/523600/523534/246b00cd_z.jpg?tr=q-40,c-at_max,w-740,h-500&_src=imagekit",
+      "name":"Hotel Linh Dương",
+      "Title": "Đường Trần Phú",
+      "Price": 500
+    },
+    {
+      "id": 8,
+      "hotelId":4,
+      "img":"https://baogialai.com.vn/dataimages/202009/original/images2927238_logo_img20191128112544_1_15991305286161571887111.jpg",
+      "rate": 2,
+      "name":"Hotel Lõ Hưng",
+      "Title": "Đường Phạm Hưng",
       "Price": 600
     }
 
 
-  ]
+  ],
 
+  "Room":[
+    {
+      "id": 1,
+      "productOptionsHotelsId":1,
+      "img":"https://baogialai.com.vn/dataimages/202009/original/images2927238_logo_img20191128112544_1_15991305286161571887111.jpg",
+      "name":"Phòng 2 Người",
+      "Price": 600
+    },
+    {
+      "id": 2,
+      "productOptionsHotelsId":1,
+      "img":"https://baogialai.com.vn/dataimages/202009/original/images2927238_logo_img20191128112544_1_15991305286161571887111.jpg",
+      "name":"Phòng 4 Người",
+      "Price": 800
+    },
+    {
+      "id": 2,
+      "productOptionsHotelsId":1,
+      "img":"https://baogialai.com.vn/dataimages/202009/original/images2927238_logo_img20191128112544_1_15991305286161571887111.jpg",
+      "name":"Phòng 1 Người",
+      "Price": 200
+    },
+    {
+      "id": 2,
+      "productOptionsHotelsId":1,
+      "img":"https://baogialai.com.vn/dataimages/202009/original/images2927238_logo_img20191128112544_1_15991305286161571887111.jpg",
+      "name":"Phòng 5 Người",
+      "Price": 200
+    }
+
+  ]
 }
 
 
