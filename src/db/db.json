@@ -82,7 +82,8 @@
         "Ngắm Hoàng Hôn Cổng Tò Vò"
       ],
       "price": "5.190.000 VND",
-      "categoryId": 3
+      "categoryId": 3,
+      "tourDescriptionId":1
     },
     {
       "id": 2,
@@ -98,7 +99,8 @@
         "Phố Cổ Hội An"
       ],
       "price": "4.690.000 VND",
-      "categoryId": 2
+      "categoryId": 2,
+      "tourDescriptionId": 2
     },
     {
       "id": 3,
@@ -114,7 +116,8 @@
         "Kiệt Tác Thiên Nhiên Gành Đá Đĩa"
       ],
       "price": "4.988.000 VND",
-      "categoryId": 1
+      "categoryId": 1,
+      "tourDescriptionId": 3
     },
     {
       "id": 4,
@@ -130,7 +133,8 @@
         "Kiệt Tác Thiên Nhiên Gành Đá Đĩa"
       ],
       "price": "4.988.000 VND",
-      "categoryId": 2
+      "categoryId": 2,
+      "tourDescriptionId": 4
     },
     {
       "id": 5,
@@ -146,7 +150,9 @@
         "Kiệt Tác Thiên Nhiên Gành Đá Đĩa"
       ],
       "price": "4.988.000 VND",
-      "categoryId": 1
+      "categoryId": 1,
+      "tourDescriptionId": 5
+
     }
   ],
   "categories": [
@@ -506,6 +512,60 @@
       "img":"https://baogialai.com.vn/dataimages/202009/original/images2927238_logo_img20191128112544_1_15991305286161571887111.jpg",
       "name":"Phòng 5 Người",
       "Price": 200
+    }
+
+  ],
+
+  "tourDescriptions":[
+    {
+      "id": 1,
+      "name": "Tour Đà Nẵng 4N3D",
+      "titleOverView":"Hành Trình đi dọc miền trung đất nước",
+      "descriptionOverView": "Du lịch miền Trung luôn hấp dẫn du khách với những món ăn ngon, bãi biển xinh đẹp và những hòn đảo thơ mộng mà ít nơi nào có được. Nhưng bên cạnh đó khi tới vùng đất này bạn còn có thể khám phá những địa danh, di tích lịch sử đã tồn tại từ hàng ngàn năm nay. Có lẽ thiên nhiên đã quá ưu ái khi ban tặng cho bản đồ miền Trung Việt Nam về du lịch quá nhiều những danh lam thắm cảnh nổi tiếng mà ai cũng phải ghen tỵ, đố kỵ. Cùng iVIVU khám phá ngay hôm nay! ",
+      "titleFeel": "Những trải nghiệm thú vị trong chương trình",
+      "descriptionFeel": "Liên Tuyến kỳ thú với: - Chiêm ngưỡng khung cảnh thiên nhiên ngoạn mục trên Cây Cầu Vàng. - Tham quan Bà Nà Hill, Bán Đảo Sơn Trà, Ngũ Hành Sơn, Phố Cổ Hội An, Kinh Thành Huế, Chùa Thiên Mụ. - Tham quan Động Phong Nha, Thánh Địa La Vang, Cầu Hiền Lương.",
+      "titleSchedule": "Chương trình tour",
+      "descriptionSchedule": "NGÀY 1: ĐÀ NẴNG - BÀ NÀ HILL - PHỐ CỔ HỘI AN (ĂN SÁNG, TỐI)"
+    },
+    {
+      "id": 2,
+      "name": "Tour Lý Sơn 4N3D",
+      "titleOverView":"Hành Trình đi dọc miền trung đất nước",
+      "descriptionOverView": "Du lịch miền Trung luôn hấp dẫn du khách với những món ăn ngon, bãi biển xinh đẹp và những hòn đảo thơ mộng mà ít nơi nào có được. Nhưng bên cạnh đó khi tới vùng đất này bạn còn có thể khám phá những địa danh, di tích lịch sử đã tồn tại từ hàng ngàn năm nay. Có lẽ thiên nhiên đã quá ưu ái khi ban tặng cho bản đồ miền Trung Việt Nam về du lịch quá nhiều những danh lam thắm cảnh nổi tiếng mà ai cũng phải ghen tỵ, đố kỵ. Cùng iVIVU khám phá ngay hôm nay! ",
+      "titleFeel": "Những trải nghiệm thú vị trong chương trình",
+      "descriptionFeel": "Liên Tuyến kỳ thú với: - Chiêm ngưỡng khung cảnh thiên nhiên ngoạn mục trên Cây Cầu Vàng. - Tham quan Bà Nà Hill, Bán Đảo Sơn Trà, Ngũ Hành Sơn, Phố Cổ Hội An, Kinh Thành Huế, Chùa Thiên Mụ. - Tham quan Động Phong Nha, Thánh Địa La Vang, Cầu Hiền Lương.",
+      "titleSchedule": "Chương trình tour",
+      "descriptionSchedule": "NGÀY 1: ĐÀ NẴNG - BÀ NÀ HILL - PHỐ CỔ HỘI AN (ĂN SÁNG, TỐI)"
+    },
+    {
+      "id": 3,
+      "name": "Tour Miền Trung 4N3D",
+      "titleOverView":"Liên Tuyến Quy Nhơn - Phú Yên hương vị của biển",
+      "descriptionOverView": "Du lịch miền Trung luôn hấp dẫn du khách với những món ăn ngon, bãi biển xinh đẹp và những hòn đảo thơ mộng mà ít nơi nào có được. Nhưng bên cạnh đó khi tới vùng đất này bạn còn có thể khám phá những địa danh, di tích lịch sử đã tồn tại từ hàng ngàn năm nay. Có lẽ thiên nhiên đã quá ưu ái khi ban tặng cho bản đồ miền Trung Việt Nam về du lịch quá nhiều những danh lam thắm cảnh nổi tiếng mà ai cũng phải ghen tỵ, đố kỵ. Cùng iVIVU khám phá ngay hôm nay! ",
+      "titleFeel": "Những trải nghiệm thú vị trong chương trình",
+      "descriptionFeel": "Liên Tuyến kỳ thú với: - Chiêm ngưỡng khung cảnh thiên nhiên ngoạn mục trên Cây Cầu Vàng. - Tham quan Bà Nà Hill, Bán Đảo Sơn Trà, Ngũ Hành Sơn, Phố Cổ Hội An, Kinh Thành Huế, Chùa Thiên Mụ. - Tham quan Động Phong Nha, Thánh Địa La Vang, Cầu Hiền Lương.",
+      "titleSchedule": "Chương trình tour",
+      "descriptionSchedule": "NGÀY 1: ĐÀ NẴNG - BÀ NÀ HILL - PHỐ CỔ HỘI AN (ĂN SÁNG, TỐI)"
+    },
+    {
+      "id": 4,
+      "name": "Tour Miền Trung 3N2D",
+      "titleOverView":"Hành Trình đi dọc miền trung đất nước",
+      "descriptionOverView": "Du lịch miền Trung luôn hấp dẫn du khách với những món ăn ngon, bãi biển xinh đẹp và những hòn đảo thơ mộng mà ít nơi nào có được. Nhưng bên cạnh đó khi tới vùng đất này bạn còn có thể khám phá những địa danh, di tích lịch sử đã tồn tại từ hàng ngàn năm nay. Có lẽ thiên nhiên đã quá ưu ái khi ban tặng cho bản đồ miền Trung Việt Nam về du lịch quá nhiều những danh lam thắm cảnh nổi tiếng mà ai cũng phải ghen tỵ, đố kỵ. Cùng iVIVU khám phá ngay hôm nay! ",
+      "titleFeel": "Những trải nghiệm thú vị trong chương trình",
+      "descriptionFeel": "Liên Tuyến kỳ thú với: - Chiêm ngưỡng khung cảnh thiên nhiên ngoạn mục trên Cây Cầu Vàng. - Tham quan Bà Nà Hill, Bán Đảo Sơn Trà, Ngũ Hành Sơn, Phố Cổ Hội An, Kinh Thành Huế, Chùa Thiên Mụ. - Tham quan Động Phong Nha, Thánh Địa La Vang, Cầu Hiền Lương.",
+      "titleSchedule": "Chương trình tour",
+      "descriptionSchedule": "NGÀY 1: ĐÀ NẴNG - BÀ NÀ HILL - PHỐ CỔ HỘI AN (ĂN SÁNG, TỐI)"
+    },
+    {
+      "id": 5,
+      "name": "",
+      "titleOverView":"",
+      "descriptionOverView":"Phòng 2 Người",
+      "titleFeel": "",
+      "descriptionFeel": "",
+      "titleSchedule": "",
+      "descriptionSchedule": ""
     }
 
   ]

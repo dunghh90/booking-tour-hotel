@@ -94,7 +94,6 @@ function* getCategoryListSaga(action) {
       method: 'GET',
       url: 'http://localhost:3002/categories',
     });
-    console.log("🚀 ~ file: product.saga.js ~ line 73 ~ function*getCategoryListSaga ~ result", result)
     yield put({
       type: "GET_CATEGORY_LIST_SUCCESS",
       payload: {

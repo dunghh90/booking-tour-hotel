@@ -163,7 +163,6 @@ function ProductTourListPage({
 }
 
 const mapStateToProps = (state) => {
-console.log("🚀 ~ file: index.jsx ~ line 141 ~ mapStateToProps ~ state", state)
   const { productTourList } = state.productTourReducer;
   const { categoryList } = state.productHotelReducer;
   return {

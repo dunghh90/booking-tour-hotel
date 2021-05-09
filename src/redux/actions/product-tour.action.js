@@ -8,3 +8,12 @@ export function getProductTourListAction(params) {
     payload: params,
   }
 }
+
+
+export function getProductTourDetailAction(params) {
+  return {
+    type: 'GET_PRODUCT_TOUR_DETAIL_REQUEST',
+    payload: params,
+  }
+}
+

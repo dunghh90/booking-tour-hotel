@@ -12,6 +12,7 @@ import TourHomePage from './pages/ProductTourListHome';
 import HomePage from './pages/Home';
 import DetailPage from './pages/Detail';
 import reViewPage from './pages/Review';
+import TourDetailPage from "./pages/ProductTourDetail";
 
 function BrowserRouter(props) {
   const { productList } = props;
@@ -21,6 +22,7 @@ function BrowserRouter(props) {
         <DefaultLayout exact path="/homeTour" component={TourHomePage} />
         <LoginLayout exact path="/login" component={LoginPage} />
         <DefaultLayout exact path="/listTour" component={ProductTourListPage} />
+        <DefaultLayout exact path="/tours/:id" component={TourDetailPage} />
         <DefaultLayout
           exact
           path={ROUTERS.HOME}
