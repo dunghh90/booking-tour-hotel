@@ -484,7 +484,7 @@
 
   ],
 
-  "Room":[
+  "rooms":[
     {
       "id": 1,
       "productOptionsHotelsId":1,
@@ -500,14 +500,14 @@
       "Price": 800
     },
     {
-      "id": 2,
+      "id": 3,
       "productOptionsHotelsId":1,
       "img":"https://baogialai.com.vn/dataimages/202009/original/images2927238_logo_img20191128112544_1_15991305286161571887111.jpg",
       "name":"Phòng 1 Người",
       "Price": 200
     },
     {
-      "id": 2,
+      "id": 4,
       "productOptionsHotelsId":1,
       "img":"https://baogialai.com.vn/dataimages/202009/original/images2927238_logo_img20191128112544_1_15991305286161571887111.jpg",
       "name":"Phòng 5 Người",

@@ -36,9 +36,10 @@ function DetailPage({
 
       return (
         <>
-        <Col span={16}>
+          <Row gutter={[12, 12]}>
+        <Col span={24}>
           <Card title={productHotelDetail.data.name}
-            onClick={() => history.push(ROUTERS.REVIEW)}
+            onClick={() => history.push(`/product/room/${item.id}`)}
           >
             <div className="optiondetail">
               <img className="img1" src={item.img} alt="" />
@@ -52,6 +53,7 @@ function DetailPage({
 
           </Card>
         </Col>
+        </Row>
         </>
       )
     });
@@ -59,13 +61,14 @@ function DetailPage({
 
   return (
     <>
-      <Row gutter={[8, 8]} justify="center">
-      
-      <Col span={8}>
-          < Siderba/>
-        </Col>
       <SearchTourPage />
+      <Row gutter={[8, 8]} justify="center">
+      <Col span={7}>
+         < Siderba/>
+      </Col>
+      <Col span={17}>
         {renderProductOptions()}
+      </Col>
       </Row>
     </>
   );

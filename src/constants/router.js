@@ -4,5 +4,5 @@ export const ROUTERS = {
   PRODUCT_DETAIL: '/product/:id',
   REVIEW:'/review',
   TOUR: '/homeTour',
-  // PRODUCT_ROOM:'/product/:id/',
+  PRODUCT_ROOM:'/product/room/:id/',
 }
