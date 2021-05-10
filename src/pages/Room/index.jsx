@@ -32,7 +32,7 @@ function RoomPage({
   }, [productHotelRoom.data])
 
   function renderProductRoom() {
-    return productHotelRoom.data.Room.map((item, index) => {
+    return productHotelRoom.data.map((item, index) => {
       
       return (
         <>
