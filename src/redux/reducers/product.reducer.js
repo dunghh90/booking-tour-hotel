@@ -19,9 +19,7 @@ const initialState = {
     },
 
     productHotelRoom:{
-      data: {
-        Room: [],
-      },
+      data: [],
       load: false,
       error: '',
     }
@@ -128,6 +126,7 @@ const initialState = {
 
       case 'GET_PRODUCT_ROOM_SUCCESS': {
         const { data } = action.payload;
+        console.log("🚀 ~ file: product.reducer.js ~ line 129 ~ productHotelReducer ~ data", data)
         return {
           ...state,
          productHotelRoom: {

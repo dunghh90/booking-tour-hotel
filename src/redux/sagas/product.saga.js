@@ -72,11 +72,7 @@ function* getProductHotelRoomSaga(action) {
 
     const result = yield axios({
       method: 'GET',
-      url: `http://localhost:3002/rooms/${id}`,
-      params: {
-        // _embed: '',
-        __expand:'productOptionsHotel'
-      }
+      url: `http://localhost:3002/rooms?productOptionsHotelsId=${id}`,
     });
     yield put({
       type: "GET_PRODUCT_ROOM_SUCCESS",
