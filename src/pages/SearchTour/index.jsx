@@ -27,8 +27,6 @@ function SearchTourPage(props) {
   }
 
   function searchTour(params){
-  console.log("🚀 ~ file: index.jsx ~ line 20 ~ searchTour ~ params", params)
-  console.log("🚀 ~ file: index.jsx ~ line 20 ~ searchTour ~ params", params.dateStart.format("DD/MM/YYYY"))
     const filterTourList = productTourList.filter((item) => {
       return item.title.trim().toLowerCase().indexOf(params.placeTravel.trim().toLowerCase()) !== -1 && true;
     });

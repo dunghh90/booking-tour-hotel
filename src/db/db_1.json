@@ -81,7 +81,7 @@
         "Chứng Tích Mỹ Lai",
         "Ngắm Hoàng Hôn Cổng Tò Vò"
       ],
-      "price": 5190000,
+      "price": "5.190.000 VND",
       "categoryId": 3,
       "tourDescriptionId":1
     },
@@ -98,7 +98,7 @@
         "Tham Quan Động Phong Nha",
         "Phố Cổ Hội An"
       ],
-      "price": 4690000,
+      "price": "4.690.000 VND",
       "categoryId": 2,
       "tourDescriptionId": 2
     },
@@ -115,7 +115,7 @@
         "Hải Đăng - Mũi Điện",
         "Kiệt Tác Thiên Nhiên Gành Đá Đĩa"
       ],
-      "price": 4988000,
+      "price": "4.988.000 VND",
       "categoryId": 1,
       "tourDescriptionId": 3
     },
@@ -132,7 +132,7 @@
         "Hải Đăng - Mũi Điện",
         "Kiệt Tác Thiên Nhiên Gành Đá Đĩa"
       ],
-      "price": 4988000,
+      "price": "4.988.000 VND",
       "categoryId": 2,
       "tourDescriptionId": 4
     },
@@ -149,7 +149,7 @@
         "Hải Đăng - Mũi Điện",
         "Kiệt Tác Thiên Nhiên Gành Đá Đĩa"
       ],
-      "price": 4988000,
+      "price": "4.988.000 VND",
       "categoryId": 1,
       "tourDescriptionId": 5
 
@@ -570,5 +570,3 @@
 
   ]
 }
-
-
