@@ -6,7 +6,7 @@ const initialState = {
     },
     productHotelDetail: {
       data: {
-        productOptionsHotels: [],
+        rooms: [],
       },
       load: false,
       error: '',
@@ -38,6 +38,7 @@ const initialState = {
       }
       case 'GET_PRODUCT_HOTEL_LIST_SUCCESS': {
         const { data } = action.payload;
+        console.log("🚀 ~ file: product.reducer.js ~ line 41 ~ productHotelReducer ~  data",  data)
         return {
           ...state,
           productHotelList: {
@@ -71,6 +72,8 @@ const initialState = {
       }
       case 'GET_PRODUCT_HOTEL_DETAIL_SUCCESS': {
         const { data } = action.payload;
+        console.log("🚀 ~ file: product.reducer.js ~ line 74 ~ productHotelReducer ~  data",  data);
+
         return {
           ...state,
           productHotelDetail: {
@@ -106,7 +109,7 @@ const initialState = {
         return {
           ...state,
          productHotelRoom: {
-            ...state. productHotelRoom,
+            ...state.productHotelRoom,
             load: true,
           },
         }
@@ -126,7 +129,8 @@ const initialState = {
 
       case 'GET_PRODUCT_ROOM_SUCCESS': {
         const { data } = action.payload;
-        console.log("🚀 ~ file: product.reducer.js ~ line 129 ~ productHotelReducer ~ data", data)
+        console.log("🚀 ~ file: product.reducer.js ~ line 129 ~ productHotelReducer ~ data", data);
+        
         return {
           ...state,
          productHotelRoom: {
@@ -152,7 +156,7 @@ const initialState = {
         return {
           ...state,
          productHotelRoom: {
-            ...state. productHotelRoom,
+            ...state.productHotelRoom,
             load: false,
             error: error,
           },

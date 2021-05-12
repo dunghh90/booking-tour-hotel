@@ -17,17 +17,18 @@ function RoomPage({
    getProductRoom,
   match,
 }) {
-  const productOptionsHotelsId  = match.params.id;
+  const hotelId  = match.params.id;
+  
   
   const [optionSelected, setOptionSelected] = useState({});
 
   useEffect(() => {
-    getProductRoom({ id: productOptionsHotelsId });
+    getProductRoom({ id: hotelId });
   }, [])
 
   useEffect(() => {
     if (productHotelRoom.data.id) {
-      setOptionSelected(productHotelRoom.data.Room[0] || {})
+      setOptionSelected(productHotelRoom.data[0] || {})
     }
   }, [productHotelRoom.data])
 

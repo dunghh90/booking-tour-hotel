@@ -1,8 +1,8 @@
 export const ROUTERS = {
   HOME: '/',
   LOGIN: '/login',
-  PRODUCT_DETAIL: '/product/:id',
+  PRODUCT_DETAIL: '/hotels/:id',
   REVIEW:'/review',
   TOUR: '/homeTour',
-  PRODUCT_ROOM:'/product/room/:id/',
+  PRODUCT_ROOM:'/hotels/rooms/:id/',
 }

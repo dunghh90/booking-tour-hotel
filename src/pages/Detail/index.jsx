@@ -1,5 +1,5 @@
 import { Card, Col, Row } from 'antd';
-import { Radio } from 'antd';
+
 import { connect } from 'react-redux';
 import { getProductDetailAction } from '../../redux/actions';
 import { useEffect, useState } from 'react';
@@ -8,7 +8,7 @@ import { Rate } from 'antd';
 import './styles.css';
 import { ThunderboltOutlined } from '@ant-design/icons';
 import SearchTourPage from '../SearchTour';
-import { ROUTERS } from '../../constants/router';
+
 import Siderba from '../../components/Siderba';
 
 
@@ -17,43 +17,45 @@ function DetailPage({
   getProductDetail,
   match,
 }) {
-  const hotelsId = match.params.id;
-  const [optionSelected, setOptionSelected] = useState({});
+  const locationId = match.params.id;
+  const [roomSelected, setRoomSelected] = useState({});
 
   useEffect(() => {
-    getProductDetail({ id: hotelsId });
+    getProductDetail({ id: locationId });
   }, [])
 
   useEffect(() => {
     if (productHotelDetail.data.id) {
-      setOptionSelected(productHotelDetail.data.productOptionsHotels[0] || {})
+      setRoomSelected(productHotelDetail.data.rooms[0] || {})
     }
   }, [productHotelDetail.data])
 
-  function renderProductOptions() {
-    return productHotelDetail.data.productOptionsHotels.map((item, index) => {
-      console.log("🚀 ~ file: index.jsx ~ line 35 ~ returnproductHotelDetail.data.productOptionsHotels.map ~ item", item);
+  function renderHotelRooms() {
+    return productHotelDetail.data.rooms.map((item, index) => {
+      console.log("🚀 ~ file: index.jsx ~ line 35 ~ item", item);
 
       return (
         <>
           <Row gutter={[12, 12]}>
-        <Col span={24}>
-          <Card title={productHotelDetail.data.name}
-            onClick={() => history.push(`/product/room/${item.id}`)}
-          >
-            <div className="optiondetail">
-              <img className="img1" src={item.img} alt="" />
-                <div className="option">
+            <Col span={24}>
+              <Card
+               hoverable
+                cover={<div alt="example" src="" />}
+                onClick={() => history.push(`/hotels/rooms/${item.id}`)}
+              >
+                <div className="optiondetail">
+                  <img className="img1" src={item.img} alt="" />
+                  <div className="option">
                     <h2> {item.name} </h2>
                     <Rate disabled defaultValue={item.rate} />
                     <h5><ThunderboltOutlined />.{item.Title}</h5>
                     <span className="price">{item.Price} USD</span>
+                  </div>
                 </div>
-            </div>
 
-          </Card>
-        </Col>
-        </Row>
+              </Card>
+            </Col>
+          </Row>
         </>
       )
     });
@@ -63,12 +65,12 @@ function DetailPage({
     <>
       <SearchTourPage />
       <Row gutter={[8, 8]} justify="center">
-      <Col span={7}>
-         < Siderba/>
-      </Col>
-      <Col span={17}>
-        {renderProductOptions()}
-      </Col>
+        <Col span={7}>
+          < Siderba />
+        </Col>
+        <Col span={17}>
+          {renderHotelRooms()}
+        </Col>
       </Row>
     </>
   );
@@ -76,7 +78,7 @@ function DetailPage({
 
 const mapStateToProps = (state) => {
   const { productHotelDetail } = state.productHotelReducer;
-  console.log("🚀 ~ file: index.jsx ~ line 75 ~ mapStateToProps ~ productHotelDetail", productHotelDetail)
+  console.log("🚀 ~ file: index.jsx ~ line 75 ~ mapStateToProps ~ productHotelDetail", productHotelDetail);
 
   return {
     productHotelDetail,

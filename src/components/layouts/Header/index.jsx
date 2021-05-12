@@ -59,13 +59,13 @@ function HeaderPage(props) {
                                         {userInfo.data.id 
                                             ? (
                                             <Space>
-                                                <p>{`Tên đăng nhập: ${userInfo.data.name}`}</p>
-                                                <Button className="logout" onClick={() => logout()}>Đăng xuất
+                                                
+                                                <Button type="primary" className="logout" onClick={() => logout()}>{`Đăng xuất(${userInfo.data.name})`}
                                                 <IconFont type="icon-tuichu" />
                                                 </Button>
                                             </Space>
                                             )
-                                            : <Button onClick={() => history.push('/login')}> 
+                                            : <Button type="primary" onClick={() => history.push('/login')}> 
                                                 Đăng nhập
                                                 <ImportOutlined />
                                                 </Button>
