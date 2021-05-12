@@ -31,7 +31,7 @@ function HomePage({getProductLocationList, productHotelList}) {
           key={index}>
           <img className="item" src={item.img}
           
-          onClick={() => history.push(`/hotels/${item.id}`)}/>
+          onClick={() => history.push(`/locations/${item.id}`)}/>
           <h2 className="thongtin">{item.name}</h2>
           </Col>
         </>

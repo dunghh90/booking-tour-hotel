@@ -1,7 +1,7 @@
 import { Card, Col, Row } from 'antd';
 
 import { connect } from 'react-redux';
-import { getProductDetailAction } from '../../redux/actions';
+import { getListHotelAction } from '../../redux/actions';
 import { useEffect, useState } from 'react';
 import history from '../../utils/history';
 import { Rate } from 'antd';
@@ -12,36 +12,34 @@ import SearchTourPage from '../SearchTour';
 import Siderba from '../../components/Siderba';
 
 
-function DetailPage({
-  productHotelDetail,
-  getProductDetail,
+function ListHotelPage({
+  listHotel,
+  getListHotel,
   match,
 }) {
   const locationId = match.params.id;
   const [roomSelected, setRoomSelected] = useState({});
-
+  
   useEffect(() => {
-    getProductDetail({ id: locationId });
+    getListHotel({ id: locationId });
   }, [])
 
   useEffect(() => {
-    if (productHotelDetail.data.id) {
-      setRoomSelected(productHotelDetail.data.rooms[0] || {})
+    if (listHotel.data.id) {
+      setRoomSelected(listHotel.data.hotels[0] || {})
     }
-  }, [productHotelDetail.data])
+  }, [listHotel.data])
 
-  function renderHotelRooms() {
-    return productHotelDetail.data.rooms.map((item, index) => {
-      console.log("🚀 ~ file: index.jsx ~ line 35 ~ item", item);
-
+  function renderListHotel() {
+    return listHotel.data.hotels.map((item, index) => {
       return (
         <>
           <Row gutter={[12, 12]}>
             <Col span={24}>
               <Card
-               hoverable
+                hoverable
                 cover={<div alt="example" src="" />}
-                onClick={() => history.push(`/hotels/rooms/${item.id}`)}
+                onClick={() => history.push(`/hotels/${item.id}`)}
               >
                 <div className="optiondetail">
                   <img className="img1" src={item.img} alt="" />
@@ -69,7 +67,7 @@ function DetailPage({
           < Siderba />
         </Col>
         <Col span={17}>
-          {renderHotelRooms()}
+          {renderListHotel()}
         </Col>
       </Row>
     </>
@@ -77,21 +75,19 @@ function DetailPage({
 }
 
 const mapStateToProps = (state) => {
-  const { productHotelDetail } = state.productHotelReducer;
-  console.log("🚀 ~ file: index.jsx ~ line 75 ~ mapStateToProps ~ productHotelDetail", productHotelDetail);
-
+  const { listHotel } = state.productHotelReducer;
   return {
-    productHotelDetail,
+    listHotel,
   }
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getProductDetail: (params) => dispatch(getProductDetailAction(params)),
+    getListHotel: (params) => dispatch(getListHotelAction(params)),
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(DetailPage);
+export default connect(mapStateToProps, mapDispatchToProps)(ListHotelPage);
 
 
   // const productDetail = productList.find((item) => item. hotelsid.toString() ===  hotelsid);

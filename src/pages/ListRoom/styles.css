@@ -1,0 +1,23 @@
+.ant-card-body{
+    display: block;
+}
+.optiondetail{
+    display: flex;
+}
+.img1{
+    width: 200px;
+    height: 200px;
+}
+.option{
+    display: block;
+    margin-left: 10px;
+}
+.where-togo-area{
+    margin-top: 40px;
+}
+.price{
+    color: rgb(0, 193, 222);
+    font-size: 20px;
+    font-weight: bold;
+   
+}
