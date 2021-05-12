@@ -17,11 +17,15 @@ p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 24px;
-  width: 600px;
-  border-radius: 4px;
-  margin-left: 10px;
-  background-color: rgba(128, 199, 206, 0.75);
+  padding-left: 24px;
+  padding-top: 24px;
+  width: 450px;
+  border-radius: 2px;
+  /* margin-left: 10px; */
+  background-color: rgba(114, 129, 60, 0.65);
   color: white;
   
+}
+.ant-form {
+  width: auto;
 }

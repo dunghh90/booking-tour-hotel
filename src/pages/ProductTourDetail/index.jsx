@@ -15,31 +15,38 @@ function TourDetailPage({
   getProductTourDetail,
   match,
 }) {
+  const [orderTourForm] = Form.useForm();
   const productId = match.params.id;
   // const [optionSelected, setOptionSelected] = useState({});
 
-  const [ money, setMoney] = useState(productTourDetail.data.price);
+  const [ money, setMoney] = useState(0);
   
-
-  const dateFormat = 'YYYY/MM/DD';
+  const onFinish = (values) => {
+  };
+  const dateFormat = 'DD/MM/YYYY';
   
   useEffect(() => {
     getProductTourDetail({id: productId});
     setMoney(productTourDetail.data.price);
-    console.log("🚀 ~ file: index.jsx ~ line 69 ~ productTourDetail.data", productTourDetail.data)
   }, [])
-  console.log("=====teststttt, ", Date().toLocaleString());
-  // useEffect(() => {
-  //   if (productTourDetail.data.id) {
-  //     setOptionSelected(productDetail.data.productOptions[0] || {})
-  //   }
-  // }, [productTourDetail.data])
-  console.log("🚀 ~ file: index.jsx ~ line 22 ~ money", money)
-  function setTotalMoney() {
-    // console.log("line39:  ", adults);
+
+  var d = new Date();
+  useEffect(() => {
+    if (productTourDetail.data.id) {
+      setMoney(productTourDetail.data.price);
+      //setOptionSelected(productDetail.data.productOptions[0] || {})
+    }
+  }, [productTourDetail.data])
+  
+  function setTotalMoney(params) {
+    console.log("🚀 ~ file: index.jsx ~ line 43 ~ setTotalMoney ~ params", params && params.dateStart.format('DD/MM/YYYY'))
+    // const { child, adults  } = params;
+    console.log("🚀 ~ file: index.jsx ~ line 4666 ~ setTotalMoney ~ adults", params)
   }
   return (
     <Content className="site-layout" style={{ padding: '0 50px'}}>
+      <div style={{width:1000}}>
+      <Row span={24} gutter={24}>
       <div className="content-header">
         <ol className="breadcrumb" itemscope="" itemtype="http://schema.org/BreadcrumbList">
           <Space><HomeOutlined /></Space>
@@ -66,45 +73,36 @@ function TourDetailPage({
           </li>
         </ol>
       </div>
-      {/* <Card >
-        <span>Hãng:</span>
-        <span>
-          Giá
-
-        </span>
-      </Card> */}
-      <h2>{productTourDetail.data.name}</h2>
+      </Row>
       <Row span={24} gutter={24}>
-        <Col span={16}>
-          {/* <h3>{productTourDetail.data.tourDescription.titleOverView}</h3>
-          <p>{productTourDetail.data.tourDescription.descriptionOverView}</p>
-          <h3>{productTourDetail.data.tourDescription.titleFeel}</h3>
-          <p>{productTourDetail.data.tourDescription.descriptionFeel}</p>
-          <h3>{productTourDetail.data.tourDescription.titleSchedule}</h3>
-          <p>{productTourDetail.data.tourDescription.descriptionSchedule}</p> */}
+        <Col span={19}>
+          <h2>{productTourDetail.data.name}</h2>
+          <div dangerouslySetInnerHTML={{__html:productTourDetail.data.information}}></div>
         </Col>
-        <Col span={8}>
+        <Col span={5}>
         <div class="order-form-container">
             <Form
+              form={orderTourForm}
               // {...layout}
               name="basic"
               initialValues={{ remember: true }}
               // onFinish={(values) => login(values)}
+              onFinish={(values) => {
+                setTotalMoney(values);
+              }}
             >
               <Form.Item
                 label={<label style={{ color: "white" }}>Chọn ngày khởi hành:</label>}
                 name="dateStart"
               >
-                {/* <DatePicker defaultValue={moment('2015/01/01', dateFormat)} format={dateFormat} /> */}
-                {/* <DatePicker renderExtraFooter={() => 'extra footer'} /> */}
-                <DatePicker placeholder="Chọn ngày khởi hành: " style={{width:170}} />
+                <DatePicker defaultValue={moment(d.toLocaleDateString(), dateFormat)} format={dateFormat} />
               </Form.Item>
               <Form.Item
                 label={<label style={{ color: "white" }}>Người lớn:</label>}
                 name="adults"
-                // rules={[{ required: true, message: 'email chưa được nhập!' }]}
               >
                 <InputNumber min={1} max={10} defaultValue={3} onChange={setTotalMoney()}/>
+                {/* <InputNumber /> */}
               </Form.Item>
 
               <Form.Item
@@ -116,14 +114,14 @@ function TourDetailPage({
               </Form.Item>
 
               {/* <Form.Item> {...tailLayout}> */}
-              {money.toLocaleString('it-IT',{
+              {money && money.toLocaleString('it-IT',{
               style: 'currency',
               currency: 'VND',
               })}
               <Form.Item>
                 <Space>
                   <Button type="primary" htmlType="submit">
-                    Đăng nhập
+                    Đặt tour
                   </Button>
                 </Space>
               </Form.Item>
@@ -134,6 +132,7 @@ function TourDetailPage({
         </Col>
         
       </Row>
+      </div>
     </Content>
   );
 }
