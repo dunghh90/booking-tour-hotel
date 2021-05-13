@@ -38,16 +38,18 @@ function ListHotelPage({
             <Col span={24}>
               <Card
                 hoverable
+                title = {item.combo}
                 cover={<div alt="example" src="" />}
+                style ={{marginTop: 16}}
                 onClick={() => history.push(`/hotels/${item.id}`)}
               >
                 <div className="optiondetail">
                   <img className="img1" src={item.img} alt="" />
                   <div className="option">
-                    <h2> {item.name} </h2>
+                    <h2 > {item.name} </h2>
                     <Rate disabled defaultValue={item.rate} />
-                    <h5><ThunderboltOutlined />.{item.Title}</h5>
-                    <span className="price">{item.Price} USD</span>
+                    <h5 className="adr"><ThunderboltOutlined />.{item.Title}</h5>
+                    <span className="price">{item.Price}</span>
                   </div>
                 </div>
 

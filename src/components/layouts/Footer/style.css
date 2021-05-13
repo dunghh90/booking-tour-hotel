@@ -1,0 +1,14 @@
+.buttom{
+    height: 200px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgb(68, 91, 128,0.5); ;
+    margin-top: 25px;
+}
+.keyword{
+    display: block;
+}
+.content{
+    display: block;
+}
