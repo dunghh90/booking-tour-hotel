@@ -10,7 +10,7 @@ import { ThunderboltOutlined } from '@ant-design/icons';
 import SearchTourPage from '../SearchTour';
 
 import Siderba from '../../components/Siderba';
-
+import ItemRoom  from '../ListRoom/item';
 
 function ListRoomPage({
   listRoom,
@@ -30,6 +30,13 @@ function ListRoomPage({
     }
   }, [listRoom.data])
 
+  // function renderTitle(props){
+  //   const {description} = props;
+  //   return description.map((item,index)=>{
+  //      <div>{item}</div>
+  //   })
+  // }
+
   function renderListRoom() {
     return listRoom.data.rooms.map((item, index) => {
       return (
@@ -48,8 +55,11 @@ function ListRoomPage({
                     <span className="price">{item.Price} USD</span>
                 </div>
             </div>
-
-
+               
+            { console.log("++++Test description: ", item.description) }
+                <ItemRoom 
+                  description={item.description}
+                />
 
             {/* <Radio.Group
         onChange={(e) => setOptionSelected(e.target.value)}
