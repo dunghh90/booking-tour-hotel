@@ -38,36 +38,36 @@ function TourDetailPage({
     }
   }, [productTourDetail.data])
   
-  function setTotalMoney(params) {
-    console.log("🚀 ~ file: index.jsx ~ line 43 ~ setTotalMoney ~ params", params && params.dateStart.format('DD/MM/YYYY'))
+  function setTotalMoney(event) {
+    // console.log("🚀 ~ file: index.jsx ~ line 43 ~ setTotalMoney ~ params", params && params.dateStart.format('DD/MM/YYYY'))
     // const { child, adults  } = params;
-    console.log("🚀 ~ file: index.jsx ~ line 4666 ~ setTotalMoney ~ adults", params)
+    console.log("🚀 ~ file: index.jsx ~ line 4666 ~ setTotalMoney ~ event", event)
   }
   return (
     <Content className="site-layout" style={{ padding: '0 50px'}}>
       <div style={{width:1000}}>
       <Row span={24} gutter={24}>
       <div className="content-header">
-        <ol className="breadcrumb" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+        <ol className="breadcrumb"  >
           <Space><HomeOutlined /></Space>
-          <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+          <li  >
             <a className="item" href="/du-lich/">
-                <i class="fa fa-home"></i> <span itemprop="name">Trang chủ</span>
+                <i className="fa fa-home"></i> <span>Trang chủ</span>
             </a>
             {/* <meta itemprop="position" content="1"> */}
           </li>
           <i style={{margin: "0px 10px"}}>|</i>
-          <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+          <li  >
               <a className="item" href="/du-lich/tour-da-nang">
-                  <span itemprop="name">Đà Nẵng</span>
+                  <span>Đà Nẵng</span>
               </a>
               {/* <meta itemprop="position" content="2"> */}
           </li>
           <i style={{margin: "0px 10px"}}>|</i>
-          <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem" class="active hidden-xs">
+          <li  className="active hidden-xs">
 
-              <a className="item" class="link-detail-value" href="/du-lich/tour-da-nang-4n3d-hcm-da-nang-ba-na-hoi-an-hue-quang-binh/1189">
-                  <span itemprop="name">Tour Đà Nẵng 4N3D: TP. HCM - Đà Nẵng - Bà Nà - Hội An - Huế - Quảng Bình</span>
+              <a className="item" href="/du-lich/tour-da-nang-4n3d-hcm-da-nang-ba-na-hoi-an-hue-quang-binh/1189">
+                  <span >Tour Đà Nẵng 4N3D: TP. HCM - Đà Nẵng - Bà Nà - Hội An - Huế - Quảng Bình</span>
               </a>
               {/* <meta itemprop="position" content="3"> */}
           </li>
@@ -80,12 +80,17 @@ function TourDetailPage({
           <div dangerouslySetInnerHTML={{__html:productTourDetail.data.information}}></div>
         </Col>
         <Col span={5}>
-        <div class="order-form-container">
+        <div className="order-form-container">
             <Form
               form={orderTourForm}
               // {...layout}
               name="basic"
-              initialValues={{ remember: true }}
+              initialValues={{ 
+                remember: true ,
+                dateStart: moment(d.toLocaleDateString(), dateFormat),
+                adults : 3,
+                child: 3
+              }}
               // onFinish={(values) => login(values)}
               onFinish={(values) => {
                 setTotalMoney(values);
@@ -95,13 +100,13 @@ function TourDetailPage({
                 label={<label style={{ color: "white" }}>Chọn ngày khởi hành:</label>}
                 name="dateStart"
               >
-                <DatePicker defaultValue={moment(d.toLocaleDateString(), dateFormat)} format={dateFormat} />
+                <DatePicker format={dateFormat} />
               </Form.Item>
               <Form.Item
                 label={<label style={{ color: "white" }}>Người lớn:</label>}
                 name="adults"
               >
-                <InputNumber min={1} max={10} defaultValue={3} onChange={setTotalMoney()}/>
+                <InputNumber min={1} max={10} onChange={(e) => setTotalMoney(e)}/>
                 {/* <InputNumber /> */}
               </Form.Item>
 
@@ -110,14 +115,15 @@ function TourDetailPage({
                 name="child"
                 
               >
-                <InputNumber min={1} max={10} defaultValue={3} onChange={setTotalMoney()}/>
+                <InputNumber min={1} max={10} onChange={(e) => setTotalMoney(e)}/>
               </Form.Item>
 
               {/* <Form.Item> {...tailLayout}> */}
-              {money && money.toLocaleString('it-IT',{
+              {/* {money && money.toLocaleString('it-IT',{
               style: 'currency',
               currency: 'VND',
-              })}
+              })} */}
+              {money && (money.toLocaleString() + " VND")}
               <Form.Item>
                 <Space>
                   <Button type="primary" htmlType="submit">
