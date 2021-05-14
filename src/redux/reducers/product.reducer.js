@@ -13,7 +13,8 @@ const initialState = {
     },
     listRoom: {
       data: {
-        rooms: [],
+        rooms: [
+        ],
       },
       load: false,
       error: '',

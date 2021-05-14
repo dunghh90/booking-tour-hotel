@@ -548,28 +548,48 @@
       "hotelId":1,
       "img":"https://baogialai.com.vn/dataimages/202009/original/images2927238_logo_img20191128112544_1_15991305286161571887111.jpg",
       "name":"Phòng 2 Người",
-      "Price": 600
+      "Price": 600,
+      "description": [
+        "Bay Hãng Hàng Không VNA",
+        "Chứng Tích Mỹ Lai",
+        "Ngắm Hoàng Hôn Cổng Tò Vò"
+      ]
     },
     {
       "id": 2,
       "hotelId":1,
       "img":"https://baogialai.com.vn/dataimages/202009/original/images2927238_logo_img20191128112544_1_15991305286161571887111.jpg",
       "name":"Phòng 4 Người",
-      "Price": 800
+      "Price": 800,
+      "description": [
+        "Bay Hãng Hàng Không VNA",
+        "Chứng Tích Mỹ Lai",
+        "Ngắm Hoàng Hôn Cổng Tò Vò"
+      ]
     },
     {
       "id": 3,
       "hotelId":1,
       "img":"https://baogialai.com.vn/dataimages/202009/original/images2927238_logo_img20191128112544_1_15991305286161571887111.jpg",
       "name":"Phòng 1 Người",
-      "Price": 200
+      "Price": 200,
+      "description": [
+        "Bay Hãng Hàng Không VNA",
+        "Chứng Tích Mỹ Lai",
+        "Ngắm Hoàng Hôn Cổng Tò Vò"
+      ]
     },
     {
       "id": 4,
       "hotelId":1,
       "img":"https://baogialai.com.vn/dataimages/202009/original/images2927238_logo_img20191128112544_1_15991305286161571887111.jpg",
       "name":"Phòng 5 Người",
-      "Price": 200
+      "Price": 200,
+      "description": [
+        "Bay Hãng Hàng Không VNA",
+        "Chứng Tích Mỹ Lai",
+        "Ngắm Hoàng Hôn Cổng Tò Vò"
+      ]
     }
   ],
   "tourDescriptions": [
