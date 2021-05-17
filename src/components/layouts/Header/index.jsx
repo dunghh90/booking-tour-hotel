@@ -22,7 +22,8 @@ const onSearch = value => console.log(value);
 
 
 function HeaderPage(props) {
-    // const [seachKey,setSeachkey]= useState('')
+    const [seachKey,setSeachkey]= useState('')
+    
     const { userInfo, logout } = props;
     return (
         <>
@@ -53,6 +54,7 @@ function HeaderPage(props) {
                                           </li>
                                       </ul>
                                 </div>
+                                <Button onClick={() => history.push('/historybooking')}>lịch sử</Button>
                             </Col>
                             <Col span={4}>
                                     <div>

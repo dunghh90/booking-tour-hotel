@@ -3,6 +3,7 @@ import taskReducer from './task.reducer';
 import productTourReducer from './product-tour.reducer';
 import productHotelReducer from'./product.reducer'
 import userReducer from './user.reducer';
+import bookingReducer from './bookingRoom.reducer';
 
 
 export default combineReducers({
@@ -10,5 +11,7 @@ export default combineReducers({
   productTourReducer,
   userReducer,
   productHotelReducer,
+  bookingReducer,
+
   
 })

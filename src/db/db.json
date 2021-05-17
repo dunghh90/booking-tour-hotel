@@ -83,7 +83,7 @@
       ],
       "price": 5190000,
       "categoryId": 3,
-      "tourDescriptionId":1
+      "tourDescriptionId": 1
     },
     {
       "id": 2,
@@ -152,7 +152,6 @@
       "price": 4988000,
       "categoryId": 1,
       "tourDescriptionId": 5
-
     }
   ],
   "categories": [
@@ -183,11 +182,62 @@
     {
       "id": 7,
       "name": "Đà Lạt"
-    }
-    ,
+    },
     {
       "id": 8,
       "name": "Đà Nẵng"
+    }
+  ],
+  "tourDescriptions": [
+    {
+      "id": 1,
+      "name": "Tour Đà Nẵng 4N3D",
+      "titleOverView": "Hành Trình đi dọc miền trung đất nước",
+      "descriptionOverView": "Du lịch miền Trung luôn hấp dẫn du khách với những món ăn ngon, bãi biển xinh đẹp và những hòn đảo thơ mộng mà ít nơi nào có được. Nhưng bên cạnh đó khi tới vùng đất này bạn còn có thể khám phá những địa danh, di tích lịch sử đã tồn tại từ hàng ngàn năm nay. Có lẽ thiên nhiên đã quá ưu ái khi ban tặng cho bản đồ miền Trung Việt Nam về du lịch quá nhiều những danh lam thắm cảnh nổi tiếng mà ai cũng phải ghen tỵ, đố kỵ. Cùng iVIVU khám phá ngay hôm nay! ",
+      "titleFeel": "Những trải nghiệm thú vị trong chương trình",
+      "descriptionFeel": "Liên Tuyến kỳ thú với: - Chiêm ngưỡng khung cảnh thiên nhiên ngoạn mục trên Cây Cầu Vàng. - Tham quan Bà Nà Hill, Bán Đảo Sơn Trà, Ngũ Hành Sơn, Phố Cổ Hội An, Kinh Thành Huế, Chùa Thiên Mụ. - Tham quan Động Phong Nha, Thánh Địa La Vang, Cầu Hiền Lương.",
+      "titleSchedule": "Chương trình tour",
+      "descriptionSchedule": "NGÀY 1: ĐÀ NẴNG - BÀ NÀ HILL - PHỐ CỔ HỘI AN (ĂN SÁNG, TỐI)"
+    },
+    {
+      "id": 2,
+      "name": "Tour Lý Sơn 4N3D",
+      "titleOverView": "Hành Trình đi dọc miền trung đất nước",
+      "descriptionOverView": "Du lịch miền Trung luôn hấp dẫn du khách với những món ăn ngon, bãi biển xinh đẹp và những hòn đảo thơ mộng mà ít nơi nào có được. Nhưng bên cạnh đó khi tới vùng đất này bạn còn có thể khám phá những địa danh, di tích lịch sử đã tồn tại từ hàng ngàn năm nay. Có lẽ thiên nhiên đã quá ưu ái khi ban tặng cho bản đồ miền Trung Việt Nam về du lịch quá nhiều những danh lam thắm cảnh nổi tiếng mà ai cũng phải ghen tỵ, đố kỵ. Cùng iVIVU khám phá ngay hôm nay! ",
+      "titleFeel": "Những trải nghiệm thú vị trong chương trình",
+      "descriptionFeel": "Liên Tuyến kỳ thú với: - Chiêm ngưỡng khung cảnh thiên nhiên ngoạn mục trên Cây Cầu Vàng. - Tham quan Bà Nà Hill, Bán Đảo Sơn Trà, Ngũ Hành Sơn, Phố Cổ Hội An, Kinh Thành Huế, Chùa Thiên Mụ. - Tham quan Động Phong Nha, Thánh Địa La Vang, Cầu Hiền Lương.",
+      "titleSchedule": "Chương trình tour",
+      "descriptionSchedule": "NGÀY 1: ĐÀ NẴNG - BÀ NÀ HILL - PHỐ CỔ HỘI AN (ĂN SÁNG, TỐI)"
+    },
+    {
+      "id": 3,
+      "name": "Tour Miền Trung 4N3D",
+      "titleOverView": "Liên Tuyến Quy Nhơn - Phú Yên hương vị của biển",
+      "descriptionOverView": "Du lịch miền Trung luôn hấp dẫn du khách với những món ăn ngon, bãi biển xinh đẹp và những hòn đảo thơ mộng mà ít nơi nào có được. Nhưng bên cạnh đó khi tới vùng đất này bạn còn có thể khám phá những địa danh, di tích lịch sử đã tồn tại từ hàng ngàn năm nay. Có lẽ thiên nhiên đã quá ưu ái khi ban tặng cho bản đồ miền Trung Việt Nam về du lịch quá nhiều những danh lam thắm cảnh nổi tiếng mà ai cũng phải ghen tỵ, đố kỵ. Cùng iVIVU khám phá ngay hôm nay! ",
+      "titleFeel": "Những trải nghiệm thú vị trong chương trình",
+      "descriptionFeel": "Liên Tuyến kỳ thú với: - Chiêm ngưỡng khung cảnh thiên nhiên ngoạn mục trên Cây Cầu Vàng. - Tham quan Bà Nà Hill, Bán Đảo Sơn Trà, Ngũ Hành Sơn, Phố Cổ Hội An, Kinh Thành Huế, Chùa Thiên Mụ. - Tham quan Động Phong Nha, Thánh Địa La Vang, Cầu Hiền Lương.",
+      "titleSchedule": "Chương trình tour",
+      "descriptionSchedule": "NGÀY 1: ĐÀ NẴNG - BÀ NÀ HILL - PHỐ CỔ HỘI AN (ĂN SÁNG, TỐI)"
+    },
+    {
+      "id": 4,
+      "name": "Tour Miền Trung 3N2D",
+      "titleOverView": "Hành Trình đi dọc miền trung đất nước",
+      "descriptionOverView": "Du lịch miền Trung luôn hấp dẫn du khách với những món ăn ngon, bãi biển xinh đẹp và những hòn đảo thơ mộng mà ít nơi nào có được. Nhưng bên cạnh đó khi tới vùng đất này bạn còn có thể khám phá những địa danh, di tích lịch sử đã tồn tại từ hàng ngàn năm nay. Có lẽ thiên nhiên đã quá ưu ái khi ban tặng cho bản đồ miền Trung Việt Nam về du lịch quá nhiều những danh lam thắm cảnh nổi tiếng mà ai cũng phải ghen tỵ, đố kỵ. Cùng iVIVU khám phá ngay hôm nay! ",
+      "titleFeel": "Những trải nghiệm thú vị trong chương trình",
+      "descriptionFeel": "Liên Tuyến kỳ thú với: - Chiêm ngưỡng khung cảnh thiên nhiên ngoạn mục trên Cây Cầu Vàng. - Tham quan Bà Nà Hill, Bán Đảo Sơn Trà, Ngũ Hành Sơn, Phố Cổ Hội An, Kinh Thành Huế, Chùa Thiên Mụ. - Tham quan Động Phong Nha, Thánh Địa La Vang, Cầu Hiền Lương.",
+      "titleSchedule": "Chương trình tour",
+      "descriptionSchedule": "NGÀY 1: ĐÀ NẴNG - BÀ NÀ HILL - PHỐ CỔ HỘI AN (ĂN SÁNG, TỐI)"
+    },
+    {
+      "id": 5,
+      "name": "",
+      "titleOverView": "",
+      "descriptionOverView": "Phòng 2 Người",
+      "titleFeel": "",
+      "descriptionFeel": "",
+      "titleSchedule": "",
+      "descriptionSchedule": ""
     }
   ],
   "productOptions": [
@@ -204,412 +254,520 @@
       "name": "Daily tours"
     }
   ],
-
   "locations": [
     {
       "id": 1,
       "name": "Sapa",
-      "img":"//cdn1.ivivu.com/iVivu/2019/09/18/16/sa-pa-370x190.png"
+      "img": "//cdn1.ivivu.com/iVivu/2019/09/18/16/sa-pa-370x190.png"
     },
     {
       "id": 2,
       "name": " Hà Nội",
-   
-      "img":"https://img1.kienthucvui.vn/uploads/2019/07/19/anh-dep-ho-hoan-kiem-ve-dem_112947987.jpg"
+      "img": "https://img1.kienthucvui.vn/uploads/2019/07/19/anh-dep-ho-hoan-kiem-ve-dem_112947987.jpg"
     },
     {
       "id": 3,
       "name": "Hạ Long",
-      "img":"//cdn1.ivivu.com/iVivu/2019/03/07/16/phuquoc-755x190.jpg"
+      "img": "//cdn1.ivivu.com/iVivu/2019/03/07/16/phuquoc-755x190.jpg"
     },
     {
       "id": 4,
       "name": "  Đà nẵng",
-      "comment":" Bãi Bắc, Bán Đảo Sơn Trà, Đà Nẵng, Việt Nam",
-      "img":"//cdn1.ivivu.com/iVivu/2018/09/14/14/danang_2-370x395.png"
+      "comment": " Bãi Bắc, Bán Đảo Sơn Trà, Đà Nẵng, Việt Nam",
+      "img": "//cdn1.ivivu.com/iVivu/2018/09/14/14/danang_2-370x395.png"
     },
     {
       "id": 5,
       "name": "Quảng nam",
-      "img":"https://danangaz.com/wp-content/uploads/2019/07/ava-.jpg"
+      "img": "https://danangaz.com/wp-content/uploads/2019/07/ava-.jpg"
     },
     {
       "id": 6,
       "name": "Quy Nhơn",
-      "img":"//cdn1.ivivu.com/iVivu/2018/09/14/14/quynhon_2-370x190.jpg"
+      "img": "//cdn1.ivivu.com/iVivu/2018/09/14/14/quynhon_2-370x190.jpg"
     },
     {
       "id": 7,
       "name": "Đà lạt",
-      "img":"//cdn1.ivivu.com/iVivu/2019/09/18/16/da-lat-755x190.png"
+      "img": "//cdn1.ivivu.com/iVivu/2019/09/18/16/da-lat-755x190.png"
     },
     {
       "id": 8,
       "name": "Nha Trang",
-      "img":"//cdn1.ivivu.com/iVivu/2018/09/14/14/nhatrang_1-370x190.jpg"
+      "img": "//cdn1.ivivu.com/iVivu/2018/09/14/14/nhatrang_1-370x190.jpg"
     },
     {
       "id": 9,
       "name": "Bình Dương",
-      "img":"//cdn1.ivivu.com/iVivu/2018/09/14/14/vungtau_2-370x395.jpg"
+      "img": "//cdn1.ivivu.com/iVivu/2018/09/14/14/vungtau_2-370x395.jpg"
     },
     {
       "id": 10,
-      "name":"Cà Mau",
-      "img":"//cdn1.ivivu.com/iVivu/2017/01/23/11/khu-nghi-duong-the-graden-house-phu-quoc-374x280.png"
+      "name": "Cà Mau",
+      "img": "//cdn1.ivivu.com/iVivu/2017/01/23/11/khu-nghi-duong-the-graden-house-phu-quoc-374x280.png"
     }
   ],
   "hotels": [
     {
       "id": 1,
-      "locationId":1,
-      "img":"//cdn1.ivivu.com/iVivu/2019/09/18/16/sa-pa-370x190.png",
+      "locationId": 1,
+      "img": "//cdn1.ivivu.com/iVivu/2019/09/18/16/sa-pa-370x190.png",
       "rate": 5,
-      "name":"Hotel Hà Nội Godel",
+      "name": "Hotel Hà Nội Godel",
       "Title": "Đường Trần Duy Hưng",
-      "Price": " 4.190.000 VND",
-      "combo": "2N2D + Buffet + Đưa đón sân bay"
+      "Price": " 4.190.000 ",
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "rateId": 5
     },
     {
       "id": 2,
-      "locationId":1,
-      "img":"https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/12/3-khach-san-5-sao-tai-Sapa-1.jpg",
+      "locationId": 1,
+      "img": "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/12/3-khach-san-5-sao-tai-Sapa-1.jpg",
       "rate": 4,
-      "name":"Hotel Royal",
+      "name": "Hotel Royal",
       "Title": "Đường Hoàng Hoa Thám",
-      "Price": "5.190.000 VND",
-      "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage"
+      "Price": "5.190.000 ",
+      "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage",
+      "rateId": 4
     },
     {
       "id": 3,
-      "locationId":1,
-      "img":"https://travelreview.vn/wp-content/uploads/2018/10/Kha%CC%81ch-sa%CC%A3n-2-sao-%C6%A1%CC%89-Sapa-2.jpg",
+      "locationId": 1,
+      "img": "https://travelreview.vn/wp-content/uploads/2018/10/Kha%CC%81ch-sa%CC%A3n-2-sao-%C6%A1%CC%89-Sapa-2.jpg",
       "rate": 4,
-      "name":"Hotel BatMan ",
+      "name": "Hotel BatMan ",
       "Title": "Đường Lê Duẩn",
-      "Price": "4.690.000 VND",
-      "combo": "2N2D + Buffet + Đưa đón sân bay"
+      "Price": "4.690.000 ",
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "rateId": 4
     },
     {
       "id": 4,
-      "locationId":1,
-      "name":"Hotel Mường Thanh",
-      "img":"https://cf.bstatic.com/images/hotel/max1024x768/210/210656131.jpg",
+      "locationId": 1,
+      "name": "Hotel Mường Thanh",
+      "img": "https://cf.bstatic.com/images/hotel/max1024x768/210/210656131.jpg",
       "rate": 5,
       "Title": "Đường Lê Duẩn",
-      "Price": "5.190.000 VND",
-      "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage"
+      "Price": "5.190.000 ",
+      "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage",
+      "rateId": 5
     },
     {
       "id": 5,
-      "locationId":1,
-      "name":"Hotel Supper Godel",
-      "img":"https://pix10.agoda.net/hotelImages/626432/-1/4e377e4b246a20370ac4a9fb2e4850be.jpg?s=1024x768",
+      "locationId": 1,
+      "name": "Hotel Supper Godel",
+      "img": "https://pix10.agoda.net/hotelImages/626432/-1/4e377e4b246a20370ac4a9fb2e4850be.jpg?s=1024x768",
       "rate": 5,
       "Title": "Đường Supper",
-      "Price": "4.690.000 VND",
-      "combo": "2N2D + Buffet + Đưa đón sân bay"
+      "Price": "4.690.000 ",
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "rateId": 5
     },
     {
       "id": 6,
-      "locationId":1,
-      "img":"https://pix10.agoda.net/hotelImages/5649846/-1/ab54b6f91c343b2e68002618cdffa496.jpg?s=1024x768",
+      "locationId": 1,
+      "img": "https://pix10.agoda.net/hotelImages/5649846/-1/ab54b6f91c343b2e68002618cdffa496.jpg?s=1024x768",
       "rate": 3,
-      "name":"Hotel VinGroup",
+      "name": "Hotel VinGroup",
       "Title": "Đường Bạch Đằng",
-      "Price": "5.190.000 VND",
-      "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage"
+      "Price": "5.190.000 ",
+      "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage",
+      "rateId": 3
     },
     {
       "id": 7,
-      "locationId":1,
-      "img":"https://cdn3.ivivu.com/2017/11/khach-san-sapa-ivivu-20.jpg",
+      "locationId": 1,
+      "img": "https://cdn3.ivivu.com/2017/11/khach-san-sapa-ivivu-20.jpg",
       "rate": 3,
-      "name":"Hotel Jude Hill",
+      "name": "Hotel Jude Hill",
       "Title": "Đường Đồng Lợi",
-      "Price": "4.690.000 VND",
-      "combo": "2N2D + Buffet + Đưa đón sân bay"
+      "Price": "4.690.000 ",
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "rateId": 3
     },
     {
       "id": 8,
-      "locationId":1,
-      "img":"https://dulichkhampha24.com/wp-content/uploads/2019/05/ban-cong-khach-san-paos-sapa.jpeg",
+      "locationId": 1,
+      "img": "https://dulichkhampha24.com/wp-content/uploads/2019/05/ban-cong-khach-san-paos-sapa.jpeg",
       "rate": 2,
-      "name":"Hotel Royal",
+      "name": "Hotel Royal",
       "Title": "Đường Hoạt Nam",
-      "Price": "5.190.000 VND",
-      "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage"
+      "Price": "5.190.000 ",
+      "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage",
+      "rateId": 2
     },
-
-
     {
       "id": 1,
-      "locationId":2,
-      "img":"https://cdn.huongnghiepaau.com/wp-content/uploads/2019/10/khach-san-pullman-ha-noi.jpg",
+      "locationId": 2,
+      "img": "https://cdn.huongnghiepaau.com/wp-content/uploads/2019/10/khach-san-pullman-ha-noi.jpg",
       "rate": 5,
-      "name":"Hotel Hà Nội Godel",
+      "name": "Hotel Hà Nội Godel",
       "Title": "Đường Trần Duy Hưng",
-      "Price": "4.690.000 VND", 
-      "combo": "2N2D + Buffet + Đưa đón sân bay"
+      "Price": "4.690.000 ",
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "rateId": 5
     },
     {
       "id": 2,
-      "locationId":2,
-      "img":"https://pix10.agoda.net/hotelImages/4885116/0/3ec7a573097742323e2f976670239467.jpg?s=1024x768",
+      "locationId": 2,
+      "img": "https://pix10.agoda.net/hotelImages/4885116/0/3ec7a573097742323e2f976670239467.jpg?s=1024x768",
       "rate": 4,
-      "name":"Hotel Matcha",
+      "name": "Hotel Matcha",
       "Title": "Đường Phạm Hùng",
-      "Price": "5.190.000 VND",
-      "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage"
+      "Price": "5.190.000 ",
+      "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage",
+      "rateId": 4
     },
     {
       "id": 3,
-      "locationId":2,
-      "img":"https://toquoc.mediacdn.vn/2019/2/28/my-trieu-summit-15513252506751703394469.jpg",
+      "locationId": 2,
+      "img": "https://toquoc.mediacdn.vn/2019/2/28/my-trieu-summit-15513252506751703394469.jpg",
       "rate": 4,
-      "name":"Hotel Royal ",
+      "name": "Hotel Royal ",
       "Title": "Đường Hùng Vương",
-      "Price": "4.690.000 VND",
-      "combo": "2N2D + Buffet + Đưa đón sân bay"
+      "Price": "4.690.000 ",
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "rateId": 4
     },
     {
       "id": 4,
-      "locationId":2,
-      "name":"Hotel Mường Thanh",
-      "img":"https://cf.bstatic.com/images/hotel/max1024x768/863/86327330.jpg",
+      "locationId": 2,
+      "name": "Hotel Mường Thanh",
+      "img": "https://cf.bstatic.com/images/hotel/max1024x768/863/86327330.jpg",
       "rate": 3,
       "Title": "Đường Âu Cơ",
-      "Price": "5.190.000 VND",
-      "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage"
+      "Price": "5.190.000 ",
+      "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage",
+      "rateId": 3
     },
     {
       "id": 5,
-      "locationId":2,
-      "img":"https://cdnimg.vietnamplus.vn/uploaded/fsmsr/2015_11_26/movenpickhanoi.jpg",
-      "rate": 5,
-      "name":"Hotel Minh Toàn",
+      "locationId": 2,
+      "img": "https://cdnimg.vietnamplus.vn/uploaded/fsmsr/2015_11_26/movenpickhanoi.jpg",
+      "rate": 2,
+      "name": "Hotel Minh Toàn",
       "Title": "Đường Thác Bạc Thị ",
-      "Price": "4.690.000 VND",
-       "combo": "2N2D + Buffet + Đưa đón sân bay"
+      "Price": "4.690.000 ",
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "rateId": 2
     },
     {
       "id": 6,
-      "locationId":2,
-      "img":"https://bazantravel.com/cdn/medias/uploads/30/30991-khach-san-sheraton-hanoi.jpg",
-      "rate": 5,
-      "name":"Hotel GaLaXy",
+      "locationId": 2,
+      "img": "https://bazantravel.com/cdn/medias/uploads/30/30991-khach-san-sheraton-hanoi.jpg",
+      "rate": 2,
+      "name": "Hotel GaLaXy",
       "Title": "Đường Hai Bà Trưng",
-      "Price": "5.190.000 VND",
-      "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage"
+      "Price": "5.190.000 ",
+      "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage",
+      "rateId": 2
     },
     {
       "id": 7,
-      "locationId":2,
-      "img":"https://ik.imagekit.io/tvlk/apr-asset/TzEv3ZUmG4-4Dz22hvmO9NUDzw1DGCIdWl4oPtKumOg=/hotels/1000000/530000/523600/523534/246b00cd_z.jpg?tr=q-40,c-at_max,w-740,h-500&_src=imagekit",
+      "locationId": 2,
+      "img": "https://ik.imagekit.io/tvlk/apr-asset/TzEv3ZUmG4-4Dz22hvmO9NUDzw1DGCIdWl4oPtKumOg=/hotels/1000000/530000/523600/523534/246b00cd_z.jpg?tr=q-40,c-at_max,w-740,h-500&_src=imagekit",
       "rate": 3,
-      "name":"Hotel Linh Dương",
+      "name": "Hotel Linh Dương",
       "Title": "Đường Trần Phú",
-      "Price": "4.690.000 VND",
-      "combo": "2N2D + Buffet + Đưa đón sân bay"
+      "Price": "4.690.000 ",
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "rateId": 3
     },
     {
       "id": 8,
-      "locationId":2,
-      "img":"https://baogialai.com.vn/dataimages/202009/original/images2927238_logo_img20191128112544_1_15991305286161571887111.jpg",
+      "locationId": 2,
+      "img": "https://baogialai.com.vn/dataimages/202009/original/images2927238_logo_img20191128112544_1_15991305286161571887111.jpg",
       "rate": 2,
-      "name":"Hotel Lõ Hưng",
+      "name": "Hotel Lõ Hưng",
       "Title": "Đường Phạm Hưng",
-      "Price":"5.190.000 VND",
-      "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage"
+      "Price": "5.190.000 ",
+      "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage",
+      "rateId": 2
     },
-
-
     {
       "id": 1,
-      "locationId":4,
-      "img":"https://cdn.huongnghiepaau.com/wp-content/uploads/2019/10/khach-san-pullman-ha-noi.jpg",
+      "locationId": 4,
+      "img": "https://cdn.huongnghiepaau.com/wp-content/uploads/2019/10/khach-san-pullman-ha-noi.jpg",
       "rate": 5,
-      "name":"Hotel Hà Nội Godel",
+      "name": "Hotel Hà Nội Godel",
       "Title": "Đường Trần Duy Hưng",
-      "Price": "4.690.000 VND",
-      "combo": "2N2D + Buffet + Đưa đón sân bay"
+      "Price": "4.690.000 ",
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "rateId": 5
     },
     {
       "id": 2,
-      "locationId":4,
-      "img":"https://pix10.agoda.net/hotelImages/4885116/0/3ec7a573097742323e2f976670239467.jpg?s=1024x768",
+      "locationId": 4,
+      "img": "https://pix10.agoda.net/hotelImages/4885116/0/3ec7a573097742323e2f976670239467.jpg?s=1024x768",
       "rate": 4,
-      "name":"Hotel Matcha",
+      "name": "Hotel Matcha",
       "Title": "Đường Phạm Hùng",
-      "Price":"5.190.000 VND",
-      "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage"
+      "Price": "5.190.000 ",
+      "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage",
+      "rateId": 4
     },
     {
       "id": 3,
-      "locationId":4,
-      "img":"https://toquoc.mediacdn.vn/2019/2/28/my-trieu-summit-15513252506751703394469.jpg",
+      "locationId": 4,
+      "img": "https://toquoc.mediacdn.vn/2019/2/28/my-trieu-summit-15513252506751703394469.jpg",
       "rate": 4,
-      "name":"Hotel Royal ",
+      "name": "Hotel Royal ",
       "Title": "Đường Hùng Vương",
-      "Price": "4.690.000 VND",
-      "combo": "2N2D + Buffet + Đưa đón sân bay"
+      "Price": "4.690.000 ",
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "rateId": 4
     },
     {
       "id": 4,
-      "locationId":4,
-      "name":"Hotel Mường Thanh",
-      "img":"https://cf.bstatic.com/images/hotel/max1024x768/863/86327330.jpg",
+      "locationId": 4,
+      "name": "Hotel Mường Thanh",
+      "img": "https://cf.bstatic.com/images/hotel/max1024x768/863/86327330.jpg",
       "rate": 3,
       "Title": "Đường Âu Cơ",
-      "Price":"5.190.000 VND",
-      "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage"
+      "Price": "5.190.000 ",
+      "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage",
+      "rateId": 3
     },
     {
       "id": 5,
-      "locationId":4,
-      "img":"https://cdnimg.vietnamplus.vn/uploaded/fsmsr/2015_11_26/movenpickhanoi.jpg",
+      "locationId": 4,
+      "img": "https://cdnimg.vietnamplus.vn/uploaded/fsmsr/2015_11_26/movenpickhanoi.jpg",
       "rate": 5,
-      "name":"Hotel Minh Toàn",
+      "name": "Hotel Minh Toàn",
       "Title": "Đường Thác Bạc Thị ",
-      "Price": "4.690.000 VND",
-      "combo": "2N2D + Buffet + Đưa đón sân bay"
-
+      "Price": "4.690.000 ",
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "rateId": 5
     },
     {
       "id": 6,
-      "locationId":4,
-      "img":"https://bazantravel.com/cdn/medias/uploads/30/30991-khach-san-sheraton-hanoi.jpg",
+      "locationId": 4,
+      "img": "https://bazantravel.com/cdn/medias/uploads/30/30991-khach-san-sheraton-hanoi.jpg",
       "rate": 3,
-      "name":"Hotel GaLaXy",
+      "name": "Hotel GaLaXy",
       "Title": "Đường Hai Bà Trưng",
-      "Price":"5.190.000 VND",
-      "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage"
+      "Price": "5.190.000 ",
+      "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage",
+      "rateId": 3
     },
     {
       "id": 7,
-      "locationId":4,
-      "img":"https://ik.imagekit.io/tvlk/apr-asset/TzEv3ZUmG4-4Dz22hvmO9NUDzw1DGCIdWl4oPtKumOg=/hotels/1000000/530000/523600/523534/246b00cd_z.jpg?tr=q-40,c-at_max,w-740,h-500&_src=imagekit",
-      "rate" : 3,
-      "name":"Hotel Linh Dương",
+      "locationId": 4,
+      "img": "https://ik.imagekit.io/tvlk/apr-asset/TzEv3ZUmG4-4Dz22hvmO9NUDzw1DGCIdWl4oPtKumOg=/hotels/1000000/530000/523600/523534/246b00cd_z.jpg?tr=q-40,c-at_max,w-740,h-500&_src=imagekit",
+      "rate": 3,
+      "name": "Hotel Linh Dương",
       "Title": "Đường Trần Phú",
-      "Price": "4.690.000 VND",
-      "combo": "2N2D + Buffet + Đưa đón sân bay"
+      "Price": "4.690.000 ",
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "rateId": 3
     },
     {
       "id": 8,
-      "locationId":4,
-      "img":"https://baogialai.com.vn/dataimages/202009/original/images2927238_logo_img20191128112544_1_15991305286161571887111.jpg",
+      "locationId": 4,
+      "img": "https://baogialai.com.vn/dataimages/202009/original/images2927238_logo_img20191128112544_1_15991305286161571887111.jpg",
       "rate": 2,
-      "name":"Hotel Lõ Hưng",
+      "name": "Hotel Lõ Hưng",
       "Title": "Đường Phạm Hưng",
-      "Price":"5.190.000 VND",
-      "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage"
+      "Price": "5.190.000 ",
+      "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage",
+      "rateId": 2
     }
   ],
-
-  "rooms":[
+  "rooms": [
     {
       "id": 1,
-      "hotelId":1,
-      "img":"https://baogialai.com.vn/dataimages/202009/original/images2927238_logo_img20191128112544_1_15991305286161571887111.jpg",
-      "name":"Phòng 2 Người",
-      "Price": 600,
+      "hotelId": 1,
+      "img": "https://www.hotelgrandsaigon.com/wp-content/uploads/sites/227/2017/12/GRAND_SEDK_01.jpg",
+      "Title": "Phòng 2 Người",
+      "Price": " 2.190.000 ",
       "description": [
-        "Bay Hãng Hàng Không VNA",
-        "Chứng Tích Mỹ Lai",
-        "Ngắm Hoàng Hôn Cổng Tò Vò"
-      ]
+        "Full options",
+        "View đẹp",
+        "Hiện đại"
+      ],
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "name": "Hotel Hà Nội Godel",
+      "rate": 5
     },
     {
       "id": 2,
-      "hotelId":1,
-      "img":"https://baogialai.com.vn/dataimages/202009/original/images2927238_logo_img20191128112544_1_15991305286161571887111.jpg",
-      "name":"Phòng 4 Người",
-      "Price": 800,
+      "hotelId": 1,
+      "img": "https://www.vietnambooking.com/wp-content/uploads/2018/06/co-nhung-loai-phong-khach-san-nao-02-06-18-3.jpg",
+      "Title": "Phòng 4 Người",
+      "Price": " 3.190.000 ",
       "description": [
-        "Bay Hãng Hàng Không VNA",
-        "Chứng Tích Mỹ Lai",
-        "Ngắm Hoàng Hôn Cổng Tò Vò"
-      ]
+        "Full options",
+        "Rộng rãi thoáng mát",
+        "View đẹp sống ảo"
+      ],
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "name": "Hotel Hà Nội Godel",
+      "rate": 5
     },
     {
       "id": 3,
-      "hotelId":1,
-      "img":"https://baogialai.com.vn/dataimages/202009/original/images2927238_logo_img20191128112544_1_15991305286161571887111.jpg",
-      "name":"Phòng 1 Người",
-      "Price": 200,
+      "hotelId": 1,
+      "img": "https://www.hotelgrandsaigon.com/wp-content/uploads/sites/227/2017/12/GRAND_SEDK_01.jpg",
+      "Title": "Phòng 1 Người",
+      "Price": " 1.190.000 ",
       "description": [
-        "Bay Hãng Hàng Không VNA",
-        "Chứng Tích Mỹ Lai",
-        "Ngắm Hoàng Hôn Cổng Tò Vò"
-      ]
+        "Không full options",
+        "View đẹp",
+        "Có xông hơi"
+      ],
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "name": "Hotel Hà Nội Godel",
+      "rate": 5
     },
     {
       "id": 4,
-      "hotelId":1,
-      "img":"https://baogialai.com.vn/dataimages/202009/original/images2927238_logo_img20191128112544_1_15991305286161571887111.jpg",
-      "name":"Phòng 5 Người",
-      "Price": 200,
+      "hotelId": 1,
+      "img": "https://ezcloud.vn/wp-content/uploads/2019/05/tripple-room.jpg",
+      "Title": "Phòng 5 Người",
+      "Price": " 7.190.000 ",
       "description": [
-        "Bay Hãng Hàng Không VNA",
-        "Chứng Tích Mỹ Lai",
-        "Ngắm Hoàng Hôn Cổng Tò Vò"
-      ]
-    }
-
-  ],
-
-  "tourDescriptions":[
-    {
-      "id": 1,
-      "name": "Tour Đà Nẵng 4N3D",
-      "titleOverView":"Hành Trình đi dọc miền trung đất nước",
-      "descriptionOverView": "Du lịch miền Trung luôn hấp dẫn du khách với những món ăn ngon, bãi biển xinh đẹp và những hòn đảo thơ mộng mà ít nơi nào có được. Nhưng bên cạnh đó khi tới vùng đất này bạn còn có thể khám phá những địa danh, di tích lịch sử đã tồn tại từ hàng ngàn năm nay. Có lẽ thiên nhiên đã quá ưu ái khi ban tặng cho bản đồ miền Trung Việt Nam về du lịch quá nhiều những danh lam thắm cảnh nổi tiếng mà ai cũng phải ghen tỵ, đố kỵ. Cùng iVIVU khám phá ngay hôm nay! ",
-      "titleFeel": "Những trải nghiệm thú vị trong chương trình",
-      "descriptionFeel": "Liên Tuyến kỳ thú với: - Chiêm ngưỡng khung cảnh thiên nhiên ngoạn mục trên Cây Cầu Vàng. - Tham quan Bà Nà Hill, Bán Đảo Sơn Trà, Ngũ Hành Sơn, Phố Cổ Hội An, Kinh Thành Huế, Chùa Thiên Mụ. - Tham quan Động Phong Nha, Thánh Địa La Vang, Cầu Hiền Lương.",
-      "titleSchedule": "Chương trình tour",
-      "descriptionSchedule": "NGÀY 1: ĐÀ NẴNG - BÀ NÀ HILL - PHỐ CỔ HỘI AN (ĂN SÁNG, TỐI)"
-    },
-    {
-      "id": 2,
-      "name": "Tour Lý Sơn 4N3D",
-      "titleOverView":"Hành Trình đi dọc miền trung đất nước",
-      "descriptionOverView": "Du lịch miền Trung luôn hấp dẫn du khách với những món ăn ngon, bãi biển xinh đẹp và những hòn đảo thơ mộng mà ít nơi nào có được. Nhưng bên cạnh đó khi tới vùng đất này bạn còn có thể khám phá những địa danh, di tích lịch sử đã tồn tại từ hàng ngàn năm nay. Có lẽ thiên nhiên đã quá ưu ái khi ban tặng cho bản đồ miền Trung Việt Nam về du lịch quá nhiều những danh lam thắm cảnh nổi tiếng mà ai cũng phải ghen tỵ, đố kỵ. Cùng iVIVU khám phá ngay hôm nay! ",
-      "titleFeel": "Những trải nghiệm thú vị trong chương trình",
-      "descriptionFeel": "Liên Tuyến kỳ thú với: - Chiêm ngưỡng khung cảnh thiên nhiên ngoạn mục trên Cây Cầu Vàng. - Tham quan Bà Nà Hill, Bán Đảo Sơn Trà, Ngũ Hành Sơn, Phố Cổ Hội An, Kinh Thành Huế, Chùa Thiên Mụ. - Tham quan Động Phong Nha, Thánh Địa La Vang, Cầu Hiền Lương.",
-      "titleSchedule": "Chương trình tour",
-      "descriptionSchedule": "NGÀY 1: ĐÀ NẴNG - BÀ NÀ HILL - PHỐ CỔ HỘI AN (ĂN SÁNG, TỐI)"
-    },
-    {
-      "id": 3,
-      "name": "Tour Miền Trung 4N3D",
-      "titleOverView":"Liên Tuyến Quy Nhơn - Phú Yên hương vị của biển",
-      "descriptionOverView": "Du lịch miền Trung luôn hấp dẫn du khách với những món ăn ngon, bãi biển xinh đẹp và những hòn đảo thơ mộng mà ít nơi nào có được. Nhưng bên cạnh đó khi tới vùng đất này bạn còn có thể khám phá những địa danh, di tích lịch sử đã tồn tại từ hàng ngàn năm nay. Có lẽ thiên nhiên đã quá ưu ái khi ban tặng cho bản đồ miền Trung Việt Nam về du lịch quá nhiều những danh lam thắm cảnh nổi tiếng mà ai cũng phải ghen tỵ, đố kỵ. Cùng iVIVU khám phá ngay hôm nay! ",
-      "titleFeel": "Những trải nghiệm thú vị trong chương trình",
-      "descriptionFeel": "Liên Tuyến kỳ thú với: - Chiêm ngưỡng khung cảnh thiên nhiên ngoạn mục trên Cây Cầu Vàng. - Tham quan Bà Nà Hill, Bán Đảo Sơn Trà, Ngũ Hành Sơn, Phố Cổ Hội An, Kinh Thành Huế, Chùa Thiên Mụ. - Tham quan Động Phong Nha, Thánh Địa La Vang, Cầu Hiền Lương.",
-      "titleSchedule": "Chương trình tour",
-      "descriptionSchedule": "NGÀY 1: ĐÀ NẴNG - BÀ NÀ HILL - PHỐ CỔ HỘI AN (ĂN SÁNG, TỐI)"
-    },
-    {
-      "id": 4,
-      "name": "Tour Miền Trung 3N2D",
-      "titleOverView":"Hành Trình đi dọc miền trung đất nước",
-      "descriptionOverView": "Du lịch miền Trung luôn hấp dẫn du khách với những món ăn ngon, bãi biển xinh đẹp và những hòn đảo thơ mộng mà ít nơi nào có được. Nhưng bên cạnh đó khi tới vùng đất này bạn còn có thể khám phá những địa danh, di tích lịch sử đã tồn tại từ hàng ngàn năm nay. Có lẽ thiên nhiên đã quá ưu ái khi ban tặng cho bản đồ miền Trung Việt Nam về du lịch quá nhiều những danh lam thắm cảnh nổi tiếng mà ai cũng phải ghen tỵ, đố kỵ. Cùng iVIVU khám phá ngay hôm nay! ",
-      "titleFeel": "Những trải nghiệm thú vị trong chương trình",
-      "descriptionFeel": "Liên Tuyến kỳ thú với: - Chiêm ngưỡng khung cảnh thiên nhiên ngoạn mục trên Cây Cầu Vàng. - Tham quan Bà Nà Hill, Bán Đảo Sơn Trà, Ngũ Hành Sơn, Phố Cổ Hội An, Kinh Thành Huế, Chùa Thiên Mụ. - Tham quan Động Phong Nha, Thánh Địa La Vang, Cầu Hiền Lương.",
-      "titleSchedule": "Chương trình tour",
-      "descriptionSchedule": "NGÀY 1: ĐÀ NẴNG - BÀ NÀ HILL - PHỐ CỔ HỘI AN (ĂN SÁNG, TỐI)"
+        "Full options",
+        "Rộng rãi thoáng mát",
+        "View đẹp sống ảo",
+        "Có xông hơi"
+      ],
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "name": "Hotel Hà Nội Godel",
+      "rate": 5
     },
     {
       "id": 5,
-      "name": "",
-      "titleOverView":"",
-      "descriptionOverView":"Phòng 2 Người",
-      "titleFeel": "",
-      "descriptionFeel": "",
-      "titleSchedule": "",
-      "descriptionSchedule": ""
+      "hotelId": 1,
+      "img": "https://pix10.agoda.net/hotelImages/109/10981/10981_19052410360074693721.jpg?s=1024x768",
+      "Title": "Phòng 2 Người",
+      "Price": " 2.190.000 ",
+      "description": [
+        "Không full options",
+        "View đẹp",
+        "Có xông hơi"
+      ],
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "name": "Hotel Hà Nội Godel",
+      "rate": 5
+    },
+    {
+      "id": 6,
+      "hotelId": 1,
+      "img": "https://cdn.galaxy.tf/unit-media/tc-default/uploads/images/room_photo/001/557/713/deluxe-room-dbl-bed-op-standard.jpg",
+      "Title": "Phòng 4 Người",
+      "Price": " 4.190.000 ",
+      "description": [
+        "Không full options",
+        "Rộng rãi thoáng mát",
+        "View đẹp",
+        "Có xông hơi"
+      ],
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "name": "Hotel Hà Nội Godel",
+      "rate": 5
+    },
+    {
+      "id": 7,
+      "hotelId": 1,
+      "img": "https://cf.bstatic.com/images/hotel/max1024x768/280/28038759.jpg",
+      "Title": "Phòng 1 Người",
+      "Price": " 2.190.000 ",
+      "description": [
+        "Rộng rãi thoáng mát",
+        "Hiện đại",
+        "Full options"
+      ],
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "name": "Hotel Hà Nội Godel",
+      "rate": 5
+    },
+    {
+      "id": 8,
+      "hotelId": 1,
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMDtOJgNtr9_KuF-DoKQac9J9ESMiuefNrdw&usqp=CAU",
+      "Title": "Phòng 5 Người",
+      "Price": " 7.190.000 ",
+      "description": [
+        "Full options",
+        "Rộng rãi thoáng mát",
+        "View đẹp sống ảo",
+        "Có xông hơi"
+      ],
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "name": "Hotel Hà Nội Godel",
+      "rate": 5
     }
-
+  ],
+  "bookingRooms": [
+    {
+      "userId": 7,
+      "hotelId": 1,
+      "roomId": 2,
+      "startDate": "2021/05/05",
+      "endDate": "2021/05/07",
+      "id": 1
+    },
+    {
+      "userId": 7,
+      "hotelId": 1,
+      "roomId": 1,
+      "startDate": "2021/05/05",
+      "endDate": "2021/05/07",
+      "id": 2
+    },
+    {
+      "userId": 7,
+      "hotelId": 1,
+      "roomId": 1,
+      "startDate": "2021/05/06",
+      "endDate": "2021/05/07",
+      "id": 3
+    },
+    {
+      "userId": 7,
+      "hotelId": 1,
+      "roomId": 1,
+      "startDate": "2021/05/18",
+      "endDate": "2021/05/19",
+      "id": 4
+    },
+    {
+      "userId": 7,
+      "hotelId": 1,
+      "roomId": 1,
+      "startDate": "2021/05/05",
+      "endDate": "2021/05/08",
+      "id": 5
+    },
+    {
+      "userId": 11,
+      "hotelId": 1,
+      "roomId": 1,
+      "startDate": "2021/05/11",
+      "endDate": "2021/05/13",
+      "id": 6
+    }
+  ],
+  "rates": [
+    {
+      "id": 1,
+      "rate": 1
+    },
+    {
+      "id": 2,
+      "rate": 2
+    },
+    {
+      "id": 3,
+      "rate": 3
+    },
+    {
+      "id": 4,
+      "rate": 4
+    },
+    {
+      "id": 5,
+      "rate": 5
+    }
   ]
 }
