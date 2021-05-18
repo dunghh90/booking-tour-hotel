@@ -17,7 +17,22 @@
 }
 .price{
     color: rgb(0, 193, 222);
-    font-size: 20px;
+    font-size: 30px;
     font-weight: bold;
+    position: absolute;
+    bottom: 35px;
+    right: 165px;
    
+}
+.ant-list-bordered{
+    margin-top: 16px;
+}
+.anticon-thunderbolt{
+    color: blue;
+}
+.adr{
+    color: blue;
+}
+.ant-card-head{
+    background-color: rgb(0, 193, 222,0.5);
 }

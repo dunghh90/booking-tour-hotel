@@ -5,7 +5,9 @@ const initialState = {
       error: '',
     },
     listHotel: {
-      data: [],
+      data: {
+        hotels:[],
+      },
       load: false,
       error: '',
     },

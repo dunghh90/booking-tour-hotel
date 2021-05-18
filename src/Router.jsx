@@ -48,6 +48,7 @@ function BrowserRouter(props) {
           component={reViewPage}
           productList={productList}
         />
+        
       </Switch>
       
     </Router>

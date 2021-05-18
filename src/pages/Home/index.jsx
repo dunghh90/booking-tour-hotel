@@ -54,7 +54,7 @@ function HomePage({getProductLocationList, productHotelList}) {
 
       {renderProductHotelList()}
       </Row>
-      <ToDoListPage/>
+     
 
     </div>
     
