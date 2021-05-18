@@ -10,8 +10,8 @@ import ProductTourListPage from './pages/ProductTourList';
 import LoginPage from './pages/Login';
 import TourHomePage from './pages/ProductTourListHome';
 import HomePage from './pages/Home';
-import DetailPage from './pages/Detail';
-import RoomPage from './pages/Room';
+import ListHotelPage from './pages/ListHotel';
+import ListRoomPage from './pages/ListRoom';
 import reViewPage from './pages/Review';
 import TourDetailPage from "./pages/ProductTourDetail";
 
@@ -32,14 +32,14 @@ function BrowserRouter(props) {
         />
         <DefaultLayout
           exact
-          path={ROUTERS.PRODUCT_DETAIL}
-          component={DetailPage}
+          path={ROUTERS.LIST_HOTEL}
+          component={ListHotelPage}
           productList={productList}
         />
           <DefaultLayout
           exact
-          path={ROUTERS.PRODUCT_ROOM}
-          component={RoomPage}
+          path={ROUTERS.LIST_ROOM}
+          component={ListRoomPage}
           productList={productList}
         />
          <DefaultLayout

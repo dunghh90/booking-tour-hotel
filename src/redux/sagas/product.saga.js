@@ -34,15 +34,30 @@ function* getProductHotelListSaga(action) {
   }
 }
 
-// sủa lại hàm này get data detail
-function* getProductHotelDetailSaga(action) {
-  // [Dung] Cái này không cần thiết, data trong json viết sai hotelsid -> hotelId
-  // try {
-  //   //  const user = yield call(Api.fetchUser, action.payload.userId);
-  //   yield put({type: "GET_PRODUCT_HOTEL_DETAIL_SUCCESS", user: 'user'});
-  // } catch (e) {
-  //   yield put({type: "GET_PRODUCT_hotel_DETAIL_FAIL", message: e.message});
-  // }
+function* getListHotelSaga(action) {
+
+  try {
+    const { id } = action.payload;
+    const result = yield axios({
+      method: 'GET',
+      url: `http://localhost:3002/locations/${id}`,
+      params: {
+        _embed: "hotels",
+      }
+    });
+    
+    yield put({
+      type: "GET_LIST_HOTEL_SUCCESS",
+      payload: {
+        data: result.data,
+      },
+    });
+  } catch (e) {
+    yield put({type: "GET_LIST_HOTEL_FAIL", message: e.message});
+  }
+}
+
+function* getListRoomSaga(action) {
 
   // Chỗ này e phải lấy data của hotel chứ
   // Do e đặt tên bảng lojn xộn nên gây nhầm lẫn
@@ -59,37 +74,15 @@ function* getProductHotelDetailSaga(action) {
     });
    
     yield put({
-      type: "GET_PRODUCT_HOTEL_DETAIL_SUCCESS",
+      type: "GET_LIST_ROOM_SUCCESS",
       payload: {
         data: result.data,
       },
     });
   } catch (e) {
-    yield put({type: "GET_PRODUCT_HOTEL_DETAIL_FAIL", message: e.message});
+    yield put({type: "GET_LIST_ROOM_FAIL", message: e.message});
   }
 }
-function* getProductHotelRoomSaga(action) {
- 
-
-  try {
-    const { id } = action.payload;
-
-    const result = yield axios({
-      method: 'GET',
-      url: `http://localhost:3002/rooms/${id}`,
-      
-    });
-    yield put({
-      type: "GET_PRODUCT_ROOM_SUCCESS",
-      payload: {
-        data: result.data,
-      },
-    });
-  } catch (e) {
-    yield put({type: "GET_PRODUCT_ROOM_FAIL", message: e.message});
-  }
-}
-
 
 function* getCategoryListSaga(action) {
   try {
@@ -115,7 +108,7 @@ function* getCategoryListSaga(action) {
 
 export default function* productHotelSaga() {
   yield takeEvery('GET_PRODUCT_HOTEL_LIST_REQUEST', getProductHotelListSaga);
-  yield takeEvery('GET_PRODUCT_HOTEL_DETAIL_REQUEST', getProductHotelDetailSaga);
+  yield takeEvery('GET_LIST_HOTEL_REQUEST', getListHotelSaga);
   yield takeEvery('GET_CATEGORY_LIST_REQUEST', getCategoryListSaga);
-  yield takeEvery('GET_PRODUCT_ROOM_REQUEST', getProductHotelRoomSaga);
+  yield takeEvery('GET_LIST_ROOM_REQUEST', getListRoomSaga);
 }
