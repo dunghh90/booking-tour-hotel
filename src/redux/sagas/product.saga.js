@@ -6,10 +6,12 @@ function* getProductHotelListSaga(action) {
     const { page, limit } = action.payload;
     const result = yield axios({
       method: 'GET',
-      url: 'http://localhost:3002/hotels',
+      url: 'http://localhost:3002/locations',
       params: {
         _page: page,
         _limit: limit,
+       
+        
         // ...catagoryId && { catagoryId },// categoryId: categoryId -> null, truyen Id khi ton taij'
         // ...searchkey && { q: searchkey },
         // _sort: 'price',
@@ -42,15 +44,17 @@ function* getProductHotelDetailSaga(action) {
   //   yield put({type: "GET_PRODUCT_hotel_DETAIL_FAIL", message: e.message});
   // }
 
+  // Chỗ này e phải lấy data của hotel chứ
+  // Do e đặt tên bảng lojn xộn nên gây nhầm lẫn
+
   try {
     const { id } = action.payload;
-    console.log("🚀 ~ file: product.saga.js ~ line 55 ~ function*getProductHotelDetailSaga ~ result",id)
     const result = yield axios({
       method: 'GET',
       url: `http://localhost:3002/hotels/${id}`,
       params: {
-        __expand:"hotels",
-        _embed: 'productOptionsHotels',
+        _expand:"location",
+        _embed: "rooms",
       }
     });
    
@@ -72,7 +76,8 @@ function* getProductHotelRoomSaga(action) {
 
     const result = yield axios({
       method: 'GET',
-      url: `http://localhost:3002/rooms?productOptionsHotelsId=${id}`,
+      url: `http://localhost:3002/rooms/${id}`,
+      
     });
     yield put({
       type: "GET_PRODUCT_ROOM_SUCCESS",

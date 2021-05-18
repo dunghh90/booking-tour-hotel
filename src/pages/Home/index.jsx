@@ -4,17 +4,18 @@ import {connect} from 'react-redux';
 import SimpleSlider from '../../components/slick';
 import ToDoListPage from '../ToDoListTemp';
 
-import { getProductHotelListAction } from '../../redux/actions';
+import { getProductLocationListAction } from '../../redux/actions';
 import { useEffect } from 'react';
+
 
 import "./Home.css"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 
-function HomePage({getProductHotelList, productHotelList}) {
+function HomePage({getProductLocationList, productHotelList}) {
   useEffect(()=>{
-    getProductHotelList({
+    getProductLocationList({
       page:1,
       limit:10
     });
@@ -24,14 +25,13 @@ function HomePage({getProductHotelList, productHotelList}) {
   function renderProductHotelList() {
     console.log("🚀 ~ file: index.jsx ~ line 26 ~ returnproductHotelList.data.map ~ productHotelList", productHotelList)
     return productHotelList.data.map((item, index) => {
-     
       return (
         <>
           <Col span='8'
           key={index}>
           <img className="item" src={item.img}
           
-          onClick={() => history.push(`/product/${item.id}`)}/>
+          onClick={() => history.push(`/hotels/${item.id}`)}/>
           <h2 className="thongtin">{item.name}</h2>
           </Col>
         </>
@@ -71,7 +71,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getProductHotelList: (params) => dispatch(getProductHotelListAction(params)),
+    getProductLocationList: (params) => dispatch(getProductLocationListAction (params)),
   };
 }
 

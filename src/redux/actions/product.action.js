@@ -1,4 +1,4 @@
-export function getProductHotelListAction(params) {
+export function getProductLocationListAction(params) {
     return {
       type: 'GET_PRODUCT_HOTEL_LIST_REQUEST',
       payload: params,

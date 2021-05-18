@@ -115,7 +115,7 @@ function HeaderPage(props) {
                                             //     </Button>
                                             // </Space>
                                             )
-                                            : <Button onClick={() => history.push('/login')}> 
+                                            : <Button type="primary" onClick={() => history.push('/login')}> 
                                                 Đăng nhập
                                                 <ImportOutlined />
                                                 </Button>
