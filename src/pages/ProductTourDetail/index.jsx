@@ -1,158 +1,162 @@
 import { Card, Col, Row, Form, Input, Button, DatePicker, Space, InputNumber } from "antd";
-import { useEffect, useState  } from "react";
+import { useEffect, useState } from "react";
 import { connect } from "react-redux";
+import history from '../../utils/history';
 
-import { getProductTourDetailAction, getProductTourListAction } from "../../redux/actions";
+import { getProductTourDetailAction, getProductTourListAction, bookingTourAction } from "../../redux/actions";
 import { HomeOutlined } from '@ant-design/icons';
 import moment from 'moment';
 
 import './style.css'
+import './css/animate.min.css'
+import './css/custom-home.css'
+import './css/daterangepicker.css'
+import './css/font-awesome.min.css'
+import './css/ivivu_icons.min.css'
+import './css/owl.carousel.min.css'
+import './css/owl.theme.default.min.css'
+import './css/sweetalert.css'
+
 import { Content } from "antd/lib/layout/layout";
 
 
 function TourDetailPage({
   productTourDetail,
   getProductTourDetail,
+  bookingTour,
   match,
 }) {
   const [orderTourForm] = Form.useForm();
-  const productId = match.params.id;
-  // const [optionSelected, setOptionSelected] = useState({});
+  const tourId = match.params.id;
+  const userInfo = JSON.parse(localStorage.getItem('userInfo'));
 
-  const [ money, setMoney] = useState(0);
-  
-  const onFinish = (values) => {
-  };
-  const dateFormat = 'DD/MM/YYYY';
-  
+  const [money, setMoney] = useState(productTourDetail.data.price);
+  const [countAdults, setCountAdults] = useState(1);
+  const [countChild, setCountChild] = useState(0);
+  var d = new Date();
+  const [dateSelected, setDateSelected] = useState(moment(d).format('YYYY/MM/DD'));
+
+
   useEffect(() => {
-    getProductTourDetail({id: productId});
-    setMoney(productTourDetail.data.price);
+    getProductTourDetail({ id: tourId });
   }, [])
 
-  var d = new Date();
+  const dateFormat = 'DD/MM/YYYY';
   useEffect(() => {
     if (productTourDetail.data.id) {
       setMoney(productTourDetail.data.price);
-      //setOptionSelected(productDetail.data.productOptions[0] || {})
     }
   }, [productTourDetail.data])
-  
-  function setTotalMoney(event) {
-    // console.log("🚀 ~ file: index.jsx ~ line 43 ~ setTotalMoney ~ params", params && params.dateStart.format('DD/MM/YYYY'))
-    // const { child, adults  } = params;
-    console.log("🚀 ~ file: index.jsx ~ line 4666 ~ setTotalMoney ~ event", event)
+
+  function setMoneyAdults(values) {
+    setMoney(productTourDetail.data.price * values + productTourDetail.data.price * countChild * 0.5);
   }
+  function setMoneyChild(values) {
+    setMoney(productTourDetail.data.price * countAdults + productTourDetail.data.price * values * 0.5);
+  }
+
+  function handleBookingTour() {
+    if (!userInfo) {
+      alert('Bạn cần đăng nhập!');
+    } else if (!dateSelected) {
+      alert('Cần chọn ngày đặt tour!');
+    } else {
+      // localStorage.setItem('carts', JSON.stringify(newCartList));
+      // TODO Check tourId và startDate nếu tồn tại trong db thì ko add booking
+      bookingTour({
+        userId: userInfo.id,
+        tourId: parseInt(tourId),
+        startDate: dateSelected,
+        numberAdults: countAdults,
+        numberChild: countChild,
+      })
+    }
+  }
+
+  function handleSelectedDate(value) {
+    console.log("🚀 ~ file: index.jsx ~ line 68 ~ handleSelectedDate ~ value", value)
+    // const { startDate } = value;
+    // setDateSelected(moment(startDate).format('YYYY/MM/DD'));
+  }
+  
   return (
-    <Content className="site-layout" style={{ padding: '0 50px'}}>
-      <div style={{width:1000}}>
-      <Row span={24} gutter={24}>
-      <div className="content-header">
-        <ol className="breadcrumb"  >
-          <Space><HomeOutlined /></Space>
-          <li  >
-            <a className="item" href="/du-lich/">
-                <i className="fa fa-home"></i> <span>Trang chủ</span>
+    <>
+      <Content className="site-layout" style={{ padding: '0 50px', display:"flex", justifyContent:"center", alignItems:"center"}}>
+    <div style={{maxWidth:1400, width: "100%"}}>
+    {/* <div> */}
+    <Row span={24} gutter={24}>
+    <div className="content-header">
+      <ol className="breadcrumb"  >
+        <Space><HomeOutlined /></Space>
+        <li  >
+          <a className="item" href="/du-lich/">
+              <i className="fa fa-home"></i> <span>Trang chủ</span>
+          </a>
+        </li>
+        <i style={{margin: "0px 10px"}}>|</i>
+        <li  >
+            <a className="item" href="/du-lich/tour-da-nang">
+                <span>Đà Nẵng</span>
             </a>
-            {/* <meta itemprop="position" content="1"> */}
-          </li>
-          <i style={{margin: "0px 10px"}}>|</i>
-          <li  >
-              <a className="item" href="/du-lich/tour-da-nang">
-                  <span>Đà Nẵng</span>
-              </a>
-              {/* <meta itemprop="position" content="2"> */}
-          </li>
-          <i style={{margin: "0px 10px"}}>|</i>
-          <li  className="active hidden-xs">
+        </li>
+        <i style={{margin: "0px 10px"}}>|</i>
+        <li  className="active hidden-xs">
 
-              <a className="item" href="/du-lich/tour-da-nang-4n3d-hcm-da-nang-ba-na-hoi-an-hue-quang-binh/1189">
-                  <span >Tour Đà Nẵng 4N3D: TP. HCM - Đà Nẵng - Bà Nà - Hội An - Huế - Quảng Bình</span>
-              </a>
-              {/* <meta itemprop="position" content="3"> */}
-          </li>
-        </ol>
-      </div>
-      </Row>
-      <Row span={24} gutter={24}>
-        <Col span={19}>
-          <h2>{productTourDetail.data.name}</h2>
-          <div dangerouslySetInnerHTML={{__html:productTourDetail.data.information}}></div>
-        </Col>
-        <Col span={5}>
-        <div className="order-form-container">
-            <Form
-              form={orderTourForm}
-              // {...layout}
-              name="basic"
-              initialValues={{ 
-                remember: true ,
-                dateStart: moment(d.toLocaleDateString(), dateFormat),
-                adults : 3,
-                child: 3
-              }}
-              // onFinish={(values) => login(values)}
-              onFinish={(values) => {
-                setTotalMoney(values);
-              }}
-            >
-              <Form.Item
-                label={<label style={{ color: "white" }}>Chọn ngày khởi hành:</label>}
-                name="dateStart"
-              >
-                <DatePicker format={dateFormat} />
-              </Form.Item>
-              <Form.Item
-                label={<label style={{ color: "white" }}>Người lớn:</label>}
-                name="adults"
-              >
-                <InputNumber min={1} max={10} onChange={(e) => setTotalMoney(e)}/>
-                {/* <InputNumber /> */}
-              </Form.Item>
+            <a className="item" href="/du-lich/tour-da-nang-4n3d-hcm-da-nang-ba-na-hoi-an-hue-quang-binh/1189">
+                <span >Tour Đà Nẵng 4N3D: TP. HCM - Đà Nẵng - Bà Nà - Hội An - Huế - Quảng Bình</span>
+            </a>
+        </li>
+      </ol>
+    </div>
+    </Row>
+    <Row span={24} gutter={24}>
+      <Col span={16} xl={{order:1}} lg={{order:1}} md={{order:2}} sm={{order:2}} xs={{order:2}}>
+        <div style={{backgroundColor:"white", padding:30, textAlign:"justify"}}>
+        <h2>{productTourDetail.data.name}</h2>
+        <div dangerouslySetInnerHTML={{__html:productTourDetail.data.information}}></div>
+        </div>
+      </Col>
+      <Col span={8} xl={{order:2}} lg={{order:2}} md={{order:1}} sm={{order:1}} xs={{order:1}}>
+      <div className="order-form-container">
+        <Row span={24} gutter={[10, 10]}>
+          <Col span={10}>Chọn ngày khởi hành:</Col>
+          <Col span={14}><DatePicker defaultValue={moment(d)} format={dateFormat} onChange={(value) => setDateSelected(value)} /></Col>
+          <Col span={10}>Người lớn:</Col>
+          <Col span={14}><InputNumber min={1} defaultValue={1} onChange={(values) => { setCountAdults(values); setMoneyAdults(values); }} /></Col>
+          <Col span={10}>Trẻ em:</Col>
+          <Col span={14}><InputNumber min={0} onChange={(values) => { setCountChild(values); setMoneyChild(values); }} /></Col>
+          <Col span={24} ><div style={{fontSize:24, color:"#ffbd00", float:"right", fontWeight:"bold"}}>{money && (money.toLocaleString() + " VND")}</div></Col>
+          <Col span={24}>
+            <Button type={{ width: "100%" }} type="primary" htmlType="submit" onClick={() => handleBookingTour()}>
+              Đặt tour
+            </Button>
+          </Col>
+        </Row>
+                                        </div>
 
-              <Form.Item
-                label={<label style={{ color: "white" }}>Trẻ em:</label>}
-                name="child"
-                
-              >
-                <InputNumber min={1} max={10} onChange={(e) => setTotalMoney(e)}/>
-              </Form.Item>
-
-              {/* <Form.Item> {...tailLayout}> */}
-              {/* {money && money.toLocaleString('it-IT',{
-              style: 'currency',
-              currency: 'VND',
-              })} */}
-              {money && (money.toLocaleString() + " VND")}
-              <Form.Item>
-                <Space>
-                  <Button type="primary" htmlType="submit">
-                    Đặt tour
-                  </Button>
-                </Space>
-              </Form.Item>
-            </Form>
-            
-          </div>
-
-        </Col>
-        
-      </Row>
-      </div>
-    </Content>
+      </Col>
+      
+    </Row>
+                                  </div>
+  </Content>
+    </>
   );
+
+    
+
 }
 
 const mapStateToProps = (state) => {
-  const { productTourDetail } = state.productTourReducer;
+  const {productTourDetail} = state.productTourReducer;
   return {
-    productTourDetail,
+                                    productTourDetail,
   }
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getProductTourDetail: (params) => dispatch(getProductTourDetailAction(params)),
+                                    getProductTourDetail: (params) => dispatch(getProductTourDetailAction(params)),
+    bookingTour: (params) => dispatch(bookingTourAction(params)),
   };
 }
 

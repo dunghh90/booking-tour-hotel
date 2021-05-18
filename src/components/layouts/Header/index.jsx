@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { UserOutlined } from '@ant-design/icons';
-import { Input, Layout, Row, Col, Button, Space } from 'antd';
+import { Input, Layout, Row, Col, Button, Space, Dropdown, Menu } from 'antd';
 
 import 'antd/dist/antd.css';
 import { Link}   from 'react-router-dom';
@@ -21,15 +21,57 @@ const { Header } = Layout;
 const onSearch = value => console.log(value);
 
 
+function renderInfoUser(userInfo, logout) {
+
+    const menu = (
+        <Menu>
+        <Menu.Item key="0">
+          <a target="_blank" rel="noopener noreferrer" href="https://www.antgroup.com">
+            Thông tin cá nhân
+          </a>
+        </Menu.Item>
+        <Menu.Item key="1" onClick={logout()}>
+          
+            Đăng xuất
+          
+        </Menu.Item>
+      </Menu>
+    );
+    return (
+    <Dropdown
+        overlay={menu}
+        // onVisibleChange={this.handleVisibleChange}
+        // visible={this.state.visible}
+    >
+        <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
+        {`Tên đăng nhập: ${userInfo.data.name}`}
+        </a>
+    </Dropdown>
+    );
+}
+
+
 function HeaderPage(props) {
     // const [seachKey,setSeachkey]= useState('')
     const { userInfo, logout } = props;
+
+    const menu = (
+        <Menu>
+        <Menu.Item key="0" onClick={() => history.push(`/profile/${userInfo.data.id}`)}>
+            Thông tin cá nhân
+        </Menu.Item>
+        <Menu.Item key="1" onClick={() => logout()}>
+            Đăng xuất
+        </Menu.Item>
+      </Menu>
+    );
+
     return (
         <>
                 <Header className="headers">
                     <div className="container-fulid">
                         <Row>
-                            <Col span={6}>
+                            <Col span={4}>
 
                                 <UserOutlined style={{ fontSize: '50px', color: '#08c' }} />
 
@@ -39,7 +81,7 @@ function HeaderPage(props) {
                                 <Input.Search placeholder="Nhập vào đây" onSearch={onSearch} enterButton />
 
                             </Col>
-                            <Col span={6}>
+                            <Col span={7}>
                                 <div className="menu">
                                       <ul className= "menu-cha">
                                           <li className="menu1">
@@ -54,16 +96,24 @@ function HeaderPage(props) {
                                       </ul>
                                 </div>
                             </Col>
-                            <Col span={4}>
-                                    <div>
-                                        {userInfo.data.id 
+                            <Col span={5}>
+                                    <div style={{color:"#1890FF"}}>
+                                        {console.log("🚀 ~ file: index.jsx ~ line 25 ~ value", userInfo.data.id)}
+                                        {
+                                        
+                                        userInfo.data.id 
                                             ? (
-                                            <Space>
-                                                <p>{`Tên đăng nhập: ${userInfo.data.name}`}</p>
-                                                <Button className="logout" onClick={() => logout()}>Đăng xuất
-                                                <IconFont type="icon-tuichu" />
-                                                </Button>
-                                            </Space>
+                                                <Dropdown overlay={menu} >
+                                                    <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
+                                                    {`Tên đăng nhập: ${userInfo.data.name}`}
+                                                    </a>
+                                                </Dropdown>
+                                            // <Space>
+                                            //     <p>{`Tên đăng nhập: ${userInfo.data.name}`}</p>
+                                            //     <Button className="logout" onClick={() => logout()}>Đăng xuất
+                                            //     <IconFont type="icon-tuichu" />
+                                            //     </Button>
+                                            // </Space>
                                             )
                                             : <Button onClick={() => history.push('/login')}> 
                                                 Đăng nhập

@@ -74,7 +74,25 @@ function LoginPage(props) {
                 <Input.Password />
               </Form.Item>
 
-              <Form.Item {...tailLayout} name="remember" valuePropName="checked">
+              <Form.Item {...tailLayout} name="remember" valuePropName="checked"
+                // rules={
+                //   [
+                //     () => ({
+                //       validator(_, value) {
+                //         return Promise.reject(new Error(login.error));
+                //       }
+                //     })
+                    // ({ login.data }) => ({
+                    //   validator(_, value) {
+                    //     if (!value || getFieldValue('password') === value) {
+                    //       return Promise.resolve();
+                    //     }
+                    //     return Promise.reject(new Error('Nhập confirm password không trùng khớp!'));
+                    //   },
+                    // })
+                //   ]
+                // }
+              >
                 <Checkbox style={{ color: "white" }}>Remember me</Checkbox>
               </Form.Item>
 
