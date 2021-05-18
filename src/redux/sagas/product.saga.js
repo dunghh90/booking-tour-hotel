@@ -3,13 +3,17 @@ import axios from 'axios';
 
 function* getProductHotelListSaga(action) {
   try {
-    const { page, limit } = action.payload;
+    const { page, limit,rateId } = action.payload;
     const result = yield axios({
       method: 'GET',
-      url: 'http://localhost:3002/hotels',
+      url: 'http://localhost:3002/locations',
       params: {
         _page: page,
         _limit: limit,
+        ...rateId && { rateId },
+        
+       
+        
         // ...catagoryId && { catagoryId },// categoryId: categoryId -> null, truyen Id khi ton taij'
         // ...searchkey && { q: searchkey },
         // _sort: 'price',
@@ -32,61 +36,56 @@ function* getProductHotelListSaga(action) {
   }
 }
 
-// sủa lại hàm này get data detail
-function* getProductHotelDetailSaga(action) {
-  // [Dung] Cái này không cần thiết, data trong json viết sai hotelsid -> hotelId
-  // try {
-  //   //  const user = yield call(Api.fetchUser, action.payload.userId);
-  //   yield put({type: "GET_PRODUCT_HOTEL_DETAIL_SUCCESS", user: 'user'});
-  // } catch (e) {
-  //   yield put({type: "GET_PRODUCT_hotel_DETAIL_FAIL", message: e.message});
-  // }
+function* getListHotelSaga(action) {
+
+  try {
+    const { id,more,page } = action.payload;
+    const result = yield axios({
+      method: 'GET',
+      url: `http://localhost:3002/locations/${id}`,
+      params: {
+        _embed: "hotels",
+        
+        
+      }
+    });
+    
+    yield put({
+      type: "GET_LIST_HOTEL_SUCCESS",
+      payload: {
+        data: result.data,
+        more,
+        page
+      },
+    });
+  } catch (e) {
+    yield put({type: "GET_LIST_HOTEL_FAIL", message: e.message});
+  }
+}
+
+function* getListRoomSaga(action) {
+
+  // Chỗ này e phải lấy data của hotel chứ
+  // Do e đặt tên bảng lojn xộn nên gây nhầm lẫn
 
   try {
     const { id } = action.payload;
-    console.log("🚀 ~ file: product.saga.js ~ line 55 ~ function*getProductHotelDetailSaga ~ result",id)
     const result = yield axios({
       method: 'GET',
-      url: `http://localhost:3002/hotels/${id}`,
-      params: {
-        __expand:"hotels",
-        _embed: 'productOptionsHotels',
-      }
+      url: `http://localhost:3002/hotels/${id}?_embed=rooms&_embed=bookingRooms&_expand=location`,
+      
     });
    
     yield put({
-      type: "GET_PRODUCT_HOTEL_DETAIL_SUCCESS",
+      type: "GET_LIST_ROOM_SUCCESS",
       payload: {
         data: result.data,
       },
     });
   } catch (e) {
-    yield put({type: "GET_PRODUCT_HOTEL_DETAIL_FAIL", message: e.message});
+    yield put({type: "GET_LIST_ROOM_FAIL", message: e.message});
   }
 }
-function* getProductHotelRoomSaga(action) {
- 
-
-  try {
-    const { id } = action.payload;
-    const result = yield axios({
-      method: 'GET',
-      url: `http://localhost:3001/Room/${id}`,
-      params: {
-        _embed: 'Room',
-      }
-    });
-    yield put({
-      type: "GET_PRODUCT_ROOM_SUCCESS",
-      payload: {
-        data: result.data,
-      },
-    });
-  } catch (e) {
-    yield put({type: "GET_PRODUCT_ROOM_FAIL", message: e.message});
-  }
-}
-
 
 function* getCategoryListSaga(action) {
   try {
@@ -109,10 +108,37 @@ function* getCategoryListSaga(action) {
     });
   }
 }
+function* getRateListSaga(action) {
+  const { rateId } = action.payload;
+  try {
+    const result = yield axios({
+      method: 'GET',
+      url: 'http://localhost:3002/rates',
+      params: {
+        _embed: "hotels",
+      
+      }
+    });
+    yield put({
+      type: "GET_RATE_LIST_SUCCESS",
+      payload: {
+        data: result.data,
+      },
+    });
+  } catch (e) {
+    yield put({
+      type: "GET_RATE_LIST_FAIL",
+      payload: {
+        error: e.error
+      },
+    });
+  }
+}
 
 export default function* productHotelSaga() {
   yield takeEvery('GET_PRODUCT_HOTEL_LIST_REQUEST', getProductHotelListSaga);
-  yield takeEvery('GET_PRODUCT_HOTEL_DETAIL_REQUEST', getProductHotelDetailSaga);
+  yield takeEvery('GET_LIST_HOTEL_REQUEST', getListHotelSaga);
   yield takeEvery('GET_CATEGORY_LIST_REQUEST', getCategoryListSaga);
-  yield takeEvery('GET_PRODUCT_ROOM_REQUEST', getProductHotelRoomSaga);
+  yield takeEvery('GET_RATE_LIST_REQUEST', getRateListSaga);
+  yield takeEvery('GET_LIST_ROOM_REQUEST', getListRoomSaga);
 }

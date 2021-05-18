@@ -10,9 +10,11 @@ import ProductTourListPage from './pages/ProductTourList';
 import LoginPage from './pages/Login';
 import TourHomePage from './pages/ProductTourListHome';
 import HomePage from './pages/Home';
-import DetailPage from './pages/Detail';
+import ListHotelPage from './pages/ListHotel';
+import ListRoomPage from './pages/ListRoom';
 import reViewPage from './pages/Review';
 import TourDetailPage from "./pages/ProductTourDetail";
+import historyPage from "./pages/HistoryBooking"
 
 function BrowserRouter(props) {
   const { productList } = props;
@@ -31,8 +33,14 @@ function BrowserRouter(props) {
         />
         <DefaultLayout
           exact
-          path={ROUTERS.PRODUCT_DETAIL}
-          component={DetailPage}
+          path={ROUTERS.LIST_HOTEL}
+          component={ListHotelPage}
+          productList={productList}
+        />
+          <DefaultLayout
+          exact
+          path={ROUTERS.LIST_ROOM}
+          component={ListRoomPage}
           productList={productList}
         />
          <DefaultLayout
@@ -41,6 +49,13 @@ function BrowserRouter(props) {
           component={reViewPage}
           productList={productList}
         />
+         <DefaultLayout
+          exact
+          path={ROUTERS.HISTORYBOOKING}
+          component={historyPage}
+          productList={productList}
+        />
+        
       </Switch>
       
     </Router>

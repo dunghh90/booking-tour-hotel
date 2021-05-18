@@ -52,7 +52,8 @@ function renderInfoUser(userInfo, logout) {
 
 
 function HeaderPage(props) {
-    // const [seachKey,setSeachkey]= useState('')
+    const [seachKey,setSeachkey]= useState('')
+    
     const { userInfo, logout } = props;
 
     const menu = (
@@ -95,6 +96,7 @@ function HeaderPage(props) {
                                           </li>
                                       </ul>
                                 </div>
+                                <Button onClick={() => history.push('/historybooking')}>lịch sử</Button>
                             </Col>
                             <Col span={5}>
                                     <div style={{color:"#1890FF"}}>
@@ -103,6 +105,7 @@ function HeaderPage(props) {
                                         
                                         userInfo.data.id 
                                             ? (
+<<<<<<< HEAD
                                                 <Dropdown overlay={menu} >
                                                     <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
                                                     {`Tên đăng nhập: ${userInfo.data.name}`}
@@ -114,8 +117,16 @@ function HeaderPage(props) {
                                             //     <IconFont type="icon-tuichu" />
                                             //     </Button>
                                             // </Space>
+=======
+                                            <Space>
+                                                
+                                                <Button type="primary" className="logout" onClick={() => logout()}>{`Đăng xuất(${userInfo.data.name})`}
+                                                <IconFont type="icon-tuichu" />
+                                                </Button>
+                                            </Space>
+>>>>>>> 88f785a41d91df9f2fdf357509cde30261f5a3da
                                             )
-                                            : <Button onClick={() => history.push('/login')}> 
+                                            : <Button type="primary" onClick={() => history.push('/login')}> 
                                                 Đăng nhập
                                                 <ImportOutlined />
                                                 </Button>
