@@ -1,40 +1,58 @@
-import { Layout, Menu } from 'antd';
-import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
+import { Layout, List } from 'antd';
+// import {List } from '@ant-design/icons';
 import './Siderba.css';
 
 const {Sider } = Layout;
+// function handleFilterCategory(id) {
+//   setCategorySelected(id);
+//   getProductTourList({
+//     page: 1,
+//     limit: 10,
+//     categoryId: id,
+//   })
+// }
+
 
 function Siderba(){
     return(
-        <Layout>
-    <Sider
-      breakpoint="lg"
-      collapsedWidth="0"
-      onBreakpoint={broken => {
-        console.log(broken);
-      }}
-      onCollapse={(collapsed, type) => {
-        console.log(collapsed, type);
-      }}
-    >
-      <div className="logo" />
-      <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']}>
-        <Menu.Item key="1" icon={<UserOutlined />}>
-          nav 1
-        </Menu.Item>
-        <Menu.Item key="2" icon={<VideoCameraOutlined />}>
-          nav 2
-        </Menu.Item>
-        <Menu.Item key="3" icon={<UploadOutlined />}>
-          nav 3
-        </Menu.Item>
-        <Menu.Item key="4" icon={<UserOutlined />}>
-          nav 4
-        </Menu.Item>
-      </Menu>
-    </Sider>
- 
-  </Layout>
+      <>
+      <List
+        size="small"
+        header={<h4 style={{fontSize:18, color:"#333", borderColor: "#ddd"}}>Địa điểm HOT trong nước</h4>}
+        bordered
+        // dataSource={[
+        //   { name: "Tất cả" },
+        //   ...categoryList.data,
+        // ]}
+        renderItem={(item) => (
+          <List.Item
+            // onClick={() => handleFilterCategory(item.id)}
+            // style={{ color: categorySelected === item.id ? 'red': 'black' }}
+          >
+            {item.name}
+          </List.Item>
+        )}
+      />
+
+      <List
+        size="small"
+        header={<h4 style={{fontSize:18, color:"#333", borderColor: "#ddd"}}>Địa điểm HOT trong nước</h4>}
+        bordered
+        style={{marginTop:20}}
+        // dataSource={[
+        //   { name: "Tất cả" },
+        //   ...categoryList.data,
+        // ]}
+        renderItem={(item) => (
+          <List.Item
+            // onClick={() => handleFilterCategory(item.id)}
+            // style={{ color: categorySelected === item.id ? 'red': 'black' }}
+          >
+            {item.name}
+          </List.Item>
+        )}
+      />
+    </>
 
     )
 }

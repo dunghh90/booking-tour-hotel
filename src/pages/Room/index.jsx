@@ -5,8 +5,10 @@ import { connect } from 'react-redux';
 import { useEffect, useState } from 'react';
 import history from '../../utils/history';
 import { Rate } from 'antd';
-import './styles.css';
+// import './styles.css';
+import {getProductRoomAction} from '../../redux/actions';
 import { ThunderboltOutlined } from '@ant-design/icons';
+import { formatCountdown } from 'antd/lib/statistic/utils';
 
 
 
@@ -16,6 +18,7 @@ function RoomPage({
   match,
 }) {
   const productOptionsHotelsId  = match.params.id;
+  
   const [optionSelected, setOptionSelected] = useState({});
 
   useEffect(() => {
@@ -30,6 +33,7 @@ function RoomPage({
 
   function renderProductRoom() {
     return productHotelRoom.data.Room.map((item, index) => {
+      
       return (
         <>
         

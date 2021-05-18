@@ -131,7 +131,7 @@ const initialState = {
         return {
           ...state,
          productHotelRoom: {
-            ...state. productHotelRoom,
+            ...state.productHotelRoom,
             data: data,
             load: false,
           },

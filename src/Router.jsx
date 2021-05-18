@@ -11,6 +11,7 @@ import LoginPage from './pages/Login';
 import TourHomePage from './pages/ProductTourListHome';
 import HomePage from './pages/Home';
 import DetailPage from './pages/Detail';
+import RoomPage from './pages/Room';
 import reViewPage from './pages/Review';
 import TourDetailPage from "./pages/ProductTourDetail";
 
@@ -33,6 +34,12 @@ function BrowserRouter(props) {
           exact
           path={ROUTERS.PRODUCT_DETAIL}
           component={DetailPage}
+          productList={productList}
+        />
+          <DefaultLayout
+          exact
+          path={ROUTERS.PRODUCT_ROOM}
+          component={RoomPage}
           productList={productList}
         />
          <DefaultLayout
