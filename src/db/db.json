@@ -78,11 +78,15 @@
       "price": 5190000,
       "categoryId": 3,
 <<<<<<< HEAD
+<<<<<<< HEAD
       "tourDescriptionId": 1,
       "information": "  <div className='col-xs-12 no-padding'>    <h3 className='tourDetailheadLine vcolor-primary'>      <div className='fb-like'        data-href='https://www.ivivu.com/du-lich/tour-cao-cap-phu-quoc-3n2d-dong-dao-chua-ho-quoc-cano-4-dao/1521'        data-layout='button' data-action='like' data-size='small' data-show-faces='true'        data-share='true' style={{float:'right'}}></div>      Phú Quốc - Hòn Ngọc Giữa Biển Khơi    </h3>    <div className='col-xs-12 tourScheduleContainer'>      <div className='tourSchedule'>        <p>Ph&uacute; Quốc l&agrave; quần đảo xinh đẹp nằm s&acirc;u trong v&ugrave;ng vịnh          Th&aacute;i          Lan, thuộc tỉnh Ki&ecirc;n Giang. Ở v&ugrave;ng biển ph&iacute;a Nam của tổ quốc, đảo Ngọc          Ph&uacute; Quốc &ndash; h&ograve;n đảo lớn nhất của Việt Nam, cũng l&agrave; đảo lớn nhất          trong quần thể 22 đảo tại đ&acirc;y. Nước biển trong vắt, những d&ograve;ng suối y&ecirc;n          b&igrave;nh c&ugrave;ng nhiều hải sản độc đ&aacute;o ch&iacute;nh l&agrave; lợi thế tuyệt          vời          của du lịch Ph&uacute; Quốc. C&ugrave;ng iVIVU kh&aacute;m ph&aacute; ngay h&ocirc;m          nay!&nbsp;</p>      </div>    </div>  </div>  <div className='col-xs-12 no-padding'>    <h3 className='tourDetailheadLine vcolor-primary'>      Những trải nghiệm thú vị trong chương trình    </h3>    <div className='col-xs-12 tourScheduleContainer'>      <div className='tourSchedule'>        <p>Đặt ch&acirc;n đến&nbsp;<strong>Ph&uacute; Quốc</strong>&nbsp;đừng bỏ lỡ:</p>        <p>-&nbsp;<strong>Dinh Cậu</strong>: thắng cảnh đẹp của Ph&uacute; Quốc v&agrave; l&agrave;          nơi          t&ocirc;n thờ t&iacute;n ngưỡng của người d&acirc;n tr&ecirc;n đảo.</p>        <p>-&nbsp;<strong>B&atilde;i Sao</strong>: qu&yacute; kh&aacute;ch tiếp tục dừng ch&acirc;n          tại          một trong những b&atilde;i biển đẹp nhất Ph&uacute; Quốc.</p>        <p>- Đi cano tham quan 4 đảo tại <strong>Ph&uacute; Quốc</strong>.</p>      </div>    </div>  </div>  <div className='col-xs-12 no-padding' id='tour-schedule'>    <h3 className='tourDetailheadLine vcolor-primary'>      Chương trình tour    </h3>    <div className='col-xs-12 tourScheduleContainer'>      <div className='tourSchedule'>        <h3>NG&Agrave;Y 01: KH&Aacute;M PH&Aacute; CUNG ĐƯỜNG BỘ ( Ăn trưa, Tối)</h3>        <p>Buổi s&aacute;ng: HDV đ&oacute;n kh&aacute;ch tại s&acirc;n bay <strong>Ph&uacute;            Quốc</strong> hoặc bến t&agrave;u. Xe đưa đo&agrave;n tham quan <strong>Đ&ocirc;ng            Đảo</strong>:</p>        <p>Tham quan c&aacute;c l&agrave;ng nghề truyền thống nổi tiếng tr&ecirc;n đảo.</p>        <p>- Hồ ti&ecirc;u <strong>Ph&uacute; Quốc</strong>.</p>        <p>- Nh&agrave; th&ugrave;ng nước mắm truyền thống.</p>        <p>- Rượu sim.</p>        <p>- Khu du lịch <strong>Suối Tranh</strong>.</p>        <p style='text-align: center'><img title='' className='lazy'     src='https://cdn2.ivivu.com/2017/04/26/13/ivivu-suoi-tranh-2.jpg' alt='' /></p>        <p style='text-align: center'><em>Suối Tranh.</em></p>        <p>- L&agrave;ng ch&agrave;i c&ocirc; <strong>H&agrave;m Ninh</strong>.</p>        <p>Trưa: Đo&agrave;n đến nh&agrave; h&agrave;ng tự do d&ugrave;ng hải sản. Sau đ&oacute; về          kh&aacute;ch sạn nhận ph&ograve;ng nghỉ ngơi.</p>        <p>Chiều: Đo&agrave;n kh&aacute;m ph&aacute; nam đảo:</p>        <p>- Di t&iacute;ch lịch sử nh&agrave; t&ugrave; <strong>Ph&uacute; Quốc.</strong></p>        <p>-&nbsp;Tắm&nbsp;biển<strong> B&atilde;i sao</strong>.</p>        <p>- Thiền viện tr&uacute;c l&acirc;m <strong>Hộ Quốc</strong>.</p>        <p style='text-align: center'><img title='' className='lazy'               src='https://cdn2.ivivu.com/2020/02/17/16/ivivu-chua-ho-quoc-pq.gif' alt='' /></p>        <p style='text-align: center'><em>Ch&ugrave;a Hộ Quốc.</em></p>        <p>- Khu nu&ocirc;i cấy Ngọc trai nh&acirc;n tạo theo c&ocirc;ng nghệ Quốc tế.</p>        <p>Tối: D&ugrave;ng bữa tối với c&aacute;c đặc sản nổi tiếng tại <strong>Ph&uacute;            Quốc.</strong>&nbsp;Sau bữa tối qu&yacute; kh&aacute;ch từ do kh&aacute;m ph&aacute;          c&aacute;c m&oacute;n đặc sản tươi sống tại chợ Đ&ecirc;m <strong>Dinh Cậu</strong>.( chi          ph&iacute; tự t&uacute;c )</p>        <h3>NG&Agrave;Y 02: CANO THAM QUAN 4 ĐẢO ( ăn s&aacute;ng, tối)</h3>        <p>Buổi s&aacute;ng: Q&uacute;y kh&aacute;ch d&ugrave;ng điểm t&acirc;m s&aacute;ng buffet tại          kh&aacute;ch sạn. Đo&agrave;n đến với chương tr&igrave;nh cano 4 đảo:</p>        <p>Cano sẽ đưa đo&agrave;n đến khu vực <strong>H&ograve;n R&otilde;i</strong> - C&ocirc;ng          vi&ecirc;n san h&ocirc; &ndash; một trong 3 c&ocirc;ng vi&ecirc;n san h&ocirc; hiếm hoi tại          <strong>Việt Nam</strong>, Qu&yacute; kh&aacute;ch c&oacute; thể&nbsp; trải nghiệm dịch vụ          đi          bộ dưới đ&aacute;y biển (ngo&agrave;i chương tr&igrave;nh, chi ph&iacute; tự          t&uacute;c):Đo&agrave;n tiếp tục l&ecirc;n cano rẽ s&oacute;ng qua c&aacute;c đảo, lắng nghe          thuyết minh về 12 h&ograve;n đảo xinh đẹp của huyện đảo <strong>Ph&uacute; Quốc</strong>,          chuẩn bị dụng cụ để c&acirc;u c&aacute; biển đ&ocirc;ng.&nbsp;</p>        <p style='text-align: center'><img title='' className='lazy'            src='https://cdn2.ivivu.com/2017/11/07/11/ivivu-hon-dam-hon-dua-hon-roi.jpg' alt='' /></p>        <p style='text-align: center'><em>H&ograve;n R&otilde;i.</em></p>        <p>Sau khi thỏa sức kh&aacute;m ph&aacute; đại dương, đo&agrave;n tiếp tục h&agrave;nh          tr&igrave;nh đến với <strong>H&ograve;n M&oacute;ng Tay</strong> &ndash; l&agrave;          vi&ecirc;n          ngọc ẩn giấu ở ph&iacute;a Nam đảo <strong>Ph&uacute; Quốc</strong>, một trong những đảo sở          hữu b&atilde;i c&aacute;t trắng mịn với l&agrave;n nước trong xanh tuyệt đẹp. Đo&agrave;n          nghỉ          ngơi, tắm biển, thư gi&atilde;n.</p>        <p style='text-align: center'><img title='' className='lazy'              src='https://cdn2.ivivu.com/2019/07/11/17/ivivu-hon-mong-tay-2.jpg' alt='' /></p>        <p style='text-align: center'><em>H&ograve;n M&oacute;ng Tay.</em></p>        <p>Cano đưa đo&agrave;n đến <strong>H&ograve;n Gầm Gh&igrave;</strong> &ndash; h&ograve;n đảo          được mệnh danh l&agrave; <strong>Vương Quốc San H&ocirc;</strong> &ndash; Qu&yacute;          kh&aacute;ch lặn ngắm san h&ocirc; với c&aacute;c dụng cụ được chuẩn bị sẵn: Ống thở,          k&iacute;nh lặn, ch&acirc;n vịt, &aacute;o phao. Nước rất cạn v&agrave; trong khe,          nh&igrave;n          tận đ&aacute;y, đ&acirc;y l&agrave; điểm ngắm san h&ocirc; rất l&yacute; tưởng.</p>        <p style='text-align: center'><img title='' className='lazy'                  src='https://cdn2.ivivu.com/2019/07/11/17/ivivu-hon-gam-ghi.jpg' alt='' /></p>        <p style='text-align: center'><em>H&ograve;n Gầm Gh&igrave;.</em></p>        <p>Cano đưa đo&agrave;n đến <strong>H&ograve;n Dăm Trong</strong> &ndash; Qu&yacute;          kh&aacute;ch c&oacute; thể chi&ecirc;m ngưỡng khung cảnh thi&ecirc;n nhi&ecirc;n hoang sơ,          tận          hưởng ho&agrave;ng h&ocirc;n tuyệt đẹp tr&ecirc;n biển.&nbsp;</p>        <p>D&ugrave;ng cơm trưa tr&ecirc;n t&agrave;u tự t&uacute;c. qu&yacute; kh&aacute;ch tự do tắm          biển lặn ngắm san h&ocirc;.</p>        <p>Buổi chiều: Đo&agrave;n di chuyển về kh&aacute;ch sạn nghỉ ngơi v&agrave; d&ugrave;ng bữa          tối          tại nh&agrave; h&agrave;ng. Q&uacute;y kh&aacute;ch c&oacute; thể kh&aacute;m ph&aacute;          caf&eacute; du thuyền, c&acirc;u mực về đ&ecirc;m, chi ph&iacute; từ 60.000 &ndash;          100.000vnd/ly.</p>        <h3>NG&Agrave;Y 03: TẠM BIỆT PH&Uacute; QUỐC&nbsp;( Ăn s&aacute;ng)</h3>        <p>Buổi s&aacute;ng: Đo&agrave;n d&ugrave;ng điểm t&acirc;m s&aacute;ng. Tự do sinh hoạt.</p>        <p>C&oacute; c&aacute;c gợi &yacute; cho đo&agrave;n như sau:</p>        <p>Gần kh&aacute;ch sạn đo&agrave;n ờ c&oacute; cafe<strong> Chuồn Chuồn</strong>&nbsp;nổi          tiếng          phong cảnh đẹp v&agrave; nằm tr&ecirc;n cao đo&agrave;n c&oacute; thể ngắm to&agrave;n          cảnh<strong> Ph&uacute; Quốc</strong> khi đến đ&acirc;y.</p>        <p style='text-align: center'><img title='' className='lazy'                 src='https://cdn2.ivivu.com/2020/07/10/10/ivivu-cafe-chuon-chuon.gif' alt='' /></p>        <p style='text-align: center'><em>Caphe Chuồn Chuồn.</em></p>        <p>C&oacute; thể đến chợ <strong>Dương Đ&ocirc;ng</strong> để mua đặc sản của người d&acirc;n          vừa đ&aacute;nh bắt v&agrave;o b&aacute;n rất tươi sống.</p>        <p>Gần kh&aacute;ch sạn c&oacute; b&atilde;i biển rất đẹp đo&agrave;n c&oacute; thể đến          đ&acirc;y để tắm biển chụp h&igrave;nh v&agrave; thưởng thức hải sản cũng như ngắm biển          v&agrave;o buổi s&aacute;ng.</p>        <p>Buổi trưa: Q&uacute;y kh&aacute;ch trả ph&ograve;ng.</p>        <p>Xe đưa đo&agrave;n ra s&acirc;n bay l&agrave;m thủ tục bay về lại <strong>S&agrave;i            G&ograve;n/ H&agrave; Nội</strong>. HDV chia tay Qu&yacute; kh&aacute;ch. Kết th&uacute;c          chương tr&igrave;nh v&agrave; hẹn gặp lại Q&uacute;y kh&aacute;ch trong những h&agrave;nh          tr&igrave;nh tiếp theo!</p>        <p style='text-align: center'><em>Do điều kiện thực tế tham quan, thứ tự c&oacute; thể thay            đổi            nhưng vẫn đảm bảo đầy đủ c&aacute;c điểm tham quan trong chương tr&igrave;nh.</em></p>      </div>    </div>  </div>"
 =======
       "tourDescriptionId": 1
 >>>>>>> 88f785a (save code)
+=======
+      "tourDescriptionId": 1
+>>>>>>> 88f785a41d91df9f2fdf357509cde30261f5a3da
     },
     {
       "id": 2,
@@ -158,7 +162,10 @@
       "information": "<h3>Hành Trình đi dọc miền trung đất nước</h3><p>Du lịch miền Trung luôn hấp dẫn du khách với những món ăn ngon, bãi biển xinh đẹp và những hòn đảo thơ mộng mà ít nơi nào có được. Nhưng bên cạnh đó khi tới vùng đất này bạn còn có thể khám phá những địa danh, di tích lịch sử đã tồn tại từ hàng ngàn năm nay. Có lẽ thiên nhiên đã quá ưu ái khi ban tặng cho bản đồ miền Trung Việt Nam về du lịch quá nhiều những danh lam thắm cảnh nổi tiếng mà ai cũng phải ghen tỵ, đố kỵ. Cùng iVIVU khám phá ngay hôm nay!</p><h3>Những trải nghiệm thú vị trong chương trình</h3><p>Liên Tuyến kỳ thú với: - Chiêm ngưỡng khung cảnh thiên nhiên ngoạn mục trên Cây Cầu Vàng. - Tham quan Bà Nà Hill, Bán Đảo Sơn Trà, Ngũ Hành Sơn, Phố Cổ Hội An, Kinh Thành Huế, Chùa Thiên Mụ. - Tham quan Động Phong Nha, Thánh Địa La Vang, Cầu Hiền Lương.</p><h3>Chương trình tour</h3><p>NGÀY 1: ĐÀ NẴNG - BÀ NÀ HILL - PHỐ CỔ HỘI AN (ĂN SÁNG, TỐI)</p>"
 =======
       "tourDescriptionId": 5
+<<<<<<< HEAD
 >>>>>>> 88f785a (save code)
+=======
+>>>>>>> 88f785a41d91df9f2fdf357509cde30261f5a3da
     }
   ],
   "categories": [
@@ -263,11 +270,14 @@
   ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> e8c707a (fail detail)
 =======
 >>>>>>> 88f785a (save code)
+=======
+>>>>>>> 88f785a41d91df9f2fdf357509cde30261f5a3da
   "locations": [
     {
       "id": 1,
@@ -290,7 +300,10 @@
       "name": "Đà nẵng",
 =======
       "name": "  Đà nẵng",
+<<<<<<< HEAD
 >>>>>>> 88f785a (save code)
+=======
+>>>>>>> 88f785a41d91df9f2fdf357509cde30261f5a3da
       "comment": " Bãi Bắc, Bán Đảo Sơn Trà, Đà Nẵng, Việt Nam",
       "img": "//cdn1.ivivu.com/iVivu/2018/09/14/14/danang_2-370x395.png"
     },
@@ -324,12 +337,15 @@
       "name": "Cà Mau",
       "img": "//cdn1.ivivu.com/iVivu/2017/01/23/11/khu-nghi-duong-the-graden-house-phu-quoc-374x280.png"
 <<<<<<< HEAD
+<<<<<<< HEAD
     },
     {
       "id": 1,
       "name": "Miền Tây"
 =======
 >>>>>>> 88f785a (save code)
+=======
+>>>>>>> 88f785a41d91df9f2fdf357509cde30261f5a3da
     }
   ],
   "hotels": [
@@ -391,6 +407,7 @@
     {
       "id": 6,
 <<<<<<< HEAD
+<<<<<<< HEAD
       "locationId":1,
 <<<<<<< HEAD
       "rate": 3,
@@ -407,6 +424,12 @@
       "rate": 3,
       "name": "Hotel VinGroup",
 >>>>>>> 88f785a (save code)
+=======
+      "locationId": 1,
+      "img": "https://pix10.agoda.net/hotelImages/5649846/-1/ab54b6f91c343b2e68002618cdffa496.jpg?s=1024x768",
+      "rate": 3,
+      "name": "Hotel VinGroup",
+>>>>>>> 88f785a41d91df9f2fdf357509cde30261f5a3da
       "Title": "Đường Bạch Đằng",
       "Price": "5.190.000 ",
       "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage",
@@ -414,6 +437,7 @@
     },
     {
       "id": 7,
+<<<<<<< HEAD
 <<<<<<< HEAD
       "locationId":1,
 <<<<<<< HEAD
@@ -431,6 +455,12 @@
       "rate": 3,
       "name": "Hotel Jude Hill",
 >>>>>>> 88f785a (save code)
+=======
+      "locationId": 1,
+      "img": "https://cdn3.ivivu.com/2017/11/khach-san-sapa-ivivu-20.jpg",
+      "rate": 3,
+      "name": "Hotel Jude Hill",
+>>>>>>> 88f785a41d91df9f2fdf357509cde30261f5a3da
       "Title": "Đường Đồng Lợi",
       "Price": "4.690.000 ",
       "combo": "2N2D + Buffet + Đưa đón sân bay",
@@ -505,6 +535,7 @@
     {
       "id": 6,
 <<<<<<< HEAD
+<<<<<<< HEAD
       "locationId":2,
 <<<<<<< HEAD
       "rate": 3,
@@ -516,11 +547,16 @@
       "name":"Hotel GaLaXy",
 >>>>>>> 4a1ef59 (footer)
 =======
+=======
+>>>>>>> 88f785a41d91df9f2fdf357509cde30261f5a3da
       "locationId": 2,
       "img": "https://bazantravel.com/cdn/medias/uploads/30/30991-khach-san-sheraton-hanoi.jpg",
       "rate": 2,
       "name": "Hotel GaLaXy",
+<<<<<<< HEAD
 >>>>>>> 88f785a (save code)
+=======
+>>>>>>> 88f785a41d91df9f2fdf357509cde30261f5a3da
       "Title": "Đường Hai Bà Trưng",
       "Price": "5.190.000 ",
       "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage",
@@ -528,6 +564,7 @@
     },
     {
       "id": 7,
+<<<<<<< HEAD
 <<<<<<< HEAD
       "locationId":2,
 <<<<<<< HEAD
@@ -545,6 +582,12 @@
       "rate": 3,
       "name": "Hotel Linh Dương",
 >>>>>>> 88f785a (save code)
+=======
+      "locationId": 2,
+      "img": "https://ik.imagekit.io/tvlk/apr-asset/TzEv3ZUmG4-4Dz22hvmO9NUDzw1DGCIdWl4oPtKumOg=/hotels/1000000/530000/523600/523534/246b00cd_z.jpg?tr=q-40,c-at_max,w-740,h-500&_src=imagekit",
+      "rate": 3,
+      "name": "Hotel Linh Dương",
+>>>>>>> 88f785a41d91df9f2fdf357509cde30261f5a3da
       "Title": "Đường Trần Phú",
       "Price": "4.690.000 ",
       "combo": "2N2D + Buffet + Đưa đón sân bay",
@@ -619,6 +662,7 @@
     {
       "id": 6,
 <<<<<<< HEAD
+<<<<<<< HEAD
       "locationId":4,
 <<<<<<< HEAD
       "rate": 3,
@@ -635,6 +679,12 @@
       "rate": 3,
       "name": "Hotel GaLaXy",
 >>>>>>> 88f785a (save code)
+=======
+      "locationId": 4,
+      "img": "https://bazantravel.com/cdn/medias/uploads/30/30991-khach-san-sheraton-hanoi.jpg",
+      "rate": 3,
+      "name": "Hotel GaLaXy",
+>>>>>>> 88f785a41d91df9f2fdf357509cde30261f5a3da
       "Title": "Đường Hai Bà Trưng",
       "Price": "5.190.000 ",
       "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage",
@@ -642,6 +692,7 @@
     },
     {
       "id": 7,
+<<<<<<< HEAD
 <<<<<<< HEAD
       "locationId":4,
 <<<<<<< HEAD
@@ -659,6 +710,12 @@
       "rate": 3,
       "name": "Hotel Linh Dương",
 >>>>>>> 88f785a (save code)
+=======
+      "locationId": 4,
+      "img": "https://ik.imagekit.io/tvlk/apr-asset/TzEv3ZUmG4-4Dz22hvmO9NUDzw1DGCIdWl4oPtKumOg=/hotels/1000000/530000/523600/523534/246b00cd_z.jpg?tr=q-40,c-at_max,w-740,h-500&_src=imagekit",
+      "rate": 3,
+      "name": "Hotel Linh Dương",
+>>>>>>> 88f785a41d91df9f2fdf357509cde30261f5a3da
       "Title": "Đường Trần Phú",
       "Price": "4.690.000 ",
       "combo": "2N2D + Buffet + Đưa đón sân bay",
@@ -677,6 +734,7 @@
     }
   ],
   "rooms": [
+<<<<<<< HEAD
     {
       "id": 1,
       "hotelId": 1,
@@ -935,6 +993,132 @@
       "startDate": "2021/05/17",
       "endDate": "2021/05/20"
 =======
+=======
+    {
+      "id": 1,
+      "hotelId": 1,
+      "img": "https://www.hotelgrandsaigon.com/wp-content/uploads/sites/227/2017/12/GRAND_SEDK_01.jpg",
+      "Title": "Phòng 2 Người",
+      "Price": " 2.190.000 ",
+      "description": [
+        "Full options",
+        "View đẹp",
+        "Hiện đại"
+      ],
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "name": "Hotel Hà Nội Godel",
+      "rate": 5
+    },
+    {
+      "id": 2,
+      "hotelId": 1,
+      "img": "https://www.vietnambooking.com/wp-content/uploads/2018/06/co-nhung-loai-phong-khach-san-nao-02-06-18-3.jpg",
+      "Title": "Phòng 4 Người",
+      "Price": " 3.190.000 ",
+      "description": [
+        "Full options",
+        "Rộng rãi thoáng mát",
+        "View đẹp sống ảo"
+      ],
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "name": "Hotel Hà Nội Godel",
+      "rate": 5
+    },
+    {
+      "id": 3,
+      "hotelId": 1,
+      "img": "https://www.hotelgrandsaigon.com/wp-content/uploads/sites/227/2017/12/GRAND_SEDK_01.jpg",
+      "Title": "Phòng 1 Người",
+      "Price": " 1.190.000 ",
+      "description": [
+        "Không full options",
+        "View đẹp",
+        "Có xông hơi"
+      ],
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "name": "Hotel Hà Nội Godel",
+      "rate": 5
+    },
+    {
+      "id": 4,
+      "hotelId": 1,
+      "img": "https://ezcloud.vn/wp-content/uploads/2019/05/tripple-room.jpg",
+      "Title": "Phòng 5 Người",
+      "Price": " 7.190.000 ",
+      "description": [
+        "Full options",
+        "Rộng rãi thoáng mát",
+        "View đẹp sống ảo",
+        "Có xông hơi"
+      ],
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "name": "Hotel Hà Nội Godel",
+      "rate": 5
+    },
+    {
+      "id": 5,
+      "hotelId": 1,
+      "img": "https://pix10.agoda.net/hotelImages/109/10981/10981_19052410360074693721.jpg?s=1024x768",
+      "Title": "Phòng 2 Người",
+      "Price": " 2.190.000 ",
+      "description": [
+        "Không full options",
+        "View đẹp",
+        "Có xông hơi"
+      ],
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "name": "Hotel Hà Nội Godel",
+      "rate": 5
+    },
+    {
+      "id": 6,
+      "hotelId": 1,
+      "img": "https://cdn.galaxy.tf/unit-media/tc-default/uploads/images/room_photo/001/557/713/deluxe-room-dbl-bed-op-standard.jpg",
+      "Title": "Phòng 4 Người",
+      "Price": " 4.190.000 ",
+      "description": [
+        "Không full options",
+        "Rộng rãi thoáng mát",
+        "View đẹp",
+        "Có xông hơi"
+      ],
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "name": "Hotel Hà Nội Godel",
+      "rate": 5
+    },
+    {
+      "id": 7,
+      "hotelId": 1,
+      "img": "https://cf.bstatic.com/images/hotel/max1024x768/280/28038759.jpg",
+      "Title": "Phòng 1 Người",
+      "Price": " 2.190.000 ",
+      "description": [
+        "Rộng rãi thoáng mát",
+        "Hiện đại",
+        "Full options"
+      ],
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "name": "Hotel Hà Nội Godel",
+      "rate": 5
+    },
+    {
+      "id": 8,
+      "hotelId": 1,
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMDtOJgNtr9_KuF-DoKQac9J9ESMiuefNrdw&usqp=CAU",
+      "Title": "Phòng 5 Người",
+      "Price": " 7.190.000 ",
+      "description": [
+        "Full options",
+        "Rộng rãi thoáng mát",
+        "View đẹp sống ảo",
+        "Có xông hơi"
+      ],
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "name": "Hotel Hà Nội Godel",
+      "rate": 5
+    }
+  ],
+>>>>>>> 88f785a41d91df9f2fdf357509cde30261f5a3da
   "bookingRooms": [
     {
       "userId": 7,
@@ -1005,7 +1189,10 @@
     {
       "id": 5,
       "rate": 5
+<<<<<<< HEAD
 >>>>>>> 88f785a (save code)
+=======
+>>>>>>> 88f785a41d91df9f2fdf357509cde30261f5a3da
     }
   ]
 }
