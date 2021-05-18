@@ -1,4 +1,4 @@
-import { Card, Col, Row } from 'antd';
+import { Button, Card, Col, Row } from 'antd';
 
 import { connect } from 'react-redux';
 import { getListHotelAction } from '../../redux/actions';
@@ -19,9 +19,15 @@ function ListHotelPage({
 }) {
   const locationId = match.params.id;
   const [roomSelected, setRoomSelected] = useState({});
+ 
   
   useEffect(() => {
-    getListHotel({ id: locationId });
+   
+    getListHotel({
+      page: 1,
+      limit: 4,
+      id: locationId
+    });
   }, [])
 
   useEffect(() => {
@@ -29,6 +35,18 @@ function ListHotelPage({
       setRoomSelected(listHotel.data.hotels[0] || {})
     }
   }, [listHotel.data])
+
+   
+
+  function loadmoreHotel(){
+    getListHotel({
+      more: true,
+      // page: page + 1,
+      page: listHotel.page + 1,
+      limit: 4,
+      locationId: roomSelected,
+    });
+  }
 
   function renderListHotel() {
     return listHotel.data.hotels.map((item, index) => {
@@ -49,7 +67,11 @@ function ListHotelPage({
                     <h2 > {item.name} </h2>
                     <Rate disabled defaultValue={item.rate} />
                     <h5 className="adr"><ThunderboltOutlined />.{item.Title}</h5>
-                    <span className="price">{item.Price}</span>
+
+                   
+
+
+                    <span className="price">{item.Price} VND</span>
                   </div>
                 </div>
 
@@ -63,7 +85,7 @@ function ListHotelPage({
 
   return (
     <>
-      <SearchTourPage />
+      <SearchTourPage/>
       <Row gutter={[8, 8]} justify="center">
         <Col span={7}>
           < Siderba />
@@ -71,6 +93,10 @@ function ListHotelPage({
         <Col span={17}>
           {renderListHotel()}
         </Col>
+        {listHotel.data.hotels.length % 4 === 0 && (
+            <Button onClick={()=>loadmoreHotel()}>Xem thêm khách sạn</Button>
+        )}
+  
       </Row>
     </>
   );

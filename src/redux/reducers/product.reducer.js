@@ -15,11 +15,16 @@ const initialState = {
       data: {
         rooms: [
         ],
+        bookingRooms:[],
       },
       load: false,
       error: '',
     },
-
+    rateList:{
+      data: [],
+      load: false,
+      error: '',
+    },
     categoryList: {
       data: [],
       load: false,
@@ -73,6 +78,7 @@ const initialState = {
         }
       }
       case 'GET_LIST_HOTEL_SUCCESS': {
+
         const { data } = action.payload;
         return {
           ...state,
@@ -157,6 +163,57 @@ const initialState = {
             ...state.categoryList,
             load: false,
             error: error,
+          },
+        }
+      }
+      case 'GET_RATE_LIST_REQUEST': {
+        return {
+          ...state,
+         rateList: {
+            ...state.rateList,
+            load: true,
+          },
+        }
+      }
+
+      case 'GET_RATE_LIST_SUCCESS': {
+        const { data } = action.payload;
+        console.log("🚀 ~ file: product.reducer.js ~ line 181 ~ productHotelReducer ~ data", data)
+        return {
+          ...state,
+         rateList: {
+            ...state.rateList,
+            data: data,
+            load: false,
+          },
+        }
+      }
+
+      case 'GET_RATE_LIST_FAIL': {
+        const { error } = action.payload;
+        return {
+          ...state,
+         rateList: {
+            ...state.rateList,
+            load: false,
+            error: error,
+          },
+        }
+      }
+      case 'BOOKING_HOTEL_ROOM_SUCCESS': {
+        const { data } = action.payload;
+        console.log("🚀 ~ file: product.reducer.js ~ line 166 ~ productHotelReducer ~ data", data)
+        return {
+          ...state,
+          listRoom: {
+            ...state.listRoom,
+            data: {
+              ...state.listRoom.data,
+              bookingRooms: [
+                ...state.listRoom.data.bookingRooms,
+                data,
+              ]
+            },
           },
         }
       }

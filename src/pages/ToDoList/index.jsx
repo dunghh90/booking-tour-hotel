@@ -18,8 +18,8 @@ function ToDoListPage(props) {
 
  
 
-  const filterToDoList = toDoList.filter((item) => {
-    // return item.title.trim().toLowerCase().indexOf(searchKey.trim().toLowerCase()) !== -1;
+  const filterToDoList = data.filter((item) => {
+    // return item.trim().toLowerCase().indexOf(searchKey.trim().toLowerCase()) !== -1;
     console.log(toDoList)
   });
  

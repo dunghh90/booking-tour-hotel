@@ -52,7 +52,8 @@ function renderInfoUser(userInfo, logout) {
 
 
 function HeaderPage(props) {
-    // const [seachKey,setSeachkey]= useState('')
+    const [seachKey,setSeachkey]= useState('')
+    
     const { userInfo, logout } = props;
 
     const menu = (
@@ -95,6 +96,7 @@ function HeaderPage(props) {
                                           </li>
                                       </ul>
                                 </div>
+                                <Button onClick={() => history.push('/historybooking')}>lịch sử</Button>
                             </Col>
                             <Col span={5}>
                                     <div style={{color:"#1890FF"}}>

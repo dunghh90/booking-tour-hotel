@@ -14,6 +14,7 @@ import ListHotelPage from './pages/ListHotel';
 import ListRoomPage from './pages/ListRoom';
 import reViewPage from './pages/Review';
 import TourDetailPage from "./pages/ProductTourDetail";
+import historyPage from "./pages/HistoryBooking"
 
 function BrowserRouter(props) {
   const { productList } = props;
@@ -46,6 +47,12 @@ function BrowserRouter(props) {
           exact
           path={ROUTERS.REVIEW}
           component={reViewPage}
+          productList={productList}
+        />
+         <DefaultLayout
+          exact
+          path={ROUTERS.HISTORYBOOKING}
+          component={historyPage}
           productList={productList}
         />
         

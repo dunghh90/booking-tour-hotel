@@ -24,3 +24,9 @@ export function getProductLocationListAction(params) {
       payload: params,
     }
   }
+  export function getRateListAction(params) {
+    return {
+      type: 'GET_RATE_LIST_REQUEST',
+      payload: params,
+    }
+  }

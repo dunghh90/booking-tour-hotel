@@ -1,7 +1,6 @@
-import { useState } from 'react';
+
 import { Row, Col, Card, Image, Space } from 'antd';
-import { FieldTimeOutlined } from '@ant-design/icons';
-import { IoAirplaneOutline, IoCarOutline } from "react-icons/io5";
+
 
 
 
@@ -26,11 +25,12 @@ function ItemRoom(props) {
     })
 
   }
-
   return (
       <Col>
 
           {renderItem()}
+     
+          
       </Col>
   );
 }

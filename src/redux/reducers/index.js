@@ -4,6 +4,8 @@ import productTourReducer from './product-tour.reducer';
 import productHotelReducer from'./product.reducer'
 import userReducer from './user.reducer';
 import bookingReducer from './booking.reducer';
+import bookingReducer from './bookingRoom.reducer';
+
 
 export default combineReducers({
   taskReducer: taskReducer,
