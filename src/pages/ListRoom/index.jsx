@@ -99,6 +99,7 @@ function ListRoomPage({
                 style={{ width: 360 }}
                 cover={<img alt="" src={item.img} />}
               >
+
                 <div className="optiondetail">
                   {/* <img className="img1" src={item.img} alt="" /> */}
 

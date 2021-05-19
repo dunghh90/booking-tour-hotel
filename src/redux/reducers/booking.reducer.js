@@ -1,9 +1,4 @@
 const initialState = {
-  bookingRooms: {
-    data: [],
-    load: false,
-    error: '',
-  },
   bookingTours: {
     data: [],
     load: false,
@@ -11,19 +6,8 @@ const initialState = {
   },
 };
 
-export default function bookingReducer(state = initialState, action) {
+export default function bookingTourReducer(state = initialState, action) {
   switch (action.type) {
-    case 'BOOKING_HOTEL_ROOM_REQUEST': {
-      const { carts } = action.payload;
-      return {
-        ...state,
-        bookingRooms: {
-          ...state.bookingRooms,
-          data: carts,
-          load: false,
-        },
-      }
-    }
     case 'BOOKING_TOUR_REQUEST': {
       const { carts } = action.payload;
       return {
