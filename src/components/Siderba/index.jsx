@@ -1,7 +1,7 @@
 import { Row, Col, List, Card } from 'antd';
 // import {List } from '@ant-design/icons';
 import './Siderba.css';
-import { getRateListAction } from '../../redux/actions';
+import { getRateListAction ,getListHotelAction} from '../../redux/actions';
 import { connect } from 'react-redux';
 import { useState,useEffect } from 'react';
 import { Rate } from 'antd';
@@ -10,15 +10,20 @@ import { Rate } from 'antd';
 const { Meta } = Card;
 
 function Siderba({
-  getHotelList,
-  rateList
+  // getHotelList,
+  getRateList,
+  rateList,
+  // listHotel
+  
 }) {
 
   const [locationSelected, setLocationSelected] = useState(0);
   useEffect(() => {
-    getHotelList({
+    // getRateList();
+    getRateList({
       page: 1,
       limit: 4,
+      
     });
   }, []);
 
@@ -26,10 +31,11 @@ function Siderba({
   function handleFilterLocation(id) {
     console.log("🚀 ~ file: index.jsx ~ line 20 ~ handleFilterLocation ~ id", id)
     setLocationSelected(id);
-    getHotelList({
+    getRateList({
       page: 1,
       limit: 4,
       rateId: id,
+
     });
   }
 
@@ -54,17 +60,47 @@ function Siderba({
               ...rateList.data,
             ]}
             renderItem={(item) => (
-              <List.Item
+              <List.Item className ="list"
                 onClick={() => handleFilterLocation(item.id)}
                 style={{ color: locationSelected === item.id ? 'red' : 'black' }}
               >     
                   <Rate disabled defaultValue={item.rate} /> 
-                  {item.rate}  
+                 
               </List.Item>
             )}
           />
         </Col>
       </Row>
+      {/* <Row gutter={16} style={{ padding: '0 16px' }}>
+        {/* <Col span={24} >
+          <Card
+            hoverable
+            style={{ width: 240 }}
+            cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
+          >
+            <Meta title="Europe Street beat" description="www.instagram.com" />
+          </Card>,
+       </Col> */}
+        {/* <Col span={24}>
+          <List
+            size="small"
+            header={<div>Tìm kiếm </div>}
+            bordered
+            dataSource={[
+              ...listHotel.data.rooms,
+            ]}
+            renderItem={(item) => (
+              <List.Item
+                onClick={() => handleFilterLocation(item.id)}
+                style={{ color: locationSelected === item.id ? 'red' : 'black' }}
+              >     
+                  {item.name} 
+                 
+              </List.Item>
+            )}
+          />
+        </Col>
+      </Row> */} 
 
     </>
 
@@ -72,16 +108,19 @@ function Siderba({
 }
 const mapStateToProps = (state) => {
   const { rateList } = state.productHotelReducer;
+  // const { listHotel } = state.productHotelReducer;
   console.log("🚀 ~ file: index.jsx ~ line 69 ~ mapStateToProps ~ rateList", rateList)
   
   return {
     rateList: rateList,
+    // listHotel: listHotel,
   }
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getHotelList: (params) => dispatch(getRateListAction(params)),
+    getRateList: (params) => dispatch(getRateListAction(params)),
+    // getHotelList: (params) => dispatch(getListHotelAction(params)),
   };
 }
 

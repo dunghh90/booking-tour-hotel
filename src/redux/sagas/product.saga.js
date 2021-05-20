@@ -3,16 +3,14 @@ import axios from 'axios';
 
 function* getProductHotelListSaga(action) {
   try {
-    const { page, limit,rateId } = action.payload;
+    const { page, limit} = action.payload;
     const result = yield axios({
       method: 'GET',
       url: 'http://localhost:3002/locations',
       params: {
         _page: page,
         _limit: limit,
-        ...rateId && { rateId },
-        
-       
+           
         
         // ...catagoryId && { catagoryId },// categoryId: categoryId -> null, truyen Id khi ton taij'
         // ...searchkey && { q: searchkey },
@@ -39,12 +37,16 @@ function* getProductHotelListSaga(action) {
 function* getListHotelSaga(action) {
 
   try {
-    const { id,more,page } = action.payload;
+    const { id,more,page,limit,rateId } = action.payload;
     const result = yield axios({
       method: 'GET',
       url: `http://localhost:3002/locations/${id}`,
       params: {
         _embed: "hotels",
+        page: 1,
+        limit: 4,
+        ...rateId && {rateId}
+
         
         
       }
@@ -109,15 +111,14 @@ function* getCategoryListSaga(action) {
   }
 }
 function* getRateListSaga(action) {
-  const { rateId } = action.payload;
+  
   try {
     const result = yield axios({
       method: 'GET',
       url: 'http://localhost:3002/rates',
-      params: {
-        _embed: "hotels",
-      
-      }
+      // params: {
+      //   _embed: "hotels", 
+      // }
     });
     yield put({
       type: "GET_RATE_LIST_SUCCESS",

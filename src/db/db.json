@@ -504,46 +504,125 @@
     {
       "id": 1,
       "hotelId": 1,
-      "img": "https://baogialai.com.vn/dataimages/202009/original/images2927238_logo_img20191128112544_1_15991305286161571887111.jpg",
-      "name": "Phòng 2 Người",
-      "Price": 600,
+      "img": "https://www.hotelgrandsaigon.com/wp-content/uploads/sites/227/2017/12/GRAND_SEDK_01.jpg",
+      "Title": "Phòng 2 Người",
+      "Price": " 2.190.000 ",
       "description": [
-        "test1",
-        "test2"
-      ]
+        "Full options",
+        "View đẹp",
+        "Hiện đại"
+      ],
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "name": "Hotel Hà Nội Godel",
+      "rate": 5
     },
     {
       "id": 2,
       "hotelId": 1,
-      "img": "https://baogialai.com.vn/dataimages/202009/original/images2927238_logo_img20191128112544_1_15991305286161571887111.jpg",
-      "name": "Phòng 4 Người",
-      "Price": 800,
+      "img": "https://www.vietnambooking.com/wp-content/uploads/2018/06/co-nhung-loai-phong-khach-san-nao-02-06-18-3.jpg",
+      "Title": "Phòng 4 Người",
+      "Price": " 3.190.000 ",
       "description": [
-        "test1",
-        "test2"
-      ]
+        "Full options",
+        "Rộng rãi thoáng mát",
+        "View đẹp sống ảo"
+      ],
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "name": "Hotel Hà Nội Godel",
+      "rate": 5
     },
     {
       "id": 3,
       "hotelId": 1,
-      "img": "https://baogialai.com.vn/dataimages/202009/original/images2927238_logo_img20191128112544_1_15991305286161571887111.jpg",
-      "name": "Phòng 1 Người",
-      "Price": 200,
+      "img": "https://www.hotelgrandsaigon.com/wp-content/uploads/sites/227/2017/12/GRAND_SEDK_01.jpg",
+      "Title": "Phòng 1 Người",
+      "Price": " 1.190.000 ",
       "description": [
-        "test1",
-        "test2"
-      ]
+        "Không full options",
+        "View đẹp",
+        "Có xông hơi"
+      ],
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "name": "Hotel Hà Nội Godel",
+      "rate": 5
     },
     {
       "id": 4,
       "hotelId": 1,
-      "img": "https://baogialai.com.vn/dataimages/202009/original/images2927238_logo_img20191128112544_1_15991305286161571887111.jpg",
-      "name": "Phòng 5 Người",
-      "Price": 200,
+      "img": "https://ezcloud.vn/wp-content/uploads/2019/05/tripple-room.jpg",
+      "Title": "Phòng 5 Người",
+      "Price": " 7.190.000 ",
       "description": [
-        "test1",
-        "test2"
-      ]
+        "Full options",
+        "Rộng rãi thoáng mát",
+        "View đẹp sống ảo",
+        "Có xông hơi"
+      ],
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "name": "Hotel Hà Nội Godel",
+      "rate": 5
+    },
+    {
+      "id": 5,
+      "hotelId": 1,
+      "img": "https://pix10.agoda.net/hotelImages/109/10981/10981_19052410360074693721.jpg?s=1024x768",
+      "Title": "Phòng 2 Người",
+      "Price": " 2.190.000 ",
+      "description": [
+        "Không full options",
+        "View đẹp",
+        "Có xông hơi"
+      ],
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "name": "Hotel Hà Nội Godel",
+      "rate": 5
+    },
+    {
+      "id": 6,
+      "hotelId": 1,
+      "img": "https://cdn.galaxy.tf/unit-media/tc-default/uploads/images/room_photo/001/557/713/deluxe-room-dbl-bed-op-standard.jpg",
+      "Title": "Phòng 4 Người",
+      "Price": " 4.190.000 ",
+      "description": [
+        "Không full options",
+        "Rộng rãi thoáng mát",
+        "View đẹp",
+        "Có xông hơi"
+      ],
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "name": "Hotel Hà Nội Godel",
+      "rate": 5
+    },
+    {
+      "id": 7,
+      "hotelId": 1,
+      "img": "https://cf.bstatic.com/images/hotel/max1024x768/280/28038759.jpg",
+      "Title": "Phòng 1 Người",
+      "Price": " 2.190.000 ",
+      "description": [
+        "Rộng rãi thoáng mát",
+        "Hiện đại",
+        "Full options"
+      ],
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "name": "Hotel Hà Nội Godel",
+      "rate": 5
+    },
+    {
+      "id": 8,
+      "hotelId": 1,
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMDtOJgNtr9_KuF-DoKQac9J9ESMiuefNrdw&usqp=CAU",
+      "Title": "Phòng 5 Người",
+      "Price": " 7.190.000 ",
+      "description": [
+        "Full options",
+        "Rộng rãi thoáng mát",
+        "View đẹp sống ảo",
+        "Có xông hơi"
+      ],
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "name": "Hotel Hà Nội Godel",
+      "rate": 5
     }
   ],
   "tourDescriptions": [
@@ -668,6 +747,22 @@
       "numberAdults": 3,
       "numberChild": 1,
       "id": 13
+    },
+    {
+      "userId": 7,
+      "tourId": 1,
+      "startDate": "2021/05/19",
+      "numberAdults": 14,
+      "numberChild": 1223131231,
+      "id": 14
+    },
+    {
+      "userId": 7,
+      "tourId": 1,
+      "startDate": "2021/05/19",
+      "numberAdults": 14,
+      "numberChild": 1223131231,
+      "id": 15
     }
   ],
   "bookingRooms": [
@@ -710,6 +805,28 @@
       "startDate": "2021/05/19",
       "endDate": "2021/05/20",
       "id": 5
+    }
+  ],
+  "rates": [
+    {
+      "id": 1,
+      "rate": 1
+    },
+    {
+      "id": 2,
+      "rate": 2
+    },
+    {
+      "id": 3,
+      "rate": 3
+    },
+    {
+      "id": 4,
+      "rate": 4
+    },
+    {
+      "id": 5,
+      "rate": 5
     }
   ]
 }
