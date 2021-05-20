@@ -301,7 +301,7 @@
     },
     {
       "id": 5,
-      "locationId": 1,
+      "locationId": 2,
       "name": "Hotel Supper Godel",
       "img": "https://pix10.agoda.net/hotelImages/626432/-1/4e377e4b246a20370ac4a9fb2e4850be.jpg?s=1024x768",
       "rate": 5,
@@ -340,7 +340,7 @@
       "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage"
     },
     {
-      "id": 1,
+      "id": 9,
       "locationId": 2,
       "img": "https://cdn.huongnghiepaau.com/wp-content/uploads/2019/10/khach-san-pullman-ha-noi.jpg",
       "rate": 5,
@@ -350,7 +350,7 @@
       "combo": "2N2D + Buffet + Đưa đón sân bay"
     },
     {
-      "id": 2,
+      "id": 10,
       "locationId": 2,
       "img": "https://pix10.agoda.net/hotelImages/4885116/0/3ec7a573097742323e2f976670239467.jpg?s=1024x768",
       "rate": 4,
@@ -360,7 +360,7 @@
       "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage"
     },
     {
-      "id": 3,
+      "id": 11,
       "locationId": 2,
       "img": "https://toquoc.mediacdn.vn/2019/2/28/my-trieu-summit-15513252506751703394469.jpg",
       "rate": 4,
@@ -370,7 +370,7 @@
       "combo": "2N2D + Buffet + Đưa đón sân bay"
     },
     {
-      "id": 4,
+      "id": 12,
       "locationId": 2,
       "name": "Hotel Mường Thanh",
       "img": "https://cf.bstatic.com/images/hotel/max1024x768/863/86327330.jpg",
@@ -380,7 +380,7 @@
       "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage"
     },
     {
-      "id": 5,
+      "id": 13,
       "locationId": 2,
       "img": "https://cdnimg.vietnamplus.vn/uploaded/fsmsr/2015_11_26/movenpickhanoi.jpg",
       "rate": 5,
@@ -390,7 +390,7 @@
       "combo": "2N2D + Buffet + Đưa đón sân bay"
     },
     {
-      "id": 6,
+      "id": 14,
       "locationId": 2,
       "img": "https://bazantravel.com/cdn/medias/uploads/30/30991-khach-san-sheraton-hanoi.jpg",
       "rate": 5,
@@ -400,7 +400,7 @@
       "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage"
     },
     {
-      "id": 7,
+      "id": 15,
       "locationId": 2,
       "img": "https://ik.imagekit.io/tvlk/apr-asset/TzEv3ZUmG4-4Dz22hvmO9NUDzw1DGCIdWl4oPtKumOg=/hotels/1000000/530000/523600/523534/246b00cd_z.jpg?tr=q-40,c-at_max,w-740,h-500&_src=imagekit",
       "rate": 3,
@@ -410,7 +410,7 @@
       "combo": "2N2D + Buffet + Đưa đón sân bay"
     },
     {
-      "id": 8,
+      "id": 16,
       "locationId": 2,
       "img": "https://baogialai.com.vn/dataimages/202009/original/images2927238_logo_img20191128112544_1_15991305286161571887111.jpg",
       "rate": 2,
@@ -420,7 +420,7 @@
       "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage"
     },
     {
-      "id": 1,
+      "id": 17,
       "locationId": 4,
       "img": "https://cdn.huongnghiepaau.com/wp-content/uploads/2019/10/khach-san-pullman-ha-noi.jpg",
       "rate": 5,
@@ -430,7 +430,7 @@
       "combo": "2N2D + Buffet + Đưa đón sân bay"
     },
     {
-      "id": 2,
+      "id": 18,
       "locationId": 4,
       "img": "https://pix10.agoda.net/hotelImages/4885116/0/3ec7a573097742323e2f976670239467.jpg?s=1024x768",
       "rate": 4,
@@ -440,7 +440,7 @@
       "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage"
     },
     {
-      "id": 3,
+      "id": 19,
       "locationId": 4,
       "img": "https://toquoc.mediacdn.vn/2019/2/28/my-trieu-summit-15513252506751703394469.jpg",
       "rate": 4,
@@ -450,7 +450,7 @@
       "combo": "2N2D + Buffet + Đưa đón sân bay"
     },
     {
-      "id": 4,
+      "id": 20,
       "locationId": 4,
       "name": "Hotel Mường Thanh",
       "img": "https://cf.bstatic.com/images/hotel/max1024x768/863/86327330.jpg",
@@ -460,7 +460,7 @@
       "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage"
     },
     {
-      "id": 5,
+      "id": 21,
       "locationId": 4,
       "img": "https://cdnimg.vietnamplus.vn/uploaded/fsmsr/2015_11_26/movenpickhanoi.jpg",
       "rate": 5,
@@ -470,7 +470,7 @@
       "combo": "2N2D + Buffet + Đưa đón sân bay"
     },
     {
-      "id": 6,
+      "id": 22,
       "locationId": 4,
       "img": "https://bazantravel.com/cdn/medias/uploads/30/30991-khach-san-sheraton-hanoi.jpg",
       "rate": 3,
@@ -480,7 +480,7 @@
       "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage"
     },
     {
-      "id": 7,
+      "id": 23,
       "locationId": 4,
       "img": "https://ik.imagekit.io/tvlk/apr-asset/TzEv3ZUmG4-4Dz22hvmO9NUDzw1DGCIdWl4oPtKumOg=/hotels/1000000/530000/523600/523534/246b00cd_z.jpg?tr=q-40,c-at_max,w-740,h-500&_src=imagekit",
       "rate": 3,
@@ -490,14 +490,14 @@
       "combo": "2N2D + Buffet + Đưa đón sân bay"
     },
     {
-      "id": 8,
+      "id": 24,
       "locationId": 4,
-      "img": "https://baogialai.com.vn/dataimages/202009/original/images2927238_logo_img20191128112544_1_15991305286161571887111.jpg",
-      "rate": 2,
-      "name": "Hotel Lõ Hưng",
-      "Title": "Đường Phạm Hưng",
-      "Price": "5.190.000 VND",
-      "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage"
+      "img": "https://ik.imagekit.io/tvlk/apr-asset/TzEv3ZUmG4-4Dz22hvmO9NUDzw1DGCIdWl4oPtKumOg=/hotels/1000000/530000/523600/523534/246b00cd_z.jpg?tr=q-40,c-at_max,w-740,h-500&_src=imagekit",
+      "rate": 3,
+      "name": "Hotel Linh Dương",
+      "Title": "Đường Trần Phú",
+      "Price": "4.690.000 VND",
+      "combo": "2N2D + Buffet + Đưa đón sân bay"
     }
   ],
   "rooms": [

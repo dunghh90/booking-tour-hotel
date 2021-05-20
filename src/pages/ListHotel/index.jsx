@@ -1,4 +1,4 @@
-import { Button, Card, Col, Row } from 'antd';
+import { Button, Card, Col, Row, List } from 'antd';
 
 import { connect } from 'react-redux';
 import { getListHotelAction } from '../../redux/actions';
@@ -9,17 +9,14 @@ import './styles.css';
 import { ThunderboltOutlined } from '@ant-design/icons';
 import SearchTourPage from '../SearchTour';
 
-import Siderba from '../../components/Siderba';
-
-
 function ListHotelPage({
   listHotel,
   getListHotel,
   match,
 }) {
+  const [categorySelected, setCategorySelected] = useState(undefined);
   const locationId = match.params.id;
   const [roomSelected, setRoomSelected] = useState({});
- 
   
   useEffect(() => {
    
@@ -36,7 +33,16 @@ function ListHotelPage({
     }
   }, [listHotel.data])
 
-   
+
+  function handleFilterLocation(id) {
+    setCategorySelected(id);
+    getListHotel({
+      page: 1,
+      limit: 4,
+      id: locationId,
+      rate: id
+    });
+  }
 
   function loadmoreHotel(){
     getListHotel({
@@ -44,12 +50,13 @@ function ListHotelPage({
       // page: page + 1,
       page: listHotel.page + 1,
       limit: 4,
-      locationId: roomSelected,
+      id: locationId,
+      rate: categorySelected
     });
   }
 
   function renderListHotel() {
-    return listHotel.data.hotels.map((item, index) => {
+    return listHotel.data.map((item, index) => {
       return (
         <>
           <Row gutter={[12, 12]}>
@@ -81,6 +88,7 @@ function ListHotelPage({
         </>
       )
     });
+    
   }
 
   return (
@@ -88,12 +96,30 @@ function ListHotelPage({
       <SearchTourPage/>
       <Row gutter={[8, 8]} justify="center">
         <Col span={7}>
-          < Siderba />
+          <Row gutter={16} style={{ padding: '0 16px' }}>
+            <Col span={24}>
+              <List
+                size="small"
+                header={<div>Tìm kiếm </div>}
+                bordered
+                dataSource={[ 1, 2, 3, 4, 5 ]}
+                renderItem={(item) => 
+                  (
+                  <List.Item className ="list"
+                    onClick={() => handleFilterLocation(item)}
+                  >     
+                      <Rate disabled defaultValue={item} /> 
+                    
+                  </List.Item>
+                )}
+              />
+            </Col>
+          </Row>
         </Col>
         <Col span={17}>
           {renderListHotel()}
         </Col>
-        {listHotel.data.hotels.length % 4 === 0 && (
+        {listHotel.data.length % 4 === 0  && (
             <Button onClick={()=>loadmoreHotel()}>Xem thêm khách sạn</Button>
         )}
   
@@ -111,32 +137,11 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getListHotel: (params) => dispatch(getListHotelAction(params)),
+    getListHotel: (params) => dispatch(getListHotelAction(params))
   };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ListHotelPage);
-
-
-  // const productDetail = productList.find((item) => item. hotelsid.toString() ===  hotelsid);
-  // return (
-  //   <>
-  //   <Row >
-  //     <Col span ={16}>
-  //   <Card>
-
-  //     <img style={{width:200 , height:200}} src={productDetail.img} />
-  //     <div className="detail">
-  //     <h2>
-  //     {productDetail.name}
-  //     </h2>
-  //     <span>{productDetail.comment}</span>
-  //     </div>
-  //   </Card>
-  //     </Col>
-  //   </Row>
-  //   </>
-  // );
 
 
 
