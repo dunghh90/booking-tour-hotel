@@ -104,12 +104,17 @@ function HeaderPage(props) {
                                         
                                         userInfo.data.id 
                                             ? (
-                                            <Space>
+                                                <Dropdown overlay={menu} >
+                                                     <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
+                                                     {`Tên đăng nhập: ${userInfo.data.name}`}
+                                                     </a>
+                                                 </Dropdown>
+                                            // <Space>
                                                 
-                                                <Button type="primary" className="logout" onClick={() => logout()}>{`Đăng xuất(${userInfo.data.name})`}
-                                                <IconFont type="icon-tuichu" />
-                                                </Button>
-                                            </Space>
+                                            //     <Button type="primary" className="logout" onClick={() => logout()}>{`Đăng xuất(${userInfo.data.name})`}
+                                            //     <IconFont type="icon-tuichu" />
+                                            //     </Button>
+                                            // </Space>
                                             )
                                             : <Button type="primary" onClick={() => history.push('/login')}> 
                                                 Đăng nhập

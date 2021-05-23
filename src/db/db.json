@@ -835,21 +835,24 @@
       "userId": 1,
       "hotelId": 1,
       "comment": "khách sạn khá tốt",
-      "rate": 3
+      "rate": 3,
+      "creatDate": "24/05/2021"
     },
     {
       "id": 2,
       "userId": 2,
       "hotelId": 1,
       "comment": "Khách sạn hơi tệ",
-      "rate": 4
+      "rate": 4,
+      "creatDate": "24/05/2021"
     },
     {
       "id": 3,
       "userId": 2,
       "hotelId": 2,
       "comment": "Quá tuyệt vời",
-      "rate": 4
+      "rate": 4,
+      "creatDate": "24/05/2021"
     }
   ],
   "commentTours": [
@@ -858,34 +861,31 @@
       "userId": 1,
       "tourId": 1,
       "comment": "Tour vui vẻ",
-      "rate": 3
+      "rate": 3,
+      "creatDate": "24/05/2021"
     },
     {
       "id": 2,
       "userId": 2,
       "tourId": 1,
       "comment": "Nhân viên nhiệt tình",
-      "rate": 4
+      "rate": 4,
+      "creatDate": "24/05/2021"
     },
     {
       "userId": 1,
       "comment": "test",
       "rate": 2.5,
-      "id": 3
+      "id": 3,
+      "creatDate": "24/05/2021"
     },
     {
       "userId": 1,
       "tourId": "1",
       "comment": "test2",
       "rate": 4.5,
-      "id": 4
-    },
-    {
-      "userId": 1,
-      "tourId": "1",
-      "comment": "tetsese",
-      "rate": 4,
-      "id": 5
+      "id": 4,
+      "creatDate": "24/05/2021"
     }
   ]
 }

@@ -1,4 +1,4 @@
-import { Form, Input, Button, Rate,Col, Row } from 'antd';
+import { Form, Input, Button, Rate,Col, Row, Space } from 'antd';
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
 import './style.css'
@@ -49,23 +49,23 @@ function Comment(props) {
     function renderComment() {
         return commentList.data.map((item, index) => {
           return (
-            <>
+            <div style={{width: "auto"}}>
                 <div class="horizontalLine"></div>
                 <Row>
                   <Col span={6}>
                     <h4>{item.user.name}</h4>
                   </Col>
                   <Col span={16}>
-                    <p>
-                    <Rate disabled value={item.rate} />
-                    
-                    </p>
+                    <Space>
+                      <Rate disabled value={item.rate} />
+                      <span>{item.creatDate}</span>
+                    </Space>
                     <p>
                     {item.comment}
                     </p>
                   </Col>
                 </Row>
-           </>
+           </div>
           );
         })
       }
@@ -105,10 +105,10 @@ function Comment(props) {
           </Button>
                 </Form.Item>
             </Form>
-            <Col span={16}>
+            {/* <Col span={24}> */}
             <p><h3>Đánh giá gần đây</h3></p>
             {renderComment()}
-                </Col>
+            {/* </Col> */}
         </>
     )
 

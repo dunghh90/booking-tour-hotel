@@ -1,5 +1,6 @@
 import { put, takeEvery } from 'redux-saga/effects';
 import axios from 'axios';
+import moment from 'moment';
 
 function* getListCommentSaga(action) {
   try {
@@ -44,17 +45,18 @@ function* addCommentSaga(action) {
 
   try {
     const { userId, hotelId, tourId, comment, rate } = action.payload;
+    const creatDate = moment(new Date()).format('DD/MM/YYYY')
     const result = hotelId ? (
       yield axios({
         method: 'POST',
         url: 'http://localhost:3002/commentHotels',
-        data: { userId, hotelId, comment, rate }
+        data: { userId, hotelId, comment, rate, creatDate }
       })
       ) : (
       yield axios({
         method: 'POST',
         url: 'http://localhost:3002/commentTours',
-        data: { userId, tourId, comment, rate }
+        data: { userId, tourId, comment, rate, creatDate }
       })
     )
     yield put({
