@@ -97,6 +97,7 @@ function ListHotelPage({
         )
       }
       </Row>
+  
     </>
   );
 }

@@ -40,14 +40,18 @@ function* getListHotelSaga(action) {
     const { id,more,page,limit,rate } = action.payload;
     const result = yield axios({
       method: 'GET',
+
       url: 'http://localhost:3002/hotels',
       params: {
         _page: page,
         _limit: limit,
         ...id && { locationId: id },
         ...rate && { rate }
+      
       }
     });
+    console.log("🚀 ~ file: product.saga.js ~ line 59 ~ function*getListHotelSaga ~ action.payload", action.payload)
+    console.log("🚀 ~ file: product.saga.js ~ line 60 ~ function*getListHotelSaga ~ result", result)
     
     yield put({
       type: "GET_LIST_HOTEL_SUCCESS",
@@ -63,10 +67,10 @@ function* getListHotelSaga(action) {
 }
 
 function* getListRoomSaga(action) {
-
+  
   // Chỗ này e phải lấy data của hotel chứ
   // Do e đặt tên bảng lojn xộn nên gây nhầm lẫn
-
+  
   try {
     const { id } = action.payload;
     const result = yield axios({
@@ -74,7 +78,7 @@ function* getListRoomSaga(action) {
       url: `http://localhost:3002/hotels/${id}?_embed=rooms&_embed=bookingRooms&_expand=location`,
       
     });
-   
+    
     yield put({
       type: "GET_LIST_ROOM_SUCCESS",
       payload: {
@@ -114,24 +118,24 @@ function* getRateListSaga(action) {
       method: 'GET',
       url: 'http://localhost:3002/rates',
       // params: {
-      //   _embed: "hotels", 
-      // }
-    });
-    yield put({
-      type: "GET_RATE_LIST_SUCCESS",
-      payload: {
-        data: result.data,
-      },
-    });
-  } catch (e) {
-    yield put({
-      type: "GET_RATE_LIST_FAIL",
-      payload: {
-        error: e.error
-      },
-    });
+        //   _embed: "hotels", 
+        // }
+      });
+      yield put({
+        type: "GET_RATE_LIST_SUCCESS",
+        payload: {
+          data: result.data,
+        },
+      });
+    } catch (e) {
+      yield put({
+        type: "GET_RATE_LIST_FAIL",
+        payload: {
+          error: e.error
+        },
+      });
+    }
   }
-}
 
 export default function* productHotelSaga() {
   yield takeEvery('GET_LOCATION_LIST_REQUEST', getProductHotelListSaga);

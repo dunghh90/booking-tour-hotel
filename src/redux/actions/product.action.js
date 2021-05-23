@@ -30,3 +30,4 @@ export function getLocationListAction(params) {
       payload: params,
     }
   }
+  
