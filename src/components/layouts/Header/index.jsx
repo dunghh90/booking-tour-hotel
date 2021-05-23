@@ -96,11 +96,10 @@ function HeaderPage(props) {
                                           </li>
                                       </ul>
                                 </div>
-                                <Button onClick={() => history.push('/historybooking')}>lịch sử</Button>
+                                
                             </Col>
                             <Col span={5}>
                                     <div style={{color:"#1890FF"}}>
-                                        {console.log("🚀 ~ file: index.jsx ~ line 25 ~ value", userInfo.data.id)}
                                         {
                                         
                                         userInfo.data.id 

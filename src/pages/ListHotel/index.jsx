@@ -7,7 +7,7 @@ import history from '../../utils/history';
 import { Rate } from 'antd';
 import './styles.css';
 import { ThunderboltOutlined } from '@ant-design/icons';
-import SearchTourPage from '../SearchTour';
+import  Slipder from '../../components/slickHotel';
 
 import Siderba from '../../components/Siderba';
 
@@ -44,12 +44,12 @@ function ListHotelPage({
       // page: page + 1,
       page: listHotel.page + 1,
       limit: 4,
-      locationId: roomSelected,
+      id: locationId,
     });
   }
 
   function renderListHotel() {
-    return listHotel.data.hotels.map((item, index) => {
+    return listHotel.data.map((item, index) => {
       return (
         <>
           <Row gutter={[12, 12]}>
@@ -65,11 +65,8 @@ function ListHotelPage({
                   <img className="img1" src={item.img} alt="" />
                   <div className="option">
                     <h2 > {item.name} </h2>
-                    <Rate disabled defaultValue={item.rate} />
+                    <Rate disabled value={item.rate} />
                     <h5 className="adr"><ThunderboltOutlined />.{item.Title}</h5>
-
-                   
-
 
                     <span className="price">{item.Price} VND</span>
                   </div>
@@ -85,24 +82,28 @@ function ListHotelPage({
 
   return (
     <>
-      <SearchTourPage/>
+       < Slipder/>
+       <h1 className="hotel">Khách sạn</h1>
+       <span className="hotro">Cần hỗ trợ liên hệ: 0702321494</span>
       <Row gutter={[8, 8]} justify="center">
         <Col span={7}>
-          < Siderba />
+          < Siderba locationId={locationId} />
         </Col>
         <Col span={17}>
           {renderListHotel()}
         </Col>
-        {listHotel.data.hotels.length % 4 === 0 && (
+        {listHotel.data.length % 4 === 0 && (
             <Button onClick={()=>loadmoreHotel()}>Xem thêm khách sạn</Button>
-        )}
-  
+        )
+      }
       </Row>
+  
     </>
   );
 }
 
 const mapStateToProps = (state) => {
+console.log("🚀 ~ file: index.jsx ~ line 102 ~ mapStateToProps ~ state", state)
   const { listHotel } = state.productHotelReducer;
   return {
     listHotel,

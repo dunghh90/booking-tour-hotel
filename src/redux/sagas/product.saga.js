@@ -3,16 +3,14 @@ import axios from 'axios';
 
 function* getProductHotelListSaga(action) {
   try {
-    const { page, limit,rateId } = action.payload;
+    const { page, limit} = action.payload;
     const result = yield axios({
       method: 'GET',
       url: 'http://localhost:3002/locations',
       params: {
         _page: page,
         _limit: limit,
-        ...rateId && { rateId },
-        
-       
+           
         
         // ...catagoryId && { catagoryId },// categoryId: categoryId -> null, truyen Id khi ton taij'
         // ...searchkey && { q: searchkey },
@@ -21,14 +19,14 @@ function* getProductHotelListSaga(action) {
       }
     });
     yield put({
-      type: "GET_PRODUCT_HOTEL_LIST_SUCCESS",
+      type: "GET_LOCATION_LIST_SUCCESS",
       payload: {
         data: result.data
       },
     });
   } catch (e) {
     yield put({
-      type: "GET_PRODUCT_HOTEL_LIST_FAIL",
+      type: "GET_LOCATION_LIST_FAIL",
       payload: {
         error: e.error
       },
@@ -39,16 +37,21 @@ function* getProductHotelListSaga(action) {
 function* getListHotelSaga(action) {
 
   try {
-    const { id,more,page } = action.payload;
+    const { id,more,page,limit,rate } = action.payload;
     const result = yield axios({
       method: 'GET',
-      url: `http://localhost:3002/locations/${id}`,
+
+      url: 'http://localhost:3002/hotels',
       params: {
-        _embed: "hotels",
-        
-        
+        _page: page,
+        _limit: limit,
+        ...id && { locationId: id },
+        ...rate && { rate }
+      
       }
     });
+    console.log("🚀 ~ file: product.saga.js ~ line 59 ~ function*getListHotelSaga ~ action.payload", action.payload)
+    console.log("🚀 ~ file: product.saga.js ~ line 60 ~ function*getListHotelSaga ~ result", result)
     
     yield put({
       type: "GET_LIST_HOTEL_SUCCESS",
@@ -64,10 +67,10 @@ function* getListHotelSaga(action) {
 }
 
 function* getListRoomSaga(action) {
-
+  
   // Chỗ này e phải lấy data của hotel chứ
   // Do e đặt tên bảng lojn xộn nên gây nhầm lẫn
-
+  
   try {
     const { id } = action.payload;
     const result = yield axios({
@@ -75,7 +78,7 @@ function* getListRoomSaga(action) {
       url: `http://localhost:3002/hotels/${id}?_embed=rooms&_embed=bookingRooms&_expand=location`,
       
     });
-   
+    
     yield put({
       type: "GET_LIST_ROOM_SUCCESS",
       payload: {
@@ -109,34 +112,33 @@ function* getCategoryListSaga(action) {
   }
 }
 function* getRateListSaga(action) {
-  const { rateId } = action.payload;
+  
   try {
     const result = yield axios({
       method: 'GET',
       url: 'http://localhost:3002/rates',
-      params: {
-        _embed: "hotels",
-      
-      }
-    });
-    yield put({
-      type: "GET_RATE_LIST_SUCCESS",
-      payload: {
-        data: result.data,
-      },
-    });
-  } catch (e) {
-    yield put({
-      type: "GET_RATE_LIST_FAIL",
-      payload: {
-        error: e.error
-      },
-    });
+      // params: {
+        //   _embed: "hotels", 
+        // }
+      });
+      yield put({
+        type: "GET_RATE_LIST_SUCCESS",
+        payload: {
+          data: result.data,
+        },
+      });
+    } catch (e) {
+      yield put({
+        type: "GET_RATE_LIST_FAIL",
+        payload: {
+          error: e.error
+        },
+      });
+    }
   }
-}
 
 export default function* productHotelSaga() {
-  yield takeEvery('GET_PRODUCT_HOTEL_LIST_REQUEST', getProductHotelListSaga);
+  yield takeEvery('GET_LOCATION_LIST_REQUEST', getProductHotelListSaga);
   yield takeEvery('GET_LIST_HOTEL_REQUEST', getListHotelSaga);
   yield takeEvery('GET_CATEGORY_LIST_REQUEST', getCategoryListSaga);
   yield takeEvery('GET_RATE_LIST_REQUEST', getRateListSaga);

@@ -42,3 +42,13 @@
 .form_area{
     padding-left: 221px;
 }
+.hotel{
+    border: none;
+    margin-top: 27px;
+    margin-left: 19px;
+    font-weight: 700;
+}
+.hotro{
+    margin-left: 19px;
+    color: red;
+}

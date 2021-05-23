@@ -1,7 +1,7 @@
 #components-layout-demo-responsive .logo {
     height: 32px;
     margin: 16px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(63, 124, 139, 0.2);
   }
   
   .site-layout-sub-header-background {
@@ -10,4 +10,10 @@
   
   .site-layout-background {
     background: #fff;
+  }
+  .list{
+    cursor: pointer;
+  }
+  .list:hover{
+    background-color: rgba(37, 176, 211, 0.65);
   }

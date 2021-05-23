@@ -6,7 +6,6 @@ import { Row, Col, Card, Image, Space } from 'antd';
 
 function ItemRoom(props) {
   const {  description } = props;
-  console.log("🚀 ~ file: item.jsx ~ line 10 ~ ItemRoom ~ description", description)
 
   // const [isEdit, setIsEdit] = useState(false);
   // const [isShowDescription, setIsShowDescription] = useState(false);
