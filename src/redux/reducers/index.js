@@ -5,6 +5,7 @@ import productHotelReducer from'./product.reducer'
 import userReducer from './user.reducer';
 import bookingTourReducer from './booking.reducer';
 import bookingReducer from './bookingRoom.reducer';
+import commentReducer from './comment.reducer';
 
 
 export default combineReducers({
@@ -13,5 +14,6 @@ export default combineReducers({
   userReducer,
   productHotelReducer,
   bookingReducer,
-  bookingTourReducer
+  bookingTourReducer,
+  commentReducer
 })

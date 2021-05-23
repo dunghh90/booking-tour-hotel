@@ -1,4 +1,4 @@
-import { Button, Card, Col, Row, List } from 'antd';
+import { Button, Card, Col, Row } from 'antd';
 
 import { connect } from 'react-redux';
 import { getListHotelAction } from '../../redux/actions';
@@ -7,16 +7,19 @@ import history from '../../utils/history';
 import { Rate } from 'antd';
 import './styles.css';
 import { ThunderboltOutlined } from '@ant-design/icons';
-import SearchTourPage from '../SearchTour';
+import  Slipder from '../../components/slickHotel';
+
+import Siderba from '../../components/Siderba';
+
 
 function ListHotelPage({
   listHotel,
   getListHotel,
   match,
 }) {
-  const [categorySelected, setCategorySelected] = useState(undefined);
   const locationId = match.params.id;
   const [roomSelected, setRoomSelected] = useState({});
+ 
   
   useEffect(() => {
    
@@ -33,16 +36,7 @@ function ListHotelPage({
     }
   }, [listHotel.data])
 
-
-  function handleFilterLocation(id) {
-    setCategorySelected(id);
-    getListHotel({
-      page: 1,
-      limit: 4,
-      id: locationId,
-      rate: id
-    });
-  }
+   
 
   function loadmoreHotel(){
     getListHotel({
@@ -51,7 +45,6 @@ function ListHotelPage({
       page: listHotel.page + 1,
       limit: 4,
       id: locationId,
-      rate: categorySelected
     });
   }
 
@@ -72,11 +65,8 @@ function ListHotelPage({
                   <img className="img1" src={item.img} alt="" />
                   <div className="option">
                     <h2 > {item.name} </h2>
-                    <Rate disabled defaultValue={item.rate} />
+                    <Rate disabled value={item.rate} />
                     <h5 className="adr"><ThunderboltOutlined />.{item.Title}</h5>
-
-                   
-
 
                     <span className="price">{item.Price} VND</span>
                   </div>
@@ -88,47 +78,32 @@ function ListHotelPage({
         </>
       )
     });
-    
   }
 
   return (
     <>
-      <SearchTourPage/>
+       < Slipder/>
+       <h1 className="hotel">Khách sạn</h1>
+       <span className="hotro">Cần hỗ trợ liên hệ: 0702321494</span>
       <Row gutter={[8, 8]} justify="center">
         <Col span={7}>
-          <Row gutter={16} style={{ padding: '0 16px' }}>
-            <Col span={24}>
-              <List
-                size="small"
-                header={<div>Tìm kiếm </div>}
-                bordered
-                dataSource={[ 1, 2, 3, 4, 5 ]}
-                renderItem={(item) => 
-                  (
-                  <List.Item className ="list"
-                    onClick={() => handleFilterLocation(item)}
-                  >     
-                      <Rate disabled defaultValue={item} /> 
-                    
-                  </List.Item>
-                )}
-              />
-            </Col>
-          </Row>
+          < Siderba locationId={locationId} />
         </Col>
         <Col span={17}>
           {renderListHotel()}
         </Col>
-        {listHotel.data.length % 4 === 0  && (
+        {listHotel.data.length % 4 === 0 && (
             <Button onClick={()=>loadmoreHotel()}>Xem thêm khách sạn</Button>
-        )}
-  
+        )
+      }
       </Row>
+  
     </>
   );
 }
 
 const mapStateToProps = (state) => {
+console.log("🚀 ~ file: index.jsx ~ line 102 ~ mapStateToProps ~ state", state)
   const { listHotel } = state.productHotelReducer;
   return {
     listHotel,
@@ -137,11 +112,32 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getListHotel: (params) => dispatch(getListHotelAction(params))
+    getListHotel: (params) => dispatch(getListHotelAction(params)),
   };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ListHotelPage);
+
+
+  // const productDetail = productList.find((item) => item. hotelsid.toString() ===  hotelsid);
+  // return (
+  //   <>
+  //   <Row >
+  //     <Col span ={16}>
+  //   <Card>
+
+  //     <img style={{width:200 , height:200}} src={productDetail.img} />
+  //     <div className="detail">
+  //     <h2>
+  //     {productDetail.name}
+  //     </h2>
+  //     <span>{productDetail.comment}</span>
+  //     </div>
+  //   </Card>
+  //     </Col>
+  //   </Row>
+  //   </>
+  // );
 
 
 

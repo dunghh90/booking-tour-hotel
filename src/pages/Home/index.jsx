@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import SimpleSlider from '../../components/slick';
 import ToDoListPage from '../ToDoListTemp';
 
-import { getProductLocationListAction } from '../../redux/actions';
+import { getLocationListAction } from '../../redux/actions';
 import { useEffect } from 'react';
 
 
@@ -72,7 +72,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getProductLocationList: (params) => dispatch(getProductLocationListAction(params)),
+    getProductLocationList: (params) => dispatch(getLocationListAction(params)),
   };
 }
 

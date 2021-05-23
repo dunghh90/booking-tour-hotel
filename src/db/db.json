@@ -828,5 +828,46 @@
       "id": 5,
       "rate": 5
     }
+  ],
+
+  "commentHotels": [
+    {
+      "id": 1,
+      "userId": 1,
+      "hotelId": 1,
+      "comment": "khách sạn khá tốt",
+      "rate": 3
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "hotelId": 1,
+      "comment": "Khách sạn hơi tệ",
+      "rate": 4
+    },
+    {
+      "id": 3,
+      "userId": 2,
+      "hotelId": 2,
+      "comment": "Quá tuyệt vời",
+      "rate": 4
+    }
+  ],
+
+  "commentTours": [
+    {
+      "id": 1,
+      "userId": 1,
+      "tourId": 1,
+      "comment": "Tour vui vẻ",
+      "rate": 3
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "tourId": 1,
+      "comment": "Nhân viên nhiệt tình",
+      "rate": 4
+    }
   ]
 }

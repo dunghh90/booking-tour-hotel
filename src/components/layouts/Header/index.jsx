@@ -100,7 +100,6 @@ function HeaderPage(props) {
                             </Col>
                             <Col span={5}>
                                     <div style={{color:"#1890FF"}}>
-                                        {console.log("🚀 ~ file: index.jsx ~ line 25 ~ value", userInfo.data.id)}
                                         {
                                         
                                         userInfo.data.id 
