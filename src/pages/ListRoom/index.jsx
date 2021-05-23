@@ -10,6 +10,7 @@ import './styles.css';
 import { ThunderboltOutlined } from '@ant-design/icons';
 import moment from 'moment';
 import ItemRoom from '../ListRoom/item';
+import Comment from '../Comment/index'
 
 
 import {
@@ -151,6 +152,8 @@ function ListRoomPage({
       <Row gutter={[8, 8]} justify="center">
         {renderListRoom()}
       </Row>
+      <h1 className ="comment">Đánh giá khách hàng </h1>
+      <Comment/>
     </>
   );
 }

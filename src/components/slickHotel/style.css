@@ -1,0 +1,22 @@
+.slid{
+    height: 300px;
+    width: 250px;
+    cursor: pointer;
+}
+.tong{
+    margin: 30px auto 50px;
+}
+.slick-list{
+    width: 1131px;
+   
+    margin-left: 219px;
+}
+.title{
+    border: none;
+    margin-top: 27px;
+    margin-left: 19px;
+    font-weight: 700;
+}
+.des{
+    margin-left: 19px;
+}

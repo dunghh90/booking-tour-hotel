@@ -9,13 +9,16 @@ import { Rate } from 'antd';
 
 const { Meta } = Card;
 
+const RATING_LIST = [1, 2, 3, 4, 5];
+
 function Siderba({
-  // getHotelList,
+  getHotelList,
   getRateList,
-  rateList,
-  // listHotel
+  locationId,
+  listHotel
   
 }) {
+  console.log("🚀 ~ file: index.jsx ~ line 21 ~ locationId", locationId)
 
   const [locationSelected, setLocationSelected] = useState(0);
   useEffect(() => {
@@ -25,82 +28,64 @@ function Siderba({
       limit: 4,
       
     });
+    getHotelList({
+      page: 1,
+      limit: 4,
+    })
   }, []);
 
 
-  function handleFilterLocation(id) {
-    console.log("🚀 ~ file: index.jsx ~ line 20 ~ handleFilterLocation ~ id", id)
-    setLocationSelected(id);
-    getRateList({
+  function handleFilterLocation(rate) {
+    setLocationSelected(rate);
+    getHotelList({
       page: 1,
       limit: 4,
-      rateId: id,
-
+      id: locationId,
+      rate: rate,
     });
   }
 
   return (
     <>
       <Row gutter={16} style={{ padding: '0 16px' }}>
-        {/* <Col span={24} >
-          <Card
-            hoverable
-            style={{ width: 240 }}
-            cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
-          >
-            <Meta title="Europe Street beat" description="www.instagram.com" />
-          </Card>,
-       </Col> */}
         <Col span={24}>
           <List
             size="small"
             header={<div>Tìm kiếm </div>}
             bordered
-            dataSource={[
-              ...rateList.data,
-            ]}
+            dataSource={RATING_LIST}
             renderItem={(item) => (
               <List.Item className ="list"
-                onClick={() => handleFilterLocation(item.id)}
-                style={{ color: locationSelected === item.id ? 'red' : 'black' }}
+                onClick={() => handleFilterLocation(item)}
+                style={{ color: locationSelected === item ? 'red' : 'black' }}
               >     
-                  <Rate disabled defaultValue={item.rate} /> 
-                 
+                  <Rate disabled defaultValue={item} /> 
               </List.Item>
             )}
           />
         </Col>
       </Row>
-      {/* <Row gutter={16} style={{ padding: '0 16px' }}>
-        {/* <Col span={24} >
-          <Card
-            hoverable
-            style={{ width: 240 }}
-            cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
-          >
-            <Meta title="Europe Street beat" description="www.instagram.com" />
-          </Card>,
-       </Col> */}
-        {/* <Col span={24}>
+       <Row gutter={16} style={{ padding: '0 16px' }}>
+   
+         <Col span={24}>
           <List
             size="small"
             header={<div>Tìm kiếm </div>}
             bordered
             dataSource={[
-              ...listHotel.data.rooms,
+              ...listHotel.data,
             ]}
             renderItem={(item) => (
-              <List.Item
-                onClick={() => handleFilterLocation(item.id)}
-                style={{ color: locationSelected === item.id ? 'red' : 'black' }}
+              <List.Item className ="list"
+                onClick={() => handleFilterLocation(item.Title)}
+                style={{ color: locationSelected === item.Title ? 'red' : 'black' }}
               >     
-                  {item.name} 
-                 
+                  {item.Title}  
               </List.Item>
             )}
           />
         </Col>
-      </Row> */} 
+      </Row> 
 
     </>
 
@@ -108,19 +93,19 @@ function Siderba({
 }
 const mapStateToProps = (state) => {
   const { rateList } = state.productHotelReducer;
-  // const { listHotel } = state.productHotelReducer;
+  const { listHotel } = state.productHotelReducer;
   console.log("🚀 ~ file: index.jsx ~ line 69 ~ mapStateToProps ~ rateList", rateList)
   
   return {
     rateList: rateList,
-    // listHotel: listHotel,
+    listHotel: listHotel,
   }
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     getRateList: (params) => dispatch(getRateListAction(params)),
-    // getHotelList: (params) => dispatch(getListHotelAction(params)),
+    getHotelList: (params) => dispatch(getListHotelAction(params)),
   };
 }
 
