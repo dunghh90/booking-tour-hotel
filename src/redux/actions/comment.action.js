@@ -1,12 +1,12 @@
-export function getCommentHotelAction(params) {
+export function getCommentAction(params) {
   return {
-    type: 'GET_LIST_COMMENT_HOTEL_REQUEST',
+    type: 'GET_LIST_COMMENT_REQUEST',
     payload: params,
   }
 }
-export function getCommentTourAction(params) {
+export function addCommentAction(params) {
   return {
-    type: 'GET_LIST_COMMENT_TOUR_REQUEST',
+    type: 'ADD_COMMENT_REQUEST',
     payload: params,
   }
 }

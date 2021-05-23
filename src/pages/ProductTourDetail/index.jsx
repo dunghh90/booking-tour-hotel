@@ -5,17 +5,10 @@ import history from '../../utils/history';
 
 import { getProductTourDetailAction, getProductTourListAction, bookingTourAction } from "../../redux/actions";
 import { HomeOutlined } from '@ant-design/icons';
+import Comment from '../../pages/Comment'
 import moment from 'moment';
 
 import './style.css'
-import './css/animate.min.css'
-import './css/custom-home.css'
-import './css/daterangepicker.css'
-import './css/font-awesome.min.css'
-import './css/ivivu_icons.min.css'
-import './css/owl.carousel.min.css'
-import './css/owl.theme.default.min.css'
-import './css/sweetalert.css'
 
 import { Content } from "antd/lib/layout/layout";
 
@@ -118,7 +111,8 @@ function TourDetailPage({
                 <div dangerouslySetInnerHTML={{ __html: productTourDetail.data.information }}></div>
               </div>
               <div style={{backgroundColor:"white", padding:16, marginTop:16}}>
-                <Form
+                <Comment tourId={tourId} />
+                {/* <Form
                   form={rateTourForm}
                   
                   name="rateTourForm"
@@ -144,10 +138,8 @@ function TourDetailPage({
                   </Row>
                 </Form>
 
-                {/* <Row> */}
                 <p><h3>Đánh giá gần đây</h3></p>
                 <div class="horizontalLine"></div>
-                {/* </Row> */}
                 <Row>
                   <Col span={6}>
                     <h4>Hoang Huu dung</h4>
@@ -160,7 +152,7 @@ function TourDetailPage({
                       Mình hài long về tour
                     </p>
                   </Col>
-                </Row>
+                </Row> */}
               </div>
 
               <Card title="Tours du lịch Phú Quốc liên quan" style={{width: "100%", marginTop:16}}>

@@ -1,58 +1,80 @@
 import { put, takeEvery } from 'redux-saga/effects';
 import axios from 'axios';
 
-function* getListCommentHotelSaga(action) {
+function* getListCommentSaga(action) {
   try {
-    const { hotelId, page, limit } = action.payload;
+    const { hotelId, tourId, page, limit } = action.payload;
 
-    const result = yield axios({
-      method: 'GET',
-      url: 'http://localhost:3002/commentHotels',
-      params: {
-        _expand:"user",
-        _page: page,
-        _limit: limit,
-        ...hotelId && { hotelId: hotelId }
-      }
-    });
+      const result = hotelId ? 
+      (
+        yield axios({
+        method: 'GET',
+        url: 'http://localhost:3002/commentHotels',
+        params: {
+          _expand:"user",
+          _page: page,
+          _limit: limit,
+          ...hotelId && { hotelId: hotelId }
+        }
+      })
+      ) : (
+      yield axios({
+        method: 'GET',
+        url: 'http://localhost:3002/commentTours',
+        params: {
+          _expand:"user",
+          _page: page,
+          _limit: limit,
+          ...tourId && { tourId: tourId },
+        }
+      })
+      )
     
     yield put({
-      type: "GET_LIST_COMMENT_HOTEL_SUCCESS",
+      type: "GET_LIST_COMMENT_SUCCESS",
       payload: {
         data: result.data,
       },
     });
   } catch (e) {
-    yield put({type: "GET_LIST_COMMENT_HOTEL_FAIL", message: e.message});
+    yield put({type: "GET_LIST_COMMENT_FAIL", message: e.message});
   }
 }
-function* getListCommentTourSaga(action) {
+function* addCommentSaga(action) {
+
   try {
-    const { tourId, page, limit } = action.payload;
-    const result = yield axios({
-      method: 'GET',
-      url: 'http://localhost:3002/commentTours',
-      params: {
-        _expand: "user",
-        _page: page,
-        _limit: limit,
-        ...tourId && { tourId: tourId },
-      }
-    });
-    
+    const { userId, hotelId, tourId, comment, rate } = action.payload;
+    const result = hotelId ? (
+      yield axios({
+        method: 'POST',
+        url: 'http://localhost:3002/commentHotels',
+        data: { userId, hotelId, comment, rate }
+      })
+      ) : (
+      yield axios({
+        method: 'POST',
+        url: 'http://localhost:3002/commentTours',
+        data: { userId, tourId, comment, rate }
+      })
+    )
     yield put({
-      type: "GET_LIST_COMMENT_TOUR_SUCCESS",
+      type: "ADD_COMMENT_SUCCESS",
       payload: {
-        data: result.data,
+        data: result.data[0],
       },
     });
-  } catch (e) {
-    yield put({type: "GET_LIST_COMMENT_TOUR_FAIL", message: e.message});
+    window.location.reload();
+  } catch(e) {
+    yield put({
+      type: "ADD_COMMENT_FAIL",
+      payload: {
+        error: e.error
+      },
+    });
   }
 }
-
 
 export default function* commentSaga() {
-  yield takeEvery('GET_LIST_COMMENT_HOTEL_REQUEST', getListCommentHotelSaga);
-  yield takeEvery('GET_LIST_COMMENT_TOUR_REQUEST', getListCommentTourSaga);
+  yield takeEvery('GET_LIST_COMMENT_REQUEST', getListCommentSaga);
+  yield takeEvery('ADD_COMMENT_REQUEST', addCommentSaga);
 }
