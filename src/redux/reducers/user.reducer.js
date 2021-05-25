@@ -9,13 +9,6 @@ const initialState = {
 export default function userReducer(state = initialState, action) {
   switch (action.type) {
     case 'LOGIN_REQUEST': {
-      console.log("🚀 ~ file: user.reducer.js ~ line 88 ~ userReducer ~ LOGIN_REQUEST",{
-        ...state,
-        userInfo: {
-          ...state.userInfo,
-          load: true,
-        },
-      })
       return {
         ...state,
         userInfo: {

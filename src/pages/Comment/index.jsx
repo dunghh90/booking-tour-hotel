@@ -12,37 +12,33 @@ function Comment(props) {
     const [form] =Form.useForm();
 
     useEffect(() => {
-      hotelId ? 
+      // hotelId ? 
       getCommentList({
         page: 1,
         limit: 4,
-        hotelId: parseInt(hotelId) 
-      }) :
-      getCommentList({
-        page: 1,
-        limit: 4,
-        tourId: parseInt(tourId) 
+        hotelId: parseInt(hotelId),
+        tourId: parseInt(tourId)
       })
+      // }) :
+      // getCommentList({
+      //   page: 1,
+      //   limit: 4,
+      //   tourId: parseInt(tourId) 
+      // })
     },[])
 
     const userInfo = JSON.parse(localStorage.getItem('userInfo'));
-
-    // const layout = {
-    //     labelCol: { span: 8 },
-    //     wrapperCol: { span: 16 },
-    // };
-    // const tailLayout = {
-    //     wrapperCol: { offset: 8, span: 16 },
-    // };
 
     function handleAddComment(values){
       if (!userInfo) {
         alert('Bạn cần đăng nhập!');
       } else {
-        hotelId ? 
-        addComment({...values, hotelId: hotelId, userId: userInfo.id }) 
-        :
-        addComment({...values, tourId: tourId, userId: userInfo.id });
+        // hotelId ? 
+        debugger
+        addComment({...values, userName: userInfo.name, hotelId: parseInt(hotelId), tourId: parseInt(tourId), userId: userInfo.id}) 
+        // :
+        // addComment({...values, tourId: parseInt(tourId), userId: userInfo.id, useName: userInfo.name });
+        console.log("hjghjgjhgjggg")
         form.resetFields();
       }
     }
@@ -53,7 +49,7 @@ function Comment(props) {
                 <div class="horizontalLine"></div>
                 <Row>
                   <Col span={6}>
-                    <h4>{item.user.name}</h4>
+                    <h4>{item.userName}</h4>
                   </Col>
                   <Col span={16}>
                     <Space>
@@ -76,6 +72,7 @@ function Comment(props) {
             <Form
                 // {...layout}
                 name="basic"
+                useForm="form"
                 initialValues={{ remember: true }}
                 onFinish={(values) => handleAddComment(values)}
             >
@@ -86,7 +83,7 @@ function Comment(props) {
                 >
 
                 {/* <Rate className ="rate" allowHalf defaultValue={5} /> */}
-                <Rate allowHalf defaultValue={5} />
+                <Rate allowHalf />
                 </Form.Item>
                 <Form.Item
                     label="Đánh giá"

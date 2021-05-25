@@ -763,6 +763,14 @@
       "numberAdults": 14,
       "numberChild": 1223131231,
       "id": 15
+    },
+    {
+      "userId": 1,
+      "tourId": 1,
+      "startDate": "2021/05/24",
+      "numberAdults": 1,
+      "numberChild": 0,
+      "id": 16
     }
   ],
   "bookingRooms": [
@@ -829,63 +837,106 @@
       "rate": 5
     }
   ],
-  "commentHotels": [
-    {
-      "id": 1,
-      "userId": 1,
-      "hotelId": 1,
-      "comment": "khách sạn khá tốt",
-      "rate": 3,
-      "creatDate": "24/05/2021"
-    },
-    {
-      "id": 2,
-      "userId": 2,
-      "hotelId": 1,
-      "comment": "Khách sạn hơi tệ",
-      "rate": 4,
-      "creatDate": "24/05/2021"
-    },
-    {
-      "id": 3,
-      "userId": 2,
-      "hotelId": 2,
-      "comment": "Quá tuyệt vời",
-      "rate": 4,
-      "creatDate": "24/05/2021"
-    }
-  ],
+  "commentHotels": [],
   "commentTours": [
     {
-      "id": 1,
+      "userName": "Huu Dung",
       "userId": 1,
       "tourId": 1,
-      "comment": "Tour vui vẻ",
-      "rate": 3,
-      "creatDate": "24/05/2021"
+      "comment": "sdsdfsfrew",
+      "rate": 5,
+      "creatDate": "24/05/2021",
+      "id": 1
     },
     {
-      "id": 2,
-      "userId": 2,
+      "userName": "Huu Dung",
+      "userId": 1,
       "tourId": 1,
-      "comment": "Nhân viên nhiệt tình",
+      "comment": "sdsdfsfrewdfdfgdfg",
+      "rate": 5,
+      "creatDate": "24/05/2021",
+      "id": 2
+    },
+    {
+      "userName": "Huu Dung",
+      "userId": 1,
+      "tourId": 1,
+      "comment": "sdfsdf",
+      "rate": 5,
+      "creatDate": "24/05/2021",
+      "id": 3
+    },
+    {
+      "userName": "Huu Dung",
+      "userId": 1,
+      "tourId": 1,
+      "comment": "jk;jl;jjk;;",
+      "rate": 3.5,
+      "creatDate": "24/05/2021",
+      "id": 4
+    },
+    {
+      "userName": "Huu Dung",
+      "userId": 1,
+      "tourId": 1,
+      "comment": "dfddddddd",
+      "rate": 5,
+      "creatDate": "24/05/2021",
+      "id": 5
+    },
+    {
+      "userName": "Huu Dung",
+      "userId": 1,
+      "tourId": 1,
+      "comment": "sdfsfsfsdf",
       "rate": 4,
-      "creatDate": "24/05/2021"
+      "creatDate": "24/05/2021",
+      "id": 6
     },
     {
+      "userName": "Huu Dung",
       "userId": 1,
-      "comment": "test",
+      "tourId": 1,
+      "comment": "jlkjlkjl",
+      "rate": 4,
+      "creatDate": "24/05/2021",
+      "id": 7
+    },
+    {
+      "userName": "Huu Dung",
+      "userId": 1,
+      "tourId": 1,
+      "comment": "sdfsdf",
       "rate": 2.5,
-      "id": 3,
-      "creatDate": "24/05/2021"
+      "creatDate": "24/05/2021",
+      "id": 8
     },
     {
+      "userName": "Huu Dung",
       "userId": 1,
-      "tourId": "1",
-      "comment": "test2",
+      "tourId": 1,
+      "comment": "sdfsdf",
+      "rate": 2.5,
+      "creatDate": "24/05/2021",
+      "id": 9
+    },
+    {
+      "userName": "Huu Dung",
+      "userId": 1,
+      "tourId": 1,
+      "comment": "aaaaaa",
+      "rate": 2.5,
+      "creatDate": "24/05/2021",
+      "id": 10
+    },
+    {
+      "userName": "Huu Dung",
+      "userId": 1,
+      "tourId": 1,
+      "comment": "11111111",
       "rate": 4.5,
-      "id": 4,
-      "creatDate": "24/05/2021"
+      "creatDate": "24/05/2021",
+      "id": 11
     }
   ]
 }

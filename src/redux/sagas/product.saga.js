@@ -143,4 +143,5 @@ export default function* productHotelSaga() {
   yield takeEvery('GET_CATEGORY_LIST_REQUEST', getCategoryListSaga);
   yield takeEvery('GET_RATE_LIST_REQUEST', getRateListSaga);
   yield takeEvery('GET_LIST_ROOM_REQUEST', getListRoomSaga);
+  yield takeEvery('GET_LIST_ROOM_REQUEST', getListRoomSaga);
 }

@@ -6,4 +6,5 @@ export const ROUTERS = {
   TOUR: '/listTour',
   LIST_ROOM:'/hotels/:id',
   HISTORYBOOKING: '/booking',
+  PROFILE: 'profile/:id'
 }

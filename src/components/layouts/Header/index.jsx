@@ -141,7 +141,6 @@ const mapDispatchToProps = (dispatch) => {
   
   const mapStateToProps = (state) => {
     const { userInfo } = state.userReducer;
-    // console.log('🚀 ~ file: index.jsx ~ line 13 ~ mapStateToProps ~ userInfo', userInfo);
     return {
       userInfo,
     }

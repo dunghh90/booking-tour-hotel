@@ -15,6 +15,8 @@ function* getListCommentSaga(action) {
           _expand:"user",
           _page: page,
           _limit: limit,
+          _sort: "id",
+          _order: "desc",
           ...hotelId && { hotelId: hotelId }
         }
       })
@@ -26,6 +28,8 @@ function* getListCommentSaga(action) {
           _expand:"user",
           _page: page,
           _limit: limit,
+          _sort: "id",
+          _order: "desc",
           ...tourId && { tourId: tourId },
         }
       })
@@ -42,30 +46,30 @@ function* getListCommentSaga(action) {
   }
 }
 function* addCommentSaga(action) {
-
+  
   try {
-    const { userId, hotelId, tourId, comment, rate } = action.payload;
-    const creatDate = moment(new Date()).format('DD/MM/YYYY')
+    const { userId, userName,tourId, hotelId, comment, rate } = action.payload;
+    const creatDate = moment(new Date()).format('DD/MM/YYYY');
     const result = hotelId ? (
       yield axios({
         method: 'POST',
         url: 'http://localhost:3002/commentHotels',
-        data: { userId, hotelId, comment, rate, creatDate }
+        data: { userId, userName, hotelId, comment, rate, creatDate },
       })
       ) : (
       yield axios({
         method: 'POST',
         url: 'http://localhost:3002/commentTours',
-        data: { userId, tourId, comment, rate, creatDate }
+        data: { userName, userId, tourId, comment, rate, creatDate }
       })
     )
     yield put({
       type: "ADD_COMMENT_SUCCESS",
       payload: {
-        data: result.data[0],
+        data: result.data,
       },
     });
-    window.location.reload();
+    // window.location.reload();
   } catch(e) {
     yield put({
       type: "ADD_COMMENT_FAIL",

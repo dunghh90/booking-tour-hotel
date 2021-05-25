@@ -55,7 +55,10 @@ export default function commentReducer(state = initialState, action) {
         ...state,
         commentList: {
           ...state.commentList,
-          data: data,
+          data: [
+            data,
+            ...state.commentList.data
+          ],
           load: false,
         },
       }

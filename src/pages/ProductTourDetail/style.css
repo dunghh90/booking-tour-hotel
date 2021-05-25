@@ -56,9 +56,18 @@ p {
   
 }
 
+.ant-col {
+  padding: 0;
+}
+
 .horizontalLine {
   border-bottom: 1px solid #ddd;
   margin: 8px 0;
+}
+
+.loadMore {
+  text-decoration: none;
+  color: #00474f;
 }
 
 .ant-form {
