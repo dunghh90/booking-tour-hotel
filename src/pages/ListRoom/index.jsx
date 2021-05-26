@@ -15,7 +15,7 @@ import Comment from '../Comment/index'
 
 import {
 
-  bookingHotelRoomAction,
+  bookingHotelAction,
 } from '../../redux/actions';
 
 
@@ -168,7 +168,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     getListRoom: (params) => dispatch(getListRoomAction(params)),
-    bookingHotelRoom: (params) => dispatch(bookingHotelRoomAction(params)),
+    bookingHotelRoom: (params) => dispatch(bookingHotelAction(params)),
   };
 }
 

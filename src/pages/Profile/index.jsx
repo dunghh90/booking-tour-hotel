@@ -4,7 +4,8 @@ import { Space, Card, InputNumber, Button, Row, Col, Radio, Menu, Form, Input, D
 import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons';
 import moment from 'moment';
 import {
-  bookingHotelRoomAction,
+  getBookingHotelsAction,
+  getBookingTourAction,
   updateProfileAction,
 } from '../../redux/actions';
 import {
@@ -14,8 +15,8 @@ import {
 
 function ProfilePage({
   bookingTours,
-  getBookingRooms,
- 
+  getBookingHotels,
+  getBookingTours,
   addProfile,
   bookingRooms,
   match
@@ -24,30 +25,25 @@ function ProfilePage({
   const userId = match.params.id;
   const [selectObject, setSelectObject] = useState(1);
   const userInfo = JSON.parse(localStorage.getItem('userInfo'));
-  console.log("🚀 ~ file: index.jsx ~ line 25 ~ userInfo", userInfo)
-
+  
   const layout = {
     labelCol: { span: 12 },
     wrapperCol: { span: 12 },
   };
-  // useEffect(() => {
-  //   getBookingRooms({
-  //     page: 1,
-  //     limit: 10
-  //   }
-  //   )
-  // })
-  // useEffect(() => {
-  //   getProfileList(
-  //     {
-  //       page: 1,
-  //       limit: 10
-  //     }
-  //   );
-  // }, [])
+  useEffect(() => {
+    getBookingHotels({
+      page: 1,
+      limit: 10,
+      userId: userId
+    });
+    getBookingTours({
+      page: 1,
+      limit: 10,
+      userId: userId
+    });
+  },[])
 
   function addProfileUser(values) {
-    console.log("🚀 ~ file: index.jsx ~ line 38 ~ addProfileUser ~ values", values)
     const newValues = {
       ...values,
       id: userInfo.id,
@@ -55,12 +51,6 @@ function ProfilePage({
     }
     addProfile(newValues)
   }
-  // function renderUserInfo() {
-  //   return  userInfo.data.map((item) => {
-  //     <p>{item.email}</p>
-
-  //   });
-  // }
   function renderUserInfo(){
       return (
         <>
@@ -218,14 +208,34 @@ function ProfilePage({
       </Form>
     );
   }
-  function renderHistory() {
-    return bookingRooms.data.map((item) => {
-      <>
-        <div>Lịch sử giao dịch</div>
-        <div>{item.startDate}</div>
-      </>
 
+  function renderHistoryBookingHotel() {
+    return bookingRooms.data.map((item) => {
+      return (
+        <>
+          <p>{item.startDate}</p>
+        </>
+      )
     })
+  }
+  function renderHistoryBookingTour() {
+    return bookingTours.data.map((item) => {
+      return (
+        <>
+          <p>{item.startDate}</p>
+        </>
+      )
+    })
+  }
+
+  function renderHistory() {
+    return (
+      <div>
+      <p>Lịch sử giao dịch</p>
+        {renderHistoryBookingHotel()}
+        {renderHistoryBookingTour()}
+      </div>
+    )
 
 
   }
@@ -243,21 +253,6 @@ function ProfilePage({
 
     <Row gutter={16} style={{ padding: '16px 16px 0' }}>
       <Col span={4}>
-
-        {/* <List
-          size="small"
-          bordered
-          dataSource={['Thông tin của tôi', 'Lịch sử']}
-          renderItem={(item, index) => (
-          <List.Item
-              onClick={() => handlePage(index)}
-            >
-              {item}
-            </List.Item>
-          )}
-        /> */}
-
-
         <Menu
           mode="inline"
           defaultSelectedKeys={['1']}
@@ -273,7 +268,6 @@ function ProfilePage({
               onClick={() => setSelectObject(2)}
             >Đổi mật khẩu</Menu.Item>
           </Menu.SubMenu>
-          {/* </Menu.ItemGroup> */}
           <Menu.Item key="userHistory" icon={<LaptopOutlined />}
             onClick={() => setSelectObject(3)}
           >
@@ -292,12 +286,12 @@ function ProfilePage({
 }
 
 const mapStateToProps = (state) => {
-  const { bookingRooms } = state.bookingReducer;
-  console.log("🚀 ~ file: index.jsx ~ line 287 ~ mapStateToProps ~ bookingRooms", bookingRooms)
+  const { bookingRooms } = state.bookingHotelReducer;
+  const { bookingTours } = state.bookingTourReducer;
   const { userInfo } = state.userReducer;
-  console.log("🚀 ~ file: index.jsx ~ line 289 ~ mapStateToProps ~ userInfo", userInfo)
   
   return {
+    bookingTours,
     bookingRooms,
     userInfo,
   }
@@ -305,7 +299,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getBookingRooms: (params) => dispatch(bookingHotelRoomAction(params)),
+    getBookingHotels: (params) => dispatch(getBookingHotelsAction(params)),
+    getBookingTours: (params) => dispatch(getBookingTourAction(params)),
     getProfileList: (params) => dispatch( registerAction(params)),
     addProfile: (params) => dispatch(updateProfileAction(params)),
   

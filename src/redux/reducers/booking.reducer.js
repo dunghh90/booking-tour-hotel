@@ -31,6 +31,31 @@ export default function bookingTourReducer(state = initialState, action) {
       }
     }
 
+    case 'GET_BOOKING_TOUR_SUCCESS': {
+      const { data } = action.payload;
+      return {
+        ...state,
+        bookingTours: {
+          ...state.bookingTours,
+          data: data,
+          load: false,
+        },
+      }
+    }
+    case 'GET_BOOKING_TOUR_FAIL': {
+      const { error } = action.payload;
+      return {
+        ...state,
+        bookingTours: {
+          ...state.bookingTours,
+          load: false,
+          error: error,
+        },
+      }
+    }
+
+
+
     
     default: {
       return state;
