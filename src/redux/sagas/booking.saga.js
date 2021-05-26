@@ -5,7 +5,6 @@ import axios from 'axios';
 function* bookingTour(action) {
   try {
     const { userId, tourId, startDate, numberAdults, numberChild } = action.payload;
-    console.log("🚀 ~ file: booking.saga.js ~ line 42 ~ function*bookingTour ~ numberAdults", numberAdults)
     const result = yield axios({
       method: 'POST',
       url: 'http://localhost:3002/bookingTours',
@@ -46,6 +45,7 @@ function* getBookingTours(action) {
       params:{
         _page: page,
         _limit: limit,
+        _expand:"tour",
         userId
       }
     });

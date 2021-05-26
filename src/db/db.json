@@ -826,10 +826,12 @@
       "id": 6
     },
     {
-      "id": 7
-    },
-    {
-      "id": 8
+      "userId": 11,
+      "hotelId": 2,
+      "roomId": 1,
+      "startDate": "2021/05/05",
+      "endDate": "2021/05/07",
+      "id": 6
     }
   ],
   "rates": [

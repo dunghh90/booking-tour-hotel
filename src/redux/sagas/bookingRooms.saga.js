@@ -44,14 +44,8 @@ function* getBookingHotels(action) {
     const { userId, page, limit } = action.payload;
     const result = yield axios({
       method: 'GET',
-      url: 'http://localhost:3002/bookingRooms',
-      params:{
-        _page: page,
-        _limit: limit,
-        userId
-      }
+      url: `http://localhost:3002/bookingRooms?_expand=room&_expand=hotel&userId=${userId}&_page=$(page)&_limit=${limit}`,
     });
-    console.log("🚀 ~ file: bookingRooms.saga.js ~ line 54 ~ function*getBookingHotels ~ result", result)
     yield put({
       type: "GET_BOOKING_HOTEL_SUCCESS",
       payload: {

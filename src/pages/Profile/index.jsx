@@ -213,6 +213,15 @@ function ProfilePage({
     return bookingRooms.data.map((item) => {
       return (
         <>
+          <p>+++++++++++++++++</p>
+          <p>ten hotel</p>
+          <p>{item.hotel.name}</p>
+          <p>gia hotel</p>
+          <p>{item.hotel.Price}</p>
+          <p>ten hotel</p>
+          <p>{item.room.name}</p>
+          <p>gia phong</p>
+          <p>{item.room.Price}</p>
           <p>{item.startDate}</p>
         </>
       )
@@ -222,6 +231,9 @@ function ProfilePage({
     return bookingTours.data.map((item) => {
       return (
         <>
+          <p>+++++++++++++++++</p>
+          <p>{item.tour.name}</p>
+          <p>{item.tour.price}</p>
           <p>{item.startDate}</p>
         </>
       )
@@ -232,7 +244,9 @@ function ProfilePage({
     return (
       <div>
       <p>Lịch sử giao dịch</p>
+        <h2>Lich su book hotel</h2>
         {renderHistoryBookingHotel()}
+        <h2>Lich su book tour</h2>
         {renderHistoryBookingTour()}
       </div>
     )
