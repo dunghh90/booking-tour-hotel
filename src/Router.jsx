@@ -14,7 +14,6 @@ import ListHotelPage from './pages/ListHotel';
 import ListRoomPage from './pages/ListRoom';
 import reViewPage from './pages/Review';
 import TourDetailPage from "./pages/ProductTourDetail";
-import historyPage from "./pages/HistoryBooking"
 import ProfilePage from "./pages/Profile"
 
 function BrowserRouter(props) {
@@ -26,12 +25,12 @@ function BrowserRouter(props) {
         <LoginLayout exact path="/login" component={LoginPage} />
         <DefaultLayout exact path="/listTour" component={ProductTourListPage} />
         <DefaultLayout exact path="/tours/:id" component={TourDetailPage} />
-        <DefaultLayout exact path="/profile/:id" component={ProfilePage} />
-        {/* <DefaultLayout
+        {/* <DefaultLayout exact path="/profile/:id" component={ProfilePage} /> */}
+        <DefaultLayout
           exact
           path={ROUTERS.PROFILE}
           component={ProfilePage}
-        /> */}
+        />
         <DefaultLayout
           exact
           path={ROUTERS.HOME}
@@ -54,12 +53,6 @@ function BrowserRouter(props) {
           exact
           path={ROUTERS.REVIEW}
           component={reViewPage}
-          productList={productList}
-        />
-         <DefaultLayout
-          exact
-          path={ROUTERS.HISTORYBOOKING}
-          component={historyPage}
           productList={productList}
         />
         

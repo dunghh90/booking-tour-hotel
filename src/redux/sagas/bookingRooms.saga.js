@@ -4,10 +4,14 @@ import axios from 'axios';
 
 function* bookingHotelRoom(action) {
   try {
-    const { userId, hotelId, roomId, startDate, endDate } = action.payload;
+    const { userId, hotelId, roomId, startDate, endDate,page,limit } = action.payload;
     const result = yield axios({
       method: 'POST',
       url: 'http://localhost:3002/bookingRooms',
+      params:{
+        _page: page,
+        _limit: limit
+      },
       data: {
         userId,
         hotelId,

@@ -58,7 +58,7 @@ function HeaderPage(props) {
 
     const menu = (
         <Menu>
-        <Menu.Item key="0" onClick={() => history.push(`/profile/${userInfo.data.id}`)}>
+        <Menu.Item key="0" onClick={() => history.push(`/profiles/${userInfo.data.id}`)}>
             Thông tin cá nhân
         </Menu.Item>
         <Menu.Item key="1" onClick={() => logout()}>

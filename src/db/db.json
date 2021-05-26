@@ -58,7 +58,10 @@
       "email": "nhominh193@gmail.com",
       "password": "1234",
       "name": "minh",
-      "id": 11
+      "id": 11,
+      "birthday": "2021/05/26",
+      "gender": "male",
+      "phone": "0702321494"
     }
   ],
   "tours": [
@@ -813,6 +816,14 @@
       "startDate": "2021/05/19",
       "endDate": "2021/05/20",
       "id": 5
+    },
+    {
+      "userId": 11,
+      "hotelId": 1,
+      "roomId": 1,
+      "startDate": "2021/05/05",
+      "endDate": "2021/05/07",
+      "id": 6
     }
   ],
   "rates": [
@@ -837,7 +848,17 @@
       "rate": 5
     }
   ],
-  "commentHotels": [],
+  "commentHotels": [
+    {
+      "userId": 11,
+      "userName": "minh",
+      "hotelId": 1,
+      "comment": "khách sạn đẹp",
+      "rate": 3,
+      "creatDate": "26/05/2021",
+      "id": 1
+    }
+  ],
   "commentTours": [
     {
       "userName": "Huu Dung",
@@ -938,5 +959,6 @@
       "creatDate": "24/05/2021",
       "id": 11
     }
-  ]
+  ],
+  "profiles": []
 }

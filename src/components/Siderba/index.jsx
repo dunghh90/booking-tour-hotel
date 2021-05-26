@@ -65,7 +65,7 @@ function Siderba({
           />
         </Col>
       </Row>
-       <Row gutter={16} style={{ padding: '0 16px' }}>
+       {/* <Row gutter={16} style={{ padding: '0 16px' }}>
    
          <Col span={24}>
           <List
@@ -85,7 +85,7 @@ function Siderba({
             )}
           />
         </Col>
-      </Row> 
+      </Row>  */}
 
     </>
 
