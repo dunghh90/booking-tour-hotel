@@ -832,6 +832,22 @@
       "startDate": "2021/05/05",
       "endDate": "2021/05/07",
       "id": 6
+    },
+    {
+      "userId": 7,
+      "hotelId": 1,
+      "roomId": 1,
+      "startDate": "2021/05/27",
+      "endDate": "2021/05/28",
+      "id": 7
+    },
+    {
+      "userId": 7,
+      "hotelId": 1,
+      "roomId": 2,
+      "startDate": "2021/05/04",
+      "endDate": "2021/05/06",
+      "id": 8
     }
   ],
   "rates": [

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
-import { Space, Card, InputNumber, Button, Row, Col, Radio, Menu, Form, Input, DatePicker } from 'antd';
+import { Space, Card, InputNumber, Button, Row, Col, Radio, Menu, Form, Input, DatePicker, Table } from 'antd';
 import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons';
 import moment from 'moment';
 import {
@@ -21,6 +21,7 @@ function ProfilePage({
   bookingRooms,
   match
 }) {
+  console.log("🚀 ~ file: index.jsx ~ line 24 ~ bookingRooms", bookingRooms)
 
   const userId = match.params.id;
   const [selectObject, setSelectObject] = useState(1);
@@ -210,40 +211,93 @@ function ProfilePage({
   }
 
   function renderHistoryBookingHotel() {
-    return bookingRooms.data.map((item) => {
-      return (
-        <>
-          <p>+++++++++++++++++</p>
-          <p>ten hotel</p>
-          <p>{item.hotel.name}</p>
-          <p>gia hotel</p>
-          <p>{item.hotel.Price}</p>
-          <p>ten hotel</p>
-          <p>{item.room.name}</p>
-          <p>gia phong</p>
-          <p>{item.room.Price}</p>
-          <p>{item.startDate}</p>
-        </>
-      )
-    })
+    const tableColumn = [
+      {
+        title: 'Tên khách sạn',
+        dataIndex: 'hotelName',
+        key: 'hotelName',
+      },
+      {
+        title: 'Loại phòng',
+        dataIndex: 'roomName',
+        key: 'roomName',
+      },
+      {
+        title: 'Giá',
+        dataIndex: 'price',
+        key: 'price',
+      },
+      {
+        title: 'Ngày đặt',
+        dataIndex: 'date',
+        key: 'date',
+      },
+    ]
+    const tableData = bookingRooms.data.map((item) => {
+      
+      return {
+        ...item,
+        hotelName: item.hotel.name,
+        roomName: item.room.name,
+        // Chỗ này a để tạm, sau này fix data thì bỏ vào
+        price: 0,
+        date: `${item.startDate} - ${item.endDate}`,
+        key: item.id,
+      }
+    });
+    return <Table columns={tableColumn} dataSource={tableData} pagination={false} />
+    // return bookingRooms.data.map((item) => {
+    //   return (
+    //     <>
+    //       <p>+++++++++++++++++</p>
+    //       <p>ten hotel</p>
+    //       <p>{item.hotel.name}</p>
+    //       <p>gia hotel</p>
+    //       <p>{item.hotel.Price}</p>
+    //       <p>ten hotel</p>
+    //       <p>{item.room.name}</p>
+    //       <p>gia phong</p>
+    //       <p>{item.room.Price}</p>
+    //       <p>{item.startDate}</p>
+    //     </>
+    //   )
+    // })
   }
   function renderHistoryBookingTour() {
-    return bookingTours.data.map((item) => {
-      return (
-        <>
-          <p>+++++++++++++++++</p>
-          <p>{item.tour.name}</p>
-          <p>{item.tour.price}</p>
-          <p>{item.startDate}</p>
-        </>
-      )
-    })
+    const tableColumn = [
+      {
+        title: 'Tên khách sạn',
+        dataIndex: 'tourName',
+        key: 'tourName',
+      },
+   
+      {
+        title: 'Giá',
+        dataIndex: 'price',
+        key: 'price',
+      },
+      {
+        title: 'Ngày đặt',
+        dataIndex: 'date',
+        key: 'date',
+      },
+    ]
+    const tableData = bookingTours.data.map((item) => {
+      return {
+        ...item,
+        tourName: item.tour.name,
+        price: item.tour.price,
+        date: item.startDate,
+        key: item.id,
+      }
+    });
+    return <Table columns={tableColumn} dataSource={tableData} pagination={false} />
   }
 
   function renderHistory() {
     return (
       <div>
-      <p>Lịch sử giao dịch</p>
+      <p>Lịch sử đặt</p>
         <h2>Lich su book hotel</h2>
         {renderHistoryBookingHotel()}
         <h2>Lich su book tour</h2>

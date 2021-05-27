@@ -34,7 +34,6 @@ function Siderba({
     })
   }, []);
 
-
   function handleFilterLocation(rate) {
     setLocationSelected(rate);
     getHotelList({
