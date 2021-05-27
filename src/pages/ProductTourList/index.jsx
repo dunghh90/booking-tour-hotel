@@ -1,6 +1,9 @@
-import { Col, Layout, Menu, Row, List } from 'antd';
+import { Col, Layout,  Input, Form, Button, Row, List, DatePicker } from 'antd';
 import { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
+import { EnvironmentOutlined, SendOutlined } from '@ant-design/icons';
+
+import moment from 'moment';
 
 import { getProductTourListAction, getCategoryListAction } from '../../redux/actions';
 import SearchTourPage from '../SearchTour';
@@ -34,14 +37,53 @@ function ProductTourListPage({
       categoryId: id,
     })
   }
+  function findTour() {
 
+  }
+  const currentDate = new Date();
   function renderProductTourList() {
     if (productTourList.load) return <p>Loading...</p>;
 
     return (
-      <div>
-
-        <Row gutter={16} style={{padding: '10px 50px'}}>
+      <div style={{padding: '10px 50px'}}>
+        <Row gutter={16} style={{margin:'0 80px', fontSize:20, padding:"15px 10px", borderRadius:4, backgroundColor:"#bae7ff"}}>
+        <Form
+          name="basic"
+          initialValues={{ remember: true }}
+          layout="inline"
+          onFinish={findTour}
+        >
+          <Col span={7}>
+              <Form.Item
+                name="username"
+              >
+                <Input labelFontSize={100} fontSize={100} prefix={<EnvironmentOutlined />} style={{padding: '10px 50px', height:50, borderRadius:4, backgroundColor:"white"}} placeholder="Bạn muốn đi đâu?" />
+              </Form.Item>
+            </Col>
+          <Col span={7}>
+            <Form.Item
+                name="dateBooking"
+              >
+            <DatePicker style={{padding: '10px 50px', width:'100%', height:50, borderRadius:4, backgroundColor:"white"}} defaultValue={moment(currentDate)} format="DD/MM/YYYY"/>
+            </Form.Item>
+          </Col>
+          <Col span={7}>
+          <Form.Item
+                name="placeFrom"
+              >
+            <Input labelFontSize={100} fontSize={100} prefix={<SendOutlined />} style={{padding: '10px 50px', height:50, borderRadius:4, backgroundColor:"white"}} placeholder="Khởi hành từ" />
+          </Form.Item>
+          </Col>
+          <Col span={3} >
+            <Row style={{width:"100%"}} justify="end">
+              <Button style={{padding: '10px 50px', height:50, borderRadius:4, backgroundColor:"#ffe58f", color:"#003a8c", fontWeight:600}} >
+                Tìm
+              </Button>
+            </Row>
+          </Col>
+          </Form>
+        </Row>
+        <Row gutter={16}>
           <Col span={7}>
             <List
               size="small"
@@ -80,7 +122,7 @@ function ProductTourListPage({
               )}
             />
           </Col>
-          <Col span={17}>
+          <Col span={17} style={{marginTop:16}}>
             {
               productTourList.load ? (<p>Loading...</p>) 
               :(productTourList.data.map((item, index) => {

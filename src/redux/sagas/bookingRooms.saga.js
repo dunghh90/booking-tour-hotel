@@ -4,10 +4,14 @@ import axios from 'axios';
 
 function* bookingHotelRoom(action) {
   try {
-    const { userId, hotelId, roomId, startDate, endDate } = action.payload;
+    const { userId, hotelId, roomId, startDate, endDate,page,limit } = action.payload;
     const result = yield axios({
       method: 'POST',
       url: 'http://localhost:3002/bookingRooms',
+      params:{
+        _page: page,
+        _limit: limit
+      },
       data: {
         userId,
         hotelId,
@@ -35,7 +39,34 @@ function* bookingHotelRoom(action) {
     });
   }
 }
+function* getBookingHotels(action) {
+  try {
+    const { userId } = action.payload;
+    const result = yield axios({
+      method: 'GET',
+      url: `http://localhost:3002/bookingRooms?_expand=hotel&_expand=room`,
+      params: {
+        userId,
+      }
+    });
+    yield put({
+      type: "GET_BOOKING_HOTEL_SUCCESS",
+      payload: {
+        data: result.data,
+      },
+    });
+  } catch (e) {
+    yield put({
+      type: "GET_BOOKING_HOTEL_FAIL",
+      payload: {
+        error: e.error
+      },
+    });
+  }
+}
 
 export default function* cartSaga() {
   yield takeEvery('BOOKING_HOTEL_ROOM_REQUEST', bookingHotelRoom);
+  yield takeEvery('GET_BOOKING_HOTEL_REQUEST', getBookingHotels);
+  
 }

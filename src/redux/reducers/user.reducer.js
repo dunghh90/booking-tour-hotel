@@ -117,6 +117,37 @@ export default function userReducer(state = initialState, action) {
         },
       }
     }
+    case 'UPDATE_PROFILE_REQUEST': {
+      return {
+        ...state,
+        userInfo: {
+          ...state. userInfo,
+          load: true,
+        },
+      }
+    }
+    case 'UPDATE_PROFILE_SUCCESS': {
+      const { data } = action.payload;
+      return {
+        ...state,
+        userInfo: {
+          ...state. userInfo,
+          data,
+          load: false,
+        },
+      }
+    }
+    case 'UPDATE_PROFILE_FAIL': {
+      const { error } = action.payload;
+      return {
+        ...state,
+        userInfo: {
+          ...state. userInfo,
+          load: false,
+          error: error,
+        },
+      }
+    }
     default: {
       return state;
     }

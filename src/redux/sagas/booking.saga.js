@@ -5,7 +5,6 @@ import axios from 'axios';
 function* bookingTour(action) {
   try {
     const { userId, tourId, startDate, numberAdults, numberChild } = action.payload;
-    console.log("🚀 ~ file: booking.saga.js ~ line 42 ~ function*bookingTour ~ numberAdults", numberAdults)
     const result = yield axios({
       method: 'POST',
       url: 'http://localhost:3002/bookingTours',
@@ -36,6 +35,37 @@ function* bookingTour(action) {
     });
   }
 }
+
+function* getBookingTours(action) {
+  try {
+    const { userId, page, limit } = action.payload;
+    const result = yield axios({
+      method: 'GET',
+      url: 'http://localhost:3002/bookingTours',
+      params:{
+        _page: page,
+        _limit: limit,
+        _expand:"tour",
+        userId
+      }
+    });
+    yield put({
+      type: "GET_BOOKING_TOUR_SUCCESS",
+      payload: {
+        data: result.data,
+      },
+    });
+  } catch (e) {
+    yield put({
+      type: "GET_BOOKING_TOUR_FAIL",
+      payload: {
+        error: e.error
+      },
+    });
+  }
+}
 export default function* cartSaga() {
   yield takeEvery('BOOKING_TOUR_REQUEST', bookingTour);
+  yield takeEvery('GET_BOOKING_TOUR_REQUEST', getBookingTours);
+  
 }

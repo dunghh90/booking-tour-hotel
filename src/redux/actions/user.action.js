@@ -25,3 +25,9 @@ export function getUserInfoAction(params) {
     payload: params,
   }
 }
+export function updateProfileAction(params) {
+  return {
+    type: 'UPDATE_PROFILE_REQUEST',
+    payload: params,
+  }
+}

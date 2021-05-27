@@ -43,12 +43,12 @@ function* loginSaga(action) {
 
 function* registerSaga(action) {
   try {
-    const { email, password, name } = action.payload;
+    const { email, password, name,birthday,gender,phone } = action.payload;
     console.log("🚀 ~ file: user.saga.js ~ line 47 ~ function*registerSaga ~ email", email)
     const result = yield axios({
       method: 'POST',
       url: 'http://localhost:3002/users',
-      data: { email, password, name: name, }
+      data: { email, password, name }
     });
     yield put({
       type: "REGISTER_SUCCESS",
@@ -86,9 +86,37 @@ function* getUserInfoSaga(action) {
     });
   }
 }
+function* updateProfileSaga(action) {
+  
+  try {
+    const { id, email, name, birthday, gender, phone } = action.payload;
+    
+    const result = yield axios({
+        method: 'PATCH',
+        url: `http://localhost:3002/users/${id}`,
+        data: { email, name,birthday,gender,phone},
+      });
+    console.log("🚀 ~ file: user.saga.js ~ line 99 ~ function*addProfileSaga ~ result", result)
+    yield localStorage.setItem('userInfo', JSON.stringify(result.data));
+    yield put({
+      type: "UPDATE_PROFILE_SUCCESS",
+      payload: {
+        data: result.data,
+      },
+    });
+  } catch(e) {
+    yield put({
+      type: "UPDATE_PROFILE_FAIL",
+      payload: {
+        error: e.error
+      },
+    });
+  }
+}
 
 export default function* userSaga() {
   yield takeEvery('LOGIN_REQUEST', loginSaga);
   yield takeEvery('REGISTER_REQUEST', registerSaga);
   yield takeEvery('GET_USER_INFO_REQUEST', getUserInfoSaga);
+  yield takeEvery('UPDATE_PROFILE_REQUEST', updateProfileSaga);
 }
