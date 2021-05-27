@@ -1,22 +1,11 @@
 import { put, takeEvery } from 'redux-saga/effects';
 import axios from 'axios';
 
-function* getProductHotelListSaga(action) {
+function* getLocationListSaga(action) {
   try {
-    const { page, limit} = action.payload;
     const result = yield axios({
       method: 'GET',
-      url: 'http://localhost:3002/locations',
-      params: {
-        _page: page,
-        _limit: limit,
-           
-        
-        // ...catagoryId && { catagoryId },// categoryId: categoryId -> null, truyen Id khi ton taij'
-        // ...searchkey && { q: searchkey },
-        // _sort: 'price',
-        // _order: 'dest',
-      }
+      url: 'http://localhost:3002/locations'
     });
     yield put({
       type: "GET_LOCATION_LIST_SUCCESS",
@@ -90,27 +79,6 @@ function* getListRoomSaga(action) {
   }
 }
 
-function* getCategoryListSaga(action) {
-  try {
-    const result = yield axios({
-      method: 'GET',
-      url: 'http://localhost:3002/categories',
-    });
-    yield put({
-      type: "GET_CATEGORY_LIST_SUCCESS",
-      payload: {
-        data: result.data,
-      },
-    });
-  } catch (e) {
-    yield put({
-      type: "GET_CATEGORY_LIST_FAIL",
-      payload: {
-        error: e.error
-      },
-    });
-  }
-}
 function* getRateListSaga(action) {
   
   try {
@@ -138,10 +106,8 @@ function* getRateListSaga(action) {
   }
 
 export default function* productHotelSaga() {
-  yield takeEvery('GET_LOCATION_LIST_REQUEST', getProductHotelListSaga);
+  yield takeEvery('GET_LOCATION_LIST_REQUEST', getLocationListSaga);
   yield takeEvery('GET_LIST_HOTEL_REQUEST', getListHotelSaga);
-  yield takeEvery('GET_CATEGORY_LIST_REQUEST', getCategoryListSaga);
   yield takeEvery('GET_RATE_LIST_REQUEST', getRateListSaga);
-  yield takeEvery('GET_LIST_ROOM_REQUEST', getListRoomSaga);
   yield takeEvery('GET_LIST_ROOM_REQUEST', getListRoomSaga);
 }

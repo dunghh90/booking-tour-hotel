@@ -18,12 +18,6 @@ export function getLocationListAction(params) {
     }
   }
 
-  export function getCategoryListAction(params) {
-    return {
-      type: 'GET_CATEGORY_LIST_REQUEST',
-      payload: params,
-    }
-  }
   export function getRateListAction(params) {
     return {
       type: 'GET_RATE_LIST_REQUEST',

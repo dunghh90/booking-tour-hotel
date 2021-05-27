@@ -3,14 +3,15 @@ import axios from 'axios';
 
 function* getProductTourListSaga(action) {
   try {
-    const { page, limit, categoryId } = action.payload;
+    const { page, limit, locationId } = action.payload;
     const result = yield axios({
       method: 'GET',
       url: 'http://localhost:3002/tours',
       params: {
         _page: page,
         _limit: limit,
-        ...categoryId && { categoryId }
+        _expand: "location",
+        ...locationId && { locationId }
         // ...catagoryId && { catagoryId },// categoryId: categoryId -> null, truyen Id khi ton taij'
         // ...searchkey && { q: searchkey },
         // _sort: 'price',
@@ -55,16 +56,9 @@ function* getProductTourDetailSaga(action) {
   }
 }
 
-// function* getProductTourDetailSaga(action) {
-//   try {
-//     //  const user = yield call(Api.fetchUser, action.payload.userId);
-//     yield put({type: "GET_PRODUCT_TOUR_DETAIL_SUCCESS", user: 'user'});
-//   } catch (e) {
-//     yield put({type: "GET_PRODUCT_TOUR_DETAIL_FAIL", message: e.message});
-//   }
-// }
 
 export default function* productTourSaga() {
   yield takeEvery('GET_PRODUCT_TOUR_LIST_REQUEST', getProductTourListSaga);
   yield takeEvery('GET_PRODUCT_TOUR_DETAIL_REQUEST', getProductTourDetailSaga);
+  
 }

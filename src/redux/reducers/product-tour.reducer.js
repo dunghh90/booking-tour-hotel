@@ -6,7 +6,7 @@ const initialState = {
   },
   productTourDetail: {
     data: {
-      category: {},
+      location: {},
       productTourOption: [],
     },
     load: false,
