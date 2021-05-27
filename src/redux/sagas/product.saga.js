@@ -39,8 +39,6 @@ function* getListHotelSaga(action) {
       
       }
     });
-    console.log("🚀 ~ file: product.saga.js ~ line 59 ~ function*getListHotelSaga ~ action.payload", action.payload)
-    console.log("🚀 ~ file: product.saga.js ~ line 60 ~ function*getListHotelSaga ~ result", result)
     
     yield put({
       type: "GET_LIST_HOTEL_SUCCESS",

@@ -31,16 +31,27 @@ function ProductTourListPage({
     });
   }, []);
 
+  useEffect(() => {
+    getProductTourList({
+      page: 1,
+      limit: 10
+    });
+  }, [keySearchLocation]);
+
   const filterTourList = productTourList.data.filter((item) => {
     return item.location.name.trim().toLowerCase().indexOf(keySearchLocation.trim().toLowerCase()) !== -1
   })
+  let filterLocationById = locationList.data.filter((item) => {
+    return item.id == locationSelected;
+  })
 
   function handleFilterLocaiton(id) {
+    setKeySearchLocation('');
     setLocationSelected(id);
     getProductTourList({
       page: 1,
       limit: 10,
-      locaitonId: id,
+      locationId: id,
     })
   }
   const currentDate = new Date();
@@ -54,7 +65,14 @@ function ProductTourListPage({
           name="basic"
           initialValues={{ location: '' }}
           layout="inline"
-          onFinish={(values) => {setKeySearchLocation(values.location);}}
+          onFinish={(values) => {
+            setLocationSelected(null);
+            setKeySearchLocation(values.location); 
+            getProductTourList({
+              page: 1,
+              limit: 10
+            });
+          }}
         >
           <Col span={7}>
               <Form.Item
@@ -99,7 +117,8 @@ function ProductTourListPage({
               renderItem={(item) => (
                 <List.Item
                   onClick={() => handleFilterLocaiton(item.id)}
-                  style={{ color: locationSelected === item.id ? 'red': 'black' }}
+                  // style={{color: locationSelected === item.id ? 'red': 'black' }}
+                  className ="list"
                 >
                   {item.name}
                 </List.Item>
@@ -118,15 +137,18 @@ function ProductTourListPage({
               renderItem={(item) => (
                 <List.Item
                   onClick={() => handleFilterLocaiton(item.id)}
-                  style={{ color: locationSelected === item.id ? 'red': 'black' }}
+                  style={{ color: locationSelected === item.id ? 'red': 'black'}}
                 >
                   {item.name}
                 </List.Item>
               )}
             />
+
+            
           </Col>
           <Col span={17} style={{marginTop:16}}>
             {keySearchLocation && <Row style={{fontSize:28, fontWeight:600, color:"#69c0ff"}}>Tour du lịch "{keySearchLocation}" </Row>}
+            {filterLocationById.length !== 0 && <Row style={{fontSize:28, fontWeight:600, color:"#69c0ff"}}>Tour du lịch "{filterLocationById[0].name}" </Row>}
             {
               filterTourList.load ? (<p>Loading...</p>) 
               :(filterTourList.map((item, index) => {

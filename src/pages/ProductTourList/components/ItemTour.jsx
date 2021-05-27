@@ -44,7 +44,7 @@ function ItemTour(props) {
           <Col span={12} style={{ marginTop: 10 }}>
             <Row>
               <Col>
-                <div className="tourItemName">
+                <div className="tourItemName" style={{fontWeight:600}}>
                   <a>
                     {title}
                   </a>
@@ -69,7 +69,7 @@ function ItemTour(props) {
             </Row>
           </Col>
           <Col span={6} style={{ marginTop: 10 }}>
-            <span style={{ color: "#00C1DE", fontSize: 22, fontWeight: "bold", float: "right" }}>{price}</span>
+            <span style={{ color: "#00C1DE", fontSize: 22, fontWeight: "bold", float: "right" }}>{price.toLocaleString()} VNĐ</span>
           </Col>
         </Row>
       </Card>
