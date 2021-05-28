@@ -78,7 +78,7 @@ function TourDetailPage({
           <Row span={24} gutter={24}>
             <div className="content-header">
               <ol className="breadcrumb"  >
-                <Space><HomeOutlined /></Space>
+                <Space><HomeOutlined  /></Space>
                 <li  >
                   <a className="item" href="/du-lich/">
                     <i className="fa fa-home"></i> <span>Trang chủ</span>
@@ -133,48 +133,7 @@ function TourDetailPage({
                 <div dangerouslySetInnerHTML={{ __html: productTourDetail.data.information }}></div>
               </div>
               <div style={{backgroundColor:"white", padding:16, marginTop:16}}>
-                <CommentPage tourId={tourId} />
-                {/* <Form
-                  form={rateTourForm}
-                  
-                  name="rateTourForm"
-                  style={{marginTop:16}}
-                  // initialValues={productSelected.id
-                  //   ? {...productSelected, hasOption: false }
-                  //   : {}
-                  // }
-                >
-                  <Form.Item name="rateTour" label="Chọn sao:">
-                    <Rate allowHalf />
-                  </Form.Item>
-                  <Form.Item layout="vertical" name="rateDescription" label="Đánh giá">
-                    <TextArea rows={4} />
-                  </Form.Item>
-                  
-                  <Row justify="end">
-                    <Form.Item>
-                      <Button type="primary" htmlType="submit">
-                        Đánh giá
-                      </Button>
-                    </Form.Item>
-                  </Row>
-                </Form>
-
-                <p><h3>Đánh giá gần đây</h3></p>
-                <div class="horizontalLine"></div>
-                <Row>
-                  <Col span={6}>
-                    <h4>Hoang Huu dung</h4>
-                  </Col>
-                  <Col span={16}>
-                    <p>
-                      Tuyệt vời
-                    </p>
-                    <p>
-                      Mình hài long về tour
-                    </p>
-                  </Col>
-                </Row> */}
+                <Comment tourId={tourId} />
               </div>
             </Col>
             <Col span={8} xl={{ order: 2 }} lg={{ order: 2 }} md={{ order: 1 }} sm={{ order: 1 }} xs={{ order: 1 }}>

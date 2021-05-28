@@ -1,4 +1,4 @@
-import { Button, Card, DatePicker, Row, Col,Form,Input,Space } from 'antd';
+import { Button, Card, DatePicker, Row, Col, Form, Input, Space } from 'antd';
 
 import { connect } from 'react-redux';
 import { getListRoomAction } from '../../redux/actions';
@@ -7,9 +7,9 @@ import { useEffect, useState } from 'react';
 import history from '../../utils/history';
 import { Rate } from 'antd';
 import './styles.css';
-import { SendOutlined,HomeOutlined } from '@ant-design/icons';
+import { SendOutlined, HomeOutlined } from '@ant-design/icons';
 import moment from 'moment';
-import ItemRoom from '../ListRoom/item';
+import ItemRoom from './item';
 import Comment from '../Comment/index'
 
 
@@ -46,7 +46,7 @@ function ListRoomPage({
     const [startDate, endDate] = value;
 
     setDateSelected([moment(startDate).format('YYYY/MM/DD'), moment(endDate).format('YYYY/MM/DD')]);
-    
+
   }
   function handleBookingHotel(id) {
 
@@ -66,43 +66,43 @@ function ListRoomPage({
     }
 
   }
-  function renderImg(){
+  function renderImg() {
 
-      return(
-        <>
-        <Col span = {18}>
-        <Row >
-          <Col span ={9}>
-            <img className ="img2" src={listRoom.data.src[0]} alt="" />
+    return (
+      <>
+        <Col span={18}>
+          <Row >
+            <Col span={9}>
+              <img className="img2" src={listRoom.data.src[0]} alt="" />
 
-          </Col>
-          <Col span ={9} >
-            <Row >
-            <img className ="img2" src={listRoom.data.src[1]} alt="" />
-            </Row>
-            <Row gutter={[8, 8]}>
-              <Col span ={12}>
+            </Col>
+            <Col span={9} >
+              <Row >
+                <img className="img2" src={listRoom.data.src[1]} alt="" />
+              </Row>
+              <Row gutter={[8, 8]}>
+                <Col span={12}>
 
-            <img className ="img3"src={listRoom.data.src[2]} alt="" />
-              </Col>
-              <Col span ={12}>
-            <img className ="img3" src={listRoom.data.src[3]} alt="" />
-              </Col>
-            </Row>
-          </Col>
-        </Row>
-        <Row>
-            <div className ="layout">minh</div>
+                  <img className="img3" src={listRoom.data.src[2]} alt="" />
+                </Col>
+                <Col span={12}>
+                  <img className="img3" src={listRoom.data.src[3]} alt="" />
+                </Col>
+              </Row>
+            </Col>
           </Row>
-      </Col>
-      <Col span = {6}>
-        <img className ="img4" src="https://file1.dangcongsan.vn/DATA/0/2018/10/68___gi%E1%BA%BFng_l%C3%A0ng_qu%E1%BA%A3ng_ph%C3%BA_c%E1%BA%A7u__%E1%BB%A9ng_h%C3%B2a___%E1%BA%A3nh_vi%E1%BA%BFt_m%E1%BA%A1nh-16_51_07_908.jpg" alt="" />
-      </Col>
+          <Row>
+            <div className="layout">minh</div>
+          </Row>
+        </Col>
+        <Col span={6}>
+          <img className="img4" src="https://file1.dangcongsan.vn/DATA/0/2018/10/68___gi%E1%BA%BFng_l%C3%A0ng_qu%E1%BA%A3ng_ph%C3%BA_c%E1%BA%A7u__%E1%BB%A9ng_h%C3%B2a___%E1%BA%A3nh_vi%E1%BA%BFt_m%E1%BA%A1nh-16_51_07_908.jpg" alt="" />
+        </Col>
 
-</>
-      )
+      </>
+    )
 
-    
+
   }
 
   function renderListRoom() {
@@ -133,8 +133,8 @@ function ListRoomPage({
 
       return (
         <>
-            
-            <Content className="site-layout" style={{ padding: '0 30px', marginTop: 64 }}>
+
+          <Content className="site-layout" style={{ padding: '0 30px', marginTop: 64 }}>
             <Row gutter={[12, 12]}>
               <Col span={24}>
                 <Card
@@ -195,71 +195,71 @@ function ListRoomPage({
   }
 
   return (
-    <> 
+    <>
 
-    <Row  justify="center" className ="timkiem">
-      <Form
-    name="basic"
-    initialValues={{ remember: true }}
-    layout="inline"
-  //   onFinish={findTour}
-  >
-    <Col span={7}>
-        <Form.Item
-          name="username"
+      <Row justify="center" className="timkiem">
+        <Form
+          name="basic"
+          initialValues={{ remember: true }}
+          layout="inline"
+        //   onFinish={findTour}
         >
-          <Input labelFontSize={100} fontSize={100}  style={{padding: '10px 50px', height:50, borderRadius:4, backgroundColor:"white"}} placeholder="Bạn cần nhập số người?" />
-        </Form.Item>
-      </Col>
-    <Col span={7}>
-      <Form.Item
-          name="dateBooking"
-        >
-      <DatePicker.RangePicker onChange={(value) => handleDate(value)} style={{padding: '10px 50px', width:'100%', height:50, borderRadius:4, backgroundColor:"white"}} defaultValue={moment(currentDate)} format="DD/MM/YYYY"/>
-      </Form.Item>
-    </Col>
-    <Col span={7}>
-    <Form.Item
-          name="placeFrom"
-        >
-      <Input labelFontSize={100} fontSize={100} prefix={<SendOutlined />} style={{padding: '10px 50px', height:50, borderRadius:4, backgroundColor:"white"}} placeholder="Khởi hành từ" />
-    </Form.Item>
-    </Col>
-    <Col span={3} >
-      <Row style={{width:"100%"}} justify="end">
-        <Button style={{padding: '10px 50px', height:50, borderRadius:4, backgroundColor:"#ffe58f", color:"#003a8c", fontWeight:600}} >
-          Tìm
+          <Col span={7}>
+            <Form.Item
+              name="username"
+            >
+              <Input labelFontSize={100} fontSize={100} style={{ padding: '10px 50px', height: 50, borderRadius: 4, backgroundColor: "white" }} placeholder="Bạn cần nhập số người?" />
+            </Form.Item>
+          </Col>
+          <Col span={7}>
+            <Form.Item
+              name="dateBooking"
+            >
+              <DatePicker.RangePicker onChange={(value) => handleDate(value)} style={{ padding: '10px 50px', width: '100%', height: 50, borderRadius: 4, backgroundColor: "white" }} defaultValue={moment(currentDate)} format="DD/MM/YYYY" />
+            </Form.Item>
+          </Col>
+          <Col span={7}>
+            <Form.Item
+              name="placeFrom"
+            >
+              <Input labelFontSize={100} fontSize={100} prefix={<SendOutlined />} style={{ padding: '10px 50px', height: 50, borderRadius: 4, backgroundColor: "white" }} placeholder="Khởi hành từ" />
+            </Form.Item>
+          </Col>
+          <Col span={3} >
+            <Row style={{ width: "100%" }} justify="end">
+              <Button style={{ padding: '10px 50px', height: 50, borderRadius: 4, backgroundColor: "#ffe58f", color: "#003a8c", fontWeight: 600 }} >
+                Tìm
         </Button>
+            </Row>
+          </Col>
+        </Form>
       </Row>
-    </Col>
-    </Form>
-  </Row>
 
-  <Row span={24} >
-            <div className="content-header">
-              <ol className="breadcrumb"  >
-                <Space><HomeOutlined /></Space>
-                <li  >
-                  <a className="item" href="/du-lich/">
-                    <i className="fa fa-home"></i> <span>Trang chủ</span>
-                  </a>
-                </li>
-                <i style={{ margin: "0px 10px" }}>|</i>
-                <li  >
-                  <a className="item" href="/du-lich/tour-da-nang">
-                    <span>Khách sạn Việt Nam</span>
-                  </a>
-                </li>
-                <i style={{ margin: "0px 10px" }}>|</i>
-                <li className="active hidden-xs">
+      <Row span={24} >
+        <div className="content-header">
+          <ol className="breadcrumb"  >
+            <Space><HomeOutlined /></Space>
+            <li  >
+              <a className="item" href="/du-lich/">
+                <i className="fa fa-home"></i> <span>Trang chủ</span>
+              </a>
+            </li>
+            <i style={{ margin: "0px 10px" }}>|</i>
+            <li  >
+              <a className="item" href="/du-lich/tour-da-nang">
+                <span>Khách sạn Việt Nam</span>
+              </a>
+            </li>
+            <i style={{ margin: "0px 10px" }}>|</i>
+            <li className="active hidden-xs">
 
-                  <a className="item" href="/du-lich/tour-da-nang-4n3d-hcm-da-nang-ba-na-hoi-an-hue-quang-binh/1189">
-                    <span >Thông tin về khách sạn</span>
-                  </a>
-                </li>
-              </ol>
-            </div>
-          </Row>
+              <a className="item" href="/du-lich/tour-da-nang-4n3d-hcm-da-nang-ba-na-hoi-an-hue-quang-binh/1189">
+                <span >Thông tin về khách sạn</span>
+              </a>
+            </li>
+          </ol>
+        </div>
+      </Row>
 
       {/* <DatePicker.RangePicker onChange={(value) => handleDate(value)} /> */}
       {/* <Row justify="center" >
@@ -291,13 +291,13 @@ function ListRoomPage({
                 <img className ="img4" src="https://file1.dangcongsan.vn/DATA/0/2018/10/68___gi%E1%BA%BFng_l%C3%A0ng_qu%E1%BA%A3ng_ph%C3%BA_c%E1%BA%A7u__%E1%BB%A9ng_h%C3%B2a___%E1%BA%A3nh_vi%E1%BA%BFt_m%E1%BA%A1nh-16_51_07_908.jpg" alt="" />
               </Col>
             </Row> */}
-            <Row justify="center">
+      <Row justify="center">
 
-            {renderImg()}
-            </Row>
+        {renderImg()}
+      </Row>
       <Row gutter={[8, 8]} justify="center">
-      <div className ="layout2">mai nhat minh</div>
-      {/* <h3>Thông tin phòng khách sạn</h3> */}
+        <div className="layout2">mai nhat minh</div>
+        {/* <h3>Thông tin phòng khách sạn</h3> */}
         {renderListRoom()}
       </Row>
       <h1 className="comment">Đánh giá khách hàng </h1>
