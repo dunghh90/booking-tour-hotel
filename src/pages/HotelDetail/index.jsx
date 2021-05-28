@@ -10,7 +10,7 @@ import './styles.css';
 import { SendOutlined, HomeOutlined } from '@ant-design/icons';
 import moment from 'moment';
 import ItemRoom from './item';
-import Comment from '../Comment/index'
+import CommentPage from '../Comment'
 
 
 import {
@@ -301,7 +301,7 @@ function ListRoomPage({
         {renderListRoom()}
       </Row>
       <h1 className="comment">Đánh giá khách hàng </h1>
-      <Comment hotelId={hotelId} />
+      <CommentPage hotelId={hotelId} />
     </>
   );
 }

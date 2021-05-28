@@ -6,14 +6,14 @@ import { ROUTERS } from './constants/router';
 import LoginLayout from './components/layouts/LoginLayout';
 import DefaultLayout from './components/layouts/DefaultLayout';
 
-import ProductTourListPage from './pages/ProductTourList';
+import ProductTourListPage from './pages/TourList';
 import LoginPage from './pages/Login';
-import TourHomePage from './pages/ProductTourListHome';
-import HomePage from './pages/Home';
-import ListHotelPage from './pages/ListHotel';
-import ListRoomPage from './pages/ListRoom';
+import TourHomePage from './pages/TourHome';
+import HomePage from './pages/HotelHome';
+import ListHotelPage from './pages/HotelList';
+import ListRoomPage from './pages/HotelDetail';
 import reViewPage from './pages/Review';
-import TourDetailPage from "./pages/ProductTourDetail";
+import TourDetailPage from "./pages/TourDetail";
 import ProfilePage from "./pages/Profile"
 
 function BrowserRouter(props) {

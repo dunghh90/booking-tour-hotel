@@ -4,7 +4,6 @@ import { useEffect } from 'react';
 import { connect } from 'react-redux';
 
 import { getProductTourListAction } from '../../redux/actions';
-import SearchTourPage from '../SearchTour';
 import ItemTour from './components/ItemTour'
 
 function TourHomePage({ getProductTourList, productTourList }) {
@@ -20,7 +19,6 @@ function TourHomePage({ getProductTourList, productTourList }) {
     
     return (
       <Content className="site-layout" style={{ padding: '0 50px', marginTop: 64 }}>
-      <SearchTourPage />
       <Row gutter={[24, 24]}>
         {
           productTourList.data.map((item, index) => {

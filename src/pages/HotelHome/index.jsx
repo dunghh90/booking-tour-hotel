@@ -2,7 +2,6 @@ import { Row, Col, List } from 'antd';
 import history from '../../utils/history';
 import { connect } from 'react-redux';
 import SimpleSlider from '../../components/slick';
-import ToDoListPage from '../ToDoListTemp';
 
 import { getLocationListAction } from '../../redux/actions';
 import { useEffect } from 'react';
