@@ -13,6 +13,7 @@ const initialState = {
       data: {
         rooms: [],
         bookingRooms:[],
+        src:[],
       },
       load: false,
       error: '',
