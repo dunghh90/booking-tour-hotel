@@ -108,7 +108,6 @@ function ListHotelPage({
 }
 
 const mapStateToProps = (state) => {
-console.log("🚀 ~ file: index.jsx ~ line 102 ~ mapStateToProps ~ state", state)
   const { listHotel } = state.productHotelReducer;
   return {
     listHotel,

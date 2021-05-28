@@ -12,16 +12,17 @@ import "./Home.css"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-function HomePage({ getProductLocationList, productHotelList }) {
+function HomePage({ getLocationList, locationList }) {
 
 
   // const [locationSelected, setLocationSelected] = useState(null);
   
   useEffect(() => {
-    getProductLocationList({
-      page: 1,
-      limit: 10
-    });
+    // getLocationList({
+    //   page: 1,
+    //   limit: 10
+    // });
+    getLocationList();
 
   }, []);
 
@@ -29,9 +30,8 @@ function HomePage({ getProductLocationList, productHotelList }) {
 
   
 
-  function renderProductHotelList() {
-    console.log("🚀 ~ file: index.jsx ~ line 26 ~ returnproductHotelList.data.map ~ productHotelList", productHotelList)
-    return productHotelList.data.map((item, index) => {
+  function renderLocationList() {
+    return locationList.data.map((item, index) => {
       return (
         <>
           <Col span='8'
@@ -53,7 +53,7 @@ function HomePage({ getProductLocationList, productHotelList }) {
      
         <Row gutter={[8, 8]}>
 
-          {renderProductHotelList()}
+          {renderLocationList()}
         </Row>
       {/* </Row> */}
 
@@ -64,15 +64,15 @@ function HomePage({ getProductLocationList, productHotelList }) {
 
 }
 const mapStateToProps = (state) => {
-  const { productHotelList } = state.productHotelReducer;
+  const { locationList } = state.productHotelReducer;
   return {
-    productHotelList: productHotelList,
+    locationList: locationList,
   }
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getProductLocationList: (params) => dispatch(getLocationListAction(params)),
+    getLocationList: (params) => dispatch(getLocationListAction(params))
   };
 }
 

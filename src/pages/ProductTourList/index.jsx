@@ -5,40 +5,54 @@ import { EnvironmentOutlined, SendOutlined } from '@ant-design/icons';
 
 import moment from 'moment';
 
-import { getProductTourListAction, getCategoryListAction } from '../../redux/actions';
-import SearchTourPage from '../SearchTour';
+import { getProductTourListAction, getLocationListAction } from '../../redux/actions';
 import ItemTour from './components/ItemTour'
 import './styleTour.css'
 
-const { Sider, Content } = Layout;
-
 function ProductTourListPage({ 
   getProductTourList, 
-  getCategoryList,
+  getLocationList,
   productTourList,
-  categoryList
+  locationList,
+  match
 }) {
 
-  const [categorySelected, setCategorySelected] = useState(null);
+  const [locationSelected, setLocationSelected] = useState(null);
+  const [keySearchLocation, setKeySearchLocation] = useState('');
+
+  const locationId = match.params.id;
 
   useEffect(() => {
-    getCategoryList();
+    getLocationList();
     getProductTourList({
       page: 1,
       limit: 10,
+      locationId
     });
   }, []);
 
-  function handleFilterCategory(id) {
-    setCategorySelected(id);
+  useEffect(() => {
+    getProductTourList({
+      page: 1,
+      limit: 10
+    });
+  }, [keySearchLocation]);
+
+  const filterTourList = productTourList.data.filter((item) => {
+    return item.location.name.trim().toLowerCase().indexOf(keySearchLocation.trim().toLowerCase()) !== -1
+  })
+  let filterLocationById = locationList.data.filter((item) => {
+    return item.id == locationSelected;
+  })
+
+  function handleFilterLocaiton(id) {
+    setKeySearchLocation('');
+    setLocationSelected(id);
     getProductTourList({
       page: 1,
       limit: 10,
-      categoryId: id,
+      locationId: id,
     })
-  }
-  function findTour() {
-
   }
   const currentDate = new Date();
   function renderProductTourList() {
@@ -49,13 +63,20 @@ function ProductTourListPage({
         <Row gutter={16} style={{margin:'0 80px', fontSize:20, padding:"15px 10px", borderRadius:4, backgroundColor:"#bae7ff"}}>
         <Form
           name="basic"
-          initialValues={{ remember: true }}
+          initialValues={{ location: '' }}
           layout="inline"
-          onFinish={findTour}
+          onFinish={(values) => {
+            setLocationSelected(null);
+            setKeySearchLocation(values.location); 
+            getProductTourList({
+              page: 1,
+              limit: 10
+            });
+          }}
         >
           <Col span={7}>
               <Form.Item
-                name="username"
+                name="location"
               >
                 <Input labelFontSize={100} fontSize={100} prefix={<EnvironmentOutlined />} style={{padding: '10px 50px', height:50, borderRadius:4, backgroundColor:"white"}} placeholder="Bạn muốn đi đâu?" />
               </Form.Item>
@@ -76,7 +97,7 @@ function ProductTourListPage({
           </Col>
           <Col span={3} >
             <Row style={{width:"100%"}} justify="end">
-              <Button style={{padding: '10px 50px', height:50, borderRadius:4, backgroundColor:"#ffe58f", color:"#003a8c", fontWeight:600}} >
+              <Button htmlType="submit" style={{padding: '10px 50px', height:50, borderRadius:4, backgroundColor:"#ffe58f", color:"#003a8c", fontWeight:600}} >
                 Tìm
               </Button>
             </Row>
@@ -91,12 +112,13 @@ function ProductTourListPage({
               bordered
               dataSource={[
                 { name: "Tất cả" },
-                ...categoryList.data,
+                ...locationList.data,
               ]}
               renderItem={(item) => (
                 <List.Item
-                  onClick={() => handleFilterCategory(item.id)}
-                  style={{ color: categorySelected === item.id ? 'red': 'black' }}
+                  onClick={() => handleFilterLocaiton(item.id)}
+                  // style={{color: locationSelected === item.id ? 'red': 'black' }}
+                  className ="list"
                 >
                   {item.name}
                 </List.Item>
@@ -110,22 +132,26 @@ function ProductTourListPage({
               style={{marginTop:20}}
               dataSource={[
                 { name: "Tất cả" },
-                ...categoryList.data,
+                ...locationList.data,
               ]}
               renderItem={(item) => (
                 <List.Item
-                  onClick={() => handleFilterCategory(item.id)}
-                  style={{ color: categorySelected === item.id ? 'red': 'black' }}
+                  onClick={() => handleFilterLocaiton(item.id)}
+                  style={{ color: locationSelected === item.id ? 'red': 'black'}}
                 >
                   {item.name}
                 </List.Item>
               )}
             />
+
+            
           </Col>
           <Col span={17} style={{marginTop:16}}>
+            {keySearchLocation && <Row style={{fontSize:28, fontWeight:600, color:"#69c0ff"}}>Tour du lịch "{keySearchLocation}" </Row>}
+            {filterLocationById.length !== 0 && <Row style={{fontSize:28, fontWeight:600, color:"#69c0ff"}}>Tour du lịch "{filterLocationById[0].name}" </Row>}
             {
-              productTourList.load ? (<p>Loading...</p>) 
-              :(productTourList.data.map((item, index) => {
+              filterTourList.load ? (<p>Loading...</p>) 
+              :(filterTourList.map((item, index) => {
                 return (
                   <ItemTour
                     key={index}
@@ -142,57 +168,6 @@ function ProductTourListPage({
           </Col>
 
         </Row>
-        {/* <Content className="site-layout" style={{ padding: '0 50px'}}>
-        <SearchTourPage productTourList={productTourList} />
-        <Layout>
-          <Sider
-            breakpoint="lg"
-            collapsedWidth="0"
-            onBreakpoint={broken => {
-              console.log(broken);
-            }}
-            onCollapse={(collapsed, type) => {
-              console.log(collapsed, type);
-            }}
-            style={{backgroundColor:"#ecf0f5"}}
-          >
-            <div className="logo" />
-            <Menu mode="inline" >
-              <Menu.Item key="1" >
-                <a href="google.com" >Hà Nội</a>
-              </Menu.Item>
-              <Menu.Item key="2">
-                Sài Gòn
-              </Menu.Item>
-              <Menu.Item key="3" >
-                Đà Nẵng
-              </Menu.Item>
-              <Menu.Item key="4" >
-                Huế
-              </Menu.Item>
-            </Menu>
-          </Sider>
-          <Layout>
-            <Content className="site-layout" style={{ padding: '0 25px' }}>
-              
-              {
-                productTourList.data.map((item, index) => {
-                  return (
-                    <ItemTour
-                      key={index}
-                      title={item.name}
-                      link={item.linkList}
-                      description={item.description}
-                      price={item.price}
-                      time={item.time}
-                    />
-                  )
-                })
-              }
-            </Content>
-          </Layout>
-        </Layout>
-        </Content> */}
       </div>
     )
   }
@@ -206,10 +181,10 @@ function ProductTourListPage({
 
 const mapStateToProps = (state) => {
   const { productTourList } = state.productTourReducer;
-  const { categoryList } = state.productHotelReducer;
+  const { locationList } = state.productHotelReducer;
   return {
     productTourList: productTourList,
-    categoryList: categoryList
+    locationList: locationList
 
   }
 };
@@ -217,7 +192,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     getProductTourList: (params) => dispatch(getProductTourListAction(params)),
-    getCategoryList: (params) => dispatch(getCategoryListAction(params)),
+    getLocationList: (params) => dispatch(getLocationListAction(params)),
   };
 }
 

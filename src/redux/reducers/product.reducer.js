@@ -1,5 +1,5 @@
 const initialState = {
-    productHotelList: {
+    locationList: {
       data: [],
       load: false,
       error: '',
@@ -21,13 +21,7 @@ const initialState = {
       data: [],
       load: false,
       error: '',
-    },
-    categoryList: {
-      data: [],
-      load: false,
-      error: '',
-    },
-
+    }
   };
   
   export default function productHotelReducer(state = initialState, action) {
@@ -35,8 +29,8 @@ const initialState = {
       case 'GET_LOCATION_LIST_REQUEST': {
         return {
           ...state,
-          productHotelList: {
-            ...state.productHotelList,
+          locationList: {
+            ...state.locationList,
             load: true,
           },
         }
@@ -46,8 +40,8 @@ const initialState = {
         console.log("🚀 ~ file: product.reducer.js ~ line 41 ~ productHotelReducer ~  data",  data)
         return {
           ...state,
-          productHotelList: {
-            ...state.productHotelList,
+          locationList: {
+            ...state.locationList,
             data: data,
             load: false,
           },
@@ -57,8 +51,8 @@ const initialState = {
         const { error } = action.payload;
         return {
           ...state,
-          productHotelList: {
-            ...state.productHotelList,
+          locationList: {
+            ...state.locationList,
             load: false,
             error: error,
           },
@@ -76,16 +70,6 @@ const initialState = {
       }
       case 'GET_LIST_HOTEL_SUCCESS': {
         
-        // const { data } = action.payload;
-        // return {
-        //   ...state,
-        //   listHotel: {
-        //     ...state.listHotel,
-        //     data: data,
-        //     load: false,
-        //   },
-        // }
-
        const { data, page, more } = action.payload;
         console.log("🚀 ~ file: product.reducer.js ~ line 93 ~ productHotelReducer ~ data", data)
         if (more) {
@@ -158,34 +142,34 @@ const initialState = {
         }
       }
       
-      case 'GET_CATEGORY_LIST_REQUEST': {
+      case 'GET_LOCATION_LIST_REQUEST': {
         return {
           ...state,
-          categoryList: {
-            ...state.categoryList,
+          locationList: {
+            ...state.locationList,
             load: true,
           },
         }
       }
       
-      case 'GET_CATEGORY_LIST_SUCCESS': {
+      case 'GET_LOCATION_LIST_SUCCESS': {
         const { data } = action.payload;
         return {
           ...state,
-          categoryList: {
-            ...state.categoryList,
+          locationList: {
+            ...state.locationList,
             data: data,
             load: false,
           },
         }
       }
       
-      case 'GET_CATEGORY_LIST_FAIL': {
+      case 'GET_LOCATION_LIST_FAIL': {
         const { error } = action.payload;
         return {
           ...state,
-          categoryList: {
-            ...state.categoryList,
+          locationList: {
+            ...state.locationList,
             load: false,
             error: error,
           },
