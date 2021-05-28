@@ -54,7 +54,6 @@ function HomePage({ getLocationList, locationList }) {
 
           {renderLocationList()}
         </Row>
-      {/* </Row> */}
 
     </div>
 
@@ -63,7 +62,7 @@ function HomePage({ getLocationList, locationList }) {
 
 }
 const mapStateToProps = (state) => {
-  const { locationList } = state.productHotelReducer;
+  const { locationList } = state.hotelReducer;
   return {
     locationList: locationList,
   }

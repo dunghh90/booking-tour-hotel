@@ -7,7 +7,7 @@ function* bookingHotelRoom(action) {
     const { userId, hotelId, roomId, startDate, endDate,page,limit } = action.payload;
     const result = yield axios({
       method: 'POST',
-      url: 'http://localhost:3002/bookingRooms',
+      url: 'http://localhost:3002/bookingHotels',
       params:{
         _page: page,
         _limit: limit
@@ -44,7 +44,7 @@ function* getBookingHotels(action) {
     const { userId } = action.payload;
     const result = yield axios({
       method: 'GET',
-      url: `http://localhost:3002/bookingRooms?_expand=hotel&_expand=room`,
+      url: `http://localhost:3002/bookingHotels?_expand=hotel&_expand=room`,
       params: {
         userId,
       }

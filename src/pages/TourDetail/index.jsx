@@ -5,9 +5,9 @@ import history from '../../utils/history';
 
 import { EnvironmentOutlined , HistoryOutlined, DingtalkOutlined } from '@ant-design/icons';
 
-import { getProductTourDetailAction, getProductTourListAction, bookingTourAction } from "../../redux/actions";
+import { getTourDetailAction, getTourListAction, bookingTourAction } from "../../redux/actions";
 import { HomeOutlined } from '@ant-design/icons';
-import CommentPage from '../Comment'
+import CommentPage from '../../components/Comment'
 import moment from 'moment';
 
 import './style.css'
@@ -16,8 +16,8 @@ import { Content } from "antd/lib/layout/layout";
 
 
 function TourDetailPage({
-  productTourDetail,
-  getProductTourDetail,
+  tourDetail,
+  getTourDetail,
   bookingTour,
   match,
 }) {
@@ -26,7 +26,7 @@ function TourDetailPage({
   const tourId = match.params.id;
   const userInfo = JSON.parse(localStorage.getItem('userInfo'));
 
-  const [money, setMoney] = useState(productTourDetail.data.price);
+  const [money, setMoney] = useState(tourDetail.data.price);
   const [countAdults, setCountAdults] = useState(1);
   const [countChild, setCountChild] = useState(0);
   var d = new Date();
@@ -36,21 +36,21 @@ function TourDetailPage({
 
 
   useEffect(() => {
-    getProductTourDetail({ id: tourId });
+    getTourDetail({ id: tourId });
   }, [])
 
   const dateFormat = 'DD/MM/YYYY';
   useEffect(() => {
-    if (productTourDetail.data.id) {
-      setMoney(productTourDetail.data.price);
+    if (tourDetail.data.id) {
+      setMoney(tourDetail.data.price);
     }
-  }, [productTourDetail.data])
+  }, [tourDetail.data])
 
   function setMoneyAdults(values) {
-    setMoney(productTourDetail.data.price * values + productTourDetail.data.price * countChild * 0.5);
+    setMoney(tourDetail.data.price * values + tourDetail.data.price * countChild * 0.5);
   }
   function setMoneyChild(values) {
-    setMoney(productTourDetail.data.price * countAdults + productTourDetail.data.price * values * 0.5);
+    setMoney(tourDetail.data.price * countAdults + tourDetail.data.price * values * 0.5);
   }
 
   function handleBookingTour() {
@@ -101,7 +101,7 @@ function TourDetailPage({
             </div>
           </Row>
           <Row style={{fontSize:40, fontWeight:"bold", fontFamily:"'Helvetica Neue',Helvetica,Arial,sans-serif"}}>
-            {productTourDetail.data.name}
+            {tourDetail.data.name}
           </Row>
           <Row>
             <div style={{height:60, display:"flex", alignItems:"center", justifyContent:"center"}}>
@@ -130,7 +130,7 @@ function TourDetailPage({
                   <Col span={6} align="right">Mã tour: TO516</Col>
               </Row>
               <div style={{ backgroundColor: "white", padding: "10px 30px 30px 30px", textAlign: "justify" }}>
-                <div dangerouslySetInnerHTML={{ __html: productTourDetail.data.information }}></div>
+                <div dangerouslySetInnerHTML={{ __html: tourDetail.data.information }}></div>
               </div>
               <div style={{backgroundColor:"white", padding:16, marginTop:16}}>
                 <CommentPage tourId={tourId} />
@@ -195,15 +195,15 @@ function TourDetailPage({
 }
 
 const mapStateToProps = (state) => {
-  const { productTourDetail } = state.productTourReducer;
+  const { tourDetail } = state.tourReducer;
   return {
-    productTourDetail,
+    tourDetail,
   }
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getProductTourDetail: (params) => dispatch(getProductTourDetailAction(params)),
+    getTourDetail: (params) => dispatch(getTourDetailAction(params)),
     bookingTour: (params) => dispatch(bookingTourAction(params)),
   };
 }

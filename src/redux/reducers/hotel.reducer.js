@@ -12,7 +12,7 @@ const initialState = {
     listRoom: {
       data: {
         rooms: [],
-        bookingRooms:[],
+        bookingHotels:[],
         src:[],
       },
       load: false,
@@ -25,7 +25,7 @@ const initialState = {
     }
   };
   
-  export default function productHotelReducer(state = initialState, action) {
+  export default function hotelReducer(state = initialState, action) {
     switch (action.type) {
       case 'GET_LOCATION_LIST_REQUEST': {
         return {
@@ -38,7 +38,6 @@ const initialState = {
       }
       case 'GET_LOCATION_LIST_SUCCESS': {
         const { data } = action.payload;
-        console.log("🚀 ~ file: product.reducer.js ~ line 41 ~ productHotelReducer ~  data",  data)
         return {
           ...state,
           locationList: {
@@ -72,7 +71,6 @@ const initialState = {
       case 'GET_LIST_HOTEL_SUCCESS': {
         
        const { data, page, more } = action.payload;
-        console.log("🚀 ~ file: product.reducer.js ~ line 93 ~ productHotelReducer ~ data", data)
         if (more) {
           return {
             ...state,
@@ -217,8 +215,8 @@ const initialState = {
             ...state.listRoom,
             data: {
               ...state.listRoom.data,
-              bookingRooms: [
-                ...state.listRoom.data.bookingRooms,
+              bookingHotels: [
+                ...state.listRoom.data.bookingHotels,
                 data,
               ]
             },

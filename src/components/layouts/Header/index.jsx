@@ -53,10 +53,7 @@ function renderInfoUser(userInfo, logout) {
 
 function HeaderPage(props) {
     const [seachKey,setSeachkey]= useState('')
-    
-    
     const { userInfo, logout } = props;
-    console.log("🚀 ~ file: index.jsx ~ line 58 ~ HeaderPage ~ userInfo", userInfo)
 
     const menu = (
         <Menu>

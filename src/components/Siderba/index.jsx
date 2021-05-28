@@ -18,8 +18,6 @@ function Siderba({
   listHotel
   
 }) {
-  console.log("🚀 ~ file: index.jsx ~ line 21 ~ locationId", locationId)
-
   const [locationSelected, setLocationSelected] = useState(0);
   useEffect(() => {
     // getRateList();
@@ -91,9 +89,7 @@ function Siderba({
   )
 }
 const mapStateToProps = (state) => {
-  const { rateList } = state.productHotelReducer;
-  const { listHotel } = state.productHotelReducer;
-  console.log("🚀 ~ file: index.jsx ~ line 69 ~ mapStateToProps ~ rateList", rateList)
+  const { rateList, listHotel } = state.hotelReducer;
   
   return {
     rateList: rateList,

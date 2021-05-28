@@ -5,14 +5,14 @@ import { EnvironmentOutlined, SendOutlined } from '@ant-design/icons';
 
 import moment from 'moment';
 
-import { getProductTourListAction, getLocationListAction } from '../../redux/actions';
+import { getTourListAction, getLocationListAction } from '../../redux/actions';
 import ItemTour from './components/ItemTour'
 import './styleTour.css'
 
-function ProductTourListPage({ 
-  getProductTourList, 
+function TourListPage({ 
+  getTourList, 
   getLocationList,
-  productTourList,
+  tourList,
   locationList,
   match
 }) {
@@ -24,7 +24,7 @@ function ProductTourListPage({
 
   useEffect(() => {
     getLocationList();
-    getProductTourList({
+    getTourList({
       page: 1,
       limit: 10,
       locationId
@@ -32,13 +32,13 @@ function ProductTourListPage({
   }, []);
 
   useEffect(() => {
-    getProductTourList({
+    getTourList({
       page: 1,
       limit: 10
     });
   }, [keySearchLocation]);
 
-  const filterTourList = productTourList.data.filter((item) => {
+  const filterTourList = tourList.data.filter((item) => {
     return item.location.name.trim().toLowerCase().indexOf(keySearchLocation.trim().toLowerCase()) !== -1
   })
   let filterLocationById = locationList.data.filter((item) => {
@@ -48,15 +48,15 @@ function ProductTourListPage({
   function handleFilterLocaiton(id) {
     setKeySearchLocation('');
     setLocationSelected(id);
-    getProductTourList({
+    getTourList({
       page: 1,
       limit: 10,
       locationId: id,
     })
   }
   const currentDate = new Date();
-  function renderProductTourList() {
-    if (productTourList.load) return <p>Loading...</p>;
+  function renderTourList() {
+    if (tourList.load) return <p>Loading...</p>;
 
     return (
       <div style={{padding: '10px 50px'}}>
@@ -68,7 +68,7 @@ function ProductTourListPage({
           onFinish={(values) => {
             setLocationSelected(null);
             setKeySearchLocation(values.location); 
-            getProductTourList({
+            getTourList({
               page: 1,
               limit: 10
             });
@@ -174,16 +174,16 @@ function ProductTourListPage({
 
   return (
     <div>
-      {renderProductTourList()}
+      {renderTourList()}
     </div>
   );
 }
 
 const mapStateToProps = (state) => {
-  const { productTourList } = state.productTourReducer;
-  const { locationList } = state.productHotelReducer;
+  const { tourList } = state.tourReducer;
+  const { locationList } = state.hotelReducer;
   return {
-    productTourList: productTourList,
+    tourList: tourList,
     locationList: locationList
 
   }
@@ -191,11 +191,11 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getProductTourList: (params) => dispatch(getProductTourListAction(params)),
+    getTourList: (params) => dispatch(getTourListAction(params)),
     getLocationList: (params) => dispatch(getLocationListAction(params)),
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProductTourListPage);
+export default connect(mapStateToProps, mapDispatchToProps)(TourListPage);
   
   

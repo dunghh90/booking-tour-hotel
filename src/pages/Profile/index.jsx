@@ -18,10 +18,9 @@ function ProfilePage({
   getBookingHotels,
   getBookingTours,
   addProfile,
-  bookingRooms,
+  bookingHotels,
   match
 }) {
-  console.log("🚀 ~ file: index.jsx ~ line 24 ~ bookingRooms", bookingRooms)
 
   const userId = match.params.id;
   const [selectObject, setSelectObject] = useState(1);
@@ -233,7 +232,7 @@ function ProfilePage({
         key: 'date',
       },
     ]
-    const tableData = bookingRooms.data.map((item) => {
+    const tableData = bookingHotels.data.map((item) => {
       
       return {
         ...item,
@@ -246,7 +245,7 @@ function ProfilePage({
       }
     });
     return <Table columns={tableColumn} dataSource={tableData} pagination={false} />
-    // return bookingRooms.data.map((item) => {
+    // return bookingHotels.data.map((item) => {
     //   return (
     //     <>
     //       <p>+++++++++++++++++</p>
@@ -354,13 +353,13 @@ function ProfilePage({
 }
 
 const mapStateToProps = (state) => {
-  const { bookingRooms } = state.bookingHotelReducer;
+  const { bookingHotels } = state.bookingHotelReducer;
   const { bookingTours } = state.bookingTourReducer;
   const { userInfo } = state.userReducer;
   
   return {
     bookingTours,
-    bookingRooms,
+    bookingHotels,
     userInfo,
   }
 };

@@ -1,19 +1,17 @@
 import { combineReducers } from 'redux';
-import taskReducer from './task.reducer';
-import productTourReducer from './product-tour.reducer';
-import productHotelReducer from'./product.reducer'
+import tourReducer from './tour.reducer';
+import hotelReducer from'./hotel.reducer'
 import userReducer from './user.reducer';
-import bookingTourReducer from './booking.reducer';
-import bookingHotelReducer from './bookingRoom.reducer';
+import bookingTourReducer from './bookingTour.reducer';
+import bookingHotelReducer from './bookingHotel.reducer';
 import commentReducer from './comment.reducer';
 import profileReducer from './comment.reducer';
 
 
 export default combineReducers({
-  taskReducer: taskReducer,
-  productTourReducer,
+  tourReducer,
   userReducer,
-  productHotelReducer,
+  hotelReducer,
   bookingHotelReducer,
   bookingTourReducer,
   commentReducer,

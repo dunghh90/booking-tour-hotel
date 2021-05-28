@@ -38,7 +38,6 @@ function CommentPage(props) {
         addComment({...values, userName: userInfo.name, hotelId: parseInt(hotelId), tourId: parseInt(tourId), userId: userInfo.id}) 
         // :
         // addComment({...values, tourId: parseInt(tourId), userId: userInfo.id, useName: userInfo.name });
-        console.log("hjghjgjhgjggg")
         form.resetFields();
       }
     }

@@ -4,61 +4,25 @@
       "id": 1,
       "email": "dung@gmail.com",
       "password": "1234",
-      "name": "Huu Dung"
+      "name": "Hoàng Hữu Dũng",
+      "birthday": "1990/11/07",
+      "gender": "male",
+      "phone": "0975631600"
     },
     {
       "id": 2,
-      "email": "minh@gmail.com",
+      "email": "linh@gmail.com",
       "password": "1234",
-      "name": "Minh"
-    },
-    {
-      "email": "test@gmail.com",
-      "password": "123",
-      "nickname": "Dung Hoang",
-      "id": 3
-    },
-    {
-      "email": "test1@gmail.com",
-      "password": "123",
-      "name": "test",
-      "id": 4
-    },
-    {
-      "email": "test2@gmail.com",
-      "password": "123",
-      "name": "Hoang Huu",
-      "id": 5
-    },
-    {
-      "email": "test123@gmail.com",
-      "password": "123",
-      "name": "Dung",
-      "id": 6
-    },
-    {
-      "email": "abc@gmail.com",
-      "password": "123",
-      "name": "abc",
-      "id": 7
-    },
-    {
-      "email": "dung123@gmail.com",
-      "password": "123",
-      "name": "Dung Hoang123",
-      "id": 8
-    },
-    {
-      "email": "dung132@gmail.com",
-      "password": "123",
-      "name": "hahaha",
-      "id": 10
+      "name": "linh",
+      "birthday": "1995/04/07",
+      "gender": "female",
+      "phone": "0702321494"
     },
     {
       "email": "nhominh193@gmail.com",
       "password": "1234",
       "name": "minh",
-      "id": 11,
+      "id": 3,
       "birthday": "2021/05/26",
       "gender": "male",
       "phone": "0702321494"
@@ -885,7 +849,7 @@
       "id": 16
     }
   ],
-  "bookingRooms": [
+  "bookingHotels": [
     {
       "id": 1,
       "userId": 1,
@@ -1002,28 +966,6 @@
       "startDate": "2021/05/04",
       "endDate": "2021/05/06",
       "id": 14
-    }
-  ],
-  "rates": [
-    {
-      "id": 1,
-      "rate": 1
-    },
-    {
-      "id": 2,
-      "rate": 2
-    },
-    {
-      "id": 3,
-      "rate": 3
-    },
-    {
-      "id": 4,
-      "rate": 4
-    },
-    {
-      "id": 5,
-      "rate": 5
     }
   ],
   "commentHotels": [

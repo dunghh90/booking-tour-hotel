@@ -1,7 +1,6 @@
-export * from './task.action';
 export * from './user.action';
-export * from './product-tour.action';
-export * from './product.action';
-export * from './booking.action';
+export * from './tour.action';
+export * from './hotel.action';
+export * from './bookingTour.action';
 export * from './comment.action';
 

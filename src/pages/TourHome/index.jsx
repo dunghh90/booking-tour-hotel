@@ -3,25 +3,25 @@ import { Content } from 'antd/lib/layout/layout';
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
 
-import { getProductTourListAction } from '../../redux/actions';
+import { getTourListAction } from '../../redux/actions';
 import ItemTour from './components/ItemTour'
 
-function TourHomePage({ getProductTourList, productTourList }) {
+function TourHomePage({ getTourList, tourList }) {
   useEffect(() => {
-    getProductTourList({
+    getTourList({
       page: 1,
       limit: 10,
     });
   }, []);
 
-  function renderProductTourList() {
-    if (productTourList.load) return <p>Loading...</p>;
+  function renderTourList() {
+    if (tourList.load) return <p>Loading...</p>;
     
     return (
       <Content className="site-layout" style={{ padding: '0 50px', marginTop: 64 }}>
       <Row gutter={[24, 24]}>
         {
-          productTourList.data.map((item, index) => {
+          tourList.data.map((item, index) => {
             return (
               <ItemTour
                 key={index}
@@ -41,21 +41,21 @@ function TourHomePage({ getProductTourList, productTourList }) {
 
   return (
     <div>
-      {renderProductTourList()}
+      {renderTourList()}
     </div>
   );
 }
 
 const mapStateToProps = (state) => {
-  const { productTourList } = state.productTourReducer;
+  const { tourList } = state.tourReducer;
   return {
-    productTourList: productTourList,
+    tourList: tourList,
   }
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getProductTourList: (params) => dispatch(getProductTourListAction(params)),
+    getTourList: (params) => dispatch(getTourListAction(params)),
   };
 }
 

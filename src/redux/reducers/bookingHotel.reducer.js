@@ -1,5 +1,5 @@
 const initialState = {
-    bookingRooms: {
+    bookingHotels: {
       data: [],
       load: false,
       error: '',
@@ -11,8 +11,8 @@ const initialState = {
       case 'BOOKING_HOTEL_ROOM_REQUEST': {
         return {
           ...state,
-          bookingRooms: {
-            ...state.bookingRooms,
+          bookingHotels: {
+            ...state.bookingHotels,
             load: false,
           },
         }
@@ -21,8 +21,8 @@ const initialState = {
         const { data } = action.payload;
         return {
           ...state,
-          bookingRooms: {
-            ...state.bookingRooms,
+          bookingHotels: {
+            ...state.bookingHotels,
             data: data,
             load: false,
           },
@@ -33,8 +33,8 @@ const initialState = {
         const { data } = action.payload;
         return {
           ...state,
-          bookingRooms: {
-            ...state.bookingRooms,
+          bookingHotels: {
+            ...state.bookingHotels,
             data: data,
             load: false,
           },
@@ -44,8 +44,8 @@ const initialState = {
         const { error } = action.payload;
         return {
           ...state,
-          bookingRooms: {
-            ...state.bookingRooms,
+          bookingHotels: {
+            ...state.bookingHotels,
             load: false,
             error: error,
           },

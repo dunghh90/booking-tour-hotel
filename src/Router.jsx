@@ -6,13 +6,13 @@ import { ROUTERS } from './constants/router';
 import LoginLayout from './components/layouts/LoginLayout';
 import DefaultLayout from './components/layouts/DefaultLayout';
 
-import ProductTourListPage from './pages/TourList';
+import TourListPage from './pages/TourList';
 import LoginPage from './pages/Login';
 import TourHomePage from './pages/TourHome';
 import HomePage from './pages/HotelHome';
 import ListHotelPage from './pages/HotelList';
 import ListRoomPage from './pages/HotelDetail';
-import reViewPage from './pages/Review';
+import reViewPage from './components/Review';
 import TourDetailPage from "./pages/TourDetail";
 import ProfilePage from "./pages/Profile"
 
@@ -23,7 +23,7 @@ function BrowserRouter(props) {
       <Switch>
         <DefaultLayout exact path="/homeTour" component={TourHomePage} />
         <LoginLayout exact path="/login" component={LoginPage} />
-        <DefaultLayout exact path="/listTour" component={ProductTourListPage} />
+        <DefaultLayout exact path="/listTour" component={TourListPage} />
         <DefaultLayout exact path="/tours/:id" component={TourDetailPage} />
         {/* <DefaultLayout exact path="/profile/:id" component={ProfilePage} /> */}
         <DefaultLayout
