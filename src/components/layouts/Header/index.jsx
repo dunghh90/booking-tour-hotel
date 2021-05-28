@@ -85,10 +85,10 @@ function HeaderPage(props) {
                                 <div className="menu">
                                       <ul className= "menu-cha">
                                           <li className="menu1">
-                                              <Link to ={ROUTERS.HOME}>Khách sạn</Link>
+                                              <Link to ={ROUTERS.HOTEL_HOME}>Khách sạn</Link>
                                           </li>
                                           <li className="menu1">
-                                              <Link to={ROUTERS.TOUR}>Tour</Link>
+                                              <Link to={ROUTERS.TOUR_LIST}>Tour</Link>
                                           </li>
                                           <li className="menu1">
                                               <Link to={ROUTERS.REVIEW} >Giới thiệu</Link>

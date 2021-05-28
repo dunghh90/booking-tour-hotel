@@ -172,7 +172,7 @@
       "name": "Cà Mau",
       "img": "//cdn1.ivivu.com/iVivu/2017/01/23/11/khu-nghi-duong-the-graden-house-phu-quoc-374x280.png"
     }
-   ],
+  ],
   "hotels": [
     {
       "id": 1,
@@ -847,6 +847,14 @@
       "numberAdults": 1,
       "numberChild": 0,
       "id": 16
+    },
+    {
+      "userId": 1,
+      "tourId": 1,
+      "startDate": "2021/05/29",
+      "numberAdults": 1,
+      "numberChild": 0,
+      "id": 17
     }
   ],
   "bookingHotels": [

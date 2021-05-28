@@ -21,11 +21,16 @@ function BrowserRouter(props) {
   return (
     <Router history={history}>
       <Switch>
-        <DefaultLayout exact path="/homeTour" component={TourHomePage} />
-        <LoginLayout exact path="/login" component={LoginPage} />
-        <DefaultLayout exact path="/listTour" component={TourListPage} />
-        <DefaultLayout exact path="/tours/:id" component={TourDetailPage} />
+        {/* <DefaultLayout exact path="/homeTour" component={TourHomePage} /> */}
+        {/* <LoginLayout exact path="/login" component={LoginPage} /> */}
+        {/* <DefaultLayout exact path="/listTour" component={TourListPage} /> */}
+        {/* <DefaultLayout exact path="/tours/:id" component={TourDetailPage} /> */}
         {/* <DefaultLayout exact path="/profile/:id" component={ProfilePage} /> */}
+        <DefaultLayout
+          exact
+          path={ROUTERS.LOGIN}
+          component={LoginPage}
+        />
         <DefaultLayout
           exact
           path={ROUTERS.PROFILE}
@@ -33,31 +38,46 @@ function BrowserRouter(props) {
         />
         <DefaultLayout
           exact
-          path={ROUTERS.HOME}
+          path={ROUTERS.TOUR_HOME}
+          component={TourHomePage}
+        />
+        <DefaultLayout
+          exact
+          path={ROUTERS.TOUR_LIST}
+          component={TourListPage}
+        />
+        <DefaultLayout
+          exact
+          path={ROUTERS.TOUR_DETAIL}
+          component={TourDetailPage}
+        />
+        <DefaultLayout
+          exact
+          path={ROUTERS.HOTEL_HOME}
           component={HomePage}
           productList={productList}
         />
         <DefaultLayout
           exact
-          path={ROUTERS.LIST_HOTEL}
+          path={ROUTERS.HOTEL_LIST}
           component={ListHotelPage}
           productList={productList}
         />
-          <DefaultLayout
+        <DefaultLayout
           exact
-          path={ROUTERS.LIST_ROOM}
+          path={ROUTERS.HOTEL_DETAIL}
           component={ListRoomPage}
           productList={productList}
         />
-         <DefaultLayout
+        <DefaultLayout
           exact
           path={ROUTERS.REVIEW}
           component={reViewPage}
           productList={productList}
         />
-        
+
       </Switch>
-      
+
     </Router>
   );
 }

@@ -1,10 +1,12 @@
 export const ROUTERS = {
-  HOME: '/',
   LOGIN: '/login',
-  LIST_HOTEL: '/locations/:id',
+  PROFILE:'/profile/:id',
   REVIEW:'/review',
-  TOUR: '/listTour',
-  LIST_ROOM:'/hotels/:id',
-  PROFILE:'/profile/:id'
+  HOTEL_HOME: '/',
+  HOTEL_LIST: '/locations/:id',
+  HOTEL_DETAIL:'/hotels/:id',
+  TOUR_HOME:'/homeTour',
+  TOUR_LIST:'/listTour',
+  TOUR_DETAIL:'/tours/:id'
   
 }
