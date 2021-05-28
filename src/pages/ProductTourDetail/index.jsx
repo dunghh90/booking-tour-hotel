@@ -7,7 +7,7 @@ import { EnvironmentOutlined , HistoryOutlined, DingtalkOutlined } from '@ant-de
 
 import { getProductTourDetailAction, getProductTourListAction, bookingTourAction } from "../../redux/actions";
 import { HomeOutlined } from '@ant-design/icons';
-import Comment from '../../pages/Comment'
+import CommentPage from '../../pages/Comment'
 import moment from 'moment';
 
 import './style.css'
@@ -133,7 +133,7 @@ function TourDetailPage({
                 <div dangerouslySetInnerHTML={{ __html: productTourDetail.data.information }}></div>
               </div>
               <div style={{backgroundColor:"white", padding:16, marginTop:16}}>
-                <Comment tourId={tourId} />
+                <CommentPage tourId={tourId} />
                 {/* <Form
                   form={rateTourForm}
                   

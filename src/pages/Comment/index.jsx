@@ -1,14 +1,16 @@
-import { Form, Input, Button, Rate,Col, Row, Space } from 'antd';
-import { useEffect } from 'react';
+import { Form, Input, Button, Rate,Col, Row, Space, Comment, Tooltip, Avatar} from 'antd';
+import { useEffect, createElement, useState } from 'react';
 import { connect } from 'react-redux';
+import { DislikeOutlined, LikeOutlined, DislikeFilled, LikeFilled } from '@ant-design/icons';
 import './style.css'
 import {
     getCommentAction,
     addCommentAction,
   } from '../../redux/actions';
+import moment from 'moment';
 
-function Comment(props) {
-    const {  commentList, addComment, deleteTask, getCommentList, hotelId, tourId} = props;
+function CommentPage(props) {
+    const {  commentList, addComment, deleteTask, getCommentList, hotelId, tourId, userInfo} = props;
     const [form] =Form.useForm();
 
     useEffect(() => {
@@ -27,10 +29,8 @@ function Comment(props) {
       // })
     },[])
 
-    const userInfo = JSON.parse(localStorage.getItem('userInfo'));
-
     function handleAddComment(values){
-      if (!userInfo) {
+      if (!userInfo.data.id) {
         alert('Bạn cần đăng nhập!');
       } else {
         // hotelId ? 
@@ -42,12 +42,69 @@ function Comment(props) {
         form.resetFields();
       }
     }
+    const [likes, setLikes] = useState(0);
+    const [dislikes, setDislikes] = useState(0);
+    const [action, setAction] = useState(null);
+    const like = () => {
+      setLikes(1);
+      setDislikes(0);
+      setAction('liked');
+    };
+  
+    const dislike = () => {
+      setLikes(0);
+      setDislikes(1);
+      setAction('disliked');
+    };
+    const actions = [
+      <Tooltip key="comment-basic-like" title="Like">
+        {/* <span onClick={like}> */}
+        <span >
+          {createElement(action === 'liked' ? LikeFilled : LikeOutlined)}
+          <span className="comment-action">{likes}</span>
+        </span>
+      </Tooltip>,
+      <Tooltip key="comment-basic-dislike" title="Dislike">
+        {/* <span onClick={dislike}> */}
+        <span >
+          {createElement(action === 'disliked' ? DislikeFilled : DislikeOutlined)}
+          <span className="comment-action">{dislikes}</span>
+        </span>
+      </Tooltip>,
+      // <span key="comment-basic-reply-to">Reply to</span>,
+    ];
     function renderComment() {
         return commentList.data.map((item, index) => {
           return (
             <div style={{width: "auto"}}>
                 <div class="horizontalLine"></div>
-                <Row>
+                <Comment
+                  actions={actions}
+                  author={<a>{item.userName}</a>
+                            }
+                  avatar={
+                    <Avatar
+                      src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+                      alt="Han Solo"
+                    />
+                  }
+                  content={
+                    <>
+                    <Rate disabled value={item.rate} />
+                    <p>{item.comment}</p>
+                    </>
+                  }
+                  datetime={
+                    <>
+                      <span>Bình luận ngày </span>
+                      <Tooltip title={moment().format('YYYY-MM-DD HH:mm:ss')}>
+                        <span>{item.creatDate}</span>
+                      </Tooltip>
+                    </>
+                  }
+                />
+
+                {/* <Row>
                   <Col span={6}>
                     <h4>{item.userName}</h4>
                   </Col>
@@ -60,7 +117,7 @@ function Comment(props) {
                     {item.comment}
                     </p>
                   </Col>
-                </Row>
+                </Row> */}
            </div>
           );
         })
@@ -68,7 +125,7 @@ function Comment(props) {
  
     return (
         <>
-
+          {userInfo.data.id && (
             <Form
                 // {...layout}
                 name="basic"
@@ -102,6 +159,7 @@ function Comment(props) {
           </Button>
                 </Form.Item>
             </Form>
+            )}
             {/* <Col span={24}> */}
             <p><h3>Đánh giá gần đây</h3></p>
             {renderComment()}
@@ -114,8 +172,10 @@ function Comment(props) {
 }
 const mapStateToProps = (state) => {
   const  {commentList}  = state.commentReducer;
+  const {userInfo} = state.userReducer ; 
     return {
       commentList: commentList,
+      userInfo
     }
   };
   
@@ -126,4 +186,4 @@ const mapStateToProps = (state) => {
     };
   }
   
-  export default connect(mapStateToProps, mapDispatchToProps)(Comment);
+  export default connect(mapStateToProps, mapDispatchToProps)(CommentPage);

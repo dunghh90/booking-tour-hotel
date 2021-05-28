@@ -44,7 +44,6 @@ function* loginSaga(action) {
 function* registerSaga(action) {
   try {
     const { email, password, name,birthday,gender,phone } = action.payload;
-    console.log("🚀 ~ file: user.saga.js ~ line 47 ~ function*registerSaga ~ email", email)
     const result = yield axios({
       method: 'POST',
       url: 'http://localhost:3002/users',
