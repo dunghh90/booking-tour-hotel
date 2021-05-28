@@ -108,7 +108,7 @@ function ListHotelPage({
 }
 
 const mapStateToProps = (state) => {
-  const { listHotel } = state.productHotelReducer;
+  const { listHotel } = state.hotelReducer;
   return {
     listHotel,
   }
@@ -121,27 +121,6 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ListHotelPage);
-
-
-  // const productDetail = productList.find((item) => item. hotelsid.toString() ===  hotelsid);
-  // return (
-  //   <>
-  //   <Row >
-  //     <Col span ={16}>
-  //   <Card>
-
-  //     <img style={{width:200 , height:200}} src={productDetail.img} />
-  //     <div className="detail">
-  //     <h2>
-  //     {productDetail.name}
-  //     </h2>
-  //     <span>{productDetail.comment}</span>
-  //     </div>
-  //   </Card>
-  //     </Col>
-  //   </Row>
-  //   </>
-  // );
 
 
 

@@ -1,23 +1,17 @@
 import { Button, Card, DatePicker, Row, Col, Form, Input, Space } from 'antd';
 
 import { connect } from 'react-redux';
-import { getListRoomAction } from '../../redux/actions';
 import { Content } from 'antd/lib/layout/layout';
 import { useEffect, useState } from 'react';
-import history from '../../utils/history';
-import { Rate } from 'antd';
-import './styles.css';
 import { SendOutlined, HomeOutlined } from '@ant-design/icons';
+import { Rate } from 'antd';
+import history from '../../utils/history';
 import moment from 'moment';
-import ItemRoom from './item';
-import CommentPage from '../Comment'
+import ItemRoom from './components/itemRoom';
+import CommentPage from '../../components/Comment'
+import { bookingHotelAction, getListRoomAction } from '../../redux/actions';
 
-
-import {
-
-  bookingHotelAction,
-} from '../../redux/actions';
-
+import './styles.css';
 
 function ListRoomPage({
   listRoom,
@@ -109,7 +103,7 @@ function ListRoomPage({
     return listRoom.data.rooms.map((item, index) => {
       let isDisabled = false;
       if (dateSelected) (
-        listRoom.data.bookingRooms.forEach((bookingItem, bookingIndex) => {
+        listRoom.data.bookingHotels.forEach((bookingItem, bookingIndex) => {
 
           if (
             (
@@ -117,7 +111,6 @@ function ListRoomPage({
                 moment(dateSelected[0], 'YYYY/MM/DD').unix() - moment(bookingItem.startDate, 'YYYY/MM/DD').unix() >= 0 &&
                 moment(bookingItem.endDate, 'YYYY/MM/DD').unix() - moment(dateSelected[1], 'YYYY/MM/DD').unix() >= 0
               ) || (
-                console.log("🚀 ~ file: index.jsx ~ line 75 ~ listRoom.data.bookingRooms.forEach ~ dateSelected", dateSelected),
                 moment(dateSelected[1], 'YYYY/MM/DD').unix() - moment(bookingItem.startDate, 'YYYY/MM/DD').unix() > 0 &&
                 moment(bookingItem.startDate, 'YYYY/MM/DD').unix() - moment(dateSelected[0], 'YYYY/MM/DD').unix() > 0
               ) || (
@@ -172,17 +165,6 @@ function ListRoomPage({
                     </div>
 
                   </div>
-
-
-
-                  {/* <Radio.Group
-        onChange={(e) => setOptionSelected(e.target.value)}
-        value={optionSelected}
-      > */}
-                  {/* {renderProductOptions()} */}
-                  {/* </Radio.Group> */}
-                  {/* {productHotelDetail.data.price + (optionSelected.price || 0)} */}
-
 
                 </Card>
               </Col>
@@ -307,8 +289,7 @@ function ListRoomPage({
 }
 
 const mapStateToProps = (state) => {
-  const { listRoom } = state.productHotelReducer;
-  console.log("🚀 ~ file: index.jsx ~ line 126 ~ mapStateToProps ~ listRoom", listRoom)
+  const { listRoom } = state.hotelReducer;
   return {
     listRoom,
   }
@@ -322,27 +303,6 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ListRoomPage);
-
-
-  // const productDetail = productList.find((item) => item. hotelsid.toString() ===  hotelsid);
-  // return (
-  //   <>
-  //   <Row >
-  //     <Col span ={16}>
-  //   <Card>
-
-  //     <img style={{width:200 , height:200}} src={productDetail.img} />
-  //     <div className="detail">
-  //     <h2>
-  //     {productDetail.name}
-  //     </h2>
-  //     <span>{productDetail.comment}</span>
-  //     </div>
-  //   </Card>
-  //     </Col>
-  //   </Row>
-  //   </>
-  // );
 
 
 

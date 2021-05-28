@@ -95,7 +95,6 @@ function* updateProfileSaga(action) {
         url: `http://localhost:3002/users/${id}`,
         data: { email, name,birthday,gender,phone},
       });
-    console.log("🚀 ~ file: user.saga.js ~ line 99 ~ function*addProfileSaga ~ result", result)
     yield localStorage.setItem('userInfo', JSON.stringify(result.data));
     yield put({
       type: "UPDATE_PROFILE_SUCCESS",

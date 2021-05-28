@@ -62,7 +62,7 @@ function* getListRoomSaga(action) {
     const { id } = action.payload;
     const result = yield axios({
       method: 'GET',
-      url: `http://localhost:3002/hotels/${id}?_embed=rooms&_embed=bookingRooms&_expand=location`,
+      url: `http://localhost:3002/hotels/${id}?_embed=rooms&_embed=bookingHotels&_expand=location`,
       
     });
     
@@ -103,7 +103,7 @@ function* getRateListSaga(action) {
     }
   }
 
-export default function* productHotelSaga() {
+export default function* hotelSaga() {
   yield takeEvery('GET_LOCATION_LIST_REQUEST', getLocationListSaga);
   yield takeEvery('GET_LIST_HOTEL_REQUEST', getListHotelSaga);
   yield takeEvery('GET_RATE_LIST_REQUEST', getRateListSaga);

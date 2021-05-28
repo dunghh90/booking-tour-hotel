@@ -1,10 +1,9 @@
 import { put, takeEvery } from 'redux-saga/effects';
 import axios from 'axios';
 
-function* getProductTourListSaga(action) {
+function* getTourListSaga(action) {
   try {
     const { page, limit, locationId } = action.payload;
-    console.log("🚀 ~ file: product-tour.saga.js ~ line 7 ~ function*getProductTourListSaga ~ locationId", locationId)
     const result = yield axios({
       method: 'GET',
       url: 'http://localhost:3002/tours',
@@ -20,14 +19,14 @@ function* getProductTourListSaga(action) {
       }
     });
     yield put({
-      type: "GET_PRODUCT_TOUR_LIST_SUCCESS",
+      type: "GET_TOUR_LIST_SUCCESS",
       payload: {
         data: result.data
       },
     });
   } catch (e) {
     yield put({
-      type: "GET_PRODUCT_TOUR_LIST_FAIL",
+      type: "GET_TOUR_LIST_FAIL",
       payload: {
         error: e.error
       },
@@ -35,31 +34,30 @@ function* getProductTourListSaga(action) {
   }
 }
 
-function* getProductTourDetailSaga(action) {
+function* getTourDetailSaga(action) {
   try {
     const { id } = action.payload;
     const result = yield axios({
       method: 'GET',
       url: `http://localhost:3002/tours/${id}`,
       params: {
-        // _embed: 'productOptions',
         _expand: 'tourDescription'
       }
     });
     yield put({
-      type: "GET_PRODUCT_TOUR_DETAIL_SUCCESS",
+      type: "GET_TOUR_DETAIL_SUCCESS",
       payload: {
         data: result.data,
       },
     });
   } catch (e) {
-    yield put({type: "GET_PRODUCT_TOUR_DETAIL_FAIL", message: e.message});
+    yield put({type: "GET_TOUR_DETAIL_FAIL", message: e.message});
   }
 }
 
 
-export default function* productTourSaga() {
-  yield takeEvery('GET_PRODUCT_TOUR_LIST_REQUEST', getProductTourListSaga);
-  yield takeEvery('GET_PRODUCT_TOUR_DETAIL_REQUEST', getProductTourDetailSaga);
+export default function* tourSaga() {
+  yield takeEvery('GET_TOUR_LIST_REQUEST', getTourListSaga);
+  yield takeEvery('GET_TOUR_DETAIL_REQUEST', getTourDetailSaga);
   
 }
