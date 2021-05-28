@@ -214,190 +214,322 @@
       "id": 1,
       "locationId": 1,
       "img": "//cdn1.ivivu.com/iVivu/2019/09/18/16/sa-pa-370x190.png",
+      "src": [
+        "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
+        "https://img.lovepik.com/photo/50065/5248.jpg_wh860.jpg",
+        "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/10/Intercontinental-Westlake-review1.jpeg",
+        "http://vinatel.com.vn/public/media/file/files/blog/Giai-phap-hotel-tv-cho-khach-san-5-sao-1.jpg"
+      ],
       "rate": 5,
       "name": "Hotel Hà Nội Godel",
       "Title": "Đường Trần Duy Hưng",
-      "Price": " 4.190.000 VND",
-      "combo": "2N2D + Buffet + Đưa đón sân bay"
+      "Price": 4900000,
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "note": "<div class='tong'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
     },
     {
       "id": 2,
       "locationId": 1,
       "img": "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/12/3-khach-san-5-sao-tai-Sapa-1.jpg",
+      "src": [
+        "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
+        "https://img.lovepik.com/photo/50065/5248.jpg_wh860.jpg",
+        "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/10/Intercontinental-Westlake-review1.jpeg",
+        "http://vinatel.com.vn/public/media/file/files/blog/Giai-phap-hotel-tv-cho-khach-san-5-sao-1.jpg"
+      ],
       "rate": 4,
       "name": "Hotel Royal",
       "Title": "Đường Hoàng Hoa Thám",
-      "Price": "5.190.000 VND",
-      "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage"
+      "Price": 3900000,
+      "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage",
+      "note": "<div class='tong'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
     },
     {
       "id": 3,
       "locationId": 1,
       "img": "https://travelreview.vn/wp-content/uploads/2018/10/Kha%CC%81ch-sa%CC%A3n-2-sao-%C6%A1%CC%89-Sapa-2.jpg",
+      "src": [
+        "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
+        "https://img.lovepik.com/photo/50065/5248.jpg_wh860.jpg",
+        "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/10/Intercontinental-Westlake-review1.jpeg",
+        "http://vinatel.com.vn/public/media/file/files/blog/Giai-phap-hotel-tv-cho-khach-san-5-sao-1.jpg"
+      ],
       "rate": 4,
       "name": "Hotel BatMan ",
       "Title": "Đường Lê Duẩn",
-      "Price": "4.690.000 VND",
-      "combo": "2N2D + Buffet + Đưa đón sân bay"
+      "Price": 3900000,
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "note": "<div class='tong'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
     },
     {
       "id": 4,
       "locationId": 1,
       "name": "Hotel Mường Thanh",
       "img": "https://cf.bstatic.com/images/hotel/max1024x768/210/210656131.jpg",
+      "src": [
+        "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
+        "https://img.lovepik.com/photo/50065/5248.jpg_wh860.jpg",
+        "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/10/Intercontinental-Westlake-review1.jpeg",
+        "http://vinatel.com.vn/public/media/file/files/blog/Giai-phap-hotel-tv-cho-khach-san-5-sao-1.jpg"
+      ],
       "rate": 5,
       "Title": "Đường Lê Duẩn",
-      "Price": "5.190.000 VND",
-      "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage"
+      "Price": 4900000,
+      "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage",
+      "note": "<div class='tong'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
     },
     {
       "id": 5,
       "locationId": 2,
       "name": "Hotel Supper Godel",
       "img": "https://pix10.agoda.net/hotelImages/626432/-1/4e377e4b246a20370ac4a9fb2e4850be.jpg?s=1024x768",
+      "src": [
+        "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
+        "https://img.lovepik.com/photo/50065/5248.jpg_wh860.jpg",
+        "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/10/Intercontinental-Westlake-review1.jpeg",
+        "http://vinatel.com.vn/public/media/file/files/blog/Giai-phap-hotel-tv-cho-khach-san-5-sao-1.jpg"
+      ],
       "rate": 5,
       "Title": "Đường Supper",
-      "Price": "4.690.000 VND",
-      "combo": "2N2D + Buffet + Đưa đón sân bay"
+      "Price": 4900000,
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "note": "<div class='tong'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
     },
     {
       "id": 6,
       "locationId": 1,
       "img": "https://pix10.agoda.net/hotelImages/5649846/-1/ab54b6f91c343b2e68002618cdffa496.jpg?s=1024x768",
+      "src": [
+        "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
+        "https://img.lovepik.com/photo/50065/5248.jpg_wh860.jpg",
+        "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/10/Intercontinental-Westlake-review1.jpeg",
+        "http://vinatel.com.vn/public/media/file/files/blog/Giai-phap-hotel-tv-cho-khach-san-5-sao-1.jpg"
+      ],
       "rate": 3,
       "name": "Hotel VinGroup",
       "Title": "Đường Bạch Đằng",
-      "Price": "5.190.000 VND",
-      "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage"
+      "Price": 2900000,
+      "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage",
+      "note": "<div class='tong'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
     },
     {
       "id": 7,
       "locationId": 1,
       "img": "https://cdn3.ivivu.com/2017/11/khach-san-sapa-ivivu-20.jpg",
+      "src": [
+        "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
+        "https://img.lovepik.com/photo/50065/5248.jpg_wh860.jpg",
+        "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/10/Intercontinental-Westlake-review1.jpeg",
+        "http://vinatel.com.vn/public/media/file/files/blog/Giai-phap-hotel-tv-cho-khach-san-5-sao-1.jpg"
+      ],
       "rate": 3,
       "name": "Hotel Jude Hill",
       "Title": "Đường Đồng Lợi",
-      "Price": "4.690.000 VND",
-      "combo": "2N2D + Buffet + Đưa đón sân bay"
+      "Price": 4900000,
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "note": "<div class='tong'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
     },
     {
       "id": 8,
       "locationId": 1,
       "img": "https://dulichkhampha24.com/wp-content/uploads/2019/05/ban-cong-khach-san-paos-sapa.jpeg",
+      "src": [
+        "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
+        "https://img.lovepik.com/photo/50065/5248.jpg_wh860.jpg",
+        "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/10/Intercontinental-Westlake-review1.jpeg",
+        "http://vinatel.com.vn/public/media/file/files/blog/Giai-phap-hotel-tv-cho-khach-san-5-sao-1.jpg"
+      ],
       "rate": 2,
       "name": "Hotel Royal",
       "Title": "Đường Hoạt Nam",
-      "Price": "5.190.000 VND",
-      "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage"
+      "Price": 1900000,
+      "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage",
+      "note": "<div class='tong'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
     },
     {
       "id": 9,
       "locationId": 2,
       "img": "https://cdn.huongnghiepaau.com/wp-content/uploads/2019/10/khach-san-pullman-ha-noi.jpg",
+      "src": [
+        "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
+        "https://img.lovepik.com/photo/50065/5248.jpg_wh860.jpg",
+        "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/10/Intercontinental-Westlake-review1.jpeg",
+        "http://vinatel.com.vn/public/media/file/files/blog/Giai-phap-hotel-tv-cho-khach-san-5-sao-1.jpg"
+      ],
       "rate": 5,
       "name": "Hotel Hà Nội Godel",
       "Title": "Đường Trần Duy Hưng",
-      "Price": "4.690.000 VND",
-      "combo": "2N2D + Buffet + Đưa đón sân bay"
+      "Price": 4900000,
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "note": "<div class='tong'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
     },
     {
       "id": 10,
       "locationId": 2,
       "img": "https://pix10.agoda.net/hotelImages/4885116/0/3ec7a573097742323e2f976670239467.jpg?s=1024x768",
+      "src": [
+        "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
+        "https://img.lovepik.com/photo/50065/5248.jpg_wh860.jpg",
+        "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/10/Intercontinental-Westlake-review1.jpeg",
+        "http://vinatel.com.vn/public/media/file/files/blog/Giai-phap-hotel-tv-cho-khach-san-5-sao-1.jpg"
+      ],
       "rate": 4,
       "name": "Hotel Matcha",
       "Title": "Đường Phạm Hùng",
-      "Price": "5.190.000 VND",
-      "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage"
+      "Price": 3900000,
+      "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage",
+      "note": "<div class='tong'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
     },
     {
       "id": 11,
       "locationId": 2,
       "img": "https://toquoc.mediacdn.vn/2019/2/28/my-trieu-summit-15513252506751703394469.jpg",
+      "src": [
+        "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
+        "https://img.lovepik.com/photo/50065/5248.jpg_wh860.jpg",
+        "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/10/Intercontinental-Westlake-review1.jpeg",
+        "http://vinatel.com.vn/public/media/file/files/blog/Giai-phap-hotel-tv-cho-khach-san-5-sao-1.jpg"
+      ],
       "rate": 4,
       "name": "Hotel Royal ",
       "Title": "Đường Hùng Vương",
-      "Price": "4.690.000 VND",
-      "combo": "2N2D + Buffet + Đưa đón sân bay"
+      "Price": 3900000,
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "note": "<div class='tong'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
     },
     {
       "id": 12,
       "locationId": 2,
       "name": "Hotel Mường Thanh",
       "img": "https://cf.bstatic.com/images/hotel/max1024x768/863/86327330.jpg",
+      "src": [
+        "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
+        "https://img.lovepik.com/photo/50065/5248.jpg_wh860.jpg",
+        "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/10/Intercontinental-Westlake-review1.jpeg",
+        "http://vinatel.com.vn/public/media/file/files/blog/Giai-phap-hotel-tv-cho-khach-san-5-sao-1.jpg"
+      ],
       "rate": 3,
       "Title": "Đường Âu Cơ",
-      "Price": "5.190.000 VND",
-      "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage"
+      "Price": 2900000,
+      "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage",
+      "note": "<div class='tong'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
     },
     {
       "id": 13,
       "locationId": 2,
       "img": "https://cdnimg.vietnamplus.vn/uploaded/fsmsr/2015_11_26/movenpickhanoi.jpg",
+      "src": [
+        "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
+        "https://img.lovepik.com/photo/50065/5248.jpg_wh860.jpg",
+        "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/10/Intercontinental-Westlake-review1.jpeg",
+        "http://vinatel.com.vn/public/media/file/files/blog/Giai-phap-hotel-tv-cho-khach-san-5-sao-1.jpg"
+      ],
       "rate": 5,
       "name": "Hotel Minh Toàn",
       "Title": "Đường Thác Bạc Thị ",
-      "Price": "4.690.000 VND",
-      "combo": "2N2D + Buffet + Đưa đón sân bay"
+      "Price": 4900000,
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "note": "<div class='tong'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
     },
     {
       "id": 14,
       "locationId": 2,
       "img": "https://bazantravel.com/cdn/medias/uploads/30/30991-khach-san-sheraton-hanoi.jpg",
+      "src": [
+        "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
+        "https://img.lovepik.com/photo/50065/5248.jpg_wh860.jpg",
+        "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/10/Intercontinental-Westlake-review1.jpeg",
+        "http://vinatel.com.vn/public/media/file/files/blog/Giai-phap-hotel-tv-cho-khach-san-5-sao-1.jpg"
+      ],
       "rate": 5,
       "name": "Hotel GaLaXy",
       "Title": "Đường Hai Bà Trưng",
-      "Price": "5.190.000 VND",
-      "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage"
+      "Price": 4900000,
+      "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage",
+      "note": "<div class='tong'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
     },
     {
       "id": 15,
       "locationId": 2,
       "img": "https://ik.imagekit.io/tvlk/apr-asset/TzEv3ZUmG4-4Dz22hvmO9NUDzw1DGCIdWl4oPtKumOg=/hotels/1000000/530000/523600/523534/246b00cd_z.jpg?tr=q-40,c-at_max,w-740,h-500&_src=imagekit",
+      "src": [
+        "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
+        "https://img.lovepik.com/photo/50065/5248.jpg_wh860.jpg",
+        "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/10/Intercontinental-Westlake-review1.jpeg",
+        "http://vinatel.com.vn/public/media/file/files/blog/Giai-phap-hotel-tv-cho-khach-san-5-sao-1.jpg"
+      ],
       "rate": 3,
       "name": "Hotel Linh Dương",
       "Title": "Đường Trần Phú",
-      "Price": "4.690.000 VND",
-      "combo": "2N2D + Buffet + Đưa đón sân bay"
+      "Price": 4900000,
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "note": "<div class='tong'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
     },
     {
       "id": 16,
       "locationId": 2,
       "img": "https://baogialai.com.vn/dataimages/202009/original/images2927238_logo_img20191128112544_1_15991305286161571887111.jpg",
+      "src": [
+        "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
+        "https://img.lovepik.com/photo/50065/5248.jpg_wh860.jpg",
+        "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/10/Intercontinental-Westlake-review1.jpeg",
+        "http://vinatel.com.vn/public/media/file/files/blog/Giai-phap-hotel-tv-cho-khach-san-5-sao-1.jpg"
+      ],
       "rate": 2,
       "name": "Hotel Lõ Hưng",
       "Title": "Đường Phạm Hưng",
-      "Price": "5.190.000 VND",
-      "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage"
+      "Price": 1900000,
+      "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage",
+      "note": "<div class='tong'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
     },
     {
       "id": 17,
       "locationId": 4,
       "img": "https://cdn.huongnghiepaau.com/wp-content/uploads/2019/10/khach-san-pullman-ha-noi.jpg",
+      "src": [
+        "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
+        "https://img.lovepik.com/photo/50065/5248.jpg_wh860.jpg",
+        "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/10/Intercontinental-Westlake-review1.jpeg",
+        "http://vinatel.com.vn/public/media/file/files/blog/Giai-phap-hotel-tv-cho-khach-san-5-sao-1.jpg"
+      ],
       "rate": 5,
       "name": "Hotel Hà Nội Godel",
       "Title": "Đường Trần Duy Hưng",
-      "Price": "4.690.000 VND",
-      "combo": "2N2D + Buffet + Đưa đón sân bay"
+      "Price": 4900000,
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "note": "<div class='tong'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
     },
     {
       "id": 18,
       "locationId": 4,
       "img": "https://pix10.agoda.net/hotelImages/4885116/0/3ec7a573097742323e2f976670239467.jpg?s=1024x768",
+      "src": [
+        "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
+        "https://img.lovepik.com/photo/50065/5248.jpg_wh860.jpg",
+        "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/10/Intercontinental-Westlake-review1.jpeg",
+        "http://vinatel.com.vn/public/media/file/files/blog/Giai-phap-hotel-tv-cho-khach-san-5-sao-1.jpg"
+      ],
       "rate": 4,
       "name": "Hotel Matcha",
       "Title": "Đường Phạm Hùng",
-      "Price": "5.190.000 VND",
-      "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage"
+      "Price": 3900000,
+      "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage",
+      "note": "<div class='tong'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
     },
     {
       "id": 19,
       "locationId": 4,
       "img": "https://toquoc.mediacdn.vn/2019/2/28/my-trieu-summit-15513252506751703394469.jpg",
+      "src": [
+        "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
+        "https://img.lovepik.com/photo/50065/5248.jpg_wh860.jpg",
+        "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/10/Intercontinental-Westlake-review1.jpeg",
+        "http://vinatel.com.vn/public/media/file/files/blog/Giai-phap-hotel-tv-cho-khach-san-5-sao-1.jpg"
+      ],
       "rate": 4,
       "name": "Hotel Royal ",
       "Title": "Đường Hùng Vương",
-      "Price": "4.690.000 VND",
+      "Price": 3900000,
       "combo": "2N2D + Buffet + Đưa đón sân bay"
     },
     {
@@ -405,49 +537,79 @@
       "locationId": 4,
       "name": "Hotel Mường Thanh",
       "img": "https://cf.bstatic.com/images/hotel/max1024x768/863/86327330.jpg",
+      "src": [
+        "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
+        "https://img.lovepik.com/photo/50065/5248.jpg_wh860.jpg",
+        "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/10/Intercontinental-Westlake-review1.jpeg",
+        "http://vinatel.com.vn/public/media/file/files/blog/Giai-phap-hotel-tv-cho-khach-san-5-sao-1.jpg"
+      ],
       "rate": 3,
       "Title": "Đường Âu Cơ",
-      "Price": "5.190.000 VND",
+      "Price": 2900000,
       "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage"
     },
     {
       "id": 21,
       "locationId": 4,
       "img": "https://cdnimg.vietnamplus.vn/uploaded/fsmsr/2015_11_26/movenpickhanoi.jpg",
+      "src": [
+        "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
+        "https://img.lovepik.com/photo/50065/5248.jpg_wh860.jpg",
+        "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/10/Intercontinental-Westlake-review1.jpeg",
+        "http://vinatel.com.vn/public/media/file/files/blog/Giai-phap-hotel-tv-cho-khach-san-5-sao-1.jpg"
+      ],
       "rate": 5,
       "name": "Hotel Minh Toàn",
       "Title": "Đường Thác Bạc Thị ",
-      "Price": "4.690.000 VND",
+      "Price": 4900000,
       "combo": "2N2D + Buffet + Đưa đón sân bay"
     },
     {
       "id": 22,
       "locationId": 4,
       "img": "https://bazantravel.com/cdn/medias/uploads/30/30991-khach-san-sheraton-hanoi.jpg",
+      "src": [
+        "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
+        "https://img.lovepik.com/photo/50065/5248.jpg_wh860.jpg",
+        "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/10/Intercontinental-Westlake-review1.jpeg",
+        "http://vinatel.com.vn/public/media/file/files/blog/Giai-phap-hotel-tv-cho-khach-san-5-sao-1.jpg"
+      ],
       "rate": 3,
       "name": "Hotel GaLaXy",
       "Title": "Đường Hai Bà Trưng",
-      "Price": "5.190.000 VND",
+      "Price": 2900000,
       "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage"
     },
     {
       "id": 23,
       "locationId": 4,
       "img": "https://ik.imagekit.io/tvlk/apr-asset/TzEv3ZUmG4-4Dz22hvmO9NUDzw1DGCIdWl4oPtKumOg=/hotels/1000000/530000/523600/523534/246b00cd_z.jpg?tr=q-40,c-at_max,w-740,h-500&_src=imagekit",
+      "src": [
+        "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
+        "https://img.lovepik.com/photo/50065/5248.jpg_wh860.jpg",
+        "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/10/Intercontinental-Westlake-review1.jpeg",
+        "http://vinatel.com.vn/public/media/file/files/blog/Giai-phap-hotel-tv-cho-khach-san-5-sao-1.jpg"
+      ],
       "rate": 3,
       "name": "Hotel Linh Dương",
       "Title": "Đường Trần Phú",
-      "Price": "4.690.000 VND",
+      "Price": 2900000,
       "combo": "2N2D + Buffet + Đưa đón sân bay"
     },
     {
       "id": 24,
       "locationId": 4,
       "img": "https://ik.imagekit.io/tvlk/apr-asset/TzEv3ZUmG4-4Dz22hvmO9NUDzw1DGCIdWl4oPtKumOg=/hotels/1000000/530000/523600/523534/246b00cd_z.jpg?tr=q-40,c-at_max,w-740,h-500&_src=imagekit",
+      "src": [
+        "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
+        "https://img.lovepik.com/photo/50065/5248.jpg_wh860.jpg",
+        "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/10/Intercontinental-Westlake-review1.jpeg",
+        "http://vinatel.com.vn/public/media/file/files/blog/Giai-phap-hotel-tv-cho-khach-san-5-sao-1.jpg"
+      ],
       "rate": 3,
       "name": "Hotel Linh Dương",
       "Title": "Đường Trần Phú",
-      "Price": "4.690.000 VND",
+      "Price": 3900000,
       "combo": "2N2D + Buffet + Đưa đón sân bay"
     }
   ],
@@ -457,7 +619,8 @@
       "hotelId": 1,
       "img": "https://www.hotelgrandsaigon.com/wp-content/uploads/sites/227/2017/12/GRAND_SEDK_01.jpg",
       "Title": "Phòng 2 Người",
-      "Price": " 2.190.000 ",
+      "price": 2900000,
+      "isNew": true,
       "description": [
         "Full options",
         "View đẹp",
@@ -472,7 +635,8 @@
       "hotelId": 1,
       "img": "https://www.vietnambooking.com/wp-content/uploads/2018/06/co-nhung-loai-phong-khach-san-nao-02-06-18-3.jpg",
       "Title": "Phòng 4 Người",
-      "Price": " 3.190.000 ",
+      "price": 3900000,
+      "isNew": true,
       "description": [
         "Full options",
         "Rộng rãi thoáng mát",
@@ -487,7 +651,8 @@
       "hotelId": 1,
       "img": "https://www.hotelgrandsaigon.com/wp-content/uploads/sites/227/2017/12/GRAND_SEDK_01.jpg",
       "Title": "Phòng 1 Người",
-      "Price": " 1.190.000 ",
+      "price": 1900000,
+      "isNew": true,
       "description": [
         "Không full options",
         "View đẹp",
@@ -502,12 +667,12 @@
       "hotelId": 1,
       "img": "https://ezcloud.vn/wp-content/uploads/2019/05/tripple-room.jpg",
       "Title": "Phòng 5 Người",
-      "Price": " 7.190.000 ",
+      "price": 4900000,
+      "isNew": true,
       "description": [
         "Full options",
         "Rộng rãi thoáng mát",
-        "View đẹp sống ảo",
-        "Có xông hơi"
+        "View đẹp sống ảo"
       ],
       "combo": "2N2D + Buffet + Đưa đón sân bay",
       "name": "Hotel Hà Nội Godel",
@@ -518,7 +683,8 @@
       "hotelId": 1,
       "img": "https://pix10.agoda.net/hotelImages/109/10981/10981_19052410360074693721.jpg?s=1024x768",
       "Title": "Phòng 2 Người",
-      "Price": " 2.190.000 ",
+      "isNew": true,
+      "price": 2900000,
       "description": [
         "Không full options",
         "View đẹp",
@@ -533,12 +699,12 @@
       "hotelId": 1,
       "img": "https://cdn.galaxy.tf/unit-media/tc-default/uploads/images/room_photo/001/557/713/deluxe-room-dbl-bed-op-standard.jpg",
       "Title": "Phòng 4 Người",
-      "Price": " 4.190.000 ",
+      "price": 4900000,
+      "isNew": true,
       "description": [
         "Không full options",
         "Rộng rãi thoáng mát",
-        "View đẹp",
-        "Có xông hơi"
+        "View đẹp"
       ],
       "combo": "2N2D + Buffet + Đưa đón sân bay",
       "name": "Hotel Hà Nội Godel",
@@ -549,7 +715,8 @@
       "hotelId": 1,
       "img": "https://cf.bstatic.com/images/hotel/max1024x768/280/28038759.jpg",
       "Title": "Phòng 1 Người",
-      "Price": " 2.190.000 ",
+      "price": 1900000,
+      "isNew": false,
       "description": [
         "Rộng rãi thoáng mát",
         "Hiện đại",
@@ -564,12 +731,28 @@
       "hotelId": 1,
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMDtOJgNtr9_KuF-DoKQac9J9ESMiuefNrdw&usqp=CAU",
       "Title": "Phòng 5 Người",
-      "Price": " 7.190.000 ",
+      "isNew": false,
+      "price": 4900000,
       "description": [
         "Full options",
         "Rộng rãi thoáng mát",
-        "View đẹp sống ảo",
-        "Có xông hơi"
+        "View đẹp sống ảo"
+      ],
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "name": "Hotel Hà Nội Godel",
+      "rate": 5
+    },
+    {
+      "id": 9,
+      "hotelId": 1,
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMDtOJgNtr9_KuF-DoKQac9J9ESMiuefNrdw&usqp=CAU",
+      "Title": "Phòng 5 Người",
+      "isNew": false,
+      "price": 4900000,
+      "description": [
+        "Full options",
+        "Rộng rãi thoáng mát",
+        "View đẹp sống ảo"
       ],
       "combo": "2N2D + Buffet + Đưa đón sân bay",
       "name": "Hotel Hà Nội Godel",
@@ -774,6 +957,51 @@
       "startDate": "2021/05/04",
       "endDate": "2021/05/06",
       "id": 8
+    },
+    {
+      "userId": 1,
+      "hotelId": 1,
+      "roomId": 1,
+      "startDate": "2021/05/04",
+      "endDate": "2021/05/05",
+      "id": 9
+    },
+    {
+      "userId": 1,
+      "hotelId": 1,
+      "roomId": 1,
+      "startDate": "2021/05/04",
+      "endDate": "2021/05/05",
+      "id": 10
+    },
+    {
+      "userId": 1,
+      "hotelId": 1,
+      "roomId": 1,
+      "startDate": null,
+      "id": 11
+    },
+    {
+      "userId": 1,
+      "hotelId": 1,
+      "roomId": 1,
+      "startDate": null,
+      "id": 12
+    },
+    {
+      "userId": 1,
+      "hotelId": 1,
+      "roomId": 1,
+      "startDate": null,
+      "id": 13
+    },
+    {
+      "userId": 1,
+      "hotelId": 1,
+      "roomId": 3,
+      "startDate": "2021/05/04",
+      "endDate": "2021/05/06",
+      "id": 14
     }
   ],
   "rates": [

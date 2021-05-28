@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { UserOutlined } from '@ant-design/icons';
-import { Input, Layout, Row, Col, Button, Space, Dropdown, Menu } from 'antd';
-
+import { UserOutlined,SendOutlined } from '@ant-design/icons';
+import { Input, Layout, Row, Col, Button, Space, Dropdown, Menu,Form,DatePicker } from 'antd';
+import moment from 'moment';
 import 'antd/dist/antd.css';
 import { Link}   from 'react-router-dom';
 import './Header.css'
@@ -54,6 +54,7 @@ function renderInfoUser(userInfo, logout) {
 function HeaderPage(props) {
     const [seachKey,setSeachkey]= useState('')
     
+    
     const { userInfo, logout } = props;
     console.log("🚀 ~ file: index.jsx ~ line 58 ~ HeaderPage ~ userInfo", userInfo)
 
@@ -80,7 +81,7 @@ function HeaderPage(props) {
                             </Col>
                             <Col className='minh' span={8}>
 
-                                <Input.Search placeholder="Nhập vào đây" onSearch={onSearch} enterButton />
+                                {/* <Input.Search placeholder="Nhập vào đây" onSearch={onSearch} enterButton /> */}
 
                             </Col>
                             <Col span={7}>
@@ -125,6 +126,8 @@ function HeaderPage(props) {
                                     </div>
                             </Col>
                         </Row>
+                        
+       
                     </div>
                 </Header>
             
