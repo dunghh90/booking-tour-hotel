@@ -15,13 +15,13 @@
 .where-togo-area{
     margin-top: 40px;
 }
-.price{
+.price1{
     color: rgb(0, 193, 222);
     font-size: 30px;
     font-weight: bold;
     position: absolute;
     bottom: 35px;
-    right: 165px;
+    right: 78px;
    
 }
 .ant-list-bordered{
@@ -51,4 +51,18 @@
 .hotro{
     margin-left: 19px;
     color: red;
+}
+
+.note{
+    background-color: rgba(214, 244, 250, 0.7);
+    border: none;
+    margin-left: 5px;
+    padding: 10px;
+  
+}
+.name{
+    width: 100%;
+}
+.tong{
+    margin-top: 16px;
 }

@@ -199,7 +199,7 @@ function TourDetailPage({
 
           </Row>
           <Row>
-            <Card title="Tours du lịch Phú Quốc liên quan" extra={<a className="loadMore" href="#">XEM TẤT CẢ ></a>} style={{width: "100%", marginTop:16}}>
+            <Card title="Tours du lịch Phú Quốc liên quan" extra={<a className="loadMore" href="#">XEM TẤT CẢ </a>} style={{width: "100%", marginTop:16}}>
                   <Row gutter={[28,28]}>
                     <Col span={8}>
                       <Card 

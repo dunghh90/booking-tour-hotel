@@ -58,17 +58,22 @@ function ListHotelPage({
                 hoverable
                 title = {item.combo}
                 cover={<div alt="example" src="" />}
-                style ={{marginTop: 16}}
+                style ={{marginTop: 16 }}
                 onClick={() => history.push(`/hotels/${item.id}`)}
               >
                 <div className="optiondetail">
                   <img className="img1" src={item.img} alt="" />
                   <div className="option">
-                    <h2 > {item.name} </h2>
+                    <h2 className ="name" > {item.name} </h2>
                     <Rate disabled value={item.rate} />
                     <h5 className="adr"><ThunderboltOutlined />.{item.Title}</h5>
-
-                    <span className="price">{item.Price} VND</span>
+                    {/* <button>{item.note}</button> */}
+                     <div
+                      dangerouslySetInnerHTML={{
+                        __html: item.note
+                      }}>
+                      </div>
+                    <span className="price1">{item.Price.toLocaleString()} VND</span>
                   </div>
                 </div>
 

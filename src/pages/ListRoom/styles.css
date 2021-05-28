@@ -1,9 +1,6 @@
-.ant-card-body{
+/* .ant-card-body{
     display: block;
     z-index: 999;
-}
-.optiondetail{
-    display: flex;
 }
 .img1{
     width: 200px;
@@ -71,4 +68,59 @@
     margin-top: 27px;
     font-weight: 500;
     margin-left: 265px;
+} */
+.ALLROOM{
+    display: flex;
+    
+}
+
+h2{
+    
+    width: 156px;
+
+}
+.optiondetail2{
+    display: block;
+}
+.price{
+    color: rgb(0, 193, 222);
+    font-size: 30px;
+    font-weight: bold;
+   margin-bottom: -27px;
+   margin-right: 10px;
+   
+}
+.book{
+    margin-left: 65px;
+}
+.img2{
+    width: 400px;
+    height: 100%;
+}
+.img3{
+    width: 100%;
+    margin-top: 5px;
+}
+.img4{
+    width: 100%;
+    margin-left: -161px;
+}
+.layout{
+    background-color: red;
+    width: 75%;
+}
+.layout2{
+    width: 100%;
+    background-color: blue;
+}
+.timkiem{
+    /* position: fixed;
+    top: 67px;
+    left: 0; */
+    margin-bottom: 10px;
+    margin-top: 2px;
+    /* z-index: 999; */
+}
+.content-header{
+    height: 35px;
 }

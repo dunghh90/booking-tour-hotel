@@ -26,10 +26,7 @@ function ItemRoom(props) {
   }
   return (
       <Col>
-
-          {renderItem()}
-     
-          
+          {renderItem()}  
       </Col>
   );
 }
