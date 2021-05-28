@@ -67,27 +67,26 @@ function ListRoomPage({
 
   }
   function renderImg(){
-    return listRoom.data.src.map((item)=>{
-      console.log("🚀 ~ file: index.jsx ~ line 69 ~ returnlistRoom.data.src.map ~ item", item)
+
       return(
         <>
         <Col span = {18}>
         <Row >
           <Col span ={9}>
-            <img className ="img2" src={item.src} alt="" />
+            <img className ="img2" src={listRoom.data.src[0]} alt="" />
 
           </Col>
           <Col span ={9} >
             <Row >
-            <img className ="img2" src={item.src} alt="" />
+            <img className ="img2" src={listRoom.data.src[1]} alt="" />
             </Row>
             <Row gutter={[8, 8]}>
-              <Col span ={12}>\
+              <Col span ={12}>
 
-            <img className ="img3"src={item.src} alt="" />
+            <img className ="img3"src={listRoom.data.src[2]} alt="" />
               </Col>
               <Col span ={12}>
-            <img className ="img3" src={item.src} alt="" />
+            <img className ="img3" src={listRoom.data.src[3]} alt="" />
               </Col>
             </Row>
           </Col>
@@ -103,7 +102,7 @@ function ListRoomPage({
 </>
       )
 
-    })
+    
   }
 
   function renderListRoom() {
