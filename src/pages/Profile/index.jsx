@@ -240,7 +240,7 @@ function ProfilePage({
         hotelName: item.hotel.name,
         roomName: item.room.name,
         // Chỗ này a để tạm, sau này fix data thì bỏ vào
-        price: 0,
+        price: item.room.price,
         date: `${item.startDate} - ${item.endDate}`,
         key: item.id,
       }
