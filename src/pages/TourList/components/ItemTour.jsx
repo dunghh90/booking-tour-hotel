@@ -35,7 +35,8 @@ function ItemTour(props) {
       >
         <Row gutter={24}>
           <Col span={6}>
-            <img src={link} style={{width:"100%", cursor:"pointer"}}/>
+            {/* <img src={link} style={{width:"100%", cursor:"pointer"}}/> */}
+            <div style={{backgroundImage: `url(${link})`, width:"100%", height:150, backgroundSize:"cover", backgroundRepeat:"no-repeat", backgroundPosition:"center"}}></div>
             {/* <Image
             width={200}
             src={link}

@@ -184,7 +184,7 @@ function TourDetailPage({
                       // style={{color: locationSelected === item.id ? 'red': 'black' }}
                       className ="moveLocation"
                     >
-                      <a style={{color:"gray"}} href="#${tour-program}">{item}</a>
+                      <a style={{color:"gray"}} href="#tour-program">{item}</a>
                     </List.Item>
                   )}
                 />
