@@ -73,25 +73,21 @@ function HeaderPage(props) {
                         <Row>
                             <Col span={4}>
 
-                                <UserOutlined style={{ fontSize: '50px', color: '#08c' }} />
+                               <img src="https://res.ivivu.com/hotel/img/logo.svg" alt="" />
 
                             </Col>
-                            <Col className='minh' span={8}>
-
-                                {/* <Input.Search placeholder="Nhập vào đây" onSearch={onSearch} enterButton /> */}
-
-                            </Col>
-                            <Col span={7}>
+                           
+                            <Col className="centerheader" span={15}>
                                 <div className="menu">
                                       <ul className= "menu-cha">
                                           <li className="menu1">
-                                              <Link to ={ROUTERS.HOTEL_HOME}>Khách sạn</Link>
+                                              <Link className="menu2" to ={ROUTERS.HOTEL_HOME}>Khách sạn</Link>
                                           </li>
                                           <li className="menu1">
-                                              <Link to={ROUTERS.TOUR_LIST}>Tour</Link>
+                                              <Link className="menu2"   to={ROUTERS.TOUR_LIST}>Tour</Link>
                                           </li>
                                           <li className="menu1">
-                                              <Link to={ROUTERS.REVIEW} >Giới thiệu</Link>
+                                              <Link className="menu2" to={ROUTERS.REVIEW} >Giới thiệu</Link>
                                           </li>
                                       </ul>
                                 </div>
