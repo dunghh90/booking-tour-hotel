@@ -21,11 +21,6 @@ function BrowserRouter(props) {
   return (
     <Router history={history}>
       <Switch>
-        {/* <DefaultLayout exact path="/homeTour" component={TourHomePage} /> */}
-        {/* <LoginLayout exact path="/login" component={LoginPage} /> */}
-        {/* <DefaultLayout exact path="/listTour" component={TourListPage} /> */}
-        {/* <DefaultLayout exact path="/tours/:id" component={TourDetailPage} /> */}
-        {/* <DefaultLayout exact path="/profile/:id" component={ProfilePage} /> */}
         <DefaultLayout
           exact
           path={ROUTERS.LOGIN}
