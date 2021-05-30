@@ -19,7 +19,10 @@ function TourListPage({
   console.log("🚀 ~ file: index.jsx ~ line 19 ~ match", match.params.keySearch)
 
   const [locationSelected, setLocationSelected] = useState(null);
+  
   const [keySearchLocation, setKeySearchLocation] = useState(match.params.keySearch?match.params.keySearch:'');
+
+  
 
   const locationId = match.params.id;
 
@@ -116,7 +119,8 @@ function TourListPage({
                   { name: "Tất cả" },
                   ...locationList.data,
                 ]}
-                renderItem={(item) => (
+                renderItem={(item) => 
+                  (
                   <List.Item
                     onClick={() => handleFilterLocaiton(item.id)}
                     // style={{color: locationSelected === item.id ? 'red': 'black' }}
@@ -142,7 +146,8 @@ function TourListPage({
                   "Tour biển đảo",
                   "Tour nước ngoài"
                 ]}
-                renderItem={(item, index) => (
+                renderItem={(item, index) => 
+                  (
                   <List.Item
                     onClick={() => handleFilterLocaiton(index + 1)}
                     // style={{ color: locationSelected === item.id ? 'red': 'black'}}

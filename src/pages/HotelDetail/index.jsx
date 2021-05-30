@@ -3,8 +3,8 @@ import { Button, Card, DatePicker, Row, Col, Form, Input, Space } from 'antd';
 import { connect } from 'react-redux';
 import { Content } from 'antd/lib/layout/layout';
 import { useEffect, useState } from 'react';
-import { SendOutlined, HomeOutlined, WifiOutlined, CarOutlined, InsertRowRightOutlined, FieldTimeOutlined, EnvironmentOutlined, FileExcelOutlined, HeartOutlined, HistoryOutlined } from '@ant-design/icons';
-import { Rate, Progress } from 'antd';
+import { SendOutlined, HomeOutlined, WifiOutlined, CarOutlined, ArrowUpOutlined, InsertRowRightOutlined, FieldTimeOutlined, EnvironmentOutlined, FileExcelOutlined, HeartOutlined, HistoryOutlined } from '@ant-design/icons';
+import { Rate, Progress, BackTop } from 'antd';
 import history from '../../utils/history';
 import moment from 'moment';
 import ItemRoom from './components/itemRoom';
@@ -13,6 +13,18 @@ import { bookingHotelAction, getListRoomAction } from '../../redux/actions';
 
 import './styles.css';
 
+
+
+const style = {
+  height: 40,
+  width: 40,
+  lineHeight: '40px',
+  borderRadius: 4,
+  backgroundColor: '#1088e9',
+  color: '#fff',
+  textAlign: 'center',
+  fontSize: 14,
+};
 function ListRoomPage({
   listRoom,
   getListRoom,
@@ -23,8 +35,14 @@ function ListRoomPage({
   const [roomSelected, setRoomSelected] = useState({});
   const userInfo = JSON.parse(localStorage.getItem('userInfo'));
   const [dateSelected, setDateSelected] = useState();
+  // const [totalPrice, setTotalPrice] = useState(0);
   const isNew = true;
   const currentDate = new Date();
+  const [locationSelected, setLocationSelected] = useState(null);
+
+  const [searchKey, setSearchKey] = useState({ userNum: '', price: '' });
+
+  let totalPrice = 0;
 
   useEffect(() => {
     getListRoom({ id: hotelId });
@@ -36,9 +54,29 @@ function ListRoomPage({
     }
   }, [listRoom.data])
 
+  const filterListRoom = listRoom.data.rooms.filter((item) => {
+    // console.log("🚀 ~ file: index.jsx ~ line 46 ~ filterListRoom ~ item", item)
+    // console.log("🚀 ~ file: index.jsx ~ line 43 ~ filterListRoom ~ searchKey.price", searchKey.price)
+
+    return item.price.toString().indexOf(searchKey.price.trim()) !== -1 && item.title.toString().indexOf(searchKey.userNum.trim()) !== -1
+  })
+  console.log("🚀 ~ file: index.jsx ~ line 46 ~ filterListRoom ~ filterListRoom", filterListRoom)
+  // let filterPriceListRoom = listRoom.data.rooms.filter((item) => {
+  //   return item.id == locationSelected;
+  // })
+
+  // function handleFilterLocaiton(id) {
+  //   setKeySearchLocation('');
+  //   setLocationSelected(id);
+  //   getListRoom({
+  //     page: 1,
+  //     limit: 10,
+  //     hotelId: id,
+  //   },[keySearchLocation])
+  // }
+
   function handleDate(value) {
     const [startDate, endDate] = value;
-
     setDateSelected([moment(startDate).format('YYYY/MM/DD'), moment(endDate).format('YYYY/MM/DD')]);
 
   }
@@ -60,7 +98,7 @@ function ListRoomPage({
       </>
     )
   }
-  function handleBookingHotel(id) {
+  function handleBookingHotel(id, defaultPrice) {
 
     if (!userInfo) {
       alert('Bạn cần đăng nhập!');
@@ -74,7 +112,7 @@ function ListRoomPage({
         startDate: dateSelected[0],
         endDate: dateSelected[1]
       })
-
+      totalPrice = defaultPrice;
     }
 
   }
@@ -140,14 +178,14 @@ function ListRoomPage({
             <Row gutter={[12, 12]}>
               <Card title="Đánh giá chất lượng khách sạn" style={{ width: 514 }}>
                 <div>
-                <div>
-                  <label htmlFor="">Tuyệt vời</label>
-                  <Progress percent={90} status="active" />
-                </div>
-                <div>
-                  <label htmlFor="">Tốt</label>
-                  <Progress percent={80} status="active" />
-                </div>
+                  <div>
+                    <label htmlFor="">Tuyệt vời</label>
+                    <Progress percent={90} status="active" />
+                  </div>
+                  <div>
+                    <label htmlFor="">Tốt</label>
+                    <Progress percent={80} status="active" />
+                  </div>
                   <label htmlFor="">Không đạt yêu cầu</label>
                   <Progress percent={10} status="exception" />
                 </div>
@@ -189,12 +227,13 @@ function ListRoomPage({
 
   }
 
-  function renderListRoom() {
-    return listRoom.data.rooms.map((item, index) => {
-      let isDisabled = false;
-      if (dateSelected) (
-        listRoom.data.bookingHotels.forEach((bookingItem, bookingIndex) => {
 
+  function renderListRoom() {
+    return filterListRoom.map((item, index) => {
+      let isDisabled = false;
+      if (dateSelected) {
+        console.log("🚀 ~ file: index.jsx ~ line 223 ~ returnfilterListRoom.map ~ dateSelected", dateSelected)
+        listRoom.data.bookingHotels.forEach((bookingItem, bookingIndex) => {
           if (
             (
               (
@@ -212,14 +251,29 @@ function ListRoomPage({
             isDisabled = true;
           }
         })
-      )
+        const numDate = moment(dateSelected[1]).day() - moment(dateSelected[0]).day();
+        totalPrice = numDate * item.price;
+        // console.log("🚀 ~ file: index.jsx ~ line 241 ~ returnfilterListRoom.map ~ item.price", item.price)
+        console.log("🚀 ~ file: index.jsx ~ line 242 ~ returnfilterListRoom.map ~ numDate", numDate)
+        // console.log("🚀 ~ file: index.jsx ~ line 243 ~ returnfilterListRoom.map ~ totalPrice", totalPrice)
+      } else {
+        totalPrice = item.price;
+        // console.log("🚀 ~ file: index.jsx ~ line 244 ~ returnfilterListRoom.map ~ item.price", item.price)
+
+
+      }
+
+      // console.log("🚀 ~ file: index.jsx ~ line 244 ~ returnfilterListRoom.map ~ moment", moment(dateSelected[1]).day())
 
       return (
         <>
-
           <Content className="site-layout" style={{ padding: '0 30px', marginTop: 64 }}>
             <Row gutter={[12, 12]}>
               <Col span={24}>
+                {/* {
+                filterListRoom.load ? (<p>Loading...</p>) 
+                :(filterListRoom.map((item, index) => {
+                  return ( */}
                 <Card
                   hoverable
                   size="small"
@@ -229,10 +283,13 @@ function ListRoomPage({
                   <div className="ALLROOM">
                     <div className="optiondetail2">
                       <img className="img1" src={item.img} alt="" />
-                      <span className="price">{item.price.toLocaleString()} VND</span>
+                      {/* <span className="price">{item.price.toLocaleString()} VND</span> */}
+                      {/* <span>Tổng số ngày:{item.numDate}</span> */}
+                      <span className="price">{totalPrice.toLocaleString()} VND</span>
+
                     </div>
                     <div className="option">
-                      <h2> {item.Title} </h2>
+                      <h2> {item.title} </h2>
                       <Rate disabled defaultValue={item.rate} />
                       <h3>{item.name}</h3>
                       <ItemRoom
@@ -248,7 +305,7 @@ function ListRoomPage({
                         <Button type="primary" className="book" >Hết Phòng</Button>
                       )}
                       {!isDisabled && (
-                        <Button type="primary" className="book" onClick={() => handleBookingHotel(item.id)}>Đặt Phòng</Button>
+                        <Button type="primary" className="book" onClick={() => handleBookingHotel(item.id, item.price)}>Đặt Phòng</Button>
                       )}
 
 
@@ -257,6 +314,11 @@ function ListRoomPage({
                   </div>
 
                 </Card>
+                {/* )
+                      console.log("🚀 ~ file: index.jsx ~ line 307 ~ returnfilterListRoom.map ~ item.numDate", item.numDate)
+                      console.log("🚀 ~ file: index.jsx ~ line 307 ~ returnfilterListRoom.map ~ item.numDate", item.numDate)
+                  }))
+                }  */}
               </Col>
 
             </Row>
@@ -268,20 +330,34 @@ function ListRoomPage({
 
   return (
     <>
-
+      {/* Serch hotel  */}
       <Row className="timkiem">
         <div className="alltimkiem">
           <Form
             name="basic"
             initialValues={{ remember: true }}
             layout="inline"
-          //   onFinish={findTour}
+            onFinish={(values) => {
+              setSearchKey({ userNum: values.userNum, price: values.price });
+            }}
           >
             <Col span={7}>
               <Form.Item
-                name="username"
+                name="userNum"
               >
-                <Input labelFontSize={100} fontSize={100} style={{ padding: '10px 50px', height: 50, borderRadius: 4, backgroundColor: "white" }} placeholder="Bạn cần nhập số người?" />
+                <Input
+                  labelFontSize={100}
+                  fontSize={100} prefix={<SendOutlined />}
+                  style={{
+                    padding: '10px 50px', height: 50,
+                    borderRadius: 4,
+                    backgroundColor: "white"
+                  }}
+                  onChange={(e) => //setSearchKey(e.target.value)
+                    setSearchKey({ ...searchKey, userNum: e.target.value })
+                  }
+                  placeholder="Bạn cần nhập số người"
+                />
               </Form.Item>
             </Col>
             <Col span={7}>
@@ -293,9 +369,21 @@ function ListRoomPage({
             </Col>
             <Col span={7}>
               <Form.Item
-                name="placeFrom"
+                name="price"
               >
-                <Input labelFontSize={100} fontSize={100} prefix={<SendOutlined />} style={{ padding: '10px 50px', height: 50, borderRadius: 4, backgroundColor: "white" }} placeholder="Chọn giá tiền" />
+                <Input
+                  labelFontSize={100}
+                  fontSize={100} prefix={<SendOutlined />}
+                  style={{
+                    padding: '10px 50px',
+                    height: 50, borderRadius: 4,
+                    backgroundColor: "white"
+                  }}
+                  onChange={(e) => //setSearchKey(e.target.value)
+                    setSearchKey({ ...searchKey, price: e.target.value })
+                  }
+                  placeholder="Chọn giá tiền"
+                />
               </Form.Item>
             </Col>
             <Col span={3} >
@@ -310,7 +398,7 @@ function ListRoomPage({
 
       </Row>
 
-      <Row span={24} >
+      <Row span={24} className="detailTrangchu">
         <div className="content-header">
           <ol className="breadcrumb"  >
             <Space><HomeOutlined /></Space>
@@ -353,6 +441,9 @@ function ListRoomPage({
         </div>
         {/* <h3>Thông tin phòng khách sạn</h3> */}
         {renderListRoom()}
+        <BackTop className="backtop">
+          <div  style={style}><ArrowUpOutlined /></div>
+        </BackTop>
       </Row>
       <Row>
         <Col span={8}></Col>

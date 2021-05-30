@@ -616,7 +616,7 @@
       "id": 1,
       "hotelId": 1,
       "img": "https://www.hotelgrandsaigon.com/wp-content/uploads/sites/227/2017/12/GRAND_SEDK_01.jpg",
-      "Title": "Phòng 2 Người",
+      "title": "Phòng 2 Người",
       "price": 2900000,
       "isNew": true,
       "description": [
@@ -632,7 +632,7 @@
       "id": 2,
       "hotelId": 1,
       "img": "https://www.vietnambooking.com/wp-content/uploads/2018/06/co-nhung-loai-phong-khach-san-nao-02-06-18-3.jpg",
-      "Title": "Phòng 4 Người",
+      "title": "Phòng 4 Người",
       "price": 3900000,
       "isNew": true,
       "description": [
@@ -648,7 +648,7 @@
       "id": 3,
       "hotelId": 1,
       "img": "https://www.hotelgrandsaigon.com/wp-content/uploads/sites/227/2017/12/GRAND_SEDK_01.jpg",
-      "Title": "Phòng 1 Người",
+      "title": "Phòng 1 Người",
       "price": 1900000,
       "isNew": true,
       "description": [
@@ -664,7 +664,7 @@
       "id": 4,
       "hotelId": 1,
       "img": "https://ezcloud.vn/wp-content/uploads/2019/05/tripple-room.jpg",
-      "Title": "Phòng 5 Người",
+      "title": "Phòng 5 Người",
       "price": 4900000,
       "isNew": true,
       "description": [
@@ -680,7 +680,7 @@
       "id": 5,
       "hotelId": 1,
       "img": "https://pix10.agoda.net/hotelImages/109/10981/10981_19052410360074693721.jpg?s=1024x768",
-      "Title": "Phòng 2 Người",
+      "title": "Phòng 2 Người",
       "isNew": true,
       "price": 2900000,
       "description": [
@@ -696,7 +696,7 @@
       "id": 6,
       "hotelId": 1,
       "img": "https://cdn.galaxy.tf/unit-media/tc-default/uploads/images/room_photo/001/557/713/deluxe-room-dbl-bed-op-standard.jpg",
-      "Title": "Phòng 4 Người",
+      "title": "Phòng 4 Người",
       "price": 4900000,
       "isNew": true,
       "description": [
@@ -712,7 +712,7 @@
       "id": 7,
       "hotelId": 1,
       "img": "https://cf.bstatic.com/images/hotel/max1024x768/280/28038759.jpg",
-      "Title": "Phòng 1 Người",
+      "title": "Phòng 1 Người",
       "price": 1900000,
       "isNew": false,
       "description": [
@@ -728,7 +728,7 @@
       "id": 8,
       "hotelId": 1,
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMDtOJgNtr9_KuF-DoKQac9J9ESMiuefNrdw&usqp=CAU",
-      "Title": "Phòng 5 Người",
+      "title": "Phòng 5 Người",
       "isNew": false,
       "price": 4900000,
       "description": [
@@ -744,7 +744,7 @@
       "id": 9,
       "hotelId": 1,
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMDtOJgNtr9_KuF-DoKQac9J9ESMiuefNrdw&usqp=CAU",
-      "Title": "Phòng 5 Người",
+      "title": "Phòng 5 Người",
       "isNew": false,
       "price": 4900000,
       "description": [
@@ -1036,6 +1036,30 @@
       "startDate": "2021/05/04",
       "endDate": "2021/05/06",
       "id": 14
+    },
+    {
+      "userId": 3,
+      "hotelId": 1,
+      "roomId": 8,
+      "startDate": "2021/06/07",
+      "endDate": "2021/06/10",
+      "id": 15
+    },
+    {
+      "userId": 3,
+      "hotelId": 1,
+      "roomId": 2,
+      "startDate": "2021/06/01",
+      "endDate": "2021/06/18",
+      "id": 16
+    },
+    {
+      "userId": 3,
+      "hotelId": 1,
+      "roomId": 1,
+      "startDate": "2021/06/07",
+      "endDate": "2021/06/18",
+      "id": 17
     }
   ],
   "commentHotels": [

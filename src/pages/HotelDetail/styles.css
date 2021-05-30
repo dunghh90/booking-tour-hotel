@@ -23,9 +23,7 @@
     margin-bottom: 40px;
    
 }
-.ant-row-center{
-    margin-left: 75px;
-}
+
 .ant-col{
     padding-bottom: 30px;
 }
@@ -124,14 +122,7 @@ h2{
     display: flex;
     border-radius: 10px;
 }
-.timkiem{
-    /* position: fixed;
-    top: 67px;
-    left: 0; */
-    margin-bottom: 10px;
-    
-    /* z-index: 999; */
-}
+
 .content-header{
     height: 35px;
 }
@@ -157,7 +148,7 @@ h2{
     font-size: 30px;
     position: absolute;
     
-    bottom: 353px;
+    bottom: 363px;
     left: 148px;
     color: greenyellow;
 }
@@ -248,6 +239,7 @@ h2{
     padding: 18px;
     display: flex;
     padding-left: 7px;
+   
 
 }
 .diemnobatcon1{
@@ -277,8 +269,26 @@ h2{
     background-color: rgba(9, 4, 37, 0.9);
     display: flex;
   justify-content: center;
+  position: fixed;
+  top: 64px;
+  width: 100%;
+  z-index: 99;
 
 }
+/* .timkiem::before{
+    display: table;
+    content: "";
+}
+.timkiem:after{
+    clear: both;
+} */
 .alltimkiem{
     padding: 10px;
+}
+.detailTrangchu{
+    margin-top: 40px;
+    margin-top: 134px;
+}
+.backtop{
+    margin-right: -81px;
 }
