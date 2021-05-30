@@ -1,4 +1,4 @@
-import { Form, Input, Button, Rate,Col, Row, Space, Comment, Tooltip, Avatar} from 'antd';
+import { Form, Input, Button, Rate,  Comment, Tooltip, Avatar} from 'antd';
 import { useEffect, createElement, useState } from 'react';
 import { connect } from 'react-redux';
 import { DislikeOutlined, LikeOutlined, DislikeFilled, LikeFilled } from '@ant-design/icons';
@@ -10,7 +10,7 @@ import {
 import moment from 'moment';
 
 function CommentPage(props) {
-    const {  commentList, addComment, deleteTask, getCommentList, hotelId, tourId, userInfo} = props;
+    const {  commentList, addComment, getCommentList, hotelId, tourId, userInfo} = props;
     const [form] =Form.useForm();
 
     useEffect(() => {
@@ -44,17 +44,17 @@ function CommentPage(props) {
     const [likes, setLikes] = useState(0);
     const [dislikes, setDislikes] = useState(0);
     const [action, setAction] = useState(null);
-    const like = () => {
-      setLikes(1);
-      setDislikes(0);
-      setAction('liked');
-    };
+    // const like = () => {
+    //   setLikes(1);
+    //   setDislikes(0);
+    //   setAction('liked');
+    // };
   
-    const dislike = () => {
-      setLikes(0);
-      setDislikes(1);
-      setAction('disliked');
-    };
+    // const dislike = () => {
+    //   setLikes(0);
+    //   setDislikes(1);
+    //   setAction('disliked');
+    // };
     const actions = [
       <Tooltip key="comment-basic-like" title="Like">
         {/* <span onClick={like}> */}

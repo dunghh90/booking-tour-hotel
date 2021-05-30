@@ -4,7 +4,7 @@ import { Col, Card, Row } from 'antd';
 import history from '../../../utils/history';
 
 function ItemTour(props) {
-  const { title, link, description, time, price } = props;
+  const { title, link, description, rate, price, id } = props;
 
   // const [isEdit, setIsEdit] = useState(false);
   // const [isShowDescription, setIsShowDescription] = useState(false);
@@ -13,35 +13,52 @@ function ItemTour(props) {
 
   function renderUrlTour() {
     return description.map((item, index) => {
-          return (
-            <ul>
-            <li>
-              <a href="google.com.vn" style={{color: "#00C1DE"}}>{item}</a>
-            </li>
-            </ul>
-          )
-        })
+      return (
+        
+          <li style={{display:"inline-block", padding:"0px 5px" }}>
+            {item}
+          </li>
+      )
+    })
     
   }
   
   return (
-      <Col span={8}>
-      <Card
-        hoverable
-        style={{ width: 370, minHeight: 500}}
-        cover={<img alt="example" src={link} />}
-        onClick={() => null }
-      >
-        {/* <Meta title="Europe Street beat" description="www.instagram.com" /> */}
-        <Row>
-          <Col span={24} style={{color:"#003C71", fontSize:16, fontWeight:"bold"}}>
-            {title}
-          </Col>
-          <Col span={12} style={{fontSize:13, color:"#4E4E4E"}}>{time}</Col><Col span={12}></Col>
-          <Col span={24}>{renderUrlTour()}</Col>
-        <Col span={12}></Col><Col span={12} style={{display:"flex", alignItems:"right", color: "#00C1DE", fontSize:20, fontWeight:"bold", float:"right"}}>{price}</Col>
-        </Row>
-      </Card>
+      <Col xxl={6} xl={8} lg={12} md={12} sm={24} >
+        <Card
+          hoverable
+          // style={{ width: 340}}
+          cover={<img alt="example" src={link} />}
+          onClick={() => history.push(`/tours/${id}`)}
+        >
+          {/* <Meta title="Europe Street beat" description="www.instagram.com" /> */}
+          <div>
+            <Row>
+              <div className="tourItemName" style={{fontWeight:600}}>
+                <a>
+                  {title}
+                </a>
+              </div>
+            </Row>
+            <Row style={{ marginTop: 10 }}>
+                <div>
+                  <span className="score-container">
+                    <span className="score">{rate}.0</span>
+                    <span className="score-description">Tuyệt vời</span>
+                  </span>
+                  <span>| 1 đánh giá</span>
+                </div>
+              </Row>
+            <Row style={{ margin: "10px 0px" }}>
+              <ul style={{ color: "#00C1DE", paddingLeft:0, marginLeft:-5,listStyle:"none" }}>
+                {renderUrlTour()}
+              </ul>
+            </Row>
+            <Row justify="end">
+                <div style={{ color: "#00C1DE", fontSize: 20, fontWeight: 500}}>{price.toLocaleString()} VNĐ</div>
+            </Row>
+          </div>
+        </Card>
       </Col>
   );
 }

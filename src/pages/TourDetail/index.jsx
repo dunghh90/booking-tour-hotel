@@ -1,4 +1,4 @@
-import { Card, Col, Row, Form, Input, Button, DatePicker, Space, InputNumber, Rate} from "antd";
+import { Card, Col, Row, Form, Input, Button, DatePicker, Space, InputNumber, Modal, List} from "antd";
 import { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import history from '../../utils/history';
@@ -6,7 +6,7 @@ import history from '../../utils/history';
 import { EnvironmentOutlined , HistoryOutlined, DingtalkOutlined } from '@ant-design/icons';
 
 import { getTourDetailAction, getTourListAction, bookingTourAction } from "../../redux/actions";
-import { HomeOutlined } from '@ant-design/icons';
+import { HomeOutlined, ExclamationCircleOutlined } from '@ant-design/icons';
 import CommentPage from '../../components/Comment'
 import moment from 'moment';
 
@@ -53,6 +53,44 @@ function TourDetailPage({
     setMoney(tourDetail.data.price * countAdults + tourDetail.data.price * values * 0.5);
   }
 
+  function renderConfirmTour() {
+    return (
+      <>
+        <Row ><h3>{tourDetail.data.name}</h3></Row>
+        <Row>
+          <Col span={10}>Số lượng người lớn: </Col>
+          <Col span={14}>{countAdults}</Col>
+          <Col span={10}>Số lượng trẻ em: </Col>
+          <Col span={14}>{countChild}</Col>
+          <Col span={24}>Tổng tiền: {money.toLocaleString()} VNĐ</Col>
+        </Row>
+      </>
+    )
+  }
+
+  function showConfirmBooking() {
+    Modal.confirm({
+      title: 'Thông tin tour đã đặt:',
+      icon: <ExclamationCircleOutlined />,
+      content: renderConfirmTour(),//'Tour Đà Nẵng 2 ngày 3 đêm',
+      okText: 'Xác nhận',
+      cancelText: 'Huỷ',
+      onOk() {
+        console.log('OK');
+        bookingTour({
+          userId: userInfo.id,
+          tourId: parseInt(tourId),
+          startDate: dateSelected,
+          numberAdults: countAdults,
+          numberChild: countChild,
+        })
+      },
+      onCancel() {
+        console.log('Cancel');
+      },
+    });
+  }
+
   function handleBookingTour() {
     if (!userInfo) {
       alert('Bạn cần đăng nhập!');
@@ -61,13 +99,7 @@ function TourDetailPage({
     } else {
       // localStorage.setItem('carts', JSON.stringify(newCartList));
       // TODO Check tourId và startDate nếu tồn tại trong db thì ko add booking
-      bookingTour({
-        userId: userInfo.id,
-        tourId: parseInt(tourId),
-        startDate: dateSelected,
-        numberAdults: countAdults,
-        numberChild: countChild,
-      })
+      showConfirmBooking();
     }
   }
 
@@ -75,39 +107,22 @@ function TourDetailPage({
     <>
       <Content className="site-layout" style={{ padding: '0 50px', display: "flex", justifyContent: "center", alignItems: "center" }}>
         <div style={{ maxWidth: 1300, width: "100%" }}>
-          <Row span={24} gutter={24}>
-            <div className="content-header">
-              <ol className="breadcrumb"  >
-                <Space><HomeOutlined  /></Space>
-                <li  >
-                  <a className="item" href="/du-lich/">
-                    <i className="fa fa-home"></i> <span>Trang chủ</span>
-                  </a>
-                </li>
-                <i style={{ margin: "0px 10px" }}>|</i>
-                <li  >
-                  <a className="item" href="/du-lich/tour-da-nang">
-                    <span>Đà Nẵng</span>
-                  </a>
-                </li>
-                <i style={{ margin: "0px 10px" }}>|</i>
-                <li className="active hidden-xs">
-
-                  <a className="item" href="/du-lich/tour-da-nang-4n3d-hcm-da-nang-ba-na-hoi-an-hue-quang-binh/1189">
-                    <span >Tour Đà Nẵng 4N3D: TP. HCM - Đà Nẵng - Bà Nà - Hội An - Huế - Quảng Bình</span>
-                  </a>
-                </li>
-              </ol>
-            </div>
+          <Row >
+              <ul className="listPath" >
+                <li><HomeOutlined  /> <a className="itemPath" href="/du-lich/">Trang chủ</a></li>
+                <li><div style={{display:"inline", color:"#bfbfbf", padding:"0px 10px"}} >\</div><a className="itemPath" href="/du-lich/">Đà Nẵng</a></li>
+                <li><div style={{display:"inline", color:"#bfbfbf", padding:"0px 10px"}}>\</div><a className="itemPath" href="/du-lich/">Tour Đà Nẵng 4N3D: TP. HCM - Đà Nẵng - Bà Nà - Hội An - Huế - Quảng Bình</a></li>
+              </ul>
           </Row>
-          <Row style={{fontSize:40, fontWeight:"bold", fontFamily:"'Helvetica Neue',Helvetica,Arial,sans-serif"}}>
+          <Row style={{fontSize:37, fontWeight:600, color:"#10239e", fontFamily:"'Helvetica Neue',Helvetica,Arial,sans-serif"}}>
             {tourDetail.data.name}
           </Row>
-          <Row>
-            <div style={{height:60, display:"flex", alignItems:"center", justifyContent:"center"}}>
-            <span>Tuyệt vời</span>
-            | 8 đánh giá
-            </div>
+          <Row justify="start" style={{margin:"10px 0"}}>
+                <span className="score-container">
+                  <span className="score">{tourDetail.data.rate}.0</span>
+                  <span className="score-description">Tuyệt vời</span>
+                </span>
+                <span>| 1 đánh giá</span>
           </Row>
           <Row span={24} gutter={24}>
             <Col span={16} xl={{ order: 1 }} lg={{ order: 1 }} md={{ order: 2 }} sm={{ order: 2 }} xs={{ order: 2 }}>
@@ -152,6 +167,27 @@ function TourDetailPage({
                     </Button>
                   </Col>
                 </Row>
+              </div>
+              <div style={{minWidth:400, borderRadius:4}}>
+                <List
+                  size="small"
+                  // header={<h4 style={{fontSize:18, color:"#333", borderColor: "#ddd"}}></h4>}
+                  bordered
+                  dataSource={[
+                    "CHƯƠNG TRÌNH TOUR",
+                    "TRẢI NGHIỆM THEO CÁCH CỦA BẠN",
+                    "ĐIỀU KHOẢN QUY ĐỊNH"
+                  ]}
+                  renderItem={(item) => (
+                    <List.Item
+                      // onClick={() => handleFilterLocaiton(item.id)}
+                      // style={{color: locationSelected === item.id ? 'red': 'black' }}
+                      className ="moveLocation"
+                    >
+                      <a style={{color:"gray"}} href="#${tour-program}">{item}</a>
+                    </List.Item>
+                  )}
+                />
               </div>
 
             </Col>

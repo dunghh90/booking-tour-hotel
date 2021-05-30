@@ -3,7 +3,7 @@ import { Router, Switch } from 'react-router-dom';
 import history from './utils/history';
 import { ROUTERS } from './constants/router';
 // components
-import LoginLayout from './components/layouts/LoginLayout';
+// import LoginLayout from './components/layouts/LoginLayout';
 import DefaultLayout from './components/layouts/DefaultLayout';
 
 import TourListPage from './pages/TourList';
@@ -50,6 +50,11 @@ function BrowserRouter(props) {
           exact
           path={ROUTERS.TOUR_DETAIL}
           component={TourDetailPage}
+        />
+        <DefaultLayout
+          exact
+          path={ROUTERS.TOUR_SEARCH}
+          component={TourListPage}
         />
         <DefaultLayout
           exact

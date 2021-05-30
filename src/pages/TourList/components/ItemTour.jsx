@@ -7,7 +7,7 @@ import { IoAirplaneOutline, IoCarOutline } from "react-icons/io5";
 import history from '../../../utils/history';
 
 function ItemTour(props) {
-  const { title, link, description, price, time, id } = props;
+  const { title, link, description, price, startDate, rate, time, id } = props;
 
   // const [isEdit, setIsEdit] = useState(false);
   // const [isShowDescription, setIsShowDescription] = useState(false);
@@ -17,11 +17,10 @@ function ItemTour(props) {
   function renderUrlTour() {
     return description.map((item, index) => {
       return (
-        <ul>
-          <li>
-            <a style={{ color: "#00C1DE" }}>{item}</a>
+        
+          <li style={{display:"inline-block", padding:"0px 5px"}}>
+            {item}
           </li>
-        </ul>
       )
     })
 
@@ -36,12 +35,13 @@ function ItemTour(props) {
       >
         <Row gutter={24}>
           <Col span={6}>
-            <Image
+            <img src={link} style={{width:"100%", cursor:"pointer"}}/>
+            {/* <Image
             width={200}
             src={link}
-            />
+            /> */}
           </Col>
-          <Col span={12} style={{ marginTop: 10 }}>
+          <Col span={10} style={{ marginTop: 10 }}>
             <Row>
               <Col>
                 <div className="tourItemName" style={{fontWeight:600}}>
@@ -51,25 +51,32 @@ function ItemTour(props) {
                 </div>
               </Col>
             </Row>
-            <Row style={{ margin: "10px 0px" }}>
-              <Col span={6}>
-                Mã: sdfsd
-            </Col>
-              <Col span={10}>
-                <Space><FieldTimeOutlined />{time}</Space>
-              </Col>
-              <Col span={8}>
-                Phương tiện: <IoAirplaneOutline /><IoCarOutline />
-              </Col>
+            <Row style={{ marginTop: 10 }}>
+              <div>
+                <span className="score-container">
+                  <span className="score">{rate}.0</span>
+                  <span className="score-description">Tuyệt vời</span>
+                </span>
+                <span>| 1 đánh giá</span>
+              </div>
+            </Row>
+            <Row justify="space-between" style={{ margin: "10px 0px" }}>
+              <div>Mã: TO123</div>
+              <div><FieldTimeOutlined /> {time}</div>
+              <div>Phương tiện: <IoAirplaneOutline /><IoCarOutline /></div>
             </Row>
             <Row>
-              <Col>
+              <ul style={{ color: "#00C1DE", paddingLeft:0, marginLeft:-5,listStyle:"none" }}>
                 {renderUrlTour()}
-              </Col>
+              </ul>
             </Row>
           </Col>
-          <Col span={6} style={{ marginTop: 10 }}>
-            <span style={{ color: "#00C1DE", fontSize: 22, fontWeight: "bold", float: "right" }}>{price.toLocaleString()} VNĐ</span>
+          <Col span={8} style={{ marginTop: 10 }}>
+            <Row justify="end">
+              <div>Khởi hành: {startDate}</div>
+              <div style={{ color: "#00C1DE", fontSize: 20, fontWeight: 500}}>{price.toLocaleString()} VNĐ</div>
+              <div style={{ color: "gray", fontSize:13}}>Áp dụng cho nhóm trên 2 khách</div>
+            </Row>
           </Col>
         </Row>
       </Card>
