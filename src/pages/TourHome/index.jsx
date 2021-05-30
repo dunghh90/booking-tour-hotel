@@ -7,6 +7,8 @@ import { getTourListAction } from '../../redux/actions';
 import SearchTour from '../../components/SearchTour';
 import ItemTour from './components/ItemTour'
 
+import './styleTour.css'
+
 function TourHomePage({ getTourList, tourList }) {
   
   useEffect(() => {
@@ -30,7 +32,11 @@ function TourHomePage({ getTourList, tourList }) {
       <div style={{display:"flex", justifyContent:"center"}}>
         <div style={{padding: '10px 50px', maxWidth: 1400, width: "100%" }}>
           <SearchTour setKeySearchLocation={setKeySearchLocation}/>
-          <Row gutter={[24, 24]} style={{marginTop:10, width:"100%"}}>
+          <Row justify="space-between" align="bottom" className="localHeadLine">
+              <div>Mùa hè rực rỡ</div>
+              <div style={{fontSize:12, fontWeight:500}}>XEM THÊM TOUR ></div>
+          </Row>
+          <Row gutter={[24, 24]} style={{marginTop:10}}>
             {
               filterTourList.map((item, index) => {
                 return (

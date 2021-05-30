@@ -34,7 +34,7 @@ function ItemTour(props) {
           {/* <Meta title="Europe Street beat" description="www.instagram.com" /> */}
           <div>
             <Row>
-              <div className="tourItemName" style={{fontWeight:600}}>
+              <div className="tourItemName" style={{fontWeight:600, height:76}}>
                 <a>
                   {title}
                 </a>
@@ -49,13 +49,13 @@ function ItemTour(props) {
                   <span>| 1 đánh giá</span>
                 </div>
               </Row>
-            <Row style={{ margin: "10px 0px" }}>
-              <ul style={{ color: "#00C1DE", paddingLeft:0, marginLeft:-5,listStyle:"none" }}>
+            <Row >
+              <ul style={{ color: "#00C1DE", paddingLeft:0, marginTop:10, marginLeft:-5,listStyle:"none" }}>
                 {renderUrlTour()}
               </ul>
             </Row>
             <Row justify="end">
-                <div style={{ color: "#00C1DE", fontSize: 20, fontWeight: 500}}>{price.toLocaleString()} VNĐ</div>
+                <div style={{ color: "#00C1DE", fontSize: 20, fontWeight: 500}}>{price.toLocaleString()} <span style={{fontSize:14}}>VNĐ</span></div>
             </Row>
           </div>
         </Card>
