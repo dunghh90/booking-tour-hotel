@@ -66,7 +66,7 @@ function ListHotelPage({
                   <div className="option">
                     <h2 className ="name" > {item.name} </h2>
                     <Rate disabled value={item.rate} />
-                    <h5 className="adr"><ThunderboltOutlined />.{item.Title}</h5>
+                    <h5 className="adr"><ThunderboltOutlined />.{item.address}</h5>
                     {/* <button>{item.note}</button> */}
                      <div
                       dangerouslySetInnerHTML={{
