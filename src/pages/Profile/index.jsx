@@ -327,19 +327,23 @@ function ProfilePage({
           style={{ height: '100%' }}
         >
           {/* <Menu.ItemGroup key="userInfo" icon={<UserOutlined />} title="Thông tin của tôi"> */}
-          <Menu.SubMenu key="userInfo" icon={<UserOutlined />} title="Thông tin của tôi">
+          {/* <Menu.SubMenu key="userInfo" icon={<UserOutlined />} title="Thông tin của tôi"> */}
+          <Menu.Item key="userHistory" icon={<LaptopOutlined />}
+            onClick={() => setSelectObject(3)}
+          >
+            Lịch sử booking
+          </Menu.Item>
+          <Menu.ItemGroup key="g1" title={<><UserOutlined /> <span>Thông tin của tôi</span></>}>
             <Menu.Item key="1"
               onClick={() => setSelectObject(1)}
             >Tài khoản</Menu.Item>
             <Menu.Item key="2"
               onClick={() => setSelectObject(2)}
             >Đổi mật khẩu</Menu.Item>
-          </Menu.SubMenu>
-          <Menu.Item key="userHistory" icon={<LaptopOutlined />}
-            onClick={() => setSelectObject(3)}
-          >
-            Lịch sử booking
-              </Menu.Item>
+          </Menu.ItemGroup>
+          {/* </Menu.SubMenu> */}
+          {/* <Menu.ItemGroup key="g2" > */}
+          {/* </Menu.ItemGroup> */}
         </Menu>
 
       </Col>

@@ -1,4 +1,4 @@
-import { Card, Col, Row, Form, Input, Button, DatePicker, Space, InputNumber, Modal, List} from "antd";
+import { Breadcrumb, Card, Col, Row, Form, Input, Button, DatePicker, Space, InputNumber, Modal, List} from "antd";
 import { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import history from '../../utils/history';
@@ -107,12 +107,23 @@ function TourDetailPage({
     <>
       <Content className="site-layout" style={{ padding: '0 50px', display: "flex", justifyContent: "center", alignItems: "center" }}>
         <div style={{ maxWidth: 1300, width: "100%" }}>
-          <Row >
+          {/* <Row >
               <ul className="listPath" >
                 <li><HomeOutlined  /> <a className="itemPath" href="/du-lich/">Trang chủ</a></li>
                 <li><div style={{display:"inline", color:"#bfbfbf", padding:"0px 10px"}} >\</div><a className="itemPath" href="/du-lich/">Đà Nẵng</a></li>
                 <li><div style={{display:"inline", color:"#bfbfbf", padding:"0px 10px"}}>\</div><a className="itemPath" href="/du-lich/">Tour Đà Nẵng 4N3D: TP. HCM - Đà Nẵng - Bà Nà - Hội An - Huế - Quảng Bình</a></li>
               </ul>
+          </Row> */}
+          <Row>
+            <Breadcrumb>
+              <Breadcrumb.Item><HomeOutlined  /> Trang chủ</Breadcrumb.Item>
+              <Breadcrumb.Item>
+                <a href="">Đà Nẵng</a>
+              </Breadcrumb.Item>
+              <Breadcrumb.Item>
+                <a href="">Tour Đà Nẵng 4N3D: TP. HCM - Đà Nẵng - Bà Nà - Hội An - Huế - Quảng Bình</a>
+              </Breadcrumb.Item>
+            </Breadcrumb>
           </Row>
           <Row style={{fontSize:37, fontWeight:600, color:"#10239e", fontFamily:"'Helvetica Neue',Helvetica,Arial,sans-serif"}}>
             {tourDetail.data.name}
