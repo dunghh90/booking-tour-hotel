@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { UserOutlined,SendOutlined } from '@ant-design/icons';
+import { UserOutlined,SendOutlined, DownOutlined } from '@ant-design/icons';
+import { VscAccount } from "react-icons/vsc";
+
 import { Input, Layout, Row, Col, Button, Space, Dropdown, Menu,Form,DatePicker } from 'antd';
 import moment from 'moment';
 import 'antd/dist/antd.css';
@@ -71,13 +73,13 @@ function HeaderPage(props) {
                 <Header className="headers">
                     <div className="container-fulid">
                         <Row>
-                            <Col span={4}>
+                            <Col xxl={4} xl={4} md={4} sm={4} xs={0}>
 
                                <img src="https://res.ivivu.com/hotel/img/logo.svg" alt="" />
 
                             </Col>
                            
-                            <Col className="centerheader" span={15}>
+                            <Col className="centerheader" xxl={15} xl={14} md={0} xm={0} xs={0}>
                                 <div className="menu">
                                       <ul className= "menu-cha">
                                           <li className="menu1">
@@ -93,23 +95,20 @@ function HeaderPage(props) {
                                 </div>
                                 
                             </Col>
-                            <Col span={5}>
-                                    <div style={{color:"#1890FF"}}>
+                            <Col xxl={5} xl={6} md={20} sm={20} xs={24}>
+                                    <div>
                                         {
                                         
                                         userInfo.data.id 
                                             ? (
                                                 <Dropdown overlay={menu} >
-                                                     <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
-                                                     {`Tên đăng nhập: ${userInfo.data.name}`}
+                                                     <div style={{ display:'flex', alignItems:"center", color:"white"}}>
+                                                     <VscAccount size={26} />
+                                                     <a style={{fontSize:16, paddingLeft:10, color:"white"}} onClick={e => e.preventDefault()}>
+                                                      {userInfo.data.name} <DownOutlined />
                                                      </a>
+                                                     </div>
                                                  </Dropdown>
-                                            // <Space>
-                                                
-                                            //     <Button type="primary" className="logout" onClick={() => logout()}>{`Đăng xuất(${userInfo.data.name})`}
-                                            //     <IconFont type="icon-tuichu" />
-                                            //     </Button>
-                                            // </Space>
                                             )
                                             : <Button type="primary" onClick={() => history.push('/login')}> 
                                                 Đăng nhập
