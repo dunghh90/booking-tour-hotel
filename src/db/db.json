@@ -942,6 +942,30 @@
       "startDate": "2021/06/07",
       "endDate": "2021/06/18",
       "id": 17
+    },
+    {
+      "userId": 3,
+      "hotelId": 1,
+      "roomId": 5,
+      "startDate": "2021/05/04",
+      "endDate": "2021/05/06",
+      "id": 18
+    },
+    {
+      "userId": 3,
+      "hotelId": 1,
+      "roomId": 4,
+      "startDate": "2021/05/04",
+      "endDate": "2021/05/06",
+      "id": 19
+    },
+    {
+      "userId": 3,
+      "hotelId": 1,
+      "roomId": 8,
+      "startDate": "2021/05/04",
+      "endDate": "2021/05/06",
+      "id": 20
     }
   ],
   "commentHotels": [

@@ -12,9 +12,13 @@ h1{
     left: 31px;
     font-size: 45px;
     color: white;
-    z-index: 999;
+    width: 500px;
+    z-index: 9;
 }
 .item{
   width: 500px;
     height: 190px;
+}
+.homepage{
+    margin-top: 65px;
 }

@@ -20,12 +20,16 @@
     height: 40px;
     position: absolute;
     left: 110px;
-    z-index: 999;
+    z-index: 9;
 }
 
 .ant-row-center{
     width: 95%;
     margin-left: 35px;
+}
+.slick-list{
+    width: 1131px;
+    margin-left: 219px;
 }
 
 
