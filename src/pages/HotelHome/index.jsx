@@ -46,7 +46,7 @@ function HomePage({ getLocationList, locationList }) {
   }
 
   return (
-    <div>
+    <div className="homepage">
       <SimpleSlider />
       <h1>Điểm điến trong nước</h1>
      
