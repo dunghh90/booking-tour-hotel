@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { Space, Card, InputNumber, Button, Row, Col, Radio, Menu, Form, Input, DatePicker, Table } from 'antd';
 import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons';
+import history from '../../utils/history';
+import { Redirect } from 'react-router-dom';
 import moment from 'moment';
 import {
   getBookingHotelsAction,
@@ -19,13 +21,14 @@ function ProfilePage({
   getBookingTours,
   addProfile,
   bookingHotels,
+  userInfo,
   match
 }) {
 
   const userId = match.params.id;
   const [selectObject, setSelectObject] = useState(1);
-  const userInfo = JSON.parse(localStorage.getItem('userInfo'));
-  
+  // const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+
   const layout = {
     labelCol: { span: 12 },
     wrapperCol: { span: 12 },
@@ -42,6 +45,10 @@ function ProfilePage({
       userId: userId
     });
   },[])
+  
+  if (!userInfo.data.id) {
+    return <Redirect to="/login"/>;
+  }
 
   function addProfileUser(values) {
     const newValues = {
@@ -60,11 +67,11 @@ function ProfilePage({
           name="register"
           onFinish={(values) => addProfileUser(values)}
           initialValues={{
-            email: userInfo.email,
-            name: userInfo.name,
-            phone: userInfo.phone,
-            gender: userInfo.gender,
-            birthday: moment(userInfo.birthday, 'YYYY/MM/DD')
+            email: userInfo.data.email,
+            name: userInfo.data.name,
+            phone: userInfo.data.phone,
+            gender: userInfo.data.gender,
+            birthday: moment(userInfo.data.birthday, 'YYYY/MM/DD')
           }}
           style={{ width: 700 }}
           scrollToFirstError
@@ -327,21 +334,21 @@ function ProfilePage({
           style={{ height: '100%' }}
         >
           {/* <Menu.ItemGroup key="userInfo" icon={<UserOutlined />} title="Thông tin của tôi"> */}
-          {/* <Menu.SubMenu key="userInfo" icon={<UserOutlined />} title="Thông tin của tôi"> */}
-          <Menu.Item key="userHistory" icon={<LaptopOutlined />}
-            onClick={() => setSelectObject(3)}
-          >
-            Lịch sử booking
-          </Menu.Item>
-          <Menu.ItemGroup key="g1" title={<><UserOutlined /> <span>Thông tin của tôi</span></>}>
+          <Menu.SubMenu key="userInfo" icon={<UserOutlined />} title="Thông tin của tôi">
+          {/* <Menu.ItemGroup key="g1" title={<><UserOutlined /> <span>Thông tin của tôi</span></>}> */}
             <Menu.Item key="1"
               onClick={() => setSelectObject(1)}
             >Tài khoản</Menu.Item>
             <Menu.Item key="2"
               onClick={() => setSelectObject(2)}
             >Đổi mật khẩu</Menu.Item>
-          </Menu.ItemGroup>
-          {/* </Menu.SubMenu> */}
+          {/* </Menu.ItemGroup> */}
+          </Menu.SubMenu>
+          <Menu.Item key="userHistory" icon={<LaptopOutlined />}
+            onClick={() => setSelectObject(3)}
+          >
+            Lịch sử booking
+          </Menu.Item>
           {/* <Menu.ItemGroup key="g2" > */}
           {/* </Menu.ItemGroup> */}
         </Menu>

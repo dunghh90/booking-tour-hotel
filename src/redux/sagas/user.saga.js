@@ -4,7 +4,7 @@ import history from '../../utils/history';
 
 function* loginSaga(action) {
   try {
-    const { email, password } = action.payload;
+    const { email, password, prevPath } = action.payload;
     const result = yield axios({
       method: 'GET',
       url: 'http://localhost:3002/users',
@@ -22,7 +22,7 @@ function* loginSaga(action) {
         },
       });
       
-      yield history.push('/');
+      yield history.push(prevPath?prevPath:'/');
     } else {
       yield put({
         type: "LOGIN_FAIL",

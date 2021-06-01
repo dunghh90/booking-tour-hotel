@@ -73,13 +73,13 @@ function HeaderPage(props) {
                 <Header className="headers">
                     <div className="container-fulid">
                         <Row>
-                            <Col xxl={4} xl={4} md={4} sm={4} xs={0}>
+                            <Col xxl={4} xl={4} md={5} sm={4} xs={0}>
 
                                <img src="https://res.ivivu.com/hotel/img/logo.svg" alt="" />
 
                             </Col>
                            
-                            <Col className="centerheader" xxl={15} xl={14} md={0} xm={0} xs={0}>
+                            <Col className="centerheader" xxl={15} xl={14} md={10} xm={0} xs={0}>
                                 <div className="menu">
                                       <ul className= "menu-cha">
                                           <li className="menu1">
@@ -95,7 +95,7 @@ function HeaderPage(props) {
                                 </div>
                                 
                             </Col>
-                            <Col xxl={5} xl={6} md={20} sm={20} xs={24}>
+                            <Col xxl={5} xl={6} md={9} sm={20} xs={24}>
                                     <div>
                                         {
                                         

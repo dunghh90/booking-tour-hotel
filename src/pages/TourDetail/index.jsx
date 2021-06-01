@@ -19,12 +19,13 @@ function TourDetailPage({
   tourDetail,
   getTourDetail,
   bookingTour,
+  userInfo,
   match,
 }) {
   const [orderTourForm] = Form.useForm();
   const { TextArea } = Input;
   const tourId = match.params.id;
-  const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+  // const userInfo = JSON.parse(localStorage.getItem('userInfo'));
 
   const [money, setMoney] = useState(tourDetail.data.price);
   const [countAdults, setCountAdults] = useState(1);
@@ -78,7 +79,7 @@ function TourDetailPage({
       onOk() {
         console.log('OK');
         bookingTour({
-          userId: userInfo.id,
+          userId: userInfo.data.id,
           tourId: parseInt(tourId),
           startDate: dateSelected,
           numberAdults: countAdults,
@@ -92,8 +93,14 @@ function TourDetailPage({
   }
 
   function handleBookingTour() {
-    if (!userInfo) {
+    if (!userInfo.data.id) {
       alert('Bạn cần đăng nhập!');
+      history.push({
+        pathname: '/login',
+        state: {
+          prevPath: `tours/${tourId}`
+        }
+      })
     } else if (!dateSelected) {
       alert('Cần chọn ngày đặt tour!');
     } else {
@@ -243,8 +250,10 @@ function TourDetailPage({
 
 const mapStateToProps = (state) => {
   const { tourDetail } = state.tourReducer;
+  const { userInfo } = state.userReducer;
   return {
     tourDetail,
+    userInfo
   }
 };
 

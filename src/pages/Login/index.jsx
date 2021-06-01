@@ -45,7 +45,7 @@ function LoginPage(props) {
     history.push('/');
   };
 
-  const { login, register } = props;
+  const { login, register, location } = props;
 
   return (
     <div class="register-bg-container">
@@ -56,7 +56,10 @@ function LoginPage(props) {
               {...layout}
               name="basic"
               initialValues={{ remember: true }}
-              onFinish={(values) => login(values)}
+              onFinish={(values) => {
+                const newVal = location.state?.prevPath?{...values,prevPath: location.state.prevPath}:values;
+                login(newVal);
+              }}
             >
               <Form.Item
                 label={<label style={{ color: "white" }}>Email</label>}

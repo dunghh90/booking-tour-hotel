@@ -65,3 +65,17 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 32px;
   font-weight: 400;
 }
+
+.container-search {
+
+  background-image: url(https://cdn1.ivivu.com/iVivu/2021/03/24/09/imperial-vt.jpg);
+  height: 400px;
+  background-position: "center";
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+}

@@ -4,6 +4,11 @@ const initialState = {
     load: false,
     error: '',
   },
+  topicTourList: {
+    data: [],
+    load: false,
+    error: '',
+  },
   tourDetail: {
     data: {
       location: {}
@@ -42,6 +47,37 @@ export default function tourReducer(state = initialState, action) {
         ...state,
         tourList: {
           ...state.tourList,
+          load: false,
+          error: error,
+        },
+      }
+    }
+    case 'GET_TOPIC_TOUR_LIST_REQUEST': {
+      return {
+        ...state,
+        topicTourList: {
+          ...state.topicTourList,
+          load: true,
+        },
+      }
+    }
+    case 'GET_TOPIC_TOUR_LIST_SUCCESS': {
+      const { data } = action.payload;
+      return {
+        ...state,
+        topicTourList: {
+          ...state.topicTourList,
+          data: data,
+          load: false,
+        },
+      }
+    }
+    case 'GET_TOPIC_TOUR_LIST_FAIL': {
+      const { error } = action.payload;
+      return {
+        ...state,
+        topicTourList: {
+          ...state.topicTourList,
           load: false,
           error: error,
         },

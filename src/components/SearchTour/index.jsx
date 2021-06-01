@@ -24,7 +24,7 @@ function SearchTour({getTourList, setKeySearchLocation}) {
   const currentDate = new Date();
 
   return (
-    <Row style={{margin:'10px 0px', fontSize:20, padding:"15px 10px", borderRadius:4, backgroundColor:"#bae7ff"}}>
+    <Row style={{margin:'10px 0px', fontSize:20, padding:"15px 10px", borderRadius:4, backgroundColor:"rgb(0,0,0,0.3"}}>
       <Form
         name="basic"
         initialValues={{ location: '' }}

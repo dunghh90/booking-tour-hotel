@@ -5,19 +5,21 @@ import { EnvironmentOutlined, SendOutlined } from '@ant-design/icons';
 
 import moment from 'moment';
 
-import { getTourListAction, getLocationListAction } from '../../redux/actions';
+import { getTourListAction, getLocationListAction, getTopicTourListAction } from '../../redux/actions';
 import ItemTour from './components/ItemTour'
 import './styleTour.css'
 
 function TourListPage({ 
   getTourList, 
   getLocationList,
+  topicTourList,
+  getTopicTourList,
   tourList,
   locationList,
   match
 }) {
-  console.log("🚀 ~ file: index.jsx ~ line 19 ~ match", match.params.keySearch)
 
+  const [topicSelected, setTopicSelected] = useState(null);
   const [locationSelected, setLocationSelected] = useState(null);
   const [keySearchLocation, setKeySearchLocation] = useState(match.params.keySearch?match.params.keySearch:'');
 
@@ -25,6 +27,7 @@ function TourListPage({
 
   useEffect(() => {
     getLocationList();
+    getTopicTourList();
     getTourList({
       page: 1,
       limit: 10,
@@ -45,14 +48,28 @@ function TourListPage({
   let filterLocationById = locationList.data.filter((item) => {
     return item.id == locationSelected;
   })
+  let filterTopicById = topicTourList.data.filter((item) => {
+    return item.id == topicSelected;
+  })
 
   function handleFilterLocaiton(id) {
+    setTopicSelected(null);
     setKeySearchLocation('');
     setLocationSelected(id);
     getTourList({
       page: 1,
       limit: 10,
       locationId: id,
+    })
+  }
+  function handleFilterTopic(id) {
+    setKeySearchLocation('');
+    setTopicSelected(id);
+    setLocationSelected(null);
+    getTourList({
+      page: 1,
+      limit: 10,
+      topicTourId: id,
     })
   }
   const currentDate = new Date();
@@ -132,23 +149,14 @@ function TourListPage({
                 header={<h4 style={{fontSize:18, color:"#333", borderColor: "#ddd"}}>Tours theo chủ đề</h4>}
                 bordered
                 style={{marginTop:20}}
-                dataSource={[
-                  "Tour cao cấp",
-                  "Tour trải nghiệm",
-                  "Trải nghiệm địa phương",
-                  "Tour nội địa hot",
-                  "Tour sông nước miền tây",
-                  "Tour truyền thống",
-                  "Tour biển đảo",
-                  "Tour nước ngoài"
-                ]}
-                renderItem={(item, index) => (
+                dataSource={topicTourList.data}
+                renderItem={(item) => (
                   <List.Item
-                    onClick={() => handleFilterLocaiton(index + 1)}
+                    onClick={() => handleFilterTopic(item.id)}
                     // style={{ color: locationSelected === item.id ? 'red': 'black'}}
                     className="list"
                   >
-                    {item}
+                    {item.name}
                   </List.Item>
                 )}
               />
@@ -158,6 +166,7 @@ function TourListPage({
             <Col span={18} style={{marginTop:16}}>
               {keySearchLocation && <Row style={{fontSize:28, fontWeight:600, color:"#69c0ff"}}>Tour du lịch "{keySearchLocation}" </Row>}
               {filterLocationById.length !== 0 && <Row style={{fontSize:28, fontWeight:600, color:"#69c0ff"}}>Tour du lịch "{filterLocationById[0].name}" </Row>}
+              {filterTopicById.length !== 0 && <Row style={{fontSize:28, fontWeight:600, color:"#69c0ff"}}>Tour du lịch "{filterTopicById[0].name}" </Row>}
               {
                 filterTourList.load ? (<p>Loading...</p>) 
                 :(filterTourList.map((item, index) => {
@@ -192,11 +201,12 @@ function TourListPage({
 }
 
 const mapStateToProps = (state) => {
-  const { tourList } = state.tourReducer;
+  const { tourList, topicTourList } = state.tourReducer;
   const { locationList } = state.hotelReducer;
   return {
     tourList: tourList,
-    locationList: locationList
+    locationList: locationList,
+    topicTourList: topicTourList
 
   }
 };
@@ -205,6 +215,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     getTourList: (params) => dispatch(getTourListAction(params)),
     getLocationList: (params) => dispatch(getLocationListAction(params)),
+    getTopicTourList: (params) => dispatch(getTopicTourListAction(params)),
   };
 }
 

@@ -31,6 +31,7 @@ function ItemTour(props) {
 
       <Card
         size="small"
+        hoverable
         onClick={() => history.push(`/tours/${id}`)}
       >
         <Row gutter={24}>

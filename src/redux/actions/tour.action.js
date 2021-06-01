@@ -17,5 +17,11 @@ export function getTourDetailAction(params) {
   }
 }
 
+export function getTopicTourListAction(params) {
+  return {
+    type: 'GET_TOPIC_TOUR_LIST_REQUEST',
+    payload: params,
+  }
+}
 
 

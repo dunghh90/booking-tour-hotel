@@ -36,6 +36,7 @@
       "linkList": "https://cdn2.ivivu.com/2021/03/25/15/ivivu-ly-son-quang-ngai-bia-240x153.gif",
       "time": "4 Ngày 3 Đêm",
       "rate": 4,
+      "topicTourId":1,
       "dateStart": "2021-04-26",
       "description": [
         "• Bay Hãng",
@@ -54,6 +55,7 @@
       "linkList": "https://cdn2.ivivu.com/2019/04/04/10/tour-da-nangba-na-hill-cau-vang-204x153.jpg",
       "time": "4 Ngày 3 Đêm",
       "rate": 4,
+      "topicTourId":1,
       "dateStart": "2021-04-26",
       "description": [
         "• Khu Du Lịch Bà Nà Núi Chúa",
@@ -72,6 +74,7 @@
       "linkList": "https://cdn2.ivivu.com/2021/04/08/13/ivivu-bai-xep-bia-240x153.gif",
       "time": "4 Ngày 3 Đêm",
       "rate": 5,
+      "topicTourId":1,
       "dateStart": "2021-04-26",
       "description": [
         "• Bán Đảo Phương Mai",
@@ -90,6 +93,7 @@
       "linkList": "https://cdn2.ivivu.com/2021/03/09/15/ivivu-du-lich-tanyoli-bia-240x153.gif",
       "time": "4 Ngày 3 Đêm",
       "rate": 5,
+      "topicTourId":2,
       "dateStart": "2021-04-26",
       "description": [
         "• Bán Đảo Phương Mai",
@@ -108,6 +112,7 @@
       "linkList": "https://cdn2.ivivu.com/2021/04/15/11/ivivu-du-lich-tanyoli-nt-240x153.gif",
       "time": "4 Ngày 3 Đêm",
       "rate": 3,
+      "topicTourId":2,
       "dateStart": "2021-04-26",
       "description": [
         "• Bán Đảo Phương Mai",
@@ -173,10 +178,10 @@
       "img": "//cdn1.ivivu.com/iVivu/2017/01/23/11/khu-nghi-duong-the-graden-house-phu-quoc-374x280.png"
     }
   ],
-  "TourType": [
+  "topicTours": [
     {
       "id": 1,
-      "name": "Tour cao cấp"
+      "name": "Mùa Hè Rực rỡ"
     },
     {
       "id": 2,
