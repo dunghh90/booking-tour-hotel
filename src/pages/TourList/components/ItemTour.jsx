@@ -37,7 +37,7 @@ function ItemTour(props) {
         <Row gutter={24}>
           <Col span={6}>
             {/* <img src={link} style={{width:"100%", cursor:"pointer"}}/> */}
-            <div style={{backgroundImage: `url(${link})`, width:"100%", height:150, backgroundSize:"cover", backgroundRepeat:"no-repeat", backgroundPosition:"center"}}></div>
+            <div style={{backgroundImage: `url(${link})`, width:"100%", height:150}}></div>
             {/* <Image
             width={200}
             src={link}
@@ -75,9 +75,11 @@ function ItemTour(props) {
           </Col>
           <Col span={8} style={{ marginTop: 10 }}>
             <Row justify="end">
-              <div>Khởi hành: {startDate}</div>
-              <div style={{ color: "#00C1DE", fontSize: 20, fontWeight: 500}}>{price.toLocaleString()} VNĐ</div>
-              <div style={{ color: "gray", fontSize:13}}>Áp dụng cho nhóm trên 2 khách</div>
+              <div>
+                <div style={{textAlign:"right"}}>Khởi hành: {startDate}</div>
+                <div style={{textAlign:"right", color: "#00C1DE", fontSize: 20, fontWeight: 500}}>{price.toLocaleString()} VNĐ</div>
+                <div style={{textAlign:"right", color: "gray", fontSize:13}}>Áp dụng cho nhóm trên 2 khách</div>
+              </div>
             </Row>
           </Col>
         </Row>

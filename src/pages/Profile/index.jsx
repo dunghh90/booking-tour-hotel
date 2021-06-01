@@ -19,7 +19,7 @@ function ProfilePage({
   bookingTours,
   getBookingHotels,
   getBookingTours,
-  addProfile,
+  updateUser,
   bookingHotels,
   userInfo,
   match
@@ -27,7 +27,7 @@ function ProfilePage({
 
   const userId = match.params.id;
   const [selectObject, setSelectObject] = useState(1);
-  // const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+  const userInfoLocal = JSON.parse(localStorage.getItem('userInfo'));
 
   const layout = {
     labelCol: { span: 12 },
@@ -46,32 +46,41 @@ function ProfilePage({
     });
   },[])
   
-  if (!userInfo.data.id) {
+  if (!userInfo.data.id && !userInfoLocal) {
     return <Redirect to="/login"/>;
   }
 
-  function addProfileUser(values) {
+  function updateUserInfo(values) {
     const newValues = {
       ...values,
-      id: userInfo.id,
-      birthday: moment(values).format('YYYY/MM/DD'),
+      id: userInfo.data.id,
+      birthday: moment(values.birthday).format('YYYY/MM/DD'),
     }
-    addProfile(newValues)
+    updateUser(newValues);
   }
+
+  function changePassword(values) {
+    const newValues = {
+      ...values,
+      id: userInfo.data.id,
+    }
+    updateUser(newValues);
+  }
+
   function renderUserInfo(){
       return (
         <>
         <Form
           // form={form}
           {...layout}
-          name="register"
-          onFinish={(values) => addProfileUser(values)}
+          name="changeInfo"
+          onFinish={(values) => updateUserInfo(values)}
           initialValues={{
-            email: userInfo.data.email,
-            name: userInfo.data.name,
-            phone: userInfo.data.phone,
-            gender: userInfo.data.gender,
-            birthday: moment(userInfo.data.birthday, 'YYYY/MM/DD')
+            email: userInfoLocal.email,
+            name: userInfoLocal.name,
+            phone: userInfoLocal.phone,
+            gender: userInfoLocal.gender,
+            birthday: moment(userInfoLocal.birthday, 'YYYY/MM/DD')
           }}
           style={{ width: 700 }}
           scrollToFirstError
@@ -151,11 +160,6 @@ function ProfilePage({
         {/* { renderUserInfo()} */}
         </>
       );
-          }
-  
-
-  function changePassword() {
-
   }
 
   function renderChangePass() {
@@ -164,7 +168,6 @@ function ProfilePage({
         {...layout}
         name="changePassword"
         onFinish={(values) => changePassword(values)}
-        // initialValues={}
         style={{ width: 700 }}
         scrollToFirstError
       >
@@ -246,7 +249,7 @@ function ProfilePage({
         hotelName: item.hotel.name,
         roomName: item.room.name,
         // Chỗ này a để tạm, sau này fix data thì bỏ vào
-        price: item.room.price,
+        price: item.room.price.toLocaleString() + " VNĐ",
         date: `${item.startDate} - ${item.endDate}`,
         key: item.id,
       }
@@ -272,18 +275,28 @@ function ProfilePage({
   function renderHistoryBookingTour() {
     const tableColumn = [
       {
-        title: 'Tên khách sạn',
+        title: 'TOUR',
         dataIndex: 'tourName',
         key: 'tourName',
       },
+      {
+        title: 'NGƯỜI LỚN',
+        dataIndex: 'adults',
+        key: 'adults',
+      },
    
       {
-        title: 'Giá',
+        title: 'TRẺ EM',
+        dataIndex: 'child',
+        key: 'child',
+      },
+      {
+        title: 'GIÁ',
         dataIndex: 'price',
         key: 'price',
       },
       {
-        title: 'Ngày đặt',
+        title: 'NGÀY ĐẶT',
         dataIndex: 'date',
         key: 'date',
       },
@@ -292,7 +305,9 @@ function ProfilePage({
       return {
         ...item,
         tourName: item.tour.name,
-        price: item.tour.price,
+        price: item.totalPrice.toLocaleString() + " VNĐ",
+        adults: item.numberAdults,
+        child: item.numberChild,
         date: item.startDate,
         key: item.id,
       }
@@ -303,11 +318,16 @@ function ProfilePage({
   function renderHistory() {
     return (
       <div>
-      <p>Lịch sử đặt</p>
-        <h2>Lich su book hotel</h2>
+        <div style={{fontWeight:600, fontSize:16}}>Lịch sử book khách sạn</div>
+        <Row>
+
         {renderHistoryBookingHotel()}
-        <h2>Lich su book tour</h2>
+        </Row>
+        <div style={{fontWeight:600, fontSize:16}}>Lịch sử book tour</div>
+        <Row>
+
         {renderHistoryBookingTour()}
+        </Row>
       </div>
     )
 
@@ -380,7 +400,7 @@ const mapDispatchToProps = (dispatch) => {
     getBookingHotels: (params) => dispatch(getBookingHotelsAction(params)),
     getBookingTours: (params) => dispatch(getBookingTourAction(params)),
     getProfileList: (params) => dispatch( registerAction(params)),
-    addProfile: (params) => dispatch(updateProfileAction(params)),
+    updateUser: (params) => dispatch(updateProfileAction(params)),
   
   };
 }

@@ -1,6 +1,7 @@
 import { put, takeEvery } from 'redux-saga/effects';
 import axios from 'axios';
 import history from '../../utils/history';
+import { notification } from 'antd';
 
 function* loginSaga(action) {
   try {
@@ -88,14 +89,25 @@ function* getUserInfoSaga(action) {
 function* updateProfileSaga(action) {
   
   try {
-    const { id, email, name, birthday, gender, phone } = action.payload;
+    const { id, email, name, birthday, gender, phone, passwordNew } = action.payload;
     
-    const result = yield axios({
+    const result = passwordNew?
+      yield axios({
         method: 'PATCH',
         url: `http://localhost:3002/users/${id}`,
-        data: { email, name,birthday,gender,phone},
+        data: { password: passwordNew },
+      }) :
+      yield axios({
+          method: 'PATCH',
+          url: `http://localhost:3002/users/${id}`,
+          data: { email, name,birthday,gender,phone},
       });
     yield localStorage.setItem('userInfo', JSON.stringify(result.data));
+    
+    yield notification.open({
+      message: 'cập nhật thông tin thành công',
+      // description: `Bạn đã đặt tour ngày`,
+    });
     yield put({
       type: "UPDATE_PROFILE_SUCCESS",
       payload: {

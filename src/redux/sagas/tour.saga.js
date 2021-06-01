@@ -65,7 +65,7 @@ function* getTourDetailSaga(action) {
       method: 'GET',
       url: `http://localhost:3002/tours/${id}`,
       params: {
-        _expand: 'tourDescription'
+        _expand: 'location'
       }
     });
     yield put({

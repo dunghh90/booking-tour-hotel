@@ -84,6 +84,7 @@ function TourDetailPage({
           startDate: dateSelected,
           numberAdults: countAdults,
           numberChild: countChild,
+          totalPrice: money
         })
       },
       onCancel() {
@@ -124,12 +125,8 @@ function TourDetailPage({
           <Row>
             <Breadcrumb>
               <Breadcrumb.Item><HomeOutlined  /> Trang chủ</Breadcrumb.Item>
-              <Breadcrumb.Item>
-                <a href="">Đà Nẵng</a>
-              </Breadcrumb.Item>
-              <Breadcrumb.Item>
-                <a href="">Tour Đà Nẵng 4N3D: TP. HCM - Đà Nẵng - Bà Nà - Hội An - Huế - Quảng Bình</a>
-              </Breadcrumb.Item>
+              <Breadcrumb.Item><a href="">Đà Nẵng</a></Breadcrumb.Item>
+              <Breadcrumb.Item><a href="">Tour Đà Nẵng 4N3D: TP. HCM - Đà Nẵng - Bà Nà - Hội An - Huế - Quảng Bình</a></Breadcrumb.Item>
             </Breadcrumb>
           </Row>
           <Row style={{fontSize:37, fontWeight:600, color:"#10239e", fontFamily:"'Helvetica Neue',Helvetica,Arial,sans-serif"}}>
@@ -170,49 +167,50 @@ function TourDetailPage({
               </div>
             </Col>
             <Col span={8} xl={{ order: 2 }} lg={{ order: 2 }} md={{ order: 1 }} sm={{ order: 1 }} xs={{ order: 1 }}>
-              <div className="order-form-container">
-                <Row span={24} gutter={[10, 10]}>
-                  <Col span={10}>Chọn ngày khởi hành:</Col>
-                  <Col span={14}><DatePicker defaultValue={moment(d)} format={dateFormat} onChange={(value) => setDateSelected(value)} /></Col>
-                  <Col span={10}>Người lớn:</Col>
-                  <Col span={14}><InputNumber min={1} defaultValue={1} onChange={(values) => { setCountAdults(values); setMoneyAdults(values); }} /></Col>
-                  <Col span={10}>Trẻ em:</Col>
-                  <Col span={14}><InputNumber min={0} onChange={(values) => { setCountChild(values); setMoneyChild(values); }} /></Col>
-                  <Col span={24} ><div style={{ fontSize: 24, color: "#ffbd00", float: "right", fontWeight: "bold" }}>{money && (money.toLocaleString() + " VND")}</div></Col>
-                  <Col span={24}>
-                    <Button style={{ width: "100%", height:40, fontSize:18, backgroundColor:"#ffa940", color:"white" }}  htmlType="submit" onClick={() => handleBookingTour()}>
-                      Đặt tour
-                    </Button>
-                  </Col>
-                </Row>
+              <div style={{position:"sticky", top:0}}>
+                <div className="order-form-container">
+                  <Row span={24} gutter={[10, 10]}>
+                    <Col span={10}>Chọn ngày khởi hành:</Col>
+                    <Col span={14}><DatePicker defaultValue={moment(d)} format={dateFormat} onChange={(value) => setDateSelected(value)} /></Col>
+                    <Col span={10}>Người lớn:</Col>
+                    <Col span={14}><InputNumber min={1} defaultValue={1} onChange={(values) => { setCountAdults(values); setMoneyAdults(values); }} /></Col>
+                    <Col span={10}>Trẻ em:</Col>
+                    <Col span={14}><InputNumber min={0} defaultValue={0} onChange={(values) => { setCountChild(values); setMoneyChild(values); }} /></Col>
+                    <Col span={24} ><div style={{ fontSize: 24, color: "#ffbd00", float: "right", fontWeight: "bold" }}>{money && (money.toLocaleString() + " VND")}</div></Col>
+                    <Col span={24}>
+                      <Button style={{ width: "100%", height:40, fontSize:18, backgroundColor:"#ffa940", color:"white" }}  htmlType="submit" onClick={() => handleBookingTour()}>
+                        Đặt tour
+                      </Button>
+                    </Col>
+                  </Row>
+                </div>
+                <div style={{minWidth:400, borderRadius:4}}>
+                  <List
+                    size="small"
+                    // header={<h4 style={{fontSize:18, color:"#333", borderColor: "#ddd"}}></h4>}
+                    bordered
+                    dataSource={[
+                      "CHƯƠNG TRÌNH TOUR",
+                      "TRẢI NGHIỆM THEO CÁCH CỦA BẠN",
+                      "ĐIỀU KHOẢN QUY ĐỊNH"
+                    ]}
+                    renderItem={(item) => (
+                      <List.Item
+                        // onClick={() => handleFilterLocaiton(item.id)}
+                        // style={{color: locationSelected === item.id ? 'red': 'black' }}
+                        className ="moveLocation"
+                      >
+                        <a style={{color:"gray"}} href="#tour-program">{item}</a>
+                      </List.Item>
+                    )}
+                  />
+                </div>
               </div>
-              <div style={{minWidth:400, borderRadius:4}}>
-                <List
-                  size="small"
-                  // header={<h4 style={{fontSize:18, color:"#333", borderColor: "#ddd"}}></h4>}
-                  bordered
-                  dataSource={[
-                    "CHƯƠNG TRÌNH TOUR",
-                    "TRẢI NGHIỆM THEO CÁCH CỦA BẠN",
-                    "ĐIỀU KHOẢN QUY ĐỊNH"
-                  ]}
-                  renderItem={(item) => (
-                    <List.Item
-                      // onClick={() => handleFilterLocaiton(item.id)}
-                      // style={{color: locationSelected === item.id ? 'red': 'black' }}
-                      className ="moveLocation"
-                    >
-                      <a style={{color:"gray"}} href="#tour-program">{item}</a>
-                    </List.Item>
-                  )}
-                />
-              </div>
-
             </Col>
 
           </Row>
           <Row>
-            <Card title="Tours du lịch Phú Quốc liên quan" extra={<a className="loadMore" href="#">XEM TẤT CẢ </a>} style={{width: "100%", marginTop:16}}>
+            <Card title={`Tours du lịch ${tourDetail.data.location.name} liên quan`} extra={<a className="loadMore" href="#">XEM TẤT CẢ </a>} style={{width: "100%", marginTop:16}}>
                   <Row gutter={[28,28]}>
                     <Col span={8}>
                       <Card 

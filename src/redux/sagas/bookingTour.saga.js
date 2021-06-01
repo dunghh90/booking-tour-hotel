@@ -4,7 +4,7 @@ import axios from 'axios';
 
 function* bookingTour(action) {
   try {
-    const { userId, tourId, startDate, numberAdults, numberChild } = action.payload;
+    const { userId, tourId, startDate, numberAdults, numberChild, totalPrice } = action.payload;
     const result = yield axios({
       method: 'POST',
       url: 'http://localhost:3002/bookingTours',
@@ -13,7 +13,8 @@ function* bookingTour(action) {
         tourId,
         startDate,
         numberAdults,
-        numberChild
+        numberChild,
+        totalPrice
       }
     });
     yield notification.open({
