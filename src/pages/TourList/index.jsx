@@ -24,7 +24,10 @@ function TourListPage({
   const [topicSelected, setTopicSelected] = useState(topicTourId);
   console.log("🚀 ~ file: index.jsx ~ line 25 ~ topicSelected", topicSelected)
   const [locationSelected, setLocationSelected] = useState(null);
+  
   const [keySearchLocation, setKeySearchLocation] = useState(match.params.keySearch?match.params.keySearch:'');
+
+  
 
   const locationId = match.params.id;
   // const newVal = location.state?.prevPath?{...values,prevPath: location.state.prevPath}:values;
@@ -141,7 +144,8 @@ function TourListPage({
                   { name: "Tất cả" },
                   ...locationList.data,
                 ]}
-                renderItem={(item) => (
+                renderItem={(item) => 
+                  (
                   <List.Item
                     onClick={() => handleFilterLocaiton(item.id)}
                     // style={{color: locationSelected === item.id ? 'red': 'black' }}
