@@ -345,7 +345,7 @@ function ProfilePage({
 
   return (
 
-    <Row gutter={16} style={{ padding: '16px 16px 0' }}>
+    <Row  gutter={16} style={{ padding: '16px 16px 0',marginTop: 50 }}>
       <Col span={4}>
         <Menu
           mode="inline"

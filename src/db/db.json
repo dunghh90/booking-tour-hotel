@@ -23,7 +23,7 @@
       "password": "1234",
       "name": "minh",
       "id": 3,
-      "birthday": "2021/05/26",
+      "birthday": "2021/06/02",
       "gender": "male",
       "phone": "0702321494"
     }
@@ -225,10 +225,11 @@
       ],
       "rate": 5,
       "name": "Hotel Hà Nội Godel",
-      "address": "270 Võ Nguyên Giáp, Phường Mỹ An, Phố Hàng Tuyền, Thủ Đô Hà Nội, Việt Nam",
+      "address": "270 Võ Nguyên Giáp, Phường Mỹ An,Thành phố SaPa,Tỉnh Lào Cai, Việt Nam",
       "Price": 4900000,
-      "combo": "Wifi miễn phí",
-      "note": "<div class='tong'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
+      "area": "Thành Phố SaPa-Tỉnh Lào Cai",
+      "comment": "Được khách đánh giá cao-90% sẽ giới thiệu",
+      "note": "<div class='tongHotelList'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
     },
     {
       "id": 2,
@@ -242,10 +243,11 @@
       ],
       "rate": 4,
       "name": "Hotel Royal",
-      "address": "273 Võ Nguyên Giáp, Phường Mỹ An, Phố Hàng Tuyền, Thủ Đô Hà Nội, Việt Nam",
+      "address": "273 Võ Nguyên Giáp, Phường Mỹ An,Thành phố SaPa,Tỉnh Lào Cai, Việt Nam",
       "Price": 3900000,
-      "combo": "3N2D + Buffet + Đưa đón sân bay+ Massage",
-      "note": "<div class='tong'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
+      "area": "Thành Phố SaPa-Tỉnh Lào Cai",
+      "comment": "Được khách đánh giá cao-90% sẽ giới thiệu",
+      "note": "<div class='tongHotelList'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
     },
     {
       "id": 3,
@@ -259,10 +261,11 @@
       ],
       "rate": 4,
       "name": "Hotel BatMan ",
-      "address": "270 Hàng Đẩy, Phường Mỹ An, Phố Hàng Tuyền, Thủ Đô Hà Nội, Việt Nam",
+      "address": "270 Hàng Đẩy, Phường Mỹ An,Thành phố SaPa,Tỉnh Lào Cai, Việt Nam",
       "Price": 3900000,
-      "combo": "Wifi miễn phí",
-      "note": "<div class='tong'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
+      "area": "Thành Phố SaPa-Tỉnh Lào Cai",
+      "comment": "Được khách đánh giá cao-90% sẽ giới thiệu",
+      "note": "<div class='tongHotelList'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
     },
     {
       "id": 4,
@@ -276,14 +279,15 @@
         "http://vinatel.com.vn/public/media/file/files/blog/Giai-phap-hotel-tv-cho-khach-san-5-sao-1.jpg"
       ],
       "rate": 5,
-      "address": "279 Hàng Đẩy, Phường Mỹ An, Phố Hàng Tuyền, Thủ Đô Hà Nội, Việt Nam",
+      "address": "279 Nguyễn Văn Linh, Phường Mỹ An,Thành phố SaPa,Tỉnh Lào Cai, Việt Nam",
       "Price": 4900000,
-      "combo": "Wifi miễn phí",
-      "note": "<div class='tong'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
+      "area": "Thành Phố SaPa-Tỉnh Lào Cai",
+      "comment": "Được khách đánh giá cao-90% sẽ giới thiệu",
+      "note": "<div class='tongHotelList'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
     },
     {
       "id": 5,
-      "locationId": 2,
+      "locationId": 1,
       "name": "Hotel Supper Godel",
       "img": "https://pix10.agoda.net/hotelImages/626432/-1/4e377e4b246a20370ac4a9fb2e4850be.jpg?s=1024x768",
       "src": [
@@ -293,10 +297,11 @@
         "http://vinatel.com.vn/public/media/file/files/blog/Giai-phap-hotel-tv-cho-khach-san-5-sao-1.jpg"
       ],
       "rate": 5,
-      "address": "Đường Supper",
+      "address": "279 Hàng Đẩy, Phường Mỹ An,Thành phố SaPa,Tỉnh Lào Cai, Việt Nam",
       "Price": 4900000,
-      "combo": "Wifi miễn phí",
-      "note": "<div class='tong'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
+      "area": "Thành Phố SaPa-Tỉnh Lào Cai",
+      "comment": "Được khách đánh giá cao-90% sẽ giới thiệu",
+      "note": "<div class='tongHotelList'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
     },
     {
       "id": 6,
@@ -310,10 +315,11 @@
       ],
       "rate": 3,
       "name": "Hotel VinGroup",
-      "address": "Đường Bạch Đằng",
+      "address": "280 Hàng Đẩy, Phường Mỹ An,Thành phố SaPa,Tỉnh Lào Cai, Việt Nam",
       "Price": 2900000,
-      "combo": "Wifi miễn phí",
-      "note": "<div class='tong'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
+      "area": "Thành Phố SaPa-Tỉnh Lào Cai",
+      "comment": "Được khách đánh giá cao-90% sẽ giới thiệu",
+      "note": "<div class='tongHotelList'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
     },
     {
       "id": 7,
@@ -327,10 +333,11 @@
       ],
       "rate": 3,
       "name": "Hotel Jude Hill",
-      "address": "Đường Đồng Lợi",
+      "address": "290 Hàng Đẩy, Phường Mỹ An,Thành phố SaPa,Tỉnh Lào Cai, Việt Nam",
       "Price": 4900000,
-      "combo": "Wifi miễn phí",
-      "note": "<div class='tong'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
+      "area": "Thành Phố SaPa-Tỉnh Lào Cai",
+      "comment": "Được khách đánh giá cao-90% sẽ giới thiệu",
+      "note": "<div class='tongHotelList'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
     },
     {
       "id": 8,
@@ -344,14 +351,15 @@
       ],
       "rate": 2,
       "name": "Hotel Royal",
-      "address": "Đường Hoạt Nam",
+      "address": "250 Hàng Đẩy, Phường Mỹ An,Thành phố SaPa,Tỉnh Lào Cai, Việt Nam",
       "Price": 1900000,
-      "combo": "Wifi miễn phí",
-      "note": "<div class='tong'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
+      "area": "Thành Phố SaPa-Tỉnh Lào Cai",
+      "comment": "Được khách đánh giá cao-90% sẽ giới thiệu",
+      "note": "<div class='tongHotelList'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
     },
     {
       "id": 9,
-      "locationId": 2,
+      "locationId": 1,
       "img": "https://cdn.huongnghiepaau.com/wp-content/uploads/2019/10/khach-san-pullman-ha-noi.jpg",
       "src": [
         "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
@@ -360,15 +368,16 @@
         "http://vinatel.com.vn/public/media/file/files/blog/Giai-phap-hotel-tv-cho-khach-san-5-sao-1.jpg"
       ],
       "rate": 5,
-      "name": "Hotel Hà Nội Godel",
-      "address": "Đường Trần Duy Hưng",
+      "name": "Hotel Korae Godel",
+      "address": "60 Hàng Đẩy, Phường Mỹ An,Thành phố SaPa,Tỉnh Lào Cai, Việt Nam",
       "Price": 4900000,
-      "combo": "Wifi miễn phí",
-      "note": "<div class='tong'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
+      "area": "Thành Phố SaPa-Tỉnh Lào Cai",
+      "comment": "Được khách đánh giá cao-90% sẽ giới thiệu",
+      "note": "<div class='tongHotelList'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
     },
     {
       "id": 10,
-      "locationId": 2,
+      "locationId": 1,
       "img": "https://pix10.agoda.net/hotelImages/4885116/0/3ec7a573097742323e2f976670239467.jpg?s=1024x768",
       "src": [
         "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
@@ -377,15 +386,16 @@
         "http://vinatel.com.vn/public/media/file/files/blog/Giai-phap-hotel-tv-cho-khach-san-5-sao-1.jpg"
       ],
       "rate": 4,
-      "name": "Hotel Matcha",
-      "address": "Đường Phạm Hùng",
+      "name": "Hotel Japan Pro",
+      "address": "240 Hàng Đẩy, Phường Mỹ An,Thành phố SaPa,Tỉnh Lào Cai, Việt Nam",
       "Price": 3900000,
-      "combo": "Wifi miễn phí",
-      "note": "<div class='tong'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
+      "area": "Thành Phố SaPa-Tỉnh Lào Cai",
+      "comment": "Được khách đánh giá cao-90% sẽ giới thiệu",
+      "note": "<div class='tongHotelList'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
     },
     {
       "id": 11,
-      "locationId": 2,
+      "locationId": 1,
       "img": "https://toquoc.mediacdn.vn/2019/2/28/my-trieu-summit-15513252506751703394469.jpg",
       "src": [
         "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
@@ -395,10 +405,11 @@
       ],
       "rate": 4,
       "name": "Hotel Royal ",
-      "address": "Đường Hùng Vương",
+      "address": "276 Hàng Đẩy, Phường Mỹ An,Thành phố SaPa,Tỉnh Lào Cai, Việt Nam",
       "Price": 3900000,
-      "combo": "Wifi miễn phí",
-      "note": "<div class='tong'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
+      "area": "Khu vực SaPa-Tỉnh Lào Cai",
+      "comment": "Được khách đánh giá cao-90% sẽ giới thiệu",
+      "note": "<div class='tongHotelList'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
     },
     {
       "id": 12,
@@ -414,8 +425,8 @@
       "rate": 3,
       "address": "Đường Âu Cơ",
       "Price": 2900000,
-      "combo": "Wifi miễn phí",
-      "note": "<div class='tong'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
+      "area": "Wifi miễn phí",
+      "note": "<div class='tongHotelList'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
     },
     {
       "id": 13,
@@ -431,8 +442,8 @@
       "name": "Hotel Minh Toàn",
       "address": "Đường Thác Bạc Thị ",
       "Price": 4900000,
-      "combo": "Wifi miễn phí",
-      "note": "<div class='tong'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
+      "area": "Wifi miễn phí",
+      "note": "<div class='tongHotelList'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
     },
     {
       "id": 14,
@@ -448,8 +459,8 @@
       "name": "Hotel GaLaXy",
       "address": "Đường Hai Bà Trưng",
       "Price": 4900000,
-      "combo": "Wifi miễn phí",
-      "note": "<div class='tong'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
+      "area": "Wifi miễn phí",
+      "note": "<div class='tongHotelList'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
     },
     {
       "id": 15,
@@ -465,8 +476,8 @@
       "name": "Hotel Linh Dương",
       "address": "Đường Trần Phú",
       "Price": 4900000,
-      "combo": "Wifi miễn phí",
-      "note": "<div class='tong'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
+      "area": "Wifi miễn phí",
+      "note": "<div class='tongHotelList'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
     },
     {
       "id": 16,
@@ -482,8 +493,8 @@
       "name": "Hotel Lõ Hưng",
       "address": "Đường Phạm Hưng",
       "Price": 1900000,
-      "combo": "Wifi miễn phí",
-      "note": "<div class='tong'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
+      "area": "Wifi miễn phí",
+      "note": "<div class='tongHotelList'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
     },
     {
       "id": 17,
@@ -499,8 +510,8 @@
       "name": "Hotel Hà Nội Godel",
       "address": "Đường Trần Duy Hưng",
       "Price": 4900000,
-      "combo": "Wifi miễn phí",
-      "note": "<div class='tong'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
+      "area": "Wifi miễn phí",
+      "note": "<div class='tongHotelList'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
     },
     {
       "id": 18,
@@ -516,8 +527,8 @@
       "name": "Hotel Matcha",
       "address": "Đường Phạm Hùng",
       "Price": 3900000,
-      "combo": "Wifi miễn phí",
-      "note": "<div class='tong'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
+      "area": "Wifi miễn phí",
+      "note": "<div class='tongHotelList'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
     },
     {
       "id": 19,
@@ -533,7 +544,7 @@
       "name": "Hotel Royal ",
       "address": "Đường Hùng Vương",
       "Price": 3900000,
-      "combo": "Wifi miễn phí"
+      "area": "Wifi miễn phí"
     },
     {
       "id": 20,
@@ -549,7 +560,7 @@
       "rate": 3,
       "address": "Đường Âu Cơ",
       "Price": 2900000,
-      "combo": "Wifi miễn phí"
+      "area": "Wifi miễn phí"
     },
     {
       "id": 21,
@@ -565,7 +576,7 @@
       "name": "Hotel Minh Toàn",
       "address": "Đường Thác Bạc Thị ",
       "Price": 4900000,
-      "combo": "Wifi miễn phí"
+      "area": "Wifi miễn phí"
     },
     {
       "id": 22,
@@ -581,7 +592,7 @@
       "name": "Hotel GaLaXy",
       "address": "Đường Hai Bà Trưng",
       "Price": 2900000,
-      "combo": "Wifi miễn phí"
+      "area": "Wifi miễn phí"
     },
     {
       "id": 23,
@@ -597,7 +608,7 @@
       "name": "Hotel Linh Dương",
       "address": "Đường Trần Phú",
       "Price": 2900000,
-      "combo": "Wifi miễn phí"
+      "area": "Wifi miễn phí"
     },
     {
       "id": 24,
@@ -613,7 +624,7 @@
       "name": "Hotel Linh Dương",
       "address": "Đường Trần Phú",
       "Price": 3900000,
-      "combo": "Wifi miễn phí"
+      "area": "Wifi miễn phí"
     }
   ],
   "rooms": [
@@ -966,6 +977,22 @@
       "startDate": "2021/05/04",
       "endDate": "2021/05/06",
       "id": 20
+    },
+    {
+      "userId": 3,
+      "hotelId": 1,
+      "roomId": 5,
+      "startDate": "2021/06/07",
+      "endDate": "2021/06/11",
+      "id": 21
+    },
+    {
+      "userId": 3,
+      "hotelId": 1,
+      "roomId": 2,
+      "startDate": "2021/07/07",
+      "endDate": "2021/07/09",
+      "id": 22
     }
   ],
   "commentHotels": [

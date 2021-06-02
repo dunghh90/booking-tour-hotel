@@ -18,11 +18,12 @@ const initialState = {
       load: false,
       error: '',
     },
-    rateList:{
-      data: [],
-      load: false,
-      error: '',
-    }
+    // rateList:{
+    //   data: [],
+    //   load: false,
+    //   error: '',
+    // },
+   
   };
   
   export default function hotelReducer(state = initialState, action) {
@@ -174,39 +175,39 @@ const initialState = {
           },
         }
       }
-      case 'GET_RATE_LIST_REQUEST': {
-        return {
-          ...state,
-          rateList: {
-            ...state.rateList,
-            load: true,
-          },
-        }
-      }
+      // case 'GET_RATE_LIST_REQUEST': {
+      //   return {
+      //     ...state,
+      //     rateList: {
+      //       ...state.rateList,
+      //       load: true,
+      //     },
+      //   }
+      // }
       
-      case 'GET_RATE_LIST_SUCCESS': {
-        const { data } = action.payload;
-        return {
-          ...state,
-          rateList: {
-            ...state.rateList,
-            data: data,
-            load: false,
-          },
-        }
-      }
+      // case 'GET_RATE_LIST_SUCCESS': {
+      //   const { data } = action.payload;
+      //   return {
+      //     ...state,
+      //     rateList: {
+      //       ...state.rateList,
+      //       data: data,
+      //       load: false,
+      //     },
+      //   }
+      // }
       
-      case 'GET_RATE_LIST_FAIL': {
-        const { error } = action.payload;
-        return {
-          ...state,
-          rateList: {
-            ...state.rateList,
-            load: false,
-            error: error,
-          },
-        }
-      }
+      // case 'GET_RATE_LIST_FAIL': {
+      //   const { error } = action.payload;
+      //   return {
+      //     ...state,
+      //     rateList: {
+      //       ...state.rateList,
+      //       load: false,
+      //       error: error,
+      //     },
+      //   }
+      // }
       case 'BOOKING_HOTEL_ROOM_SUCCESS': {
         const { data } = action.payload;
         return {
@@ -244,6 +245,37 @@ const initialState = {
         }
       }
       case 'GET_LIST_HOTEL_BY_RATE_FAIL': {
+        const { error } = action.payload;
+        return {
+          ...state,
+          listHotel: {
+            ...state.listHotel,
+            load: false,
+            error: error,
+          },
+        }
+      }
+      case 'GET_LIST_HOTEL_BY_ADDRESS_REQUEST': {
+        return {
+          ...state,
+          listHotel: {
+            ...state.listHotel,
+            load: true,
+          },
+        }
+      }
+      case 'GET_LIST_HOTEL_BY_ADDRESS_SUCCESS': {
+        const { data } = action.payload;
+        return {
+          ...state,
+          listHotel: {
+            ...state.listHotel,
+            data: data,
+            load: false,
+          },
+        }
+      }
+      case 'GET_LIST_HOTEL_BY_ADDRESS_FAIL': {
         const { error } = action.payload;
         return {
           ...state,

@@ -15,7 +15,7 @@ function HomePage({ getLocationList, locationList }) {
 
 
   // const [locationSelected, setLocationSelected] = useState(null);
-  
+
   useEffect(() => {
     // getLocationList({
     //   page: 1,
@@ -27,18 +27,19 @@ function HomePage({ getLocationList, locationList }) {
 
 
 
-  
+
 
   function renderLocationList() {
     return locationList.data.map((item, index) => {
       return (
         <>
-          <Col span='8'
+          <Col span={8}
             key={index}>
+              <div className="noteHome">
             <img className="item" src={item.img}
-
               onClick={() => history.push(`/locations/${item.id}`)} />
             <h2 className="thongtin">{item.name}</h2>
+            </div>
           </Col>
         </>
       )
@@ -47,13 +48,25 @@ function HomePage({ getLocationList, locationList }) {
 
   return (
     <div className="homepage">
-      <SimpleSlider />
+      <Row className="slidercenter" justify="center">
+        <div>
+          <h1>Ưu đãi tốt nhất hôm nay</h1>
+          <p>Du lịch để hiểu biết nhiều hơn</p>
+          <img src="//cdn1.ivivu.com/iVivu/2021/04/02/18/anantara-1140x250.jpg" alt="" />
+        </div>
+      </Row>
+      <div className="headerdanhgia">
+        <h1>Những khách sạn nổi tiếng</h1>
+        <p>Được đánh giá chất lượng quốc tế</p>
+      </div>
+      
+        <SimpleSlider />
       <h1>Điểm điến trong nước</h1>
-     
-        <Row gutter={[8, 8]}>
+      <p>Những khu vực đến nhiều nhất trong năm</p>
+      <Row gutter={[8, 8]}>
 
-          {renderLocationList()}
-        </Row>
+        {renderLocationList()}
+      </Row>
 
     </div>
 

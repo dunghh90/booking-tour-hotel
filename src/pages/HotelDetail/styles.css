@@ -144,7 +144,7 @@ h2{
     padding-left: 23px;
     padding: 5px;
 }
-.name{
+.HotelDetailName{
     
     font-size: 23px;
     font-weight: 700;
@@ -188,7 +188,7 @@ h2{
 .imgcart{
     width: 322px;
     margin-left: -28px;
-    border-radius: 14px;
+    /* border-radius: 14px; */
 }
 .doxe{
     display: flex;
@@ -349,9 +349,9 @@ h2{
   .thongtinluuy1{
       margin-top: -16px;
   }
-.ant-tabs-nav-list{
-    margin-left: -596px;
-}
+/* .ant-tabs-nav-list{
+    margin-left: -671px;
+} */
 .rowdanhgiaall{
     margin-left: 150px;
 }
@@ -368,9 +368,9 @@ h2{
     padding-top: 7px;
     color: red;
 }
-.ant-tabs-nav{
+/* .ant-tabs-nav{
     width: 957px;
-}
+} */
 .iconTime2{
     font-size: 80px;
     padding-left: 23px;

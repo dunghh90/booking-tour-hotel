@@ -4,14 +4,24 @@ import { connect } from 'react-redux';
 import { getListHotelAction } from '../../redux/actions';
 import { useEffect, useState } from 'react';
 import history from '../../utils/history';
-import { Rate } from 'antd';
+import { Rate,BackTop } from 'antd';
 import './styles.css';
-import { ThunderboltOutlined } from '@ant-design/icons';
-import  Slipder from '../../components/slickHotel';
+import { EnvironmentOutlined, TeamOutlined,ArrowUpOutlined } from '@ant-design/icons';
+import Slipder from '../../components/slickHotel';
 
 import Siderba from '../../components/Siderba';
 
 
+const style = {
+  height: 40,
+  width: 40,
+  lineHeight: '40px',
+  borderRadius: 4,
+  backgroundColor: '#1088e9',
+  color: '#fff',
+  textAlign: 'center',
+  fontSize: 14,
+};
 function ListHotelPage({
   listHotel,
   getListHotel,
@@ -19,13 +29,13 @@ function ListHotelPage({
 }) {
   const locationId = match.params.id;
   const [roomSelected, setRoomSelected] = useState({});
- 
-  
+
+
   useEffect(() => {
-   
+
     getListHotel({
       page: 1,
-      limit: 4,
+      limit: 10,
       id: locationId
     });
   }, [])
@@ -36,14 +46,15 @@ function ListHotelPage({
     }
   }, [listHotel.data])
 
-   
 
-  function loadmoreHotel(){
+
+  function loadmoreHotel() {
+    console.log("🚀 ~ file: index.jsx ~ line 42 ~ loadmoreHotel ~ loadmoreHotel", loadmoreHotel)
     getListHotel({
       more: true,
       // page: page + 1,
       page: listHotel.page + 1,
-      limit: 4,
+      limit: 10,
       id: locationId,
     });
   }
@@ -56,24 +67,33 @@ function ListHotelPage({
             <Col span={24}>
               <Card
                 hoverable
-                title = {item.combo}
+                title={item.area}
                 cover={<div alt="example" src="" />}
-                style ={{marginTop: 16 }}
+                style={{ marginTop: 16 }}
                 onClick={() => history.push(`/hotels/${item.id}`)}
               >
                 <div className="optiondetail">
-                  <img className="img1" src={item.img} alt="" />
+                  <img className="imgAll" src={item.img} alt="" />
                   <div className="option">
-                    <h2 className ="name" > {item.name} </h2>
+                    <h2 className="name" > {item.name} </h2>
                     <Rate disabled value={item.rate} />
-                    <h5 className="adr"><ThunderboltOutlined />.{item.address}</h5>
+                    <h5 className="adr"><EnvironmentOutlined />.{item.address}</h5>
                     {/* <button>{item.note}</button> */}
-                     <div
+                    <div
                       dangerouslySetInnerHTML={{
                         __html: item.note
                       }}>
-                      </div>
+                    </div>
+                    <h4 className="comment12"><TeamOutlined />.{item.comment}</h4>
+                    <p className="pricerenhat">Giá 1 đêm của khách sạn từ:</p>
+                    {/* <Card className="uudai" style={{ width: 184, height: 141 }}>
+                      <h3>Ưu đãi đặc biệt</h3>
+                      <p>Có buffect ăn sáng</p>
+                       
+                    </Card> */}
                     <span className="price1">{item.Price.toLocaleString()} VND</span>
+                    <h3 className="pricerenhat12" > Lưu ý: Giá của khách sạn cao theo số người và chất lượng phòng  </h3>
+
                   </div>
                 </div>
 
@@ -87,9 +107,9 @@ function ListHotelPage({
 
   return (
     <>
-       < Slipder/>
-       <h1 className="hotel">Khách sạn</h1>
-       <span className="hotro">Cần hỗ trợ liên hệ: 0702321494</span>
+      < Slipder />
+      <h1 className="hotel">Khách sạn</h1>
+      <span className="hotro">Cần hỗ trợ liên hệ: 0702321494</span>
       <Row gutter={[8, 8]} justify="center">
         <Col span={7}>
           < Siderba locationId={locationId} />
@@ -97,12 +117,17 @@ function ListHotelPage({
         <Col span={17}>
           {renderListHotel()}
         </Col>
-        {listHotel.data.length % 4 === 0 && (
-            <Button onClick={()=>loadmoreHotel()}>Xem thêm khách sạn</Button>
-        )
-      }
+        <Row>
+        <BackTop className="backtop">
+          <div style={style}><ArrowUpOutlined /></div>
+        </BackTop>
       </Row>
-  
+        {listHotel.data.length % 10 === 0 && (
+          <Button onClick={() => loadmoreHotel()}>Xem thêm khách sạn</Button>
+        )
+        }
+      </Row>
+
     </>
   );
 }

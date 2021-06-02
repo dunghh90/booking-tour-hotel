@@ -4,11 +4,12 @@
 .optiondetail{
     display: flex;
 }
-.img1{
+.imgAll{
     width: 200px;
     height: 200px;
 }
 .option{
+    position: relative;
     display: block;
     margin-left: 10px;
 }
@@ -20,8 +21,8 @@
     font-size: 30px;
     font-weight: bold;
     position: absolute;
-    bottom: 35px;
-    right: 78px;
+    bottom: 13px;
+    right: -441px;
    
 }
 .ant-list-bordered{
@@ -63,6 +64,27 @@
 .name{
     width: 100%;
 }
-.tong{
+.tongHotelList{
     margin-top: 16px;
 }
+.comment12{
+    margin-top: 3px;
+}
+.pricerenhat{
+    color: red;
+    position: absolute;
+    bottom: 39px;
+    right: -438px;
+}
+.pricerenhat12{  
+     
+    position: absolute;
+    bottom: -23px;
+    right: -439px;}
+/* 
+.uudai{
+    position: absolute;
+    bottom: 143px;
+    right: 70px;
+
+} */
