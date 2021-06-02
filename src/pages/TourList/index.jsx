@@ -16,22 +16,27 @@ function TourListPage({
   getTopicTourList,
   tourList,
   locationList,
-  match
+  match,
+  location
 }) {
 
-  const [topicSelected, setTopicSelected] = useState(null);
+  const topicTourId = location.topicTourId? location.topicTourId : '';
+  const [topicSelected, setTopicSelected] = useState(topicTourId);
+  console.log("🚀 ~ file: index.jsx ~ line 25 ~ topicSelected", topicSelected)
   const [locationSelected, setLocationSelected] = useState(null);
   const [keySearchLocation, setKeySearchLocation] = useState(match.params.keySearch?match.params.keySearch:'');
 
   const locationId = match.params.id;
-
+  // const newVal = location.state?.prevPath?{...values,prevPath: location.state.prevPath}:values;
+  
   useEffect(() => {
     getLocationList();
     getTopicTourList();
     getTourList({
       page: 1,
       limit: 10,
-      locationId
+      locationId,
+      topicTourId
     });
   }, []);
 
@@ -44,6 +49,8 @@ function TourListPage({
 
   const filterTourList = tourList.data.filter((item) => {
     return item.location.name.trim().toLowerCase().indexOf(keySearchLocation.trim().toLowerCase()) !== -1
+     && 
+     item.topicTour.id.toString().indexOf(topicSelected.toString()) !== -1
   })
   let filterLocationById = locationList.data.filter((item) => {
     return item.id == locationSelected;
@@ -53,7 +60,7 @@ function TourListPage({
   })
 
   function handleFilterLocaiton(id) {
-    setTopicSelected(null);
+    setTopicSelected('');
     setKeySearchLocation('');
     setLocationSelected(id);
     getTourList({
@@ -87,6 +94,7 @@ function TourListPage({
             onFinish={(values) => {
               setLocationSelected(null);
               setKeySearchLocation(values.location); 
+              setTopicSelected('');
               getTourList({
                 page: 1,
                 limit: 10

@@ -35,7 +35,6 @@ function SearchTour({getTourList, setKeySearchLocation}) {
             page: 1,
             limit: 10
           });
-          console.log("🚀 ~ file: index.jsx ~ line 36 ~ SearchTour ~ values", values)
           history.push(`/listTour/${values.location}`);
         }}
       >

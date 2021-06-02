@@ -3,6 +3,7 @@ import { Content } from 'antd/lib/layout/layout';
 import { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { getTourListAction, getTopicTourListAction } from '../../redux/actions';
+import history from '../../utils/history';
 
 import SearchTour from '../../components/SearchTour';
 import ItemTour from './components/ItemTour'
@@ -28,6 +29,7 @@ function TourHomePage({ getTourList, tourList, getTopicTourList, topicTourList }
 
   function renderTourFolowTopic() {
     return topicTourList.data.map((item, index) => {
+
       {filterTourList = tourList.data.filter((itemTour) => {
         return itemTour.topicTourId == item.id
       })}
@@ -35,7 +37,12 @@ function TourHomePage({ getTourList, tourList, getTopicTourList, topicTourList }
       <>
       <Row justify="space-between" align="bottom" className="localHeadLine">
           <div>{item.name}</div>
-          <div style={{fontSize:12, fontWeight:500}}>XEM THÊM TOUR ></div>
+          <div 
+            style={{fontSize:12, fontWeight:500, cursor:"pointer"}} 
+            onClick={() => history.push({pathname: '/listTour', topicTourId: item.id})}
+          >
+              XEM THÊM TOUR >
+          </div>
       </Row>
       <Row gutter={[24, 24]} style={{marginTop:10}}>
         {
@@ -112,7 +119,6 @@ function TourHomePage({ getTourList, tourList, getTopicTourList, topicTourList }
 
 const mapStateToProps = (state) => {
   const { tourList, topicTourList } = state.tourReducer;
-  console.log("🚀 ~ file: index.jsx ~ line 115 ~ mapStateToProps ~ topicTourList", topicTourList)
   return {
     tourList: tourList,
     topicTourList: topicTourList,

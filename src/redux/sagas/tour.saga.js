@@ -4,7 +4,6 @@ import axios from 'axios';
 function* getTourListSaga(action) {
   try {
     const { page, limit, locationId, topicTourId } = action.payload;
-    console.log("🚀 ~ file: tour.saga.js ~ line 7 ~ function*getTourListSaga ~ action", action.payload)
     const result = yield axios({
       method: 'GET',
       url: `http://localhost:3002/tours?_page=${page}&_limit=${limit}&_expand=location&_expand=topicTour`,
