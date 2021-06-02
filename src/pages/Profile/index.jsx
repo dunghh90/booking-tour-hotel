@@ -318,7 +318,7 @@ function ProfilePage({
 
   return (
 
-    <Row gutter={16} style={{ padding: '16px 16px 0' }}>
+    <Row  gutter={16} style={{ padding: '16px 16px 0',marginTop: 50 }}>
       <Col span={4}>
         <Menu
           mode="inline"
@@ -326,13 +326,7 @@ function ProfilePage({
           defaultOpenKeys={['sub1']}
           style={{ height: '100%' }}
         >
-          {/* <Menu.ItemGroup key="userInfo" icon={<UserOutlined />} title="Thông tin của tôi"> */}
-          {/* <Menu.SubMenu key="userInfo" icon={<UserOutlined />} title="Thông tin của tôi"> */}
-          <Menu.Item key="userHistory" icon={<LaptopOutlined />}
-            onClick={() => setSelectObject(3)}
-          >
-            Lịch sử booking
-          </Menu.Item>
+         
           <Menu.ItemGroup key="g1" title={<><UserOutlined /> <span>Thông tin của tôi</span></>}>
             <Menu.Item key="1"
               onClick={() => setSelectObject(1)}
@@ -341,6 +335,11 @@ function ProfilePage({
               onClick={() => setSelectObject(2)}
             >Đổi mật khẩu</Menu.Item>
           </Menu.ItemGroup>
+          <Menu.Item key="userHistory" icon={<LaptopOutlined />}
+            onClick={() => setSelectObject(3)}
+          >
+            Lịch sử booking
+          </Menu.Item>
           {/* </Menu.SubMenu> */}
           {/* <Menu.ItemGroup key="g2" > */}
           {/* </Menu.ItemGroup> */}

@@ -1,7 +1,7 @@
 import { Row, Col, List, Card } from 'antd';
 // import {List } from '@ant-design/icons';
 import './Siderba.css';
-import { getRateListAction ,getListHotelAction} from '../../redux/actions';
+import {getListHotelAction} from '../../redux/actions';
 import { connect } from 'react-redux';
 import { useState,useEffect } from 'react';
 import { Rate } from 'antd';
@@ -13,32 +13,29 @@ const RATING_LIST = [1, 2, 3, 4, 5];
 
 function Siderba({
   getHotelList,
-  getRateList,
-  locationId,
-  listHotel
-  
+  locationId
 }) {
   const [locationSelected, setLocationSelected] = useState(0);
+  const [addressSelected, setAddressSelected] = useState(null);
   useEffect(() => {
-    // getRateList();
-    getRateList({
-      page: 1,
-      limit: 4,
-      
-    });
     getHotelList({
       page: 1,
       limit: 4,
     })
   }, []);
 
-  function handleFilterLocation(rate) {
-    setLocationSelected(rate);
+  function handleFilterLocation(rate,address)
+   {
+  console.log("🚀 ~ file: index.jsx ~ line 31 ~ rate", rate)
+  console.log("🚀 ~ file: index.jsx ~ line 31 ~ address", address)
+  setLocationSelected(rate);
+  setAddressSelected(address);
     getHotelList({
       page: 1,
       limit: 4,
       id: locationId,
       rate: rate,
+      address: address,
     });
   }
 
@@ -48,13 +45,13 @@ function Siderba({
         <Col span={24}>
           <List
             size="small"
-            header={<div>Tìm kiếm </div>}
+            header={<div>Tìm kiếm theo chất lượng</div>}
             bordered
             dataSource={RATING_LIST}
             renderItem={(item) => (
               <List.Item className ="list"
                 onClick={() => handleFilterLocation(item)}
-                style={{ color: locationSelected === item ? 'red' : 'black' }}
+                // style={{ color: locationSelected === item ? 'red' : 'black' }}
               >     
                   <Rate disabled defaultValue={item} /> 
               </List.Item>
@@ -62,45 +59,54 @@ function Siderba({
           />
         </Col>
       </Row>
-       {/* <Row gutter={16} style={{ padding: '0 16px' }}>
+       <Row gutter={16} style={{ padding: '0 16px' }}>
    
          <Col span={24}>
           <List
             size="small"
-            header={<div>Tìm kiếm </div>}
+            header={<div>Tìm kiếm theo tên đường</div>}
             bordered
             dataSource={[
-              ...listHotel.data,
+              "Võ Nguyên Giáp",
+              "Hàng Đẩy",
+              "Nguyễn Văn Linh",
+              "Lê Duẩn",
+              "Tô Hiệu",
+              "Điện Biên Phủ",
+              "Trần Cao Vân"
             ]}
-            renderItem={(item) => (
+            renderItem={(item) => 
+              (
               <List.Item className ="list"
-                onClick={() => handleFilterLocation(item.Title)}
-                style={{ color: locationSelected === item.Title ? 'red' : 'black' }}
-              >     
-                  {item.Title}  
+                onClick={() => handleFilterLocation(item)}
+                // style={{ color: locationSelected === item ? 'red' : 'black' }}
+              >    
+              {item} 
               </List.Item>
             )}
           />
         </Col>
-      </Row>  */}
+      </Row> 
 
     </>
 
   )
 }
 const mapStateToProps = (state) => {
-  const { rateList, listHotel } = state.hotelReducer;
+  const {  listHotel } = state.hotelReducer;
+  console.log("🚀 ~ file: index.jsx ~ line 100 ~ mapStateToProps ~ listHotel",listHotel)
   
   return {
-    rateList: rateList,
+    
     listHotel: listHotel,
   }
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getRateList: (params) => dispatch(getRateListAction(params)),
     getHotelList: (params) => dispatch(getListHotelAction(params)),
+
+    
   };
 }
 

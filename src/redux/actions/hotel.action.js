@@ -24,4 +24,9 @@ export function getLocationListAction(params) {
       payload: params,
     }
   }
-  
+  export function getAddressListAction(params) {
+    return {
+      type: 'GET_ADDRESS_LIST_REQUEST',
+      payload: params,
+    }
+  }

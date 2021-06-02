@@ -3,7 +3,7 @@ import { Button, Card, DatePicker, Row, Col, Form, Input, Space } from 'antd';
 import { connect } from 'react-redux';
 import { Content } from 'antd/lib/layout/layout';
 import { useEffect, useState } from 'react';
-import { SendOutlined, HomeOutlined,GlobalOutlined , WifiOutlined, CarOutlined, ArrowUpOutlined, InsertRowRightOutlined, FieldTimeOutlined, EnvironmentOutlined, FileExcelOutlined, HeartOutlined, HistoryOutlined } from '@ant-design/icons';
+import { SendOutlined, HomeOutlined,GlobalOutlined,UsergroupAddOutlined,VideoCameraOutlined ,GiftOutlined  , BankOutlined,TeamOutlined, CarOutlined, ArrowUpOutlined, InsertRowRightOutlined, FieldTimeOutlined, EnvironmentOutlined, FileExcelOutlined, HeartOutlined, HistoryOutlined } from '@ant-design/icons';
 import { Rate, Progress, BackTop } from 'antd';
 import history from '../../utils/history';
 import moment from 'moment';
@@ -60,6 +60,7 @@ function ListRoomPage({
       setRoomSelected(listRoom.data.rooms[0] || {})
     }
   }, [listRoom.data])
+  console.log("🚀 ~ file: index.jsx ~ line 63 ~ listRoom.data", listRoom.data)
    let isFilter = false;
   const filterListRoom = listRoom.data.rooms.filter((item) => 
   {
@@ -86,8 +87,8 @@ function ListRoomPage({
             {/* <EnvironmentOutlined className ="bando" /> */}
 
           </div>
-          <p className="name">{listRoom.data.name}</p>
-          <Rate disabled defaultValue={listRoom.data.rate} />
+          <p className="HotelDetailName">{listRoom.data.name}</p>
+          <Rate disabled value={listRoom.data.rate} />
           <p>{listRoom.data.address}</p>
         </div>
 
@@ -470,8 +471,8 @@ function ListRoomPage({
       <Row className="rowdanhgiaall">
         <Col className="coldanhgia" span={16}>
           <div className="bottomcoment">
-        <Tabs defaultActiveKey="1" onChange={callback}>
-          <TabPane tab="Nhận xét trên Webbooking" key="1">
+        <Tabs  defaultActiveKey="1" onChange={callback}>
+          <TabPane  tab="Nhận xét trên Webbooking" key="1">
             <div className="alldanhgia">
               <div>
                 <div>
@@ -562,27 +563,22 @@ function ListRoomPage({
         </Col>
 
         <Col className="coldanhgia2" span={8}>
-        <Card title="Những điều cần biết" style={{ width: 407 }}>
+        <Card title="Vourcher + Combo khuyến mãi ngày hè" style={{ width: 407 }}>
                 <Row justify="center">
                   <div>
-                    <img className="imgcart" src={listRoom.data.src[0]} alt="" />
+                    <img className="imgcart" src={listRoom.data.src[1]} alt="" />
                     <div className="cartall">
-                      <h3><EnvironmentOutlined />.Vị trí hiếm có</h3>
-                      <h3><InsertRowRightOutlined />.Địa bàn phổ biến</h3>
+                      <h3><UsergroupAddOutlined />.Tối đa 3 người lớn và 2 trẻ em</h3>
+                      <h3><BankOutlined />.Rộng 40m2</h3>
+                      <h3 className="Note"><UsergroupAddOutlined />.Một giường đôi</h3>
+                  
+                      <h3 className="Note"><VideoCameraOutlined/>.View nhìn ra biển</h3>
                     </div>
-                    <div className="doxe">
+                    {/* <div className="doxe">
                       <h4 className="itemdoxe"> <CarOutlined className="icondoxe" />.Đỗ xe</h4>
                       <span className="free">Miễn phí</span>
-                    </div>
+                    </div> */}
                     <div>
-                      <h4 className="Note">Các địa điểm nổi tiếng</h4>
-                      <ul className="itemnote">
-                        <li className="itemnote1">Vịnh Hạ Long</li>
-                        <li className="itemnote1">Phong Nha Kẻ Bàng</li>
-                        <li className="itemnote1">Hội An</li>
-                        <li className="itemnote1">Biển Mỹ Khê Đà Nẵng</li>
-                        
-                      </ul>
 
                     </div>
                   </div>

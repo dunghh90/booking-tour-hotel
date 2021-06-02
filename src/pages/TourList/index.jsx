@@ -65,7 +65,7 @@ function TourListPage({
     return (
       <div style={{display:"flex", justifyContent:"center"}}>
         <div style={{padding: '10px 50px', maxWidth:1400, width:"100%"}}>
-          <Row gutter={16} style={{margin:'0 80px', fontSize:20, padding:"15px 10px", borderRadius:4, backgroundColor:"#bae7ff"}}>
+          <Row className="timkiem" gutter={16} style={{margin:'0 80px', fontSize:20, padding:"15px 10px", borderRadius:4, backgroundColor:"#bae7ff"}}>
           <Form
             name="basic"
             initialValues={{ location: '' }}

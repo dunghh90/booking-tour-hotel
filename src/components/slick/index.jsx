@@ -11,10 +11,10 @@ import './slick.css'
       dots: true,
       infinite: true,
       speed: 500,
-      slidesToShow: 1,
+      slidesToShow: 4,
       slidesToScroll: 1,
       autoplay: true,
-      autoplaySpeed: 5000,
+      autoplaySpeed: 4000,
       // pauseOnHover: true
       
     };
@@ -23,9 +23,9 @@ import './slick.css'
       <Row>
         <Col span ='24'>
         <Slider {...settings}>
-          <div className ="minh">
+          {/* <div className ="minh">
             <img className="slider" src="https://cdn3.ivivu.com/2014/01/SUPER-DELUXE2.jpg" alt=""/>
-          </div>
+          </div> */}
           <div>
           <img  className="slider" src="https://gohola.vn/uploads/2018/01/dlg-da-nang-gohola-travel-2-800x600.jpg" alt=""/>
           </div>
