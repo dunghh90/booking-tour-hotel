@@ -85,7 +85,7 @@ function TourHomePage({ getTourList, tourList, getTopicTourList, topicTourList }
           {renderTourFolowTopic()}
           {/* <Row justify="space-between" align="bottom" className="localHeadLine">
               <div>Mùa hè rực rỡ</div>
-              <div style={{fontSize:12, fontWeight:500}}>XEM THÊM TOUR ></div>
+              <div style={{fontSize:12, fontWeight:500}}>XEM THÊM TOUR </div>
           </Row>
           <Row gutter={[24, 24]} style={{marginTop:10}}>
             {

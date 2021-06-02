@@ -26,7 +26,7 @@ function* getLocationListSaga(action) {
 function* getListHotelSaga(action) {
 
   try {
-    const { id,more,page,limit,rate } = action.payload;
+    const { id,more,page,limit,rate,address } = action.payload;
     const result = yield axios({
       method: 'GET',
 
@@ -35,8 +35,8 @@ function* getListHotelSaga(action) {
         _page: page,
         _limit: limit,
         ...id && { locationId: id },
-        ...rate && { rate }
-      
+        ...rate && { rate },
+        ...address && {address},
       }
     });
     
@@ -77,35 +77,10 @@ function* getListRoomSaga(action) {
   }
 }
 
-function* getRateListSaga(action) {
-  
-  try {
-    const result = yield axios({
-      method: 'GET',
-      url: 'http://localhost:3002/rates',
-      // params: {
-        //   _embed: "hotels", 
-        // }
-      });
-      yield put({
-        type: "GET_RATE_LIST_SUCCESS",
-        payload: {
-          data: result.data,
-        },
-      });
-    } catch (e) {
-      yield put({
-        type: "GET_RATE_LIST_FAIL",
-        payload: {
-          error: e.error
-        },
-      });
-    }
-  }
+
 
 export default function* hotelSaga() {
   yield takeEvery('GET_LOCATION_LIST_REQUEST', getLocationListSaga);
   yield takeEvery('GET_LIST_HOTEL_REQUEST', getListHotelSaga);
-  yield takeEvery('GET_RATE_LIST_REQUEST', getRateListSaga);
   yield takeEvery('GET_LIST_ROOM_REQUEST', getListRoomSaga);
 }

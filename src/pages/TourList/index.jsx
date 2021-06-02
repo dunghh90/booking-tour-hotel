@@ -24,7 +24,10 @@ function TourListPage({
   const [topicSelected, setTopicSelected] = useState(topicTourId);
   console.log("🚀 ~ file: index.jsx ~ line 25 ~ topicSelected", topicSelected)
   const [locationSelected, setLocationSelected] = useState(null);
+  
   const [keySearchLocation, setKeySearchLocation] = useState(match.params.keySearch?match.params.keySearch:'');
+
+  
 
   const locationId = match.params.id;
   // const newVal = location.state?.prevPath?{...values,prevPath: location.state.prevPath}:values;
@@ -86,7 +89,7 @@ function TourListPage({
     return (
       <div style={{display:"flex", justifyContent:"center"}}>
         <div style={{padding: '10px 50px', maxWidth:1400, width:"100%"}}>
-          <Row gutter={16} style={{margin:'0 80px', fontSize:20, padding:"15px 10px", borderRadius:4, backgroundColor:"#bae7ff"}}>
+          <Row className="timkiem" gutter={16} style={{margin:'0 80px', fontSize:20, padding:"15px 10px", borderRadius:4, backgroundColor:"#bae7ff"}}>
           <Form
             name="basic"
             initialValues={{ location: '' }}
@@ -141,7 +144,8 @@ function TourListPage({
                   { name: "Tất cả" },
                   ...locationList.data,
                 ]}
-                renderItem={(item) => (
+                renderItem={(item) => 
+                  (
                   <List.Item
                     onClick={() => handleFilterLocaiton(item.id)}
                     // style={{color: locationSelected === item.id ? 'red': 'black' }}

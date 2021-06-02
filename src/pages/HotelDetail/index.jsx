@@ -3,8 +3,8 @@ import { Button, Card, DatePicker, Row, Col, Form, Input, Space } from 'antd';
 import { connect } from 'react-redux';
 import { Content } from 'antd/lib/layout/layout';
 import { useEffect, useState } from 'react';
-import { SendOutlined, HomeOutlined, WifiOutlined, CarOutlined, InsertRowRightOutlined, FieldTimeOutlined, EnvironmentOutlined, FileExcelOutlined, HeartOutlined, HistoryOutlined } from '@ant-design/icons';
-import { Rate, Progress } from 'antd';
+import { SendOutlined, HomeOutlined,GlobalOutlined,UsergroupAddOutlined,VideoCameraOutlined ,GiftOutlined  , BankOutlined,TeamOutlined, CarOutlined, ArrowUpOutlined, InsertRowRightOutlined, FieldTimeOutlined, EnvironmentOutlined, FileExcelOutlined, HeartOutlined, HistoryOutlined } from '@ant-design/icons';
+import { Rate, Progress, BackTop } from 'antd';
 import history from '../../utils/history';
 import moment from 'moment';
 import ItemRoom from './components/itemRoom';
@@ -12,7 +12,26 @@ import CommentPage from '../../components/Comment'
 import { bookingHotelAction, getListRoomAction } from '../../redux/actions';
 
 import './styles.css';
+import { Tabs } from 'antd';
 
+const { TabPane } = Tabs;
+
+function callback(key) {
+  console.log(key);
+}
+
+
+
+const style = {
+  height: 40,
+  width: 40,
+  lineHeight: '40px',
+  borderRadius: 4,
+  backgroundColor: '#1088e9',
+  color: '#fff',
+  textAlign: 'center',
+  fontSize: 14,
+};
 function ListRoomPage({
   listRoom,
   getListRoom,
@@ -23,8 +42,14 @@ function ListRoomPage({
   const [roomSelected, setRoomSelected] = useState({});
   const userInfo = JSON.parse(localStorage.getItem('userInfo'));
   const [dateSelected, setDateSelected] = useState();
+  // const [totalPrice, setTotalPrice] = useState(0);
   const isNew = true;
   const currentDate = new Date();
+  const [locationSelected, setLocationSelected] = useState(null);
+
+  const [searchKey, setSearchKey] = useState({ userNum: '', price: '' });
+
+  let totalPrice = 0;
 
   useEffect(() => {
     getListRoom({ id: hotelId });
@@ -35,10 +60,20 @@ function ListRoomPage({
       setRoomSelected(listRoom.data.rooms[0] || {})
     }
   }, [listRoom.data])
+  console.log("🚀 ~ file: index.jsx ~ line 63 ~ listRoom.data", listRoom.data)
+   let isFilter = false;
+  const filterListRoom = listRoom.data.rooms.filter((item) => 
+  {
+    // console.log("🚀 ~ file: index.jsx ~ line 46 ~ filterListRoom ~ item", item)
+    // console.log("🚀 ~ file: index.jsx ~ line 43 ~ filterListRoom ~ searchKey.price", searchKey.price)
+       isFilter = true;
+    return item.price.toString().indexOf(searchKey.price.trim()) !== -1 && item.title.toString().indexOf(searchKey.userNum.trim()) !== -1
+  })
+  console.log("🚀 ~ file: index.jsx ~ line 46 ~ filterListRoom ~ filterListRoom", filterListRoom)
+
 
   function handleDate(value) {
     const [startDate, endDate] = value;
-
     setDateSelected([moment(startDate).format('YYYY/MM/DD'), moment(endDate).format('YYYY/MM/DD')]);
 
   }
@@ -48,19 +83,19 @@ function ListRoomPage({
         <div className="all">
           <div>
             <Button className="combo">{listRoom.data.combo}</Button>
-            <WifiOutlined className="wifi" />
+            {/* <WifiOutlined className="wifi" /> */}
             {/* <EnvironmentOutlined className ="bando" /> */}
 
           </div>
-          <p className="name">{listRoom.data.name}</p>
-          <Rate disabled defaultValue={listRoom.data.rate} />
+          <p className="HotelDetailName">{listRoom.data.name}</p>
+          <Rate disabled value={listRoom.data.rate} />
           <p>{listRoom.data.address}</p>
         </div>
 
       </>
     )
   }
-  function handleBookingHotel(id) {
+  function handleBookingHotel(id, defaultPrice) {
 
     if (!userInfo) {
       alert('Bạn cần đăng nhập!');
@@ -74,7 +109,7 @@ function ListRoomPage({
         startDate: dateSelected[0],
         endDate: dateSelected[1]
       })
-
+      totalPrice = defaultPrice;
     }
 
   }
@@ -82,19 +117,19 @@ function ListRoomPage({
 
     return (
       <>
-        <Col span={18}>
+        <Col  style={{marginTop: 6}} span={18}>
+          <div className="detailCol18">
           <Row >
             <Col span={9}>
-              <img className="img2" src={listRoom.data.src[0]} alt="" />
-
+              <img className="img1" src={listRoom.data.src[0]} alt="" />
             </Col>
-            <Col span={9} >
+            <Col className="imgCol9detail" span={9} >
               <Row >
+                
                 <img className="img2" src={listRoom.data.src[1]} alt="" />
               </Row>
               <Row gutter={[8, 8]}>
                 <Col span={12}>
-
                   <img className="img3" src={listRoom.data.src[2]} alt="" />
                 </Col>
                 <Col span={12}>
@@ -134,25 +169,26 @@ function ListRoomPage({
               </div>
             </div>
           </Row>
+          </div>
         </Col>
-        <Col span={6}>
+        <Col  span={6}>
           <div className="detail">
             <Row gutter={[12, 12]}>
-              <Card title="Đánh giá chất lượng khách sạn" style={{ width: 514 }}>
+              <Card title="Đánh giá chất lượng khách sạn" style={{ width: 417 }}>
                 <div>
-                <div>
-                  <label htmlFor="">Tuyệt vời</label>
-                  <Progress percent={90} status="active" />
-                </div>
-                <div>
-                  <label htmlFor="">Tốt</label>
-                  <Progress percent={80} status="active" />
-                </div>
+                  <div>
+                    <label htmlFor="">Tuyệt vời</label>
+                    <Progress percent={90} status="active" />
+                  </div>
+                  <div>
+                    <label htmlFor="">Tốt</label>
+                    <Progress percent={80} status="active" />
+                  </div>
                   <label htmlFor="">Không đạt yêu cầu</label>
                   <Progress percent={10} status="exception" />
                 </div>
               </Card>
-              <Card title="Những điều cần biết" style={{ width: 514 }}>
+              <Card title="Những điều cần biết" style={{ width: 417 }}>
                 <Row justify="center">
                   <div>
                     <img className="imgcart" src={listRoom.data.src[0]} alt="" />
@@ -171,7 +207,9 @@ function ListRoomPage({
                         <li className="itemnote1">Phong Nha Kẻ Bàng</li>
                         <li className="itemnote1">Hội An</li>
                         <li className="itemnote1">Biển Mỹ Khê Đà Nẵng</li>
-                        <li className="itemnote1">Mũi Né Cà Mau </li>
+                        <li className="itemnote1">Mũi né Cà Mau</li>
+                        <li className="itemnote1">Chùa Linh Ứng</li>
+                        
                       </ul>
 
                     </div>
@@ -189,12 +227,14 @@ function ListRoomPage({
 
   }
 
-  function renderListRoom() {
-    return listRoom.data.rooms.map((item, index) => {
-      let isDisabled = false;
-      if (dateSelected) (
-        listRoom.data.bookingHotels.forEach((bookingItem, bookingIndex) => {
 
+  function renderListRoom() {
+    return filterListRoom.map((item, index) => {
+      let isDisabled = false;
+      
+      if (dateSelected) {
+        console.log("🚀 ~ file: index.jsx ~ line 223 ~ returnfilterListRoom.map ~ dateSelected", dateSelected)
+        listRoom.data.bookingHotels.forEach((bookingItem, bookingIndex) => {
           if (
             (
               (
@@ -212,43 +252,59 @@ function ListRoomPage({
             isDisabled = true;
           }
         })
-      )
+        // const numDate = moment(dateSelected[1]).day() - moment(dateSelected[0]).day();
+        const numDate = moment.duration(moment(dateSelected[1], 'YYYY/MM/DD').diff(moment(dateSelected[0], 'YYYY/MM/DD'))).asDays();
+        console.log("🚀 ~ file: index.jsx ~ line 253 ~ returnfilterListRoom.map ~ numDate", numDate)
+        totalPrice = numDate * item.price;
+        // console.log("🚀 ~ file: index.jsx ~ line 241 ~ returnfilterListRoom.map ~ item.price", item.price)
+        console.log("🚀 ~ file: index.jsx ~ line 242 ~ returnfilterListRoom.map ~ numDate", numDate)
+        // console.log("🚀 ~ file: index.jsx ~ line 243 ~ returnfilterListRoom.map ~ totalPrice", totalPrice)
+      } else {
+        totalPrice = item.price;
+        // console.log("🚀 ~ file: index.jsx ~ line 244 ~ returnfilterListRoom.map ~ item.price", item.price)
+
+
+      }
+
+      // console.log("🚀 ~ file: index.jsx ~ line 244 ~ returnfilterListRoom.map ~ moment", moment(dateSelected[1]).day())
 
       return (
         <>
-
           <Content className="site-layout" style={{ padding: '0 30px', marginTop: 64 }}>
             <Row gutter={[12, 12]}>
-              <Col span={24}>
+              <Col xxl={6} xl={8} lg={12} md={12} sm={24} >
+                {/* {
+                filterListRoom.load ? (<p>Loading...</p>) 
+                :(filterListRoom.map((item, index) => {
+                  return ( */}
                 <Card
                   hoverable
                   size="small"
+                  cover={<img className="imghoteldetail" alt="example" src={item.img} />}
                   style={{ width: 417 }}
 
                 >
                   <div className="ALLROOM">
-                    <div className="optiondetail2">
-                      <img className="img1" src={item.img} alt="" />
-                      <span className="price">{item.price.toLocaleString()} VND</span>
-                    </div>
+
                     <div className="option">
-                      <h2> {item.Title} </h2>
+                      <h2> {item.title} </h2>
                       <Rate disabled defaultValue={item.rate} />
                       <h3>{item.name}</h3>
                       <ItemRoom
                         description={item.description}
                       />
-
-                      {/* {item.isNew ?
+{/* 
+                      {item.isNew ?
                   <div className="isnew">{item.combo}</div>
                   : null
                 } */}
-
+                    
+                      <span className="price">{totalPrice.toLocaleString()} VND</span>
                       {isDisabled && (
                         <Button type="primary" className="book" >Hết Phòng</Button>
                       )}
                       {!isDisabled && (
-                        <Button type="primary" className="book" onClick={() => handleBookingHotel(item.id)}>Đặt Phòng</Button>
+                        <Button type="primary" className="book" onClick={() => handleBookingHotel(item.id, item.price)}>Đặt Phòng</Button>
                       )}
 
 
@@ -257,6 +313,11 @@ function ListRoomPage({
                   </div>
 
                 </Card>
+                {/* )
+                      console.log("🚀 ~ file: index.jsx ~ line 307 ~ returnfilterListRoom.map ~ item.numDate", item.numDate)
+                      console.log("🚀 ~ file: index.jsx ~ line 307 ~ returnfilterListRoom.map ~ item.numDate", item.numDate)
+                  }))
+                }  */}
               </Col>
 
             </Row>
@@ -266,22 +327,38 @@ function ListRoomPage({
     });
   }
 
+
+
   return (
     <>
-
+      {/* Serch hotel  */}
       <Row className="timkiem">
         <div className="alltimkiem">
           <Form
             name="basic"
             initialValues={{ remember: true }}
             layout="inline"
-          //   onFinish={findTour}
+            onFinish={(values) => {
+              setSearchKey({ userNum: values.userNum, price: values.price });
+            }}
           >
             <Col span={7}>
               <Form.Item
-                name="username"
+                name="userNum"
               >
-                <Input labelFontSize={100} fontSize={100} style={{ padding: '10px 50px', height: 50, borderRadius: 4, backgroundColor: "white" }} placeholder="Bạn cần nhập số người?" />
+                <Input
+                  labelFontSize={100}
+                  fontSize={100} prefix={<SendOutlined />}
+                  style={{
+                    padding: '10px 50px', height: 50,
+                    borderRadius: 4,
+                    backgroundColor: "white"
+                  }}
+                  onChange={(e) => //setSearchKey(e.target.value)
+                    setSearchKey({ ...searchKey, userNum: e.target.value })
+                  }
+                  placeholder="Bạn cần nhập số người"
+                />
               </Form.Item>
             </Col>
             <Col span={7}>
@@ -293,9 +370,21 @@ function ListRoomPage({
             </Col>
             <Col span={7}>
               <Form.Item
-                name="placeFrom"
+                name="price"
               >
-                <Input labelFontSize={100} fontSize={100} prefix={<SendOutlined />} style={{ padding: '10px 50px', height: 50, borderRadius: 4, backgroundColor: "white" }} placeholder="Chọn giá tiền" />
+                <Input
+                  labelFontSize={100}
+                  fontSize={100} prefix={<SendOutlined />}
+                  style={{
+                    padding: '10px 50px',
+                    height: 50, borderRadius: 4,
+                    backgroundColor: "white"
+                  }}
+                  onChange={(e) => //setSearchKey(e.target.value)
+                    setSearchKey({ ...searchKey, price: e.target.value })
+                  }
+                  placeholder="Chọn giá tiền"
+                />
               </Form.Item>
             </Col>
             <Col span={3} >
@@ -307,10 +396,11 @@ function ListRoomPage({
             </Col>
           </Form>
         </div>
-
       </Row>
 
-      <Row span={24} >
+
+
+      <Row span={24} className="detailTrangchu">
         <div className="content-header">
           <ol className="breadcrumb"  >
             <Space><HomeOutlined /></Space>
@@ -335,13 +425,10 @@ function ListRoomPage({
           </ol>
         </div>
       </Row>
-
-
       <Row justify="center">
-
         {renderImg()}
       </Row>
-      <Row gutter={[8, 8]} justify="center">
+      <Row justify="center">
         <div className="layout2">
           <div>
             <FieldTimeOutlined className="iconTime" />
@@ -351,17 +438,156 @@ function ListRoomPage({
             <span className="bcd">Cứ 60 phút là có khách đặt phòng trên đây</span>
           </div>
         </div>
-        {/* <h3>Thông tin phòng khách sạn</h3> */}
-        {renderListRoom()}
+       
+            {isFilter && (
+                         renderListRoom()
+                      )}
+                      {!isFilter && (
+                        <p 
+                        >Không có Phòng</p>
+                        )}
+
+        <BackTop className="backtop">
+          <div style={style}><ArrowUpOutlined /></div>
+        </BackTop>
       </Row>
-      <Row>
-        <Col span={8}></Col>
-        <Col span={16}>
-          <h1 className="comment">Đánh giá khách hàng </h1>
+
+
+
+      <Row gutter={[8, 8]} justify="center">
+      <div className="layout4">
+          <div>
+            <GlobalOutlined  className="iconTime2" />
+          </div>
+          <div>
+            <h3 className="Abc">Đừng bỏ lỡ cơ hội lần này</h3>
+            <span className="bcd">Nhanh tay chọn cho mình 1 phòng yêu thích để cùng nhau du lịch nào</span>
+          </div>
+        </div>
+      </Row>
+
+
+      <h1 className="comment1">Bài đánh giá từ khách hàng </h1>
+      <Row className="rowdanhgiaall">
+        <Col className="coldanhgia" span={16}>
+          <div className="bottomcoment">
+        <Tabs  defaultActiveKey="1" onChange={callback}>
+          <TabPane  tab="Nhận xét trên Webbooking" key="1">
+            <div className="alldanhgia">
+              <div>
+                <div>
+                  <h3>Điểm số trên Webboking</h3>
+                  <Progress percent={90} status="active" />
+                </div>
+                <div className="danhgiashow">
+                  <span className="score">{listRoom.data.rate}.0</span>
+                  <span className="score-description">Trên cả tuyệt vời</span>
+                  <h3 className="score-danhgia">Dựa trên đánh giá khách hàng</h3>
+                </div>
+              </div>
+              <div className="danhgiacenter">
+                <label htmlFor="">Độ sạch sẽ</label>
+                <Progress percent={90} className="progress" status="active" size="small" />
+                <label htmlFor="">Thái độ phục vụ</label>
+                <Progress percent={95} className="progress" status="active" size="small" />
+                <label htmlFor="">Đánh giá tiền</label>
+                <Progress percent={99} className="progress" status="active" size="small" />
+              </div>
+              <div className="thongtinluuy">
+                <h3>Thông tin cần lưu ý</h3>
+                <div className="thongtinluuy1">
+                  <div className="notethongbao">
+
+                  <h4>Số lượng phòng:</h4>
+                  <span className="notethongbaocon">200</span>
+                  </div>
+                  <div  className="notethongbao">
+                  <h4>Điện áp trong phòng:</h4>
+                  <span className="notethongbaocon">220V</span>
+                  </div>
+                  <div className="notethongbao">
+                  <h4>Khách sạn được xây vào năm:</h4>
+                  <span className="notethongbaocon">2019</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </TabPane>
+          <TabPane tab="Thông tin không càn thiết" key="2">
+          <div className="alldanhgia">
+              <div>
+                <div>
+                  <h3>Điểm số trên Webboking</h3>
+                  <Progress percent={90} status="active" />
+                </div>
+                <div className="danhgiashow">
+                  <span className="score">{listRoom.data.rate}.0</span>
+                  <span className="score-description">Trên cả tuyệt vời</span>
+                  <h3 className="score-danhgia">Dựa trên đánh giá khách hàng</h3>
+                </div>
+              </div>
+              <div className="danhgiacenter">
+                <label htmlFor="">Độ sạch sẽ</label>
+                <Progress percent={90} className="progress" status="active" size="small" />
+                <label htmlFor="">Thái độ phục vụ</label>
+                <Progress percent={95} className="progress" status="active" size="small" />
+                <label htmlFor="">Đánh giá tiền</label>
+                <Progress percent={99} className="progress" status="active" size="small" />
+              </div>
+              <div className="thongtinluuy">
+                <h3>Thông tin cần lưu ý</h3>
+                <div className="thongtinluuy1">
+                  <div className="notethongbao">
+
+                  <h4>Số lượng phòng:</h4>
+                  <span className="notethongbaocon">200</span>
+                  </div>
+                  <div  className="notethongbao">
+                  <h4>Điện áp trong phòng:</h4>
+                  <span className="notethongbaocon">220V</span>
+                  </div>
+                  <div className="notethongbao">
+                  <h4>Khách sạn được xấy vào năm:</h4>
+                  <span className="notethongbaocon">2019</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+              </TabPane>
+        </Tabs>
+
+        <h1 className="comment">Đánh giá khách hàng </h1>
+
           <CommentPage hotelId={hotelId} />
+          </div>
         </Col>
 
+        <Col className="coldanhgia2" span={8}>
+        <Card title="Vourcher + Combo khuyến mãi ngày hè" style={{ width: 407 }}>
+                <Row justify="center">
+                  <div>
+                    <img className="imgcart" src={listRoom.data.src[1]} alt="" />
+                    <div className="cartall">
+                      <h3><UsergroupAddOutlined />.Tối đa 3 người lớn và 2 trẻ em</h3>
+                      <h3><BankOutlined />.Rộng 40m2</h3>
+                      <h3 className="Note"><UsergroupAddOutlined />.Một giường đôi</h3>
+                  
+                      <h3 className="Note"><VideoCameraOutlined/>.View nhìn ra biển</h3>
+                    </div>
+                    {/* <div className="doxe">
+                      <h4 className="itemdoxe"> <CarOutlined className="icondoxe" />.Đỗ xe</h4>
+                      <span className="free">Miễn phí</span>
+                    </div> */}
+                    <div>
+
+                    </div>
+                  </div>
+                </Row>
+
+              </Card>
+        </Col>
       </Row>
+     
     </>
   );
 }

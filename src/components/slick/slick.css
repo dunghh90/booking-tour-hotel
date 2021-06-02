@@ -1,9 +1,7 @@
 .slider{
-    width: 95%;
-    height: 400px;
-    margin-top: 5px;
-    margin-left: 30px;
-    z-index: 1;
+    height: 300px;
+    width: 250px;
+    cursor: pointer;
 }
 .slick-next{
     background-color: rgba(25, 96, 209,0);
@@ -11,7 +9,7 @@
     width: 40px;
     height: 40px;
     position: absolute;
-    right: 110px;
+    right: -46px;
 }
 .slick-prev{
     background-color: rgba(25, 96, 209,0);
@@ -19,13 +17,17 @@
     width: 40px;
     height: 40px;
     position: absolute;
-    left: 110px;
-    z-index: 999;
+    left: 194px;
+    z-index: 9;
 }
 
 .ant-row-center{
     width: 95%;
     margin-left: 35px;
+}
+.slick-list{
+    width: 1131px;
+    margin-left: 219px;
 }
 
 

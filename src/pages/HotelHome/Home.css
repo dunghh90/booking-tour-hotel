@@ -1,10 +1,5 @@
-h1{
-    border-style: solid;
-    border-width: 5px;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-  
+.noteHome{
+    position: relative;
 }
 .thongtin{
     position: absolute;
@@ -12,9 +7,19 @@ h1{
     left: 31px;
     font-size: 45px;
     color: white;
-    z-index: 999;
+    width: 500px;
+    z-index: 9;
 }
 .item{
-  width: 500px;
+  width: 445px;
     height: 190px;
+}
+.homepage{
+    margin-top: 65px;
+}
+.slidercenter{
+    margin-bottom: 20px;
+}
+.headerdanhgia{
+    margin-left: 266px;
 }
