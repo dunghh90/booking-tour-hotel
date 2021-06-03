@@ -439,13 +439,10 @@ function ListRoomPage({
           </div>
         </div>
        
-            {isFilter && (
-                         renderListRoom()
-                      )}
-                      {!isFilter && (
-                        <p 
-                        >Không có kết quả</p>
-                        )}
+            {isFilter ? renderListRoom():
+            <p>Không có kết quả</p>
+
+            }
 
         <BackTop className="backtop">
           <div style={style}><ArrowUpOutlined /></div>
