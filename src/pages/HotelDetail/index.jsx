@@ -49,10 +49,13 @@ function ListRoomPage({
 
   const [searchKey, setSearchKey] = useState({ userNum: '', price: '' });
 
+  let isFilter = false;
+
   let totalPrice = 0;
 
   useEffect(() => {
     getListRoom({ id: hotelId });
+    let isFilter = false;
   }, [])
 
   useEffect(() => {
@@ -61,7 +64,7 @@ function ListRoomPage({
     }
   }, [listRoom.data])
   console.log("🚀 ~ file: index.jsx ~ line 63 ~ listRoom.data", listRoom.data)
-   let isFilter = false;
+   
   const filterListRoom = listRoom.data.rooms.filter((item) => 
   {
     // console.log("🚀 ~ file: index.jsx ~ line 46 ~ filterListRoom ~ item", item)
@@ -228,8 +231,11 @@ function ListRoomPage({
   }
 
 
-  function renderListRoom() {
-    return filterListRoom.map((item, index) => {
+  function renderListRoom() { 
+  console.log("🚀 ~ file: index.jsx ~ line 235 ~ renderListRoom ~ renderListRoom", renderListRoom)
+    
+    return filterListRoom.length == 0 ?
+    (filterListRoom.map((item, index) => {
       let isDisabled = false;
       
       if (dateSelected) {
@@ -324,7 +330,10 @@ function ListRoomPage({
           </Content>
         </>
       )
-    });
+    })
+    ): (
+      <p>Kh ca  kquả</p>
+    )
   }
 
 
@@ -340,6 +349,7 @@ function ListRoomPage({
             layout="inline"
             onFinish={(values) => {
               setSearchKey({ userNum: values.userNum, price: values.price });
+
             }}
           >
             <Col span={7}>
