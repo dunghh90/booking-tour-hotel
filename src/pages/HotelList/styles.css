@@ -20,11 +20,22 @@
     color: rgb(0, 193, 222);
     font-size: 30px;
     font-weight: bold;
-    position: absolute;
-    bottom: 13px;
-    right: -441px;
+    padding-left: 290px;
    
 }
+.pricerenhat{
+    color: red;
+    padding-left: 305px;
+    font-size: 16px;
+   
+}
+/* .pricerenhat12{  
+     
+    position: absolute;
+    bottom: -23px;
+    right: -439px;
+} */
+
 .ant-list-bordered{
     margin-top: 16px;
 }
@@ -70,21 +81,8 @@
 .comment12{
     margin-top: 3px;
 }
-.pricerenhat{
-    color: red;
-    position: absolute;
-    bottom: 39px;
-    right: -438px;
-}
-.pricerenhat12{  
-     
-    position: absolute;
-    bottom: -23px;
-    right: -439px;}
-/* 
-.uudai{
-    position: absolute;
-    bottom: 143px;
-    right: 70px;
 
-} */
+.priceandnote{
+    margin-left: 412px;
+    margin-top: -70px;
+}

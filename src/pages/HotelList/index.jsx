@@ -4,9 +4,9 @@ import { connect } from 'react-redux';
 import { getListHotelAction } from '../../redux/actions';
 import { useEffect, useState } from 'react';
 import history from '../../utils/history';
-import { Rate,BackTop } from 'antd';
+import { Rate, BackTop } from 'antd';
 import './styles.css';
-import { EnvironmentOutlined, TeamOutlined,ArrowUpOutlined } from '@ant-design/icons';
+import { EnvironmentOutlined, TeamOutlined, ArrowUpOutlined } from '@ant-design/icons';
 import Slipder from '../../components/slickHotel';
 
 import Siderba from '../../components/Siderba';
@@ -64,14 +64,16 @@ function ListHotelPage({
       return (
         <>
           <Row gutter={[12, 12]}>
-            <Col span={24}>
+            <Col  span ={24}>
               <Card
                 hoverable
                 title={item.area}
                 cover={<div alt="example" src="" />}
                 style={{ marginTop: 16 }}
                 onClick={() => history.push(`/hotels/${item.id}`)}
+
               >
+                <Row>
                 <div className="optiondetail">
                   <img className="imgAll" src={item.img} alt="" />
                   <div className="option">
@@ -85,18 +87,17 @@ function ListHotelPage({
                       }}>
                     </div>
                     <h4 className="comment12"><TeamOutlined />.{item.comment}</h4>
-                    <p className="pricerenhat">Giá 1 đêm của khách sạn từ:</p>
-                    {/* <Card className="uudai" style={{ width: 184, height: 141 }}>
-                      <h3>Ưu đãi đặc biệt</h3>
-                      <p>Có buffect ăn sáng</p>
-                       
-                    </Card> */}
-                    <span className="price1">{item.Price.toLocaleString()} VND</span>
-                    <h3 className="pricerenhat12" > Lưu ý: Giá của khách sạn cao theo số người và chất lượng phòng  </h3>
+                    <div className="priceandnote">
+                      <div>
 
+                      <p className="pricerenhat">Giá 1 đêm của khách sạn từ:</p>
+                      </div>
+                      <div className="price1">{item.Price.toLocaleString()} VND</div>
+                      <h3 className="pricerenhat12" > Lưu ý: Giá của khách sạn cao theo số người và chất lượng phòng  </h3>
+                    </div>
                   </div>
                 </div>
-
+                </Row>
               </Card>
             </Col>
           </Row>
@@ -118,10 +119,10 @@ function ListHotelPage({
           {renderListHotel()}
         </Col>
         <Row>
-        <BackTop className="backtop">
-          <div style={style}><ArrowUpOutlined /></div>
-        </BackTop>
-      </Row>
+          <BackTop className="backtop">
+            <div style={style}><ArrowUpOutlined /></div>
+          </BackTop>
+        </Row>
         {listHotel.data.length % 10 === 0 && (
           <Button onClick={() => loadmoreHotel()}>Xem thêm khách sạn</Button>
         )

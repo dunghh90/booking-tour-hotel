@@ -444,7 +444,7 @@ function ListRoomPage({
                       )}
                       {!isFilter && (
                         <p 
-                        >Không có Phòng</p>
+                        >Không có kết quả</p>
                         )}
 
         <BackTop className="backtop">
@@ -472,7 +472,7 @@ function ListRoomPage({
         <Col className="coldanhgia" span={16}>
           <div className="bottomcoment">
         <Tabs  defaultActiveKey="1" onChange={callback}>
-          <TabPane  tab="Nhận xét trên Webbooking" key="1">
+          <TabPane  tab="" key="1">
             <div className="alldanhgia">
               <div>
                 <div>
@@ -513,7 +513,7 @@ function ListRoomPage({
               </div>
             </div>
           </TabPane>
-          <TabPane tab="Thông tin không càn thiết" key="2">
+          <TabPane tab="" key="2">
           <div className="alldanhgia">
               <div>
                 <div>

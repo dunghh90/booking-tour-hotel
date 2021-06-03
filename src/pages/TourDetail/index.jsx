@@ -113,7 +113,7 @@ function TourDetailPage({
 
   return (
     <>
-      <Content className="site-layout" style={{ padding: '0 50px', display: "flex", justifyContent: "center", alignItems: "center" }}>
+      <Content className="site-layout" style={{ padding: '0 50px', display: "flex",marginTop:65, justifyContent: "center", alignItems: "center" }}>
         <div style={{ maxWidth: 1300, width: "100%" }}>
           {/* <Row >
               <ul className="listPath" >

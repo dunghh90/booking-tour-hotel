@@ -87,9 +87,8 @@ function TourListPage({
     if (tourList.load) return <p>Loading...</p>;
 
     return (
-      <div style={{display:"flex", justifyContent:"center"}}>
-        <div style={{padding: '10px 50px', maxWidth:1400, width:"100%"}}>
-          <Row className="timkiem" gutter={16} style={{margin:'0 80px', fontSize:20, padding:"15px 10px", borderRadius:4, backgroundColor:"#bae7ff"}}>
+      <>
+      <Row className="timkiem" >
           <Form
             name="basic"
             initialValues={{ location: '' }}
@@ -134,6 +133,9 @@ function TourListPage({
             </Col>
             </Form>
           </Row>
+      <div style={{display:"flex", justifyContent:"center"}}>
+        <div style={{padding: '10px 50px',marginTop:130, maxWidth:1400, width:"100%"}}>
+          
           <Row gutter={16}>
             <Col span={6}>
               <List
@@ -202,6 +204,7 @@ function TourListPage({
           </Row>
         </div>
       </div>
+      </>
     )
   }
 
