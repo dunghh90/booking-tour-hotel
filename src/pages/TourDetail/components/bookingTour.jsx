@@ -1,4 +1,4 @@
-import { Breadcrumb, Card, Col, Row, Form, Input, Button, DatePicker, Space, InputNumber, Modal, List} from "antd";
+import { Breadcrumb, Card, Col, Row, Form, Input, Button, DatePicker, Space, InputNumber, Modal, notification} from "antd";
 import { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { HomeOutlined, ExclamationCircleOutlined } from '@ant-design/icons';
@@ -89,7 +89,12 @@ function BookingTourPage(props) {
         customerBooking += item.numberAdults + item.numberChild;
       });
       if (numBooking + customerBooking > tourDetail.data.maxCustomer) {
-          alert("Số lượng khách còn lại: " + (tourDetail.data.maxCustomer - customerBooking));
+        notification.open({
+          message: 'Không thể đặt',
+          description:
+          "Số lượng khách còn lại: " + (tourDetail.data.maxCustomer - customerBooking),
+          type:"warning"
+        });
       } else {
         showConfirmBooking(values);
         setCustomerRemain(tourDetail.data.maxCustomer - (numBooking + customerBooking));
