@@ -20,8 +20,6 @@ function callback(key) {
   console.log(key);
 }
 
-
-
 const style = {
   height: 40,
   width: 40,

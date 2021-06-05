@@ -13,6 +13,7 @@ import moment from 'moment';
 import './style.css'
 
 import { Content } from "antd/lib/layout/layout";
+import BookingTourPage from "./components/bookingTour";
 
 
 function TourDetailPage({
@@ -31,7 +32,8 @@ function TourDetailPage({
   const [countAdults, setCountAdults] = useState(1);
   const [countChild, setCountChild] = useState(0);
   var d = new Date();
-  const [dateSelected, setDateSelected] = useState(moment(d).format('YYYY/MM/DD'));
+  const [dateSelected, setDateSelected] = useState(moment(d).format('DD/MM/YYYY'));
+  const [customerRemain, setCustomerRemain ] = useState(0);
 
   const [rateTourForm] = Form.useForm();
 
@@ -46,6 +48,11 @@ function TourDetailPage({
       setMoney(tourDetail.data.price);
     }
   }, [tourDetail.data])
+  // useEffect(() => {
+  //   getTourDetail({ id: tourId });
+  //   console.log("🚀 ~ file: index.jsx ~ line 50 ~ test")
+  //   debugger
+  // }, [customerRemain])
 
   function setMoneyAdults(values) {
     setMoney(tourDetail.data.price * values + tourDetail.data.price * countChild * 0.5);
@@ -69,7 +76,21 @@ function TourDetailPage({
     )
   }
 
+  function checkNumberCuster(params){
+    const listBooking = tourDetail.data.bookingTours.filter((item) => {
+      return params.dataStart.trim().toLowerCase().indexOf(item.startDate.trim().toLowerCase()) !== -1;
+    })
+    let customerBooking = 0;
+    listBooking.array.forEach((item) => {
+      customerBooking += item.numberAdults + item.numberChild;
+    });
+    if (customerBooking > tourDetail.data.maxCustomer) {
+      alert("Số lượng khách còn lại: " + (tourDetail.data.maxCustomer - customerBooking));
+    }
+  }
+
   function showConfirmBooking() {
+    console.log("🚀 ~ file: index.jsx ~ line 113 ~ showConfirmBooking ~ dateSelected", dateSelected)
     Modal.confirm({
       title: 'Thông tin tour đã đặt:',
       icon: <ExclamationCircleOutlined />,
@@ -107,7 +128,26 @@ function TourDetailPage({
     } else {
       // localStorage.setItem('carts', JSON.stringify(newCartList));
       // TODO Check tourId và startDate nếu tồn tại trong db thì ko add booking
-      showConfirmBooking();
+      console.log("🚀 ~ file: index.jsx ~ line 133 ~ bookingTours ~ bookingTours", tourDetail.data.bookingTours)
+      const listBooking = tourDetail.data.bookingTours.filter((item) => {
+        return dateSelected.trim().toLowerCase().indexOf(item.startDate.trim().toLowerCase()) !== -1;
+      })
+      console.log("🚀 ~ file: index.jsx ~ line 133 ~ listBooking ~ listBooking", listBooking)
+      let customerBooking = 0;
+      const numBooking = countAdults + countChild;
+      listBooking.forEach((item) => {
+        customerBooking += item.numberAdults + item.numberChild;
+      });
+      console.log("🚀 ~ file: index.jsx ~ line 139 ~ listBooking.forEach ~ customerBooking", customerBooking)
+      console.log("🚀 ~ file: index.jsx ~ line 140 ~ handleBookingTour ~ numBooking", numBooking)
+      if (numBooking + customerBooking > tourDetail.data.maxCustomer) {
+        alert("Số lượng khách còn lại: " + (tourDetail.data.maxCustomer - customerBooking));
+      } else {
+        showConfirmBooking();
+        setCustomerRemain(tourDetail.data.maxCustomer - (numBooking + customerBooking));
+        // getTourDetail({ id: tourId });
+      }
+
     }
   }
 
@@ -169,9 +209,14 @@ function TourDetailPage({
             <Col span={8} xl={{ order: 2 }} lg={{ order: 2 }} md={{ order: 1 }} sm={{ order: 1 }} xs={{ order: 1 }}>
               <div style={{position:"sticky", top:0}}>
                 <div className="order-form-container">
-                  <Row span={24} gutter={[10, 10]}>
+                  <BookingTourPage 
+                    customerRemain={customerRemain} 
+                    setCustomerRemain={setCustomerRemain} 
+                    tourId={tourId}
+                    />
+                  {/* <Row span={24} gutter={[10, 10]}>
                     <Col span={10}>Chọn ngày khởi hành:</Col>
-                    <Col span={14}><DatePicker defaultValue={moment(d)} format={dateFormat} onChange={(value) => setDateSelected(value)} /></Col>
+                    <Col span={14}><DatePicker defaultValue={moment(d)} format={dateFormat} onChange={(value) => setDateSelected(moment(value).format("DD/MM/YYYY"))} /></Col>
                     <Col span={10}>Người lớn:</Col>
                     <Col span={14}><InputNumber min={1} defaultValue={1} onChange={(values) => { setCountAdults(values); setMoneyAdults(values); }} /></Col>
                     <Col span={10}>Trẻ em:</Col>
@@ -182,7 +227,7 @@ function TourDetailPage({
                         Đặt tour
                       </Button>
                     </Col>
-                  </Row>
+                  </Row> */}
                 </div>
                 <div style={{minWidth:400, borderRadius:4}}>
                   <List

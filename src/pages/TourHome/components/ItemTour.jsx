@@ -4,7 +4,7 @@ import { Col, Card, Row } from 'antd';
 import history from '../../../utils/history';
 
 function ItemTour(props) {
-  const { title, link, description, rate, price, id } = props;
+  const { title, link, description, rate, price, id, key } = props;
 
   // const [isEdit, setIsEdit] = useState(false);
   // const [isShowDescription, setIsShowDescription] = useState(false);

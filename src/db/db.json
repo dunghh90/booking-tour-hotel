@@ -38,6 +38,7 @@
       "rate": 4,
       "topicTourId": 1,
       "dateStart": "2021-04-26",
+      "maxCustomer": 48,
       "description": [
         "• Bay Hãng",
         "• Chứng Tích Mỹ Lai",
@@ -57,6 +58,7 @@
       "rate": 4,
       "topicTourId": 1,
       "dateStart": "2021-04-26",
+      "maxCustomer": 10,
       "description": [
         "• Khu Du Lịch Bà Nà Núi Chúa",
         "• Tham Quan Động Phong Nha",
@@ -76,6 +78,7 @@
       "rate": 5,
       "topicTourId": 1,
       "dateStart": "2021-04-26",
+      "maxCustomer": 48,
       "description": [
         "• Bán Đảo Phương Mai",
         "• Hải Đăng - Mũi Điện",
@@ -95,6 +98,7 @@
       "rate": 5,
       "topicTourId": 2,
       "dateStart": "2021-04-26",
+      "maxCustomer": 48,
       "description": [
         "• Bán Đảo Phương Mai",
         "• Hải Đăng - Mũi Điện",
@@ -114,6 +118,7 @@
       "rate": 3,
       "topicTourId": 2,
       "dateStart": "2021-04-26",
+      "maxCustomer": 48,
       "description": [
         "• Bán Đảo Phương Mai",
         "• Hải Đăng - Mũi Điện",
@@ -775,49 +780,94 @@
   ],
   "bookingTours": [
     {
-      "userId": 9,
+      "userId": 1,
       "tourId": 1,
-      "startDate": "2021/05/06",
+      "startDate": "09/06/2021",
+      "numberAdults": 4,
+      "numberChild": 3,
+      "totalPrice": 5190000,
+      "id": 34
+    },
+    {
+      "userId": 1,
+      "tourId": 1,
+      "startDate": "09/06/2021",
+      "numberAdults": 2,
+      "numberChild": 0,
+      "totalPrice": 10380000,
+      "id": 35
+    },
+    {
+      "userId": 1,
+      "tourId": 1,
+      "startDate": "04/06/2021",
       "numberAdults": 1,
       "numberChild": 0,
-      "totalPrice": 3000000,
-      "id": 1
+      "totalPrice": 5190000,
+      "id": 36
     },
     {
-      "userId": 9,
+      "userId": 1,
       "tourId": 1,
-      "startDate": "2021/05/07",
-      "numberAdults": 2,
+      "startDate": "04/06/2021",
+      "numberAdults": 1,
+      "numberChild": 0,
+      "totalPrice": 5190000,
+      "id": 37
+    },
+    {
+      "userId": 1,
+      "tourId": 1,
+      "startDate": "05/06/2021",
+      "numberAdults": 1,
       "numberChild": 1,
-      "totalPrice": 3000000,
-      "id": 2
+      "totalPrice": 7785000,
+      "id": 38
     },
     {
       "userId": 1,
-      "tourId": 2,
-      "startDate": "2021/06/01",
-      "numberAdults": 3,
+      "tourId": 1,
+      "startDate": "05/06/2021",
+      "numberAdults": 43,
       "numberChild": 1,
-      "totalPrice": 3000000,
-      "id": 3
+      "totalPrice": 236145000,
+      "id": 39
     },
     {
       "userId": 1,
       "tourId": 1,
-      "startDate": "2021/06/01",
-      "numberAdults": 3,
-      "numberChild": 2,
-      "totalPrice": 20760000,
-      "id": 4
+      "startDate": "05/06/2021",
+      "numberAdults": 1,
+      "numberChild": 0,
+      "totalPrice": 5190000,
+      "id": 40
     },
     {
       "userId": 1,
       "tourId": 1,
-      "startDate": "2021/06/02",
-      "numberAdults": 2,
-      "numberChild": 3,
-      "totalPrice": 18165000,
-      "id": 5
+      "startDate": "05/06/2021",
+      "numberAdults": 1,
+      "numberChild": 0,
+      "totalPrice": 5190000,
+      "id": 41
+    },
+    {
+      "userId": 1,
+      "tourId": 1,
+      "startDate": "10/06/2021",
+      "numberAdults": 1,
+      "numberChild": 0,
+      "totalPrice": 5190000,
+      "id": 42
+    },
+    {
+      "userId": 1,
+      "tourId": 1,
+      "startDate": "17/06/2021",
+      "numberAdults": 1,
+      "numberChild": 0,
+      "totalPrice": 5190000,
+      "id": 43
     }
   ],
   "bookingHotels": [
