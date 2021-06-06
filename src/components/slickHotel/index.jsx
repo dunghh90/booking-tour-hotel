@@ -16,7 +16,9 @@ function Slipder() {
         <>
             <h1 className ="title">Danh lam thắng cảnh</h1>
             <span className ="des">Những địa điểm hot trong nước</span>
+            <div>
             <Slider className="tong" {...settings}>
+                
                 <div>
                     <img className="slid" src="//cdn1.ivivu.com/iVivu/2018/09/14/14/vungtau_2-370x395.jpg" alt="" />
                 </div>
@@ -35,7 +37,9 @@ function Slipder() {
                 <div>
                     <img className="slid" src="https://dulichtoday.vn/wp-content/uploads/2017/04/Bien-My-Khe.jpg" alt="" />
                 </div>
+            
             </Slider>
+            </div>
         </>
 
     );

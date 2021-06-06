@@ -228,6 +228,7 @@
       "address": "270 Võ Nguyên Giáp, Phường Mỹ An,Thành phố SaPa,Tỉnh Lào Cai, Việt Nam",
       "Price": 4900000,
       "area": "Thành Phố SaPa-Tỉnh Lào Cai",
+      "wifi": "Wifi miễn phí",
       "comment": "Được khách đánh giá cao-90% sẽ giới thiệu",
       "note": "<div class='tongHotelList'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
     },
@@ -993,6 +994,22 @@
       "startDate": "2021/07/07",
       "endDate": "2021/07/09",
       "id": 22
+    },
+    {
+      "userId": 1,
+      "hotelId": 1,
+      "roomId": 8,
+      "startDate": "2021/06/01",
+      "endDate": "2021/06/03",
+      "id": 23
+    },
+    {
+      "userId": 3,
+      "hotelId": 1,
+      "roomId": 1,
+      "startDate": "2021/06/01",
+      "endDate": "2021/06/04",
+      "id": 24
     }
   ],
   "commentHotels": [
@@ -1004,6 +1021,20 @@
       "rate": 3,
       "creatDate": "26/05/2021",
       "id": 1
+    },
+    {
+      "hotelId": 1,
+      "comment": "khách sạn khá đẹp",
+      "rate": 3,
+      "creatDate": "06/06/2021",
+      "id": 2
+    },
+    {
+      "hotelId": 1,
+      "comment": "khách sạn khá đẹp",
+      "rate": 3,
+      "creatDate": "06/06/2021",
+      "id": 3
     }
   ],
   "commentTours": [

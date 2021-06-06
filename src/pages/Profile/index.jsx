@@ -225,29 +225,32 @@ function ProfilePage({
         title: 'Tên khách sạn',
         dataIndex: 'hotelName',
         key: 'hotelName',
+        with: 230,
       },
       {
         title: 'Loại phòng',
         dataIndex: 'roomName',
         key: 'roomName',
+        with: 230,
       },
       {
         title: 'Giá',
         dataIndex: 'price',
         key: 'price',
+        with: 230,
       },
       {
         title: 'Ngày đặt',
         dataIndex: 'date',
         key: 'date',
+        with: 230,
       },
     ]
     const tableData = bookingHotels.data.map((item) => {
-      
       return {
         ...item,
         hotelName: item.hotel.name,
-        roomName: item.room.name,
+        roomName: item.room.title,
         // Chỗ này a để tạm, sau này fix data thì bỏ vào
         price: item.room.price.toLocaleString() + " VNĐ",
         date: `${item.startDate} - ${item.endDate}`,
@@ -255,22 +258,7 @@ function ProfilePage({
       }
     });
     return <Table columns={tableColumn} dataSource={tableData} pagination={false} />
-    // return bookingHotels.data.map((item) => {
-    //   return (
-    //     <>
-    //       <p>+++++++++++++++++</p>
-    //       <p>ten hotel</p>
-    //       <p>{item.hotel.name}</p>
-    //       <p>gia hotel</p>
-    //       <p>{item.hotel.Price}</p>
-    //       <p>ten hotel</p>
-    //       <p>{item.room.name}</p>
-    //       <p>gia phong</p>
-    //       <p>{item.room.Price}</p>
-    //       <p>{item.startDate}</p>
-    //     </>
-    //   )
-    // })
+ 
   }
   function renderHistoryBookingTour() {
     const tableColumn = [
@@ -278,6 +266,7 @@ function ProfilePage({
         title: 'TOUR',
         dataIndex: 'tourName',
         key: 'tourName',
+       
       },
       {
         title: 'NGƯỜI LỚN',
