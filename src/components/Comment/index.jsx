@@ -13,31 +13,22 @@ function CommentPage(props) {
     const {  commentList, addComment, getCommentList, hotelId, tourId, userInfo} = props;
     const [form] =Form.useForm();
 
-    useEffect(() => {
-      // hotelId ? 
+    useEffect(() => { 
       getCommentList({
         page: 1,
         limit: 4,
         hotelId: parseInt(hotelId),
         tourId: parseInt(tourId)
       })
-      // }) :
-      // getCommentList({
-      //   page: 1,
-      //   limit: 4,
-      //   tourId: parseInt(tourId) 
-      // })
+     
     },[])
 
     function handleAddComment(values){
       if (!userInfo.data.id) {
         alert('Bạn cần đăng nhập!');
       } else {
-        // hotelId ? 
-        debugger
+        // debugger
         addComment({...values, userName: userInfo.name, hotelId: parseInt(hotelId), tourId: parseInt(tourId), userId: userInfo.id}) 
-        // :
-        // addComment({...values, tourId: parseInt(tourId), userId: userInfo.id, useName: userInfo.name });
         form.resetFields();
       }
     }
@@ -101,22 +92,7 @@ function CommentPage(props) {
                       </Tooltip>
                     </>
                   }
-                />
-
-                {/* <Row>
-                  <Col span={6}>
-                    <h4>{item.userName}</h4>
-                  </Col>
-                  <Col span={16}>
-                    <Space>
-                      <Rate disabled value={item.rate} />
-                      <span>{item.creatDate}</span>
-                    </Space>
-                    <p>
-                    {item.comment}
-                    </p>
-                  </Col>
-                </Row> */}
+                />              
            </div>
           );
         })
@@ -126,7 +102,6 @@ function CommentPage(props) {
         <>
           {userInfo.data.id && (
             <Form
-                // {...layout}
                 name="basic"
                 useForm="form"
                 initialValues={{ remember: true }}
@@ -137,8 +112,6 @@ function CommentPage(props) {
                     name="rate"
                     rules={[{ required: true, message: 'vui lòng nhập!' }]}
                 >
-
-                {/* <Rate className ="rate" allowHalf defaultValue={5} /> */}
                 <Rate allowHalf />
                 </Form.Item>
                 <Form.Item
@@ -149,9 +122,6 @@ function CommentPage(props) {
                 >
                     <Input.TextArea />
                 </Form.Item>
-
-
-                {/* <Form.Item {...tailLayout}> */}
                 <Form.Item >
                     <Button type="primary" htmlType="submit">
                         Đánh giá
@@ -159,18 +129,17 @@ function CommentPage(props) {
                 </Form.Item>
             </Form>
             )}
-            {/* <Col span={24}> */}
+            
             <p><h3>Đánh giá gần đây</h3></p>
             {renderComment()}
-            {/* </Col> */}
+           
         </>
     )
-
-
 
 }
 const mapStateToProps = (state) => {
   const  {commentList}  = state.commentReducer;
+  console.log("🚀 ~ file: index.jsx ~ line 142 ~ mapStateToProps ~ commentList", commentList)
   const {userInfo} = state.userReducer ; 
     return {
       commentList: commentList,

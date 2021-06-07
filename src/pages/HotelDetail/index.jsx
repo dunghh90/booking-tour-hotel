@@ -276,7 +276,7 @@ function ListRoomPage({
 
 
   function renderListRoom() { 
-  console.log("🚀 ~ file: index.jsx ~ line 235 ~ renderListRoom ~ renderListRoom", renderListRoom)
+  if (filterListRoom.load) return <p>loading...</p> 
     return filterListRoom.map((item, index) => {
       let isDisabled = false;
       
@@ -496,6 +496,7 @@ function ListRoomPage({
         <BackTop className="backtop">
           <div style={style}><ArrowUpOutlined /></div>
         </BackTop>
+
         {filterListRoom.length !=0 ? renderListRoom():
             <Row justify="center">
               <Col span={24}>

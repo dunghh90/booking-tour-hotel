@@ -26,6 +26,30 @@
       "birthday": "2021/06/02",
       "gender": "male",
       "phone": "0702321494"
+    },
+    {
+      "email": "nhominh1997@gmail.com",
+      "password": "1234",
+      "name": "nho minh",
+      "id": 4
+    },
+    {
+      "email": "nhatminh1931998@gmail.com",
+      "password": "1234",
+      "name": "nhat minh",
+      "id": 5
+    },
+    {
+      "email": "nhatminh1931998@gmail.com",
+      "password": "1234",
+      "name": "nhat minh",
+      "id": 6
+    },
+    {
+      "email": "nhominh1994@gmail.com",
+      "password": "1234",
+      "name": "111",
+      "id": 7
     }
   ],
   "tours": [
