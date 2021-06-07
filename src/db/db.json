@@ -32,6 +32,12 @@
       "password": "123",
       "name": "test",
       "id": 4
+    },
+    {
+      "email": "test1@gmail.com",
+      "password": "123",
+      "name": "test1",
+      "id": 5
     }
   ],
   "tours": [
@@ -955,6 +961,42 @@
       "numberChild": 0,
       "totalPrice": 4690000,
       "id": 52
+    },
+    {
+      "userId": 5,
+      "tourId": 2,
+      "startDate": "08/06/2021",
+      "numberAdults": 1,
+      "numberChild": 0,
+      "totalPrice": 4690000,
+      "id": 53
+    },
+    {
+      "userId": 5,
+      "tourId": 2,
+      "startDate": "08/06/2021",
+      "numberAdults": 1,
+      "numberChild": 0,
+      "totalPrice": 4690000,
+      "id": 54
+    },
+    {
+      "userId": 5,
+      "tourId": 2,
+      "startDate": "08/06/2021",
+      "numberAdults": 5,
+      "numberChild": 0,
+      "totalPrice": 23450000,
+      "id": 55
+    },
+    {
+      "userId": 5,
+      "tourId": 2,
+      "startDate": "08/06/2021",
+      "numberAdults": 3,
+      "numberChild": 0,
+      "totalPrice": 14070000,
+      "id": 56
     }
   ],
   "bookingHotels": [
