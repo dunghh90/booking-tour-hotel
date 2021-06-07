@@ -1081,6 +1081,14 @@
       "startDate": "2021/06/01",
       "endDate": "2021/06/03",
       "id": 15
+    },
+    {
+      "userId": 5,
+      "hotelId": 1,
+      "roomId": 5,
+      "startDate": "2021/06/01",
+      "endDate": "2021/06/03",
+      "id": 16
     }
   ],
   "commentHotels": [
@@ -1092,6 +1100,15 @@
       "rate": 3,
       "creatDate": "26/05/2021",
       "id": 1
+    },
+    {
+      "userId": 5,
+      "userName": "minh ne",
+      "hotelId": 1,
+      "comment": "khachs sanj te",
+      "rate": 4,
+      "creatDate": "07/06/2021",
+      "id": 2
     }
   ],
   "commentTours": [
