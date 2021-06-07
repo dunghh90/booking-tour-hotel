@@ -6,6 +6,7 @@ import { notification } from 'antd';
 function* loginSaga(action) {
   try {
     const { email, password, prevPath } = action.payload;
+    console.log("🚀 ~ file: user.saga.js ~ line 9 ~ function*loginSaga ~ email", email)
     const result = yield axios({
       method: 'GET',
       url: 'http://localhost:3002/users',

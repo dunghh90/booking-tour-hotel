@@ -57,92 +57,92 @@ function TourDetailPage({
     }
   }, [tourDetail.data])
   // useEffect(() => {
-    //   getTourDetail({ id: tourId });
-    //   console.log("🚀 ~ file: index.jsx ~ line 50 ~ test")
-    //   debugger
-    // }, [customerRemain])
-    const filterTourListByTopic = tourList.data.filter((item) => {
-      return item.topicTourId == tourDetail.data.topicTourId;
-    })
+  //   getTourDetail({ id: tourId });
+  //   console.log("🚀 ~ file: index.jsx ~ line 50 ~ test")
+  //   debugger
+  // }, [customerRemain])
+  const filterTourListByTopic = tourList.data.filter((item) => {
+    return item.topicTourId == tourDetail.data.topicTourId;
+  })
 
-    function setMoneyAdults(values) {
-      setMoney(tourDetail.data.price * values + tourDetail.data.price * countChild * 0.5);
-    }
-  function setMoneyChild(values) {
-    setMoney(tourDetail.data.price * countAdults + tourDetail.data.price * values * 0.5);
-  }
+  // function setMoneyAdults(values) {
+  //   setMoney(tourDetail.data.price * values + tourDetail.data.price * countChild * 0.5);
+  // }
+  // function setMoneyChild(values) {
+  //   setMoney(tourDetail.data.price * countAdults + tourDetail.data.price * values * 0.5);
+  // }
 
-  function renderConfirmTour() {
-    return (
-      <>
-        <Row ><h3>{tourDetail.data.name}</h3></Row>
-        <Row>
-          <Col span={10}>Số lượng người lớn: </Col>
-          <Col span={14}>{countAdults}</Col>
-          <Col span={10}>Số lượng trẻ em: </Col>
-          <Col span={14}>{countChild}</Col>
-          <Col span={24}>Tổng tiền: {money.toLocaleString()} VNĐ</Col>
-        </Row>
-      </>
-    )
-  }
+  // function renderConfirmTour() {
+  //   return (
+  //     <>
+  //       <Row ><h3>{tourDetail.data.name}</h3></Row>
+  //       <Row>
+  //         <Col span={10}>Số lượng người lớn: </Col>
+  //         <Col span={14}>{countAdults}</Col>
+  //         <Col span={10}>Số lượng trẻ em: </Col>
+  //         <Col span={14}>{countChild}</Col>
+  //         <Col span={24}>Tổng tiền: {money.toLocaleString()} VNĐ</Col>
+  //       </Row>
+  //     </>
+  //   )
+  // }
 
-  function showConfirmBooking() {
-    Modal.confirm({
-      title: 'Thông tin tour đã đặt:',
-      icon: <ExclamationCircleOutlined />,
-      content: renderConfirmTour(),//'Tour Đà Nẵng 2 ngày 3 đêm',
-      okText: 'Xác nhận',
-      cancelText: 'Huỷ',
-      onOk() {
-        console.log('OK');
-        bookingTour({
-          userId: userInfo.data.id,
-          tourId: parseInt(tourId),
-          startDate: dateSelected,
-          numberAdults: countAdults,
-          numberChild: countChild,
-          totalPrice: money
-        })
-      },
-      onCancel() {
-        console.log('Cancel');
-      },
-    });
-  }
+  // function showConfirmBooking() {
+  //   Modal.confirm({
+  //     title: 'Thông tin tour đã đặt:',
+  //     icon: <ExclamationCircleOutlined />,
+  //     content: renderConfirmTour(),//'Tour Đà Nẵng 2 ngày 3 đêm',
+  //     okText: 'Xác nhận',
+  //     cancelText: 'Huỷ',
+  //     onOk() {
+  //       console.log('OK');
+  //       bookingTour({
+  //         userId: userInfo.data.id,
+  //         tourId: parseInt(tourId),
+  //         startDate: dateSelected,
+  //         numberAdults: countAdults,
+  //         numberChild: countChild,
+  //         totalPrice: money
+  //       })
+  //     },
+  //     onCancel() {
+  //       console.log('Cancel');
+  //     },
+  //   });
+  // }
 
-  function handleBookingTour() {
-    if (!userInfo.data.id) {
-      alert('Bạn cần đăng nhập!');
-      history.push({
-        pathname: '/login',
-        state: {
-          prevPath: `tours/${tourId}`
-        }
-      })
-    } else if (!dateSelected) {
-      alert('Cần chọn ngày đặt tour!');
-    } else {
-      // localStorage.setItem('carts', JSON.stringify(newCartList));
-      // TODO Check tourId và startDate nếu tồn tại trong db thì ko add booking
-      const listBooking = tourDetail.data.bookingTours.filter((item) => {
-        return dateSelected.trim().toLowerCase().indexOf(item.startDate.trim().toLowerCase()) !== -1;
-      })
-      let customerBooking = 0;
-      const numBooking = countAdults + countChild;
-      listBooking.forEach((item) => {
-        customerBooking += item.numberAdults + item.numberChild;
-      });
-      if (numBooking + customerBooking > tourDetail.data.maxCustomer) {
-        alert("Số lượng khách còn lại: " + (tourDetail.data.maxCustomer - customerBooking));
-      } else {
-        showConfirmBooking();
-        setCustomerRemain(tourDetail.data.maxCustomer - (numBooking + customerBooking));
-        // getTourDetail({ id: tourId });
-      }
+  // function handleBookingTour() {
+  //   if (!userInfo.data.id) {
+  //     alert('Bạn cần đăng nhập!');
+  //     history.push({
+  //       pathname: '/login',
+  //       state: {
+  //         prevPath: `tours/${tourId}`
+  //       }
+  //     })
+  //   } else if (!dateSelected) {
+  //     alert('Cần chọn ngày đặt tour!');
+  //   } else {
+  //     // localStorage.setItem('carts', JSON.stringify(newCartList));
+  //     // TODO Check tourId và startDate nếu tồn tại trong db thì ko add booking
+  //     const listBooking = tourDetail.data.bookingTours.filter((item) => {
+  //       return dateSelected.trim().toLowerCase().indexOf(item.startDate.trim().toLowerCase()) !== -1;
+  //     })
+  //     let customerBooking = 0;
+  //     const numBooking = countAdults + countChild;
+  //     listBooking.forEach((item) => {
+  //       customerBooking += item.numberAdults + item.numberChild;
+  //     });
+  //     if (numBooking + customerBooking > tourDetail.data.maxCustomer) {
+  //       alert("Số lượng khách còn lại: " + (tourDetail.data.maxCustomer - customerBooking));
+  //     } else {
+  //       showConfirmBooking();
+  //       setCustomerRemain(tourDetail.data.maxCustomer - (numBooking + customerBooking));
+  //       // getTourDetail({ id: tourId });
+  //     }
 
-    }
-  }
+  //   }
+  // }
 
   return (
     <>

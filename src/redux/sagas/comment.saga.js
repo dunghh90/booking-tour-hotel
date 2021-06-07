@@ -46,6 +46,7 @@ function* getListCommentSaga(action) {
   }
 }
 function* addCommentSaga(action) {
+console.log("🚀 ~ file: comment.saga.js ~ line 49 ~ function*addCommentSaga ~ action", action)
   
   try {
     const { userId, userName,tourId, hotelId, comment, rate } = action.payload;

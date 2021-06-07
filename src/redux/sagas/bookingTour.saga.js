@@ -22,6 +22,12 @@ function* bookingTour(action) {
       description: `Bạn đã đặt tour ngày ${startDate}`,
     });
     yield put({
+      type: "GET_TOUR_DETAIL_REQUEST",
+      payload: {
+        id: tourId
+      }
+    })
+    yield put({
       type: "BOOKING_TOUR_SUCCESS",
       data: result.data,
         payload: {

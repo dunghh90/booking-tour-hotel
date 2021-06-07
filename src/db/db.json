@@ -26,6 +26,12 @@
       "birthday": "2021/06/02",
       "gender": "male",
       "phone": "0702321494"
+    },
+    {
+      "email": "test@gmail.com",
+      "password": "123",
+      "name": "test",
+      "id": 4
     }
   ],
   "tours": [
@@ -886,6 +892,69 @@
       "numberChild": 0,
       "totalPrice": 67470000,
       "id": 45
+    },
+    {
+      "userId": 1,
+      "tourId": 2,
+      "startDate": "23/06/2021",
+      "numberAdults": 4,
+      "numberChild": 3,
+      "totalPrice": 25795000,
+      "id": 46
+    },
+    {
+      "userId": 1,
+      "tourId": 2,
+      "startDate": "29/06/2021",
+      "numberAdults": 2,
+      "numberChild": 3,
+      "totalPrice": 16415000,
+      "id": 47
+    },
+    {
+      "userId": 1,
+      "tourId": 2,
+      "startDate": "18/06/2021",
+      "numberAdults": 2,
+      "numberChild": 3,
+      "totalPrice": 16415000,
+      "id": 48
+    },
+    {
+      "userId": 1,
+      "tourId": 2,
+      "startDate": "18/06/2021",
+      "numberAdults": 2,
+      "numberChild": 3,
+      "totalPrice": 16415000,
+      "id": 49
+    },
+    {
+      "userId": 1,
+      "tourId": 2,
+      "startDate": "18/06/2021",
+      "numberAdults": 2,
+      "numberChild": 3,
+      "totalPrice": 4690000,
+      "id": 50
+    },
+    {
+      "userId": 1,
+      "tourId": 2,
+      "startDate": "07/06/2021",
+      "numberAdults": 10,
+      "numberChild": 0,
+      "totalPrice": 46900000,
+      "id": 51
+    },
+    {
+      "userId": 1,
+      "tourId": 2,
+      "startDate": "07/06/2021",
+      "numberAdults": 10,
+      "numberChild": 0,
+      "totalPrice": 4690000,
+      "id": 52
     }
   ],
   "bookingHotels": [
@@ -982,85 +1051,6 @@
       "roomId": 1,
       "startDate": null,
       "id": 12
-    },
-    {
-      "userId": 1,
-      "hotelId": 1,
-      "roomId": 1,
-      "startDate": null,
-      "id": 13
-    },
-    {
-      "userId": 1,
-      "hotelId": 1,
-      "roomId": 3,
-      "startDate": "2021/05/04",
-      "endDate": "2021/05/06",
-      "id": 14
-    },
-    {
-      "userId": 3,
-      "hotelId": 1,
-      "roomId": 8,
-      "startDate": "2021/06/07",
-      "endDate": "2021/06/10",
-      "id": 15
-    },
-    {
-      "userId": 3,
-      "hotelId": 1,
-      "roomId": 2,
-      "startDate": "2021/06/01",
-      "endDate": "2021/06/18",
-      "id": 16
-    },
-    {
-      "userId": 3,
-      "hotelId": 1,
-      "roomId": 1,
-      "startDate": "2021/06/07",
-      "endDate": "2021/06/18",
-      "id": 17
-    },
-    {
-      "userId": 3,
-      "hotelId": 1,
-      "roomId": 5,
-      "startDate": "2021/05/04",
-      "endDate": "2021/05/06",
-      "id": 18
-    },
-    {
-      "userId": 3,
-      "hotelId": 1,
-      "roomId": 4,
-      "startDate": "2021/05/04",
-      "endDate": "2021/05/06",
-      "id": 19
-    },
-    {
-      "userId": 3,
-      "hotelId": 1,
-      "roomId": 8,
-      "startDate": "2021/05/04",
-      "endDate": "2021/05/06",
-      "id": 20
-    },
-    {
-      "userId": 3,
-      "hotelId": 1,
-      "roomId": 5,
-      "startDate": "2021/06/07",
-      "endDate": "2021/06/11",
-      "id": 21
-    },
-    {
-      "userId": 3,
-      "hotelId": 1,
-      "roomId": 2,
-      "startDate": "2021/07/07",
-      "endDate": "2021/07/09",
-      "id": 22
     }
   ],
   "commentHotels": [
@@ -1130,49 +1120,36 @@
       "id": 6
     },
     {
-      "userName": "Huu Dung",
+      "userName": "Hoàng Hữu Dũng",
       "userId": 1,
-      "tourId": 1,
-      "comment": "jlkjlkjl",
+      "tourId": 2,
+      "comment": "456",
       "rate": 4,
-      "creatDate": "24/05/2021",
-      "id": 7
+      "creatDate": "07/06/2021",
+      "id": 13
     },
     {
-      "userName": "Huu Dung",
+      "userName": "Hoàng Hữu Dũng",
       "userId": 1,
-      "tourId": 1,
-      "comment": "sdfsdf",
-      "rate": 2.5,
-      "creatDate": "24/05/2021",
-      "id": 8
+      "tourId": 2,
+      "comment": "123",
+      "rate": 3,
+      "creatDate": "07/06/2021",
+      "id": 14
     },
     {
-      "userName": "Huu Dung",
-      "userId": 1,
-      "tourId": 1,
-      "comment": "sdfsdf",
-      "rate": 2.5,
-      "creatDate": "24/05/2021",
-      "id": 9
+      "tourId": 2,
+      "comment": "567",
+      "rate": 4,
+      "creatDate": "07/06/2021",
+      "id": 15
     },
     {
-      "userName": "Huu Dung",
-      "userId": 1,
-      "tourId": 1,
-      "comment": "aaaaaa",
-      "rate": 2.5,
-      "creatDate": "24/05/2021",
-      "id": 10
-    },
-    {
-      "userName": "Huu Dung",
-      "userId": 1,
-      "tourId": 1,
-      "comment": "11111111",
-      "rate": 4.5,
-      "creatDate": "24/05/2021",
-      "id": 11
+      "tourId": 2,
+      "comment": "abcd",
+      "rate": 3,
+      "creatDate": "07/06/2021",
+      "id": 16
     }
   ],
   "profiles": []

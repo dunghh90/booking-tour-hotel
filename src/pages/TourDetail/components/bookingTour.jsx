@@ -193,6 +193,7 @@ function BookingTourPage(props) {
         </Form.Item>
         {/* <Form.Item {...buttonItemLayout}> */}
         <Form.Item {...tailFormItemLayout} style={{width:"100%"}} >
+          {/* <Button className="login-form-button" disabled={!checkCustomerRemain} htmlType="submit" style={{ width: "100%", height:40, fontSize:18, {checkCustomerRemain?backgroundColor:"#ffa940":backgroundColor:"gray"}, color:"white" }}>{checkCustomerRemain?"Đặt tour":"Hết chổ"}</Button> */}
           <Button className="login-form-button" disabled={!checkCustomerRemain} htmlType="submit" style={{ width: "100%", height:40, fontSize:18, backgroundColor:"#ffa940", color:"white" }}>{checkCustomerRemain?"Đặt tour":"Hết chổ"}</Button>
         </Form.Item>
     </Form>

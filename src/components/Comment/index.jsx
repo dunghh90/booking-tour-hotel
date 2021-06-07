@@ -30,14 +30,14 @@ function CommentPage(props) {
     },[])
 
     function handleAddComment(values){
+      console.log("🚀 ~ file: index.jsx ~ line 33 ~ handleAddComment ~ values", values)
       if (!userInfo.data.id) {
         alert('Bạn cần đăng nhập!');
       } else {
-        // hotelId ? 
-        debugger
-        addComment({...values, userName: userInfo.name, hotelId: parseInt(hotelId), tourId: parseInt(tourId), userId: userInfo.id}) 
-        // :
-        // addComment({...values, tourId: parseInt(tourId), userId: userInfo.id, useName: userInfo.name });
+        hotelId ? 
+        addComment({...values, userName: userInfo.data.name, hotelId: parseInt(hotelId), tourId: parseInt(tourId), userId: userInfo.data.id}) 
+        :
+        addComment({...values, tourId: parseInt(tourId), userId: userInfo.id, useName: userInfo.name });
         form.resetFields();
       }
     }
@@ -128,7 +128,7 @@ function CommentPage(props) {
             <Form
                 // {...layout}
                 name="basic"
-                useForm="form"
+                form={form}
                 initialValues={{ remember: true }}
                 onFinish={(values) => handleAddComment(values)}
             >

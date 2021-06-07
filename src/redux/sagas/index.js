@@ -5,7 +5,6 @@ import hotelSaga  from './hotel.saga';
 import bookingSaga from './bookingTour.saga';
 import  cartSaga from './bookingHotel.saga';
 import  commentSaga from './comment.saga';
-import  profileSaga from './comment.saga';
 
 export default function* mySaga() {
   yield fork(userSaga);
@@ -14,5 +13,4 @@ export default function* mySaga() {
   yield fork(bookingSaga);
   yield fork(cartSaga);
   yield fork(commentSaga);
-  yield fork(profileSaga);
 }
