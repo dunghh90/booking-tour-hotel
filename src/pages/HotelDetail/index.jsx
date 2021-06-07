@@ -1,11 +1,11 @@
-import { Button, Card, DatePicker, Row, Col, Form, Input, Space } from 'antd';
+import { Button, Card, DatePicker, Row, Col, Form, Input, Space,Modal } from 'antd';
 
 import { connect } from 'react-redux';
 import { Content } from 'antd/lib/layout/layout';
 import { useEffect, useState } from 'react';
-import { SendOutlined, HomeOutlined,GlobalOutlined,UsergroupAddOutlined,VideoCameraOutlined ,GiftOutlined  , BankOutlined,TeamOutlined, CarOutlined, ArrowUpOutlined, InsertRowRightOutlined, FieldTimeOutlined, EnvironmentOutlined, FileExcelOutlined, HeartOutlined, HistoryOutlined } from '@ant-design/icons';
+import { SendOutlined,ExclamationCircleOutlined, HomeOutlined,GlobalOutlined,UsergroupAddOutlined,VideoCameraOutlined ,GiftOutlined  , BankOutlined,TeamOutlined, CarOutlined, ArrowUpOutlined, InsertRowRightOutlined, FieldTimeOutlined, EnvironmentOutlined, FileExcelOutlined, HeartOutlined, HistoryOutlined } from '@ant-design/icons';
 import { Rate, Progress, BackTop } from 'antd';
-import history from '../../utils/history';
+import Header from '../../components/layouts/Header';
 import moment from 'moment';
 import ItemRoom from './components/itemRoom';
 import CommentPage from '../../components/Comment'
@@ -83,7 +83,8 @@ function ListRoomPage({
       <>
         <div className="all">
           <div>
-            <Button className="combo">{listRoom.data.combo}</Button>
+            <Button className="combo">{listRoom.data.area}</Button>
+            <Button className="combo2">{listRoom.data.wifi}</Button>
             {/* <WifiOutlined className="wifi" /> */}
             {/* <EnvironmentOutlined className ="bando" /> */}
 
@@ -96,8 +97,29 @@ function ListRoomPage({
       </>
     )
   }
+  // function showConfirmBooking() {
+  //   Modal.confirm({
+  //     title: 'Thông tin tour đã đặt:',
+  //     icon: <ExclamationCircleOutlined />,
+  //     content: "Bạn có muốn đặt",
+  //     okText: 'Xác nhận',
+  //     cancelText: 'Huỷ',
+  //     onOk() {
+  //       bookingHotelRoom({
+  //         userId: userInfo.id,
+  //         hotelId: parseInt(hotelId),
+  //         roomId: id,
+  //         startDate: dateSelected[0],
+  //         endDate: dateSelected[1]
+  //       })
+  //       totalPrice = defaultPrice;
+  //     },
+  //     onCancel() {
+  //       console.log('Cancel');
+  //     },
+  //   });
+  // }
   function handleBookingHotel(id, defaultPrice) {
-
     if (!userInfo) {
       alert('Bạn cần đăng nhập!');
     } else if (!dateSelected) {
@@ -168,6 +190,30 @@ function ListRoomPage({
                   </div>
                 </div>
               </div>
+              <div className="thongtinhuich">
+                <ul>
+                  <li>
+
+                Cung cấp nhiều dịch vụ chất lượng và tiện nghi đa dạng để bạn yên tâm tận hưởng kỳ nghỉ của mình
+                  </li>
+                </ul>
+                </div>
+              <div  className="thongtinhuich">
+                <ul>
+                  <li>
+                Chỗ nghỉ này được trang bị nhiều tiện nghi đa dạng, hứa hẹn sẽ làm hài lòng ngay cả những khách hàng khó tính nhất
+                  </li>
+                  </ul>
+                </div>
+              <div  className="thongtinhuich"> 
+              <ul>
+                <li>
+                Các trang thiết bị giải trí như phòng thể dục, phòng xông hơi khô, hồ bơi trong nhà, spa, massage sẽ đem lại những giờ phút thư giãn sau một ngày bận rộn
+                </li>
+                
+          </ul>
+                </div>
+              
             </div>
           </Row>
           </div>
@@ -175,7 +221,7 @@ function ListRoomPage({
         <Col  span={6}>
           <div className="detail">
             <Row gutter={[12, 12]}>
-              <Card title="Đánh giá chất lượng khách sạn" style={{ width: 417 }}>
+              <Card title="Đánh giá chất lượng khách sạn" style={{ width: 350, marginLeft: 25 }}>
                 <div>
                   <div>
                     <label htmlFor="">Tuyệt vời</label>
@@ -189,7 +235,7 @@ function ListRoomPage({
                   <Progress percent={10} status="exception" />
                 </div>
               </Card>
-              <Card title="Những điều cần biết" style={{ width: 417 }}>
+              <Card title="Những điều cần biết" style={{ width: 350, marginLeft: 25 }}>
                 <Row justify="center">
                   <div>
                     <img className="imgcart" src={listRoom.data.src[0]} alt="" />
@@ -230,10 +276,8 @@ function ListRoomPage({
 
 
   function renderListRoom() { 
-  console.log("🚀 ~ file: index.jsx ~ line 235 ~ renderListRoom ~ renderListRoom", renderListRoom)
-    
-    return filterListRoom.length == 0 ?
-    (filterListRoom.map((item, index) => {
+  if (filterListRoom.load) return <p>loading...</p> 
+    return filterListRoom.map((item, index) => {
       let isDisabled = false;
       
       if (dateSelected) {
@@ -275,8 +319,8 @@ function ListRoomPage({
       return (
         <>
           <Content className="site-layout" style={{ padding: '0 30px', marginTop: 64 }}>
-            <Row gutter={[12, 12]}>
-              <Col xxl={6} xl={8} lg={12} md={12} sm={24} >
+            <Row gutter={[12,12]}>
+              <Col span={8} >
                 {/* {
                 filterListRoom.load ? (<p>Loading...</p>) 
                 :(filterListRoom.map((item, index) => {
@@ -285,7 +329,7 @@ function ListRoomPage({
                   hoverable
                   size="small"
                   cover={<img className="imghoteldetail" alt="example" src={item.img} />}
-                  style={{ width: 417 }}
+                  style={{ width: 360 }}
 
                 >
                   <div className="ALLROOM">
@@ -295,6 +339,7 @@ function ListRoomPage({
                       <Rate disabled defaultValue={item.rate} />
                       <h3>{item.name}</h3>
                       <ItemRoom
+                       key={index}
                         description={item.description}
                       />
 {/* 
@@ -305,7 +350,7 @@ function ListRoomPage({
                     
                       <span className="price">{totalPrice.toLocaleString()} VND</span>
                       {isDisabled && (
-                        <Button type="primary" className="book" >Hết Phòng</Button>
+                        <Button type="primary" disabled className="book" >Hết Phòng</Button>
                       )}
                       {!isDisabled && (
                         <Button type="primary" className="book" onClick={() => handleBookingHotel(item.id, item.price)}>Đặt Phòng</Button>
@@ -329,16 +374,15 @@ function ListRoomPage({
         </>
       )
     })
-    ): (
-      <p>Kh ca  kquả</p>
-    )
+    
   }
 
 
 
   return (
     <>
-      {/* Serch hotel  */}
+    <div>
+    <Header />
       <Row className="timkiem">
         <div className="alltimkiem">
           <Form
@@ -383,6 +427,7 @@ function ListRoomPage({
                 <Input
                   labelFontSize={100}
                   fontSize={100} prefix={<SendOutlined />}
+                  disabled
                   style={{
                     padding: '10px 50px',
                     height: 50, borderRadius: 4,
@@ -407,26 +452,26 @@ function ListRoomPage({
       </Row>
 
 
-
+      <div className="bodyHotelDetail">
+       <div className="bodyHotelDetail2">
       <Row span={24} className="detailTrangchu">
         <div className="content-header">
           <ol className="breadcrumb"  >
             <Space><HomeOutlined /></Space>
             <li  >
-              <a className="item" href="/du-lich/">
+              <a className="item" disabled href="/du-lich/">
                 <i className="fa fa-home"></i><span>Trang chủ</span>
               </a>
             </li>
             <i style={{ margin: "0px 10px" }}>|</i>
             <li  >
-              <a className="item" href="/du-lich/tour-da-nang">
+              <a className="item" disabled href="/du-lich/tour-da-nang">
                 <span>Khách sạn Việt Nam</span>
               </a>
             </li>
             <i style={{ margin: "0px 10px" }}>|</i>
             <li className="active hidden-xs">
-
-              <a className="item" href="/du-lich/tour-da-nang-4n3d-hcm-da-nang-ba-na-hoi-an-hue-quang-binh/1189">
+              <a className="item"  href="/du-lich/tour-da-nang-4n3d-hcm-da-nang-ba-na-hoi-an-hue-quang-binh/1189">
                 <span >Thông tin về khách sạn</span>
               </a>
             </li>
@@ -447,15 +492,19 @@ function ListRoomPage({
           </div>
         </div>
        
-            {isFilter ? renderListRoom():
-            <p>Không có kết quả</p>
-
-            }
 
         <BackTop className="backtop">
           <div style={style}><ArrowUpOutlined /></div>
         </BackTop>
-      </Row>
+
+        {filterListRoom.length !=0 ? renderListRoom():
+            <Row justify="center">
+              <Col span={24}>
+              <div className="khongcokq">Không có kết quả...</div>
+              </Col>
+            </Row>
+            }
+            </Row>
 
 
 
@@ -510,10 +559,7 @@ function ListRoomPage({
                   <h4>Điện áp trong phòng:</h4>
                   <span className="notethongbaocon">220V</span>
                   </div>
-                  <div className="notethongbao">
-                  <h4>Khách sạn được xây vào năm:</h4>
-                  <span className="notethongbaocon">2019</span>
-                  </div>
+                
                 </div>
               </div>
             </div>
@@ -532,11 +578,11 @@ function ListRoomPage({
                 </div>
               </div>
               <div className="danhgiacenter">
-                <label htmlFor="">Độ sạch sẽ</label>
+                <label >Độ sạch sẽ</label>
                 <Progress percent={90} className="progress" status="active" size="small" />
-                <label htmlFor="">Thái độ phục vụ</label>
+                <label>Thái độ phục vụ</label>
                 <Progress percent={95} className="progress" status="active" size="small" />
-                <label htmlFor="">Đánh giá tiền</label>
+                <label >Đánh giá tiền</label>
                 <Progress percent={99} className="progress" status="active" size="small" />
               </div>
               <div className="thongtinluuy">
@@ -562,13 +608,12 @@ function ListRoomPage({
         </Tabs>
 
         <h1 className="comment">Đánh giá khách hàng </h1>
-
           <CommentPage hotelId={hotelId} />
           </div>
         </Col>
 
         <Col className="coldanhgia2" span={8}>
-        <Card title="Vourcher + Combo khuyến mãi ngày hè" style={{ width: 407 }}>
+        <Card title="Vourcher + Combo khuyến mãi ngày hè" style={{ width: 350, marginLeft: 20 }}>
                 <Row justify="center">
                   <div>
                     <img className="imgcart" src={listRoom.data.src[1]} alt="" />
@@ -592,7 +637,9 @@ function ListRoomPage({
               </Card>
         </Col>
       </Row>
-     
+      </div>
+     </div>
+</div>
     </>
   );
 }

@@ -15,7 +15,7 @@ function Siderba({
   getHotelList,
   locationId
 }) {
-  const [locationSelected, setLocationSelected] = useState(0);
+  const [rateSelected, setRateSelected] = useState(0);
   const [addressSelected, setAddressSelected] = useState(null);
   useEffect(() => {
     getHotelList({
@@ -24,20 +24,29 @@ function Siderba({
     })
   }, []);
 
-  function handleFilterLocation(rate,address)
+  function handleFilterRate(rate)
    {
-  console.log("🚀 ~ file: index.jsx ~ line 31 ~ rate", rate)
-  console.log("🚀 ~ file: index.jsx ~ line 31 ~ address", address)
-  setLocationSelected(rate);
-  setAddressSelected(address);
+
+    setRateSelected(rate);
+
     getHotelList({
       page: 1,
       limit: 4,
       id: locationId,
       rate: rate,
-      address: address,
+ 
     });
   }
+  function handleFilterAddress(address)
+  {
+    setAddressSelected(address);
+     getHotelList({
+     page: 1,
+     limit: 4,
+     id: locationId,
+     address: address,
+   });
+ }
 
   return (
     <>
@@ -50,7 +59,7 @@ function Siderba({
             dataSource={RATING_LIST}
             renderItem={(item) => (
               <List.Item className ="list"
-                onClick={() => handleFilterLocation(item)}
+                onClick={() => handleFilterRate(item)}
                 // style={{ color: locationSelected === item ? 'red' : 'black' }}
               >     
                   <Rate disabled defaultValue={item} /> 
@@ -78,7 +87,7 @@ function Siderba({
             renderItem={(item) => 
               (
               <List.Item className ="list"
-                onClick={() => handleFilterLocation(item)}
+                onClick={() => handleFilterAddress(item)}
                 // style={{ color: locationSelected === item ? 'red' : 'black' }}
               >    
               {item} 

@@ -34,9 +34,9 @@ function* getListHotelSaga(action) {
       params: {
         _page: page,
         _limit: limit,
+        ...address && {q:address},
         ...id && { locationId: id },
         ...rate && { rate },
-        ...address && {address},
       }
     });
     

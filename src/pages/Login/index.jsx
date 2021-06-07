@@ -47,7 +47,7 @@ function LoginPage(props) {
     history.push('/');
   };
 
-  const { login, register, location } = props;
+  const { login, register } = props;
 
   return (
     <>
@@ -57,10 +57,10 @@ function LoginPage(props) {
             <div className="loginNote">
               <h1 className="noteKS">Web Booking Khách Sạn Và Tour</h1>
               <p>Đem lại cho chúng ta những tiện lợi tiết kiệm được thời gian quý giá</p>
-              <InstagramOutlined className="iconIns"/>
+              {/* <InstagramOutlined className="iconIns"/>
               <GooglePlusOutlined  twoToneColor="red,blue"  className="iconGG" />
            
-              <FacebookOutlined  className="iconFB" />
+              <FacebookOutlined  className="iconFB" /> */}
             </div>
           
             <div class="register-form-container">
