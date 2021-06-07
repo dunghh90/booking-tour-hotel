@@ -32,6 +32,12 @@
       "password": "123",
       "name": "test",
       "id": 4
+    },
+    {
+      "email": "nhatminh1931998@gmail.com",
+      "password": "1234",
+      "name": "minh ne",
+      "id": 5
     }
   ],
   "tours": [
@@ -1051,6 +1057,14 @@
       "roomId": 1,
       "startDate": null,
       "id": 12
+    },
+    {
+      "userId": 3,
+      "hotelId": 1,
+      "roomId": 2,
+      "startDate": "2021/06/01",
+      "endDate": "2021/06/03",
+      "id": 13
     }
   ],
   "commentHotels": [
@@ -1062,6 +1076,15 @@
       "rate": 3,
       "creatDate": "26/05/2021",
       "id": 1
+    },
+    {
+      "userId": 3,
+      "userName": "minh",
+      "hotelId": 1,
+      "comment": "khach san xau",
+      "rate": 4.5,
+      "creatDate": "07/06/2021",
+      "id": 2
     }
   ],
   "commentTours": [
