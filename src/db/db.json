@@ -28,35 +28,10 @@
       "phone": "0702321494"
     },
     {
-<<<<<<< HEAD
       "email": "test@gmail.com",
       "password": "123",
       "name": "test",
       "id": 4
-=======
-      "email": "nhominh1997@gmail.com",
-      "password": "1234",
-      "name": "nho minh",
-      "id": 4
-    },
-    {
-      "email": "nhatminh1931998@gmail.com",
-      "password": "1234",
-      "name": "nhat minh",
-      "id": 5
-    },
-    {
-      "email": "nhatminh1931998@gmail.com",
-      "password": "1234",
-      "name": "nhat minh",
-      "id": 6
-    },
-    {
-      "email": "nhominh1994@gmail.com",
-      "password": "1234",
-      "name": "111",
-      "id": 7
->>>>>>> b10bbaef9702f2b887c4f9e98d6a59b3e52f736e
     }
   ],
   "tours": [
@@ -264,7 +239,6 @@
       "address": "270 Võ Nguyên Giáp, Phường Mỹ An,Thành phố SaPa,Tỉnh Lào Cai, Việt Nam",
       "Price": 4900000,
       "area": "Thành Phố SaPa-Tỉnh Lào Cai",
-      "wifi": "Wifi miễn phí",
       "comment": "Được khách đánh giá cao-90% sẽ giới thiệu",
       "note": "<div class='tongHotelList'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
     },
@@ -1088,20 +1062,6 @@
       "rate": 3,
       "creatDate": "26/05/2021",
       "id": 1
-    },
-    {
-      "hotelId": 1,
-      "comment": "khách sạn khá đẹp",
-      "rate": 3,
-      "creatDate": "06/06/2021",
-      "id": 2
-    },
-    {
-      "hotelId": 1,
-      "comment": "khách sạn khá đẹp",
-      "rate": 3,
-      "creatDate": "06/06/2021",
-      "id": 3
     }
   ],
   "commentTours": [
@@ -1178,18 +1138,13 @@
       "id": 14
     },
     {
+      "userName": "Hoàng Hữu Dũng",
+      "userId": 1,
       "tourId": 2,
-      "comment": "567",
-      "rate": 4,
+      "comment": "67867",
+      "rate": 3.5,
       "creatDate": "07/06/2021",
       "id": 15
-    },
-    {
-      "tourId": 2,
-      "comment": "abcd",
-      "rate": 3,
-      "creatDate": "07/06/2021",
-      "id": 16
     }
   ],
   "profiles": []

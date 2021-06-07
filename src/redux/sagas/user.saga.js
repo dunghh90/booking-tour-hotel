@@ -51,9 +51,6 @@ function* registerSaga(action) {
       url: 'http://localhost:3002/users',
       data: { email, password, name }
     });
-    yield notification.open({
-      message: 'Đăng kí thành công',
-    });
     yield put({
       type: "REGISTER_SUCCESS",
       payload: {
