@@ -4,7 +4,7 @@ import { Col, Card, Row } from 'antd';
 import history from '../../../utils/history';
 
 function ItemTour(props) {
-  const { title, link, description, rate, price, id } = props;
+  const { title, link, description, rate, price, id, key } = props;
 
   // const [isEdit, setIsEdit] = useState(false);
   // const [isShowDescription, setIsShowDescription] = useState(false);
@@ -50,7 +50,7 @@ function ItemTour(props) {
                 </div>
               </Row>
             <Row >
-              <ul style={{ color: "#00C1DE", paddingLeft:0, marginTop:10, marginLeft:-5,listStyle:"none" }}>
+              <ul style={{ color: "#00C1DE", paddingLeft:0, height:76, marginTop:10, marginLeft:-5,listStyle:"none" }}>
                 {renderUrlTour()}
               </ul>
             </Row>

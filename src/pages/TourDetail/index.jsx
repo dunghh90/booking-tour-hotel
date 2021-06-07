@@ -13,11 +13,15 @@ import moment from 'moment';
 import './style.css'
 
 import { Content } from "antd/lib/layout/layout";
+import BookingTourPage from "./components/bookingTour";
+import ItemTour  from "../TourHome/components/ItemTour";
 
 
 function TourDetailPage({
   tourDetail,
   getTourDetail,
+  tourList,
+  getTourList,
   bookingTour,
   userInfo,
   match,
@@ -31,25 +35,39 @@ function TourDetailPage({
   const [countAdults, setCountAdults] = useState(1);
   const [countChild, setCountChild] = useState(0);
   var d = new Date();
-  const [dateSelected, setDateSelected] = useState(moment(d).format('YYYY/MM/DD'));
+  const [dateSelected, setDateSelected] = useState(moment(d).format('DD/MM/YYYY'));
+  const [customerRemain, setCustomerRemain ] = useState(0);
 
   const [rateTourForm] = Form.useForm();
 
-
+  
+  
   useEffect(() => {
     getTourDetail({ id: tourId });
+    getTourList({
+      page: 1,
+      limit: 10,
+    });
   }, [])
-
+  
   const dateFormat = 'DD/MM/YYYY';
   useEffect(() => {
     if (tourDetail.data.id) {
       setMoney(tourDetail.data.price);
     }
   }, [tourDetail.data])
+  // useEffect(() => {
+    //   getTourDetail({ id: tourId });
+    //   console.log("🚀 ~ file: index.jsx ~ line 50 ~ test")
+    //   debugger
+    // }, [customerRemain])
+    const filterTourListByTopic = tourList.data.filter((item) => {
+      return item.topicTourId == tourDetail.data.topicTourId;
+    })
 
-  function setMoneyAdults(values) {
-    setMoney(tourDetail.data.price * values + tourDetail.data.price * countChild * 0.5);
-  }
+    function setMoneyAdults(values) {
+      setMoney(tourDetail.data.price * values + tourDetail.data.price * countChild * 0.5);
+    }
   function setMoneyChild(values) {
     setMoney(tourDetail.data.price * countAdults + tourDetail.data.price * values * 0.5);
   }
@@ -107,7 +125,22 @@ function TourDetailPage({
     } else {
       // localStorage.setItem('carts', JSON.stringify(newCartList));
       // TODO Check tourId và startDate nếu tồn tại trong db thì ko add booking
-      showConfirmBooking();
+      const listBooking = tourDetail.data.bookingTours.filter((item) => {
+        return dateSelected.trim().toLowerCase().indexOf(item.startDate.trim().toLowerCase()) !== -1;
+      })
+      let customerBooking = 0;
+      const numBooking = countAdults + countChild;
+      listBooking.forEach((item) => {
+        customerBooking += item.numberAdults + item.numberChild;
+      });
+      if (numBooking + customerBooking > tourDetail.data.maxCustomer) {
+        alert("Số lượng khách còn lại: " + (tourDetail.data.maxCustomer - customerBooking));
+      } else {
+        showConfirmBooking();
+        setCustomerRemain(tourDetail.data.maxCustomer - (numBooking + customerBooking));
+        // getTourDetail({ id: tourId });
+      }
+
     }
   }
 
@@ -169,9 +202,14 @@ function TourDetailPage({
             <Col span={8} xl={{ order: 2 }} lg={{ order: 2 }} md={{ order: 1 }} sm={{ order: 1 }} xs={{ order: 1 }}>
               <div style={{position:"sticky", top:0}}>
                 <div className="order-form-container">
-                  <Row span={24} gutter={[10, 10]}>
+                  <BookingTourPage 
+                    customerRemain={customerRemain} 
+                    setCustomerRemain={setCustomerRemain} 
+                    tourId={tourId}
+                    />
+                  {/* <Row span={24} gutter={[10, 10]}>
                     <Col span={10}>Chọn ngày khởi hành:</Col>
-                    <Col span={14}><DatePicker defaultValue={moment(d)} format={dateFormat} onChange={(value) => setDateSelected(value)} /></Col>
+                    <Col span={14}><DatePicker defaultValue={moment(d)} format={dateFormat} onChange={(value) => setDateSelected(moment(value).format("DD/MM/YYYY"))} /></Col>
                     <Col span={10}>Người lớn:</Col>
                     <Col span={14}><InputNumber min={1} defaultValue={1} onChange={(values) => { setCountAdults(values); setMoneyAdults(values); }} /></Col>
                     <Col span={10}>Trẻ em:</Col>
@@ -182,7 +220,7 @@ function TourDetailPage({
                         Đặt tour
                       </Button>
                     </Col>
-                  </Row>
+                  </Row> */}
                 </div>
                 <div style={{minWidth:400, borderRadius:4}}>
                   <List
@@ -212,7 +250,22 @@ function TourDetailPage({
           <Row>
             <Card title={`Tours du lịch ${tourDetail.data.location.name} liên quan`} extra={<a className="loadMore" href="#">XEM TẤT CẢ </a>} style={{width: "100%", marginTop:16}}>
                   <Row gutter={[28,28]}>
-                    <Col span={8}>
+                  {
+                    filterTourListByTopic.map((item, index) => {
+                      return (
+                        <ItemTour
+                          key={index}
+                          id={item.id}
+                          title={item.name}
+                          link={item.link}
+                          description={item.description}
+                          price={item.price}
+                          rate={item.rate}
+                        />
+                      )
+                    })
+                  }
+                    {/* <Col span={8}>
                       <Card 
                         hoverable
                         cover={<img alt="Phú Quốc" src="https://cdn2.ivivu.com/2020/07/10/17/ivivu-phu-quoc-bia-360x225.gif" />}
@@ -233,7 +286,7 @@ function TourDetailPage({
                       >
 
                       </Card>
-                    </Col>
+                    </Col> */}
                   </Row>
               </Card>
           </Row>
@@ -247,10 +300,11 @@ function TourDetailPage({
 }
 
 const mapStateToProps = (state) => {
-  const { tourDetail } = state.tourReducer;
+  const { tourDetail, tourList } = state.tourReducer;
   const { userInfo } = state.userReducer;
   return {
     tourDetail,
+    tourList,
     userInfo
   }
 };
@@ -258,6 +312,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     getTourDetail: (params) => dispatch(getTourDetailAction(params)),
+    getTourList: (params) => dispatch(getTourListAction(params)),
     bookingTour: (params) => dispatch(bookingTourAction(params)),
   };
 }

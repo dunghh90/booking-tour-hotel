@@ -27,7 +27,7 @@ function SearchTour({getTourList, setKeySearchLocation}) {
     <Row style={{margin:'10px 0px', fontSize:20, padding:"15px 10px", borderRadius:4, backgroundColor:"rgb(0,0,0,0.3"}}>
       <Form
         name="basic"
-        initialValues={{ location: '' }}
+        initialValues={{ location: '' , dateBooking:moment(currentDate, "DD/MM/YYYY")}}
         layout="inline"
         onFinish={(values) => {
           setKeySearchLocation(values.location); 
@@ -42,21 +42,22 @@ function SearchTour({getTourList, setKeySearchLocation}) {
             <Form.Item
               name="location"
             >
-              <Input labelFontSize={100} fontSize={100} prefix={<EnvironmentOutlined />} style={{padding: '10px 50px', height:50, borderRadius:4, backgroundColor:"white"}} placeholder="Bạn muốn đi đâu?" />
+              <Input prefix={<EnvironmentOutlined />} style={{padding: '10px 50px', height:50, borderRadius:4, backgroundColor:"white"}} placeholder="Bạn muốn đi đâu?" />
             </Form.Item>
           </Col>
         <Col span={7}>
           <Form.Item
               name="dateBooking"
             >
-          <DatePicker style={{padding: '10px 50px', width:'100%', height:50, borderRadius:4, backgroundColor:"white"}} defaultValue={moment(currentDate)} format="DD/MM/YYYY"/>
+          {/* <DatePicker style={{padding: '10px 50px', width:'100%', height:50, borderRadius:4, backgroundColor:"white"}} defaultValue={moment(currentDate)} format="DD/MM/YYYY"/> */}
+          <DatePicker style={{padding: '10px 50px', width:'100%', height:50, borderRadius:4, backgroundColor:"white"}} format="DD/MM/YYYY"/>
           </Form.Item>
         </Col>
         <Col span={7}>
         <Form.Item
               name="placeFrom"
             >
-          <Input labelFontSize={100} fontSize={100} prefix={<SendOutlined />} style={{padding: '10px 50px', height:50, borderRadius:4, backgroundColor:"white"}} placeholder="Khởi hành từ" />
+          <Input prefix={<SendOutlined />} style={{padding: '10px 50px', height:50, borderRadius:4, backgroundColor:"white"}} placeholder="Khởi hành từ" />
         </Form.Item>
         </Col>
         <Col span={3} >

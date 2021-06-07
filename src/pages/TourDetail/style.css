@@ -150,4 +150,8 @@ body, table.body, h1, h2, h3, h4, h5, h6, p, td, th, a {
 html {
   scroll-behavior: smooth;
 }
+
+/* .ant-card-head{
+  background-color:#feeec5;
+} */
     
