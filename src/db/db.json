@@ -32,6 +32,12 @@
       "password": "123",
       "name": "test",
       "id": 4
+    },
+    {
+      "email": "nhominh1990@gmail.com",
+      "password": "1234",
+      "name": "minh ne",
+      "id": 5
     }
   ],
   "tours": [
@@ -1051,6 +1057,30 @@
       "roomId": 1,
       "startDate": null,
       "id": 12
+    },
+    {
+      "userId": 5,
+      "hotelId": 1,
+      "roomId": 2,
+      "startDate": "2021/06/01",
+      "endDate": "2021/06/03",
+      "id": 13
+    },
+    {
+      "userId": 5,
+      "hotelId": 1,
+      "roomId": 3,
+      "startDate": "2021/06/01",
+      "endDate": "2021/06/03",
+      "id": 14
+    },
+    {
+      "userId": 5,
+      "hotelId": 1,
+      "roomId": 1,
+      "startDate": "2021/06/01",
+      "endDate": "2021/06/03",
+      "id": 15
     }
   ],
   "commentHotels": [

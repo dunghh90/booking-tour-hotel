@@ -394,7 +394,7 @@ function ListRoomPage({
 
             }}
           >
-            <Col span={7}>
+            <Col span={10}>
               <Form.Item
                 name="userNum"
               >
@@ -413,14 +413,15 @@ function ListRoomPage({
                 />
               </Form.Item>
             </Col>
-            <Col span={7}>
+            <Col span={11}>
               <Form.Item
                 name="dateBooking"
               >
-                <DatePicker.RangePicker onChange={(value) => handleDate(value)} style={{ padding: '10px 50px', width: '100%', height: 50, borderRadius: 4, backgroundColor: "white" }} defaultValue={moment(currentDate)} format="DD/MM/YYYY" />
+                <DatePicker.RangePicker   labelFontSize={100}
+                  fontSize={100}onChange={(value) => handleDate(value)} style={{ padding: '10px 50px', width: '100%', height: 50, borderRadius: 4, backgroundColor: "white" }} defaultValue={moment(currentDate)} format="DD/MM/YYYY" />
               </Form.Item>
             </Col>
-            <Col span={7}>
+            {/* <Col span={7}>
               <Form.Item
                 name="price"
               >
@@ -439,12 +440,12 @@ function ListRoomPage({
                   placeholder="Chọn giá tiền"
                 />
               </Form.Item>
-            </Col>
+            </Col> */}
             <Col span={3} >
               <Row style={{ width: "100%" }} justify="end">
-                <Button style={{ padding: '10px 50px', height: 50, borderRadius: 4, backgroundColor: "#ffe58f", color: "#003a8c", fontWeight: 600 }} >
+                <Button style={{ padding: '10px 40px', height: 50, borderRadius: 4, backgroundColor: "#ffe58f", color: "#003a8c", fontWeight: 600 }} >
                   Tìm
-        </Button>
+                      </Button>
               </Row>
             </Col>
           </Form>
