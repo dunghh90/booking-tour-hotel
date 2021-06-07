@@ -14,11 +14,14 @@ import './style.css'
 
 import { Content } from "antd/lib/layout/layout";
 import BookingTourPage from "./components/bookingTour";
+import ItemTour  from "../TourHome/components/ItemTour";
 
 
 function TourDetailPage({
   tourDetail,
   getTourDetail,
+  tourList,
+  getTourList,
   bookingTour,
   userInfo,
   match,
@@ -37,11 +40,16 @@ function TourDetailPage({
 
   const [rateTourForm] = Form.useForm();
 
-
+  
+  
   useEffect(() => {
     getTourDetail({ id: tourId });
+    getTourList({
+      page: 1,
+      limit: 10,
+    });
   }, [])
-
+  
   const dateFormat = 'DD/MM/YYYY';
   useEffect(() => {
     if (tourDetail.data.id) {
@@ -49,14 +57,17 @@ function TourDetailPage({
     }
   }, [tourDetail.data])
   // useEffect(() => {
-  //   getTourDetail({ id: tourId });
-  //   console.log("🚀 ~ file: index.jsx ~ line 50 ~ test")
-  //   debugger
-  // }, [customerRemain])
+    //   getTourDetail({ id: tourId });
+    //   console.log("🚀 ~ file: index.jsx ~ line 50 ~ test")
+    //   debugger
+    // }, [customerRemain])
+    const filterTourListByTopic = tourList.data.filter((item) => {
+      return item.topicTourId == tourDetail.data.topicTourId;
+    })
 
-  function setMoneyAdults(values) {
-    setMoney(tourDetail.data.price * values + tourDetail.data.price * countChild * 0.5);
-  }
+    function setMoneyAdults(values) {
+      setMoney(tourDetail.data.price * values + tourDetail.data.price * countChild * 0.5);
+    }
   function setMoneyChild(values) {
     setMoney(tourDetail.data.price * countAdults + tourDetail.data.price * values * 0.5);
   }
@@ -76,21 +87,7 @@ function TourDetailPage({
     )
   }
 
-  function checkNumberCuster(params){
-    const listBooking = tourDetail.data.bookingTours.filter((item) => {
-      return params.dataStart.trim().toLowerCase().indexOf(item.startDate.trim().toLowerCase()) !== -1;
-    })
-    let customerBooking = 0;
-    listBooking.array.forEach((item) => {
-      customerBooking += item.numberAdults + item.numberChild;
-    });
-    if (customerBooking > tourDetail.data.maxCustomer) {
-      alert("Số lượng khách còn lại: " + (tourDetail.data.maxCustomer - customerBooking));
-    }
-  }
-
   function showConfirmBooking() {
-    console.log("🚀 ~ file: index.jsx ~ line 113 ~ showConfirmBooking ~ dateSelected", dateSelected)
     Modal.confirm({
       title: 'Thông tin tour đã đặt:',
       icon: <ExclamationCircleOutlined />,
@@ -128,18 +125,14 @@ function TourDetailPage({
     } else {
       // localStorage.setItem('carts', JSON.stringify(newCartList));
       // TODO Check tourId và startDate nếu tồn tại trong db thì ko add booking
-      console.log("🚀 ~ file: index.jsx ~ line 133 ~ bookingTours ~ bookingTours", tourDetail.data.bookingTours)
       const listBooking = tourDetail.data.bookingTours.filter((item) => {
         return dateSelected.trim().toLowerCase().indexOf(item.startDate.trim().toLowerCase()) !== -1;
       })
-      console.log("🚀 ~ file: index.jsx ~ line 133 ~ listBooking ~ listBooking", listBooking)
       let customerBooking = 0;
       const numBooking = countAdults + countChild;
       listBooking.forEach((item) => {
         customerBooking += item.numberAdults + item.numberChild;
       });
-      console.log("🚀 ~ file: index.jsx ~ line 139 ~ listBooking.forEach ~ customerBooking", customerBooking)
-      console.log("🚀 ~ file: index.jsx ~ line 140 ~ handleBookingTour ~ numBooking", numBooking)
       if (numBooking + customerBooking > tourDetail.data.maxCustomer) {
         alert("Số lượng khách còn lại: " + (tourDetail.data.maxCustomer - customerBooking));
       } else {
@@ -257,7 +250,22 @@ function TourDetailPage({
           <Row>
             <Card title={`Tours du lịch ${tourDetail.data.location.name} liên quan`} extra={<a className="loadMore" href="#">XEM TẤT CẢ </a>} style={{width: "100%", marginTop:16}}>
                   <Row gutter={[28,28]}>
-                    <Col span={8}>
+                  {
+                    filterTourListByTopic.map((item, index) => {
+                      return (
+                        <ItemTour
+                          key={index}
+                          id={item.id}
+                          title={item.name}
+                          link={item.link}
+                          description={item.description}
+                          price={item.price}
+                          rate={item.rate}
+                        />
+                      )
+                    })
+                  }
+                    {/* <Col span={8}>
                       <Card 
                         hoverable
                         cover={<img alt="Phú Quốc" src="https://cdn2.ivivu.com/2020/07/10/17/ivivu-phu-quoc-bia-360x225.gif" />}
@@ -278,7 +286,7 @@ function TourDetailPage({
                       >
 
                       </Card>
-                    </Col>
+                    </Col> */}
                   </Row>
               </Card>
           </Row>
@@ -292,10 +300,11 @@ function TourDetailPage({
 }
 
 const mapStateToProps = (state) => {
-  const { tourDetail } = state.tourReducer;
+  const { tourDetail, tourList } = state.tourReducer;
   const { userInfo } = state.userReducer;
   return {
     tourDetail,
+    tourList,
     userInfo
   }
 };
@@ -303,6 +312,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     getTourDetail: (params) => dispatch(getTourDetailAction(params)),
+    getTourList: (params) => dispatch(getTourListAction(params)),
     bookingTour: (params) => dispatch(bookingTourAction(params)),
   };
 }
