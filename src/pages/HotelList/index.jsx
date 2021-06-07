@@ -60,6 +60,7 @@ function ListHotelPage({
   }
 
   function renderListHotel() {
+    if (listHotel.load) return <p>Loading...</p>;
     return listHotel.data.map((item, index) => {
       return (
         <>
@@ -88,10 +89,8 @@ function ListHotelPage({
                       </div>
                       <h4 className="comment12"><TeamOutlined />.{item.comment}</h4>
                       <div className="priceandnote">
-                        
-
+                      
                           <div className="pricerenhat">Giá 1 đêm của khách sạn từ:</div>
-                    
                         <div className="price1">{item.Price.toLocaleString()} VND</div>
                         <div className="pricerenhat12" > Lưu ý: Giá của khách sạn cao theo số người và chất lượng phòng  </div>
                       </div>

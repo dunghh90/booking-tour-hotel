@@ -1136,6 +1136,20 @@
       "rate": 4.5,
       "creatDate": "24/05/2021",
       "id": 11
+    },
+    {
+      "tourId": 1,
+      "comment": "đẹp",
+      "rate": 3.5,
+      "creatDate": "07/06/2021",
+      "id": 12
+    },
+    {
+      "tourId": 1,
+      "comment": "đẹp",
+      "rate": 3.5,
+      "creatDate": "07/06/2021",
+      "id": 13
     }
   ],
   "profiles": []

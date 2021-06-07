@@ -348,3 +348,12 @@ h2{
 .sdt{
     color: red;
 }
+.khongcokq{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 25px;
+    color: rgba(185, 23, 23, 0.7)
+}

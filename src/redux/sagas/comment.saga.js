@@ -69,7 +69,7 @@ function* addCommentSaga(action) {
         data: result.data,
       },
     });
-    // window.location.reload();
+    
   } catch(e) {
     yield put({
       type: "ADD_COMMENT_FAIL",

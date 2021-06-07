@@ -122,7 +122,6 @@ function ListRoomPage({
   //   });
   // }
   function handleBookingHotel(id, defaultPrice) {
-
     if (!userInfo) {
       alert('Bạn cần đăng nhập!');
     } else if (!dateSelected) {
@@ -342,6 +341,7 @@ function ListRoomPage({
                       <Rate disabled defaultValue={item.rate} />
                       <h3>{item.name}</h3>
                       <ItemRoom
+                       key={index}
                         description={item.description}
                       />
 {/* 
@@ -494,18 +494,18 @@ function ListRoomPage({
           </div>
         </div>
        
-        {filterListRoom.length !=0 ? renderListRoom():
-            <Row justify="center">
-              <Col span={24}>
-              <div>Không có kết quả</div>
-              </Col>
-            </Row>
-            }
 
         <BackTop className="backtop">
           <div style={style}><ArrowUpOutlined /></div>
         </BackTop>
-      </Row>
+        {filterListRoom.length !=0 ? renderListRoom():
+            <Row justify="center">
+              <Col span={24}>
+              <div className="khongcokq">Không có kết quả...</div>
+              </Col>
+            </Row>
+            }
+            </Row>
 
 
 
@@ -560,10 +560,7 @@ function ListRoomPage({
                   <h4>Điện áp trong phòng:</h4>
                   <span className="notethongbaocon">220V</span>
                   </div>
-                  <div className="notethongbao">
-                  <h4>Khách sạn được xây vào năm:</h4>
-                  <span className="notethongbaocon">2019</span>
-                  </div>
+                
                 </div>
               </div>
             </div>
@@ -582,11 +579,11 @@ function ListRoomPage({
                 </div>
               </div>
               <div className="danhgiacenter">
-                <label htmlFor="">Độ sạch sẽ</label>
+                <label >Độ sạch sẽ</label>
                 <Progress percent={90} className="progress" status="active" size="small" />
-                <label htmlFor="">Thái độ phục vụ</label>
+                <label>Thái độ phục vụ</label>
                 <Progress percent={95} className="progress" status="active" size="small" />
-                <label htmlFor="">Đánh giá tiền</label>
+                <label >Đánh giá tiền</label>
                 <Progress percent={99} className="progress" status="active" size="small" />
               </div>
               <div className="thongtinluuy">
@@ -612,7 +609,6 @@ function ListRoomPage({
         </Tabs>
 
         <h1 className="comment">Đánh giá khách hàng </h1>
-
           <CommentPage hotelId={hotelId} />
           </div>
         </Col>
