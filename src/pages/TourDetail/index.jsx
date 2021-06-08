@@ -170,7 +170,10 @@ function TourDetailPage({
                   <span className="score">{tourDetail.data.rate}.0</span>
                   <span className="score-description">Tuyệt vời</span>
                 </span>
-                <span>| 1 đánh giá</span>
+                <span>| 1 đánh giá </span>
+                <span style={{padding: "0px 5px", color:"blue", fontWeight:600}}>
+                {customerRemain != 0 && " ( Số khách còn lại: " + customerRemain + " )"}
+                </span>
           </Row>
           <Row span={24} gutter={24}>
             <Col span={16} xl={{ order: 1 }} lg={{ order: 1 }} md={{ order: 2 }} sm={{ order: 2 }} xs={{ order: 2 }}>

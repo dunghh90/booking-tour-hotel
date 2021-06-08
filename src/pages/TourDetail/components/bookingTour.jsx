@@ -62,6 +62,7 @@ function BookingTourPage(props) {
     } else {
       setCheckCustomerRemain(true);
     }
+    setCustomerRemain(tourDetail.data.maxCustomer - customerBooking);
     
     setMoney(tourDetail.data.price * values.countAdults + tourDetail.data.price * values.countChild * 0.5)
   }
@@ -194,7 +195,21 @@ function BookingTourPage(props) {
         {/* <Form.Item {...buttonItemLayout}> */}
         <Form.Item {...tailFormItemLayout} style={{width:"100%"}} >
           {/* <Button className="login-form-button" disabled={!checkCustomerRemain} htmlType="submit" style={{ width: "100%", height:40, fontSize:18, {checkCustomerRemain?backgroundColor:"#ffa940":backgroundColor:"gray"}, color:"white" }}>{checkCustomerRemain?"Đặt tour":"Hết chổ"}</Button> */}
-          <Button className="login-form-button" disabled={!checkCustomerRemain} htmlType="submit" style={{ width: "100%", height:40, fontSize:18, backgroundColor:"#ffa940", color:"white" }}>{checkCustomerRemain?"Đặt tour":"Hết chổ"}</Button>
+          {checkCustomerRemain ? (
+            <Button className="login-form-button" htmlType="submit" style={{ width: "100%", height:40, fontSize:18, backgroundColor:"#ffa940", color:"white" }}>Đặt tour</Button>
+            
+            ): (
+              <Button className="login-form-button" disabled htmlType="submit" style={{ width: "100%", height:40, fontSize:18, backgroundColor:"gray", color:"white" }}>Hết chổ</Button>
+              
+          )}
+
+          {/* {isDisabled && (
+            <Button type="primary" disabled className="book" >Hết Phòng</Button>
+          )}
+          {!isDisabled && (
+            <Button type="primary" className="book" onClick={() => handleBookingHotel(item.id, item.price)}>Đặt Phòng</Button>
+          )} */}
+          
         </Form.Item>
     </Form>
 

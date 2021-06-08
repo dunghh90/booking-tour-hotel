@@ -26,6 +26,8 @@
       "birthday": "2021/06/02",
       "gender": "male",
       "phone": "0702321494"
+<<<<<<< HEAD
+=======
     },
     {
       "email": "test@gmail.com",
@@ -34,10 +36,18 @@
       "id": 4
     },
     {
+<<<<<<< HEAD
       "email": "nhominh1990@gmail.com",
       "password": "1234",
       "name": "minh ne",
       "id": 5
+=======
+      "email": "nhatminh1931998@gmail.com",
+      "password": "1234",
+      "name": "minh ne",
+      "id": 5
+>>>>>>> 3db888012444584827a54ae38cb4557b956a817c
+>>>>>>> 7891cf158848f77c2a3b1ffbbdf0f18d95db4259
     }
   ],
   "tours": [
@@ -961,6 +971,42 @@
       "numberChild": 0,
       "totalPrice": 4690000,
       "id": 52
+    },
+    {
+      "userId": 5,
+      "tourId": 2,
+      "startDate": "08/06/2021",
+      "numberAdults": 1,
+      "numberChild": 0,
+      "totalPrice": 4690000,
+      "id": 53
+    },
+    {
+      "userId": 5,
+      "tourId": 2,
+      "startDate": "08/06/2021",
+      "numberAdults": 1,
+      "numberChild": 0,
+      "totalPrice": 4690000,
+      "id": 54
+    },
+    {
+      "userId": 5,
+      "tourId": 2,
+      "startDate": "08/06/2021",
+      "numberAdults": 5,
+      "numberChild": 0,
+      "totalPrice": 23450000,
+      "id": 55
+    },
+    {
+      "userId": 5,
+      "tourId": 2,
+      "startDate": "08/06/2021",
+      "numberAdults": 3,
+      "numberChild": 0,
+      "totalPrice": 14070000,
+      "id": 56
     }
   ],
   "bookingHotels": [
@@ -1059,12 +1105,17 @@
       "id": 12
     },
     {
+<<<<<<< HEAD
       "userId": 5,
+=======
+      "userId": 3,
+>>>>>>> 7891cf158848f77c2a3b1ffbbdf0f18d95db4259
       "hotelId": 1,
       "roomId": 2,
       "startDate": "2021/06/01",
       "endDate": "2021/06/03",
       "id": 13
+<<<<<<< HEAD
     },
     {
       "userId": 5,
@@ -1143,6 +1194,8 @@
       "endDate": "2021/06/23",
       "totalPrice": 39200000,
       "id": 22
+=======
+>>>>>>> 7891cf158848f77c2a3b1ffbbdf0f18d95db4259
     }
   ],
   "commentHotels": [
@@ -1156,11 +1209,19 @@
       "id": 1
     },
     {
+<<<<<<< HEAD
       "userId": 5,
       "userName": "minh ne",
       "hotelId": 1,
       "comment": "khachs sanj te",
       "rate": 4,
+=======
+      "userId": 3,
+      "userName": "minh",
+      "hotelId": 1,
+      "comment": "khach san xau",
+      "rate": 4.5,
+>>>>>>> 7891cf158848f77c2a3b1ffbbdf0f18d95db4259
       "creatDate": "07/06/2021",
       "id": 2
     }
