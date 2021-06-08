@@ -26,6 +26,8 @@
       "birthday": "2021/06/02",
       "gender": "male",
       "phone": "0702321494"
+<<<<<<< HEAD
+=======
     },
     {
       "email": "test@gmail.com",
@@ -34,10 +36,11 @@
       "id": 4
     },
     {
-      "email": "test1@gmail.com",
-      "password": "123",
-      "name": "test1",
+      "email": "nhatminh1931998@gmail.com",
+      "password": "1234",
+      "name": "minh ne",
       "id": 5
+>>>>>>> 3db888012444584827a54ae38cb4557b956a817c
     }
   ],
   "tours": [
@@ -1093,6 +1096,14 @@
       "roomId": 1,
       "startDate": null,
       "id": 12
+    },
+    {
+      "userId": 3,
+      "hotelId": 1,
+      "roomId": 2,
+      "startDate": "2021/06/01",
+      "endDate": "2021/06/03",
+      "id": 13
     }
   ],
   "commentHotels": [
@@ -1104,6 +1115,15 @@
       "rate": 3,
       "creatDate": "26/05/2021",
       "id": 1
+    },
+    {
+      "userId": 3,
+      "userName": "minh",
+      "hotelId": 1,
+      "comment": "khach san xau",
+      "rate": 4.5,
+      "creatDate": "07/06/2021",
+      "id": 2
     }
   ],
   "commentTours": [
