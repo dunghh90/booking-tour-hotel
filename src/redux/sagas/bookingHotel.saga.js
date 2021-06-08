@@ -4,7 +4,7 @@ import axios from 'axios';
 
 function* bookingHotelRoom(action) {
   try {
-    const { userId, hotelId, roomId, startDate, endDate,page,limit } = action.payload;
+    const { userId, hotelId, roomId, startDate, endDate,page,limit,totalPrice } = action.payload;
     const result = yield axios({
       method: 'POST',
       url: 'http://localhost:3002/bookingHotels',
@@ -17,7 +17,8 @@ function* bookingHotelRoom(action) {
         hotelId,
         roomId,
         startDate,
-        endDate
+        endDate,
+        totalPrice
       }
     });
     yield notification.open({

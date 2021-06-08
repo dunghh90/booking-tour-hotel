@@ -119,7 +119,7 @@ function ListRoomPage({
   //     },
   //   });
   // }
-  function handleBookingHotel(id, defaultPrice) {
+  function handleBookingHotel(id) {
     if (!userInfo) {
       alert('Bạn cần đăng nhập!');
     } else if (!dateSelected) {
@@ -130,11 +130,10 @@ function ListRoomPage({
         hotelId: parseInt(hotelId),
         roomId: id,
         startDate: dateSelected[0],
-        endDate: dateSelected[1]
+        endDate: dateSelected[1],
+        totalPrice: totalPrice
       })
-      totalPrice = defaultPrice;
     }
-
   }
   function renderImg() {
 
