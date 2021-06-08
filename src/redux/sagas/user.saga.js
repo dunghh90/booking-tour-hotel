@@ -1,7 +1,8 @@
 import { put, takeEvery } from 'redux-saga/effects';
 import axios from 'axios';
 import history from '../../utils/history';
-import { notification } from 'antd';
+import { notification, Modal } from 'antd';
+import moment from 'moment';
 
 function* loginSaga(action) {
   try {
@@ -15,6 +16,7 @@ function* loginSaga(action) {
         password,
       }
     });
+    console.log("🚀 ~ file: user.saga.js ~ line 27 ~ function*loginSaga ~ result", result)
     if (result.data.length > 0) {
       localStorage.setItem('userInfo', JSON.stringify(result.data[0]));
       yield put({
@@ -49,13 +51,17 @@ function* registerSaga(action) {
     const result = yield axios({
       method: 'POST',
       url: 'http://localhost:3002/users',
-      data: { email, password, name }
+      data: { email, password, name, birthday: moment(birthday).format("DD/MM/YYYY"), gender, phone }
     });
     yield put({
       type: "REGISTER_SUCCESS",
       payload: {
         data: result.data[0],
       },
+    });
+    
+    yield Modal.success({
+      content: 'Bạn đã đăng ký thành công',
     });
     window.location.reload();
   } catch(e) {

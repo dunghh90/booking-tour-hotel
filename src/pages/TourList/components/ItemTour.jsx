@@ -7,7 +7,7 @@ import { IoAirplaneOutline, IoCarOutline } from "react-icons/io5";
 import history from '../../../utils/history';
 
 function ItemTour(props) {
-  const { title, link, description, price, startDate, rate, time, id } = props;
+  const { title, link, description, price, startDate, rate, time, date, id } = props;
 
   // const [isEdit, setIsEdit] = useState(false);
   // const [isShowDescription, setIsShowDescription] = useState(false);
@@ -76,7 +76,7 @@ function ItemTour(props) {
           <Col span={8} style={{ marginTop: 10 }}>
             <Row justify="end">
               <div>
-                <div style={{textAlign:"right"}}>Khởi hành: {startDate}</div>
+                <div style={{textAlign:"right"}}>Khởi hành: {date}</div>
                 <div style={{textAlign:"right", color: "#00C1DE", fontSize: 20, fontWeight: 500}}>{price.toLocaleString()} VNĐ</div>
                 <div style={{textAlign:"right", color: "gray", fontSize:13}}>Áp dụng cho nhóm trên 2 khách</div>
               </div>

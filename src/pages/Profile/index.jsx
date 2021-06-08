@@ -252,7 +252,7 @@ function ProfilePage({
         hotelName: item.hotel.name,
         roomName: item.room.title,
         // Chỗ này a để tạm, sau này fix data thì bỏ vào
-        price: item.totalPrice.toLocaleString() + " VNĐ",
+        price: item.totalPrice + " VNĐ",
         date: `${item.startDate} - ${item.endDate}`,
         key: item.id,
       }

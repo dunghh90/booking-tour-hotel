@@ -99,7 +99,7 @@ function HeaderPage(props) {
                                     <div>
                                         {
                                         
-                                        userInfo.data.id 
+                                        userInfo.data?.id 
                                             ? (
                                                 <Dropdown overlay={menu} >
                                                      <div style={{ display:'flex', alignItems:"center", color:"white"}}>
