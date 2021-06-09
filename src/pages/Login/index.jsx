@@ -116,8 +116,6 @@ function LoginPage(props) {
                     name="register"
                     onFinish={(values) => register(values)}
                     initialValues={{
-                      // residence: ['zhejiang', 'hangzhou', 'xihu'],
-                      // prefix: '86',
                     }}
                     scrollToFirstError
                   >

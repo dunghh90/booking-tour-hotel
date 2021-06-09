@@ -62,7 +62,6 @@ function BookingTourPage(props) {
       setCheckCustomerRemain(true);
     }
     setCustomerRemain(tourDetail.data.maxCustomer - customerBooking);
-    
     setMoney(tourDetail.data.price * values.countAdults + tourDetail.data.price * values.countChild * 0.5)
   }
 

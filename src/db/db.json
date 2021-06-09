@@ -823,6 +823,15 @@
       "numberChild": 0,
       "totalPrice": 10380000,
       "id": 35
+    },
+    {
+      "userId": 6,
+      "tourId": 1,
+      "startDate": "09/06/2021",
+      "numberAdults": 1,
+      "numberChild": 2,
+      "totalPrice": 10380000,
+      "id": 36
     }
   ],
   "bookingHotels": [
@@ -834,6 +843,15 @@
       "endDate": "2021/06/15",
       "totalPrice": 4900000,
       "id": 1
+    },
+    {
+      "userId": 6,
+      "hotelId": 1,
+      "roomId": 1,
+      "startDate": "2021/06/08",
+      "endDate": "2021/06/15",
+      "totalPrice": 34300000,
+      "id": 2
     }
   ],
   "commentHotels": [],
