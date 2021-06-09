@@ -51,7 +51,7 @@ function LoginPage(props) {
 
   return (
     <>
-      <div class="register-bg-container">
+      <div class="register-bg-container" style={{backgroundImage: ''}}>
       
         
             <div className="loginNote">

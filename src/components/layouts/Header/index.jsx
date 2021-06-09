@@ -97,8 +97,7 @@ function HeaderPage(props) {
                             </Col>
                             <Col xxl={5} xl={6} md={9} sm={20} xs={24}>
                                     <div>
-                                        {
-                                        
+                                        { 
                                         userInfo.data.id 
                                             ? (
                                                 <Dropdown overlay={menu} >

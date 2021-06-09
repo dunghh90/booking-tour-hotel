@@ -43,17 +43,15 @@ function ListRoomPage({
   // const [totalPrice, setTotalPrice] = useState(0);
   const isNew = true;
   const currentDate = new Date();
-  const [locationSelected, setLocationSelected] = useState(null);
 
   const [searchKey, setSearchKey] = useState({ userNum: '', price: '' });
 
-  let isFilter = false;
+  
 
   let totalPrice = 0;
 
   useEffect(() => {
     getListRoom({ id: hotelId });
-    let isFilter = false;
   }, [])
 
   useEffect(() => {
@@ -61,22 +59,18 @@ function ListRoomPage({
       setRoomSelected(listRoom.data.rooms[0] || {})
     }
   }, [listRoom.data])
-  console.log("🚀 ~ file: index.jsx ~ line 63 ~ listRoom.data", listRoom.data)
-   
+  console.log("🚀 ~ file: index.jsx ~ line 62 ~ listRoom.data", listRoom.data)
+
   const filterListRoom = listRoom.data.rooms.filter((item) => 
   {
-    // console.log("🚀 ~ file: index.jsx ~ line 46 ~ filterListRoom ~ item", item)
-    // console.log("🚀 ~ file: index.jsx ~ line 43 ~ filterListRoom ~ searchKey.price", searchKey.price)
-       isFilter = true;
     return item.price.toString().indexOf(searchKey.price.trim()) !== -1 && item.title.toString().indexOf(searchKey.userNum.trim()) !== -1
   })
-  console.log("🚀 ~ file: index.jsx ~ line 46 ~ filterListRoom ~ filterListRoom", filterListRoom)
+ 
 
 
   function handleDate(value) {
     const [startDate, endDate] = value;
     setDateSelected([moment(startDate).format('YYYY/MM/DD'), moment(endDate).format('YYYY/MM/DD')]);
-
   }
   function renderNoteListRoom() {
     return (
