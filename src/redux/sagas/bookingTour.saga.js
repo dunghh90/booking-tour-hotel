@@ -30,7 +30,7 @@ function* bookingTour(action) {
     yield put({
       type: "BOOKING_TOUR_SUCCESS",
       data: result.data,
-        payload: {
+      payload: {
       },
     });
   } catch (e) {

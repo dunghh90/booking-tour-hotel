@@ -30,12 +30,22 @@ function SearchTour({getTourList, setKeySearchLocation}) {
         initialValues={{ location: '' , dateBooking:moment(currentDate, "DD/MM/YYYY")}}
         layout="inline"
         onFinish={(values) => {
+          // setKeySearchLocation({location: values.location, dateBooking: moment(values.dateBooking).format("DD/MM/YYYY"), currentPosition: values.placeFrom}); 
           setKeySearchLocation(values.location); 
           getTourList({
             page: 1,
             limit: 10
           });
-          history.push(`/listTour/${values.location}`);
+          history.push({
+            pathname: "/listTour",
+            state: {
+              location: values.location, 
+              date: moment(values.dateBooking).format("DD/MM/YYYY"), 
+              from: values.placeFrom
+            }
+          })
+            // search: `?location=${values.location}&date=${moment(values.dateBooking).format("DD/MM/YYYY")}&from=${values.placeFrom}`});
+            // `/listTour/${values.location}`});
         }}
       >
         <Col span={7}>

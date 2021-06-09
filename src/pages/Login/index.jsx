@@ -1,5 +1,5 @@
 import {
-  Form, Input, Button, Checkbox, Space,Row,Col
+  Form, Input, Button, Checkbox, Space,Radio,DatePicker
 } from 'antd';
 import { connect } from 'react-redux';
 import { FacebookOutlined, GooglePlusOutlined,InstagramOutlined } from '@ant-design/icons';
@@ -15,11 +15,11 @@ const { TabPane } = Tabs;
 const formItemLayout = {
   labelCol: {
     xs: { span: 24 },
-    sm: { span: 8 },
+    sm: { span: 11 },
   },
   wrapperCol: {
     xs: { span: 24 },
-    sm: { span: 16 },
+    sm: { span: 13 },
   },
 };
 const tailFormItemLayout = {
@@ -47,7 +47,7 @@ function LoginPage(props) {
     history.push('/');
   };
 
-  const { login, register } = props;
+  const { login, register, location } = props;
 
   return (
     <>
@@ -70,7 +70,10 @@ function LoginPage(props) {
                     {...layout}
                     name="basic"
                     initialValues={{ remember: true }}
-                    onFinish={(values) => login(values)}
+                    onFinish={(values) =>{
+                      const newVal = location.state?.prevPath?{...values, prevPath: location.state.prevPath}:values;
+                      login(newVal);
+                    }}
                   >
                     <Form.Item
                       label={<label >Email</label>}
@@ -173,9 +176,43 @@ function LoginPage(props) {
                     </Form.Item>
 
                     <Form.Item
+            name="phone"
+            label="Số điện thoại"
+            rules={[
+              {
+                required: true,
+                message: 'Số điện thoại chưa được nhập!',
+              },
+            ]}
+            hasFeedback
+          >
+            <Input />
+          </Form.Item>
+
+          <Form.Item
+            name="gender"
+            label="Giới tính"
+            rules={[{ required: true, message: 'Chưa chọn giới tính!' }]}
+          >
+            <Radio.Group value={2}>
+              <Radio value="male">Nam</Radio>
+              <Radio value="female">Nữ</Radio>
+            </Radio.Group>
+          </Form.Item>
+
+
+          <Form.Item
+            name="birthday"
+            label="Ngày sinh"
+            rules={[{ required: true, message: 'Ngày sinh chưa được nhập!' }]}
+          >
+            <DatePicker placeholder="Chọn ngày"/>
+          </Form.Item>
+
+                    <Form.Item
                       name="name"
                       label={<label >Nickname</label>}
-                      tooltip="Nhập tên gọi khác của bạn!"
+                      tooltip="Có thể nhập tên thường gọi!"
                       rules={[{ required: true, message: 'Nickname chưa được nhập!', whitespace: true }]}
                     >
                       <Input />
@@ -192,7 +229,7 @@ function LoginPage(props) {
                       {...tailFormItemLayout}
                     >
                       <Checkbox>
-                        Tôi đồng ý tất cả <a href="google.com.vn">điều kiện & điều khoản</a>
+                        Tôi đồng ý tất cả <a href="#" onClick={() => alert("điều kiện và điều khoản")}>điều kiện & điều khoản</a>
                       </Checkbox>
                     </Form.Item>
                     <Form.Item {...tailFormItemLayout}>

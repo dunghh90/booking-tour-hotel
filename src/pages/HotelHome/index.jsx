@@ -14,7 +14,6 @@ import "slick-carousel/slick/slick-theme.css";
 function HomePage({ getLocationList, locationList }) {
 
   const [keySearchLocation, setKeySearchLocation] = useState('');
-  // const [locationSelected, setLocationSelected] = useState(null);
 
   useEffect(() => {
     // getLocationList({
@@ -25,7 +24,11 @@ function HomePage({ getLocationList, locationList }) {
 
   }, []);
 
-
+  // const filterListLocation = locationList.data.filter((item)=>{
+  //   return  item.name.toString().indexOf(keySearchLocation.name.trim()) !== -1
+  // })
+  // console.log("🚀 ~ file: index.jsx ~ line 31 ~ filterListLocation ~ filterListLocation", filterListLocation)
+  
 
 
 
@@ -50,7 +53,7 @@ function HomePage({ getLocationList, locationList }) {
   return (
     <>
     <div className="container-search">
-    <SearchTour setKeySearchLocation={setKeySearchLocation}/>
+    
       </div>
       <div style={{backgroundColor:"#e0e7ef", display:"flex", justifyContent:"center"}}>
         <Row justify="space-between" align="middle" style={{ textAlign:"center", fontSize:16, fontWeight:400, color:"#003C71", maxWidth:1400, width:"100%", padding:'15px 50px'}}>
@@ -70,13 +73,6 @@ function HomePage({ getLocationList, locationList }) {
       </>
 
 
-    // <div className="container-search">
-    //   <Row gutter={[8, 8]}>
-
-    //     {renderLocationList()}
-    //   </Row>
-
-    // </div>
 
   );
 
@@ -84,11 +80,11 @@ function HomePage({ getLocationList, locationList }) {
 }
 const mapStateToProps = (state) => {
   const { locationList } = state.hotelReducer;
+  console.log("🚀 ~ file: index.jsx ~ line 83 ~ mapStateToProps ~ locationList", locationList)
   return {
     locationList: locationList,
   }
 };
-
 const mapDispatchToProps = (dispatch) => {
   return {
     getLocationList: (params) => dispatch(getLocationListAction(params))

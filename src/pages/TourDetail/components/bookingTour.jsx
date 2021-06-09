@@ -18,20 +18,18 @@ function BookingTourPage(props) {
   useEffect(() => {
     getTourDetail({ id: tourId });
   }, [])
-  
+
   useEffect(() => {
     if (tourDetail.data.id) {
       setMoney(tourDetail.data.price);
-      countCustomerRemain(moment(nowDate).format("DD/MM/YYYY"));
+      countCustomerRemain(dateSelected);
     }
-  }, [tourDetail.data])
 
-  useEffect(() => {
-    getTourDetail({ id: tourId });
-  }, [customerRemain])
+  }, [tourDetail.data])
 
   const [money, setMoney] = useState(tourDetail.data.price);
   const [ checkCustomerRemain,  setCheckCustomerRemain] = useState(true);
+  const [ dateSelected, setDateSelected ] = useState(moment(nowDate).format("DD/MM/YYYY"));
 
   function countCustomerRemain(dateStart) {
     let customerBooking = 0;
@@ -41,7 +39,7 @@ function BookingTourPage(props) {
     listBooking.forEach((item) => {
       customerBooking += item.numberAdults + item.numberChild;
     });
-    if (customerBooking == tourDetail.data.maxCustomer) {
+    if (customerBooking >= tourDetail.data.maxCustomer) {
       setCheckCustomerRemain(false);
     } else {
       setCheckCustomerRemain(true);
@@ -50,6 +48,7 @@ function BookingTourPage(props) {
   }
 
   function updatePrice(values) {
+    setDateSelected(values.dateStartBooking.format("DD/MM/YYYY"));
     const listBooking = tourDetail.data.bookingTours.filter((item) => {
       return moment(values.dateStartBooking).format("DD/MM/YYYY").trim().toLowerCase().indexOf(item.startDate.trim().toLowerCase()) !== -1;
     })
@@ -57,7 +56,7 @@ function BookingTourPage(props) {
     listBooking.forEach((item) => {
       customerBooking += item.numberAdults + item.numberChild;
     });
-    if (customerBooking == tourDetail.data.maxCustomer) {
+    if (customerBooking >= tourDetail.data.maxCustomer) {
       setCheckCustomerRemain(false);
     } else {
       setCheckCustomerRemain(true);
@@ -93,18 +92,19 @@ function BookingTourPage(props) {
         notification.open({
           message: 'Không thể đặt',
           description:
-          "Số lượng khách còn lại: " + (tourDetail.data.maxCustomer - customerBooking),
+          "Số lượng khách còn lại có thể đặt: " + (tourDetail.data.maxCustomer - customerBooking),
           type:"warning"
         });
       } else {
-        showConfirmBooking(values);
-        setCustomerRemain(tourDetail.data.maxCustomer - (numBooking + customerBooking));
+        
+        showConfirmBooking(values, tourDetail.data.maxCustomer - (numBooking + customerBooking));
+        
       }
 
     }
   }
-
-  function showConfirmBooking(values) {
+  
+  function showConfirmBooking(values, cusRemain) {
     Modal.confirm({
       title: 'Thông tin tour đã đặt:',
       icon: <ExclamationCircleOutlined />,
@@ -120,7 +120,8 @@ function BookingTourPage(props) {
           numberAdults: values.countAdults,
           numberChild: values.countChild,
           totalPrice: money
-        })
+        });
+        setCustomerRemain(cusRemain);
       },
       onCancel() {
         console.log('Cancel');
@@ -199,7 +200,7 @@ function BookingTourPage(props) {
             <Button className="login-form-button" htmlType="submit" style={{ width: "100%", height:40, fontSize:18, backgroundColor:"#ffa940", color:"white" }}>Đặt tour</Button>
             
             ): (
-              <Button className="login-form-button" disabled htmlType="submit" style={{ width: "100%", height:40, fontSize:18, backgroundColor:"gray", color:"white" }}>Hết chổ</Button>
+            <Button className="login-form-button" disabled style={{ width: "100%", height:40, fontSize:18, backgroundColor:"gray", color:"white" }}>Hết chổ</Button>
               
           )}
 

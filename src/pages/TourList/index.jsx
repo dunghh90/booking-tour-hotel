@@ -1,5 +1,5 @@
 import { Col, Layout,  Input, Form, Button, Row, List, DatePicker } from 'antd';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, URLSearchParams } from 'react';
 import { connect } from 'react-redux';
 import { EnvironmentOutlined, SendOutlined } from '@ant-design/icons';
 
@@ -22,10 +22,14 @@ function TourListPage({
 
   const topicTourId = location.topicTourId? location.topicTourId : '';
   const [topicSelected, setTopicSelected] = useState(topicTourId);
-  console.log("🚀 ~ file: index.jsx ~ line 25 ~ topicSelected", topicSelected)
+  console.log("🚀 ~ file: index.jsx ~ line 25 ~ location", location)
+  
   const [locationSelected, setLocationSelected] = useState(null);
   
-  const [keySearchLocation, setKeySearchLocation] = useState(match.params.keySearch?match.params.keySearch:'');
+  // const [keySearchLocation, setKeySearchLocation] = useState(match.params.keySearch?match.params.keySearch:'');
+  const [keySearchLocation, setKeySearchLocation] = useState(location.state?.location?location.state.location:'');
+  const [keySearchFrom, setKeySearchFrom] = useState(location.state?.from?location.state.from:'');
+  const [dateBookingSelected, setDateBookingSelected ] = useState(location.state?.date?location.state.date:moment(currentDate).format("DD/MM/YYYY"));
 
   
 
@@ -91,11 +95,13 @@ function TourListPage({
       <Row className="timkiem" >
           <Form
             name="basic"
-            initialValues={{ location: '' }}
+            initialValues={{ location: '', dateBooking: moment(currentDate) }}
             layout="inline"
             onFinish={(values) => {
               setLocationSelected(null);
               setKeySearchLocation(values.location); 
+              setKeySearchFrom(values.placeFrom); 
+              setDateBookingSelected(moment(values.dateBooking).format("DD/MM/YYYY"));
               setTopicSelected('');
               getTourList({
                 page: 1,
@@ -114,7 +120,7 @@ function TourListPage({
               <Form.Item
                   name="dateBooking"
                 >
-              <DatePicker style={{padding: '10px 50px', width:'100%', height:50, borderRadius:4, backgroundColor:"white"}} defaultValue={moment(currentDate)} format="DD/MM/YYYY"/>
+              <DatePicker style={{padding: '10px 50px', width:'100%', height:50, borderRadius:4, backgroundColor:"white"}} format="DD/MM/YYYY"/>
               </Form.Item>
             </Col>
             <Col span={7}>
@@ -178,9 +184,11 @@ function TourListPage({
               
             </Col>
             <Col span={18} style={{marginTop:16}}>
-              {keySearchLocation && <Row style={{fontSize:28, fontWeight:600, color:"#69c0ff"}}>Tour du lịch "{keySearchLocation}" </Row>}
-              {filterLocationById.length !== 0 && <Row style={{fontSize:28, fontWeight:600, color:"#69c0ff"}}>Tour du lịch "{filterLocationById[0].name}" </Row>}
-              {filterTopicById.length !== 0 && <Row style={{fontSize:28, fontWeight:600, color:"#69c0ff"}}>Tour du lịch "{filterTopicById[0].name}" </Row>}
+              {filterTourList.length != 0 && keySearchLocation && <Row style={{fontSize:28, fontWeight:600, color:"#69c0ff"}}>Tour du lịch "{keySearchLocation}" {keySearchFrom && `từ ${keySearchFrom}`} </Row>}
+              {filterTourList.length != 0 && filterLocationById.length !== 0 && <Row style={{fontSize:28, fontWeight:600, color:"#69c0ff"}}>Tour du lịch "{filterLocationById[0].name}" {keySearchFrom && `từ ${keySearchFrom}`}</Row>}
+              {filterTourList.length != 0 && filterTopicById.length !== 0 && <Row style={{fontSize:28, fontWeight:600, color:"#69c0ff"}}>Tour du lịch "{filterTopicById[0].name}"  {keySearchFrom && `từ ${keySearchFrom}`}</Row>}
+              {filterTourList.length == 0 && (<Row>Xin lỗi, chúng tôi không tìm thấy dữ liệu bạn cần.
+Xin vui lòng tìm kiếm với từ khóa khác hoặc liên hệ hotline (028) 3933 8002 để được hỗ trợ</Row>)}
               {
                 filterTourList.load ? (<p>Loading...</p>) 
                 :(filterTourList.map((item, index) => {
@@ -194,6 +202,7 @@ function TourListPage({
                       time={item.time}
                       rate={item.rate}
                       startDate={item.dateStart}
+                      date={dateBookingSelected}
                       id={item.id}
                     />
                   )

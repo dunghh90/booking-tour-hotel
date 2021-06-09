@@ -17,6 +17,42 @@
       "birthday": "2021/06/10",
       "gender": "female",
       "phone": "0702321494"
+    },
+    {
+      "email": "nhominh1990@gmail.com",
+      "password": "1234",
+      "name": "minh đây",
+      "birthday": "08/06/2021",
+      "gender": "male",
+      "phone": "0702321494",
+      "id": 3
+    },
+    {
+      "email": "nhominh199@gmail.com",
+      "password": "1234",
+      "name": "minh đây",
+      "birthday": "07/06/2021",
+      "gender": "male",
+      "phone": "0702321494",
+      "id": 4
+    },
+    {
+      "email": "nhominh199@gmail.com",
+      "password": "1234",
+      "name": "minh ne",
+      "birthday": "15/06/2021",
+      "gender": "male",
+      "phone": "0702321494",
+      "id": 5
+    },
+    {
+      "email": "nhominh190@gmail.com",
+      "password": "1234",
+      "name": "nho minh",
+      "birthday": "06/06/2021",
+      "gender": "male",
+      "phone": "1234",
+      "id": 6
     }
   ],
   "tours": [
@@ -787,195 +823,6 @@
       "numberChild": 0,
       "totalPrice": 10380000,
       "id": 35
-    },
-    {
-      "userId": 1,
-      "tourId": 1,
-      "startDate": "04/06/2021",
-      "numberAdults": 1,
-      "numberChild": 0,
-      "totalPrice": 5190000,
-      "id": 36
-    },
-    {
-      "userId": 1,
-      "tourId": 1,
-      "startDate": "04/06/2021",
-      "numberAdults": 1,
-      "numberChild": 0,
-      "totalPrice": 5190000,
-      "id": 37
-    },
-    {
-      "userId": 1,
-      "tourId": 1,
-      "startDate": "05/06/2021",
-      "numberAdults": 1,
-      "numberChild": 1,
-      "totalPrice": 7785000,
-      "id": 38
-    },
-    {
-      "userId": 1,
-      "tourId": 1,
-      "startDate": "05/06/2021",
-      "numberAdults": 43,
-      "numberChild": 1,
-      "totalPrice": 236145000,
-      "id": 39
-    },
-    {
-      "userId": 1,
-      "tourId": 1,
-      "startDate": "05/06/2021",
-      "numberAdults": 1,
-      "numberChild": 0,
-      "totalPrice": 5190000,
-      "id": 40
-    },
-    {
-      "userId": 1,
-      "tourId": 1,
-      "startDate": "05/06/2021",
-      "numberAdults": 1,
-      "numberChild": 0,
-      "totalPrice": 5190000,
-      "id": 41
-    },
-    {
-      "userId": 1,
-      "tourId": 1,
-      "startDate": "10/06/2021",
-      "numberAdults": 1,
-      "numberChild": 0,
-      "totalPrice": 5190000,
-      "id": 42
-    },
-    {
-      "userId": 1,
-      "tourId": 1,
-      "startDate": "17/06/2021",
-      "numberAdults": 1,
-      "numberChild": 0,
-      "totalPrice": 5190000,
-      "id": 43
-    },
-    {
-      "userId": 1,
-      "tourId": 1,
-      "startDate": "24/06/2021",
-      "numberAdults": 45,
-      "numberChild": 2,
-      "totalPrice": 238740000,
-      "id": 44
-    },
-    {
-      "userId": 1,
-      "tourId": 1,
-      "startDate": "23/06/2021",
-      "numberAdults": 13,
-      "numberChild": 0,
-      "totalPrice": 67470000,
-      "id": 45
-    },
-    {
-      "userId": 1,
-      "tourId": 2,
-      "startDate": "23/06/2021",
-      "numberAdults": 4,
-      "numberChild": 3,
-      "totalPrice": 25795000,
-      "id": 46
-    },
-    {
-      "userId": 1,
-      "tourId": 2,
-      "startDate": "29/06/2021",
-      "numberAdults": 2,
-      "numberChild": 3,
-      "totalPrice": 16415000,
-      "id": 47
-    },
-    {
-      "userId": 1,
-      "tourId": 2,
-      "startDate": "18/06/2021",
-      "numberAdults": 2,
-      "numberChild": 3,
-      "totalPrice": 16415000,
-      "id": 48
-    },
-    {
-      "userId": 1,
-      "tourId": 2,
-      "startDate": "18/06/2021",
-      "numberAdults": 2,
-      "numberChild": 3,
-      "totalPrice": 16415000,
-      "id": 49
-    },
-    {
-      "userId": 1,
-      "tourId": 2,
-      "startDate": "18/06/2021",
-      "numberAdults": 2,
-      "numberChild": 3,
-      "totalPrice": 4690000,
-      "id": 50
-    },
-    {
-      "userId": 1,
-      "tourId": 2,
-      "startDate": "07/06/2021",
-      "numberAdults": 10,
-      "numberChild": 0,
-      "totalPrice": 46900000,
-      "id": 51
-    },
-    {
-      "userId": 1,
-      "tourId": 2,
-      "startDate": "07/06/2021",
-      "numberAdults": 10,
-      "numberChild": 0,
-      "totalPrice": 4690000,
-      "id": 52
-    },
-    {
-      "userId": 5,
-      "tourId": 2,
-      "startDate": "08/06/2021",
-      "numberAdults": 1,
-      "numberChild": 0,
-      "totalPrice": 4690000,
-      "id": 53
-    },
-    {
-      "userId": 5,
-      "tourId": 2,
-      "startDate": "08/06/2021",
-      "numberAdults": 1,
-      "numberChild": 0,
-      "totalPrice": 4690000,
-      "id": 54
-    },
-    {
-      "userId": 5,
-      "tourId": 2,
-      "startDate": "08/06/2021",
-      "numberAdults": 5,
-      "numberChild": 0,
-      "totalPrice": 23450000,
-      "id": 55
-    },
-    {
-      "userId": 5,
-      "tourId": 2,
-      "startDate": "08/06/2021",
-      "numberAdults": 3,
-      "numberChild": 0,
-      "totalPrice": 14070000,
-      "id": 56
     }
   ],
   "bookingHotels": [
@@ -987,55 +834,9 @@
       "endDate": "2021/06/15",
       "totalPrice": 4900000,
       "id": 1
-    },
-    {
-      "userId": 1,
-      "hotelId": 1,
-      "roomId": 3,
-      "startDate": "2021/06/14",
-      "endDate": "2021/06/15",
-      "totalPrice": 4900000,
-      "id": 2
-    },
-    {
-      "userId": 1,
-      "hotelId": 1,
-      "roomId": 2,
-      "startDate": "2021/06/01",
-      "endDate": "2021/06/03",
-      "totalPrice": 9800000,
-      "id": 3
-    },
-    {
-      "userId": 1,
-      "hotelId": 1,
-      "roomId": 3,
-      "startDate": "2021/06/01",
-      "endDate": "2021/06/03",
-      "totalPrice": 9800000,
-      "id": 4
-    },
-    {
-      "userId": 1,
-      "hotelId": 1,
-      "roomId": 1,
-      "startDate": "2021/06/01",
-      "endDate": "2021/06/03",
-      "totalPrice": 9800000,
-      "id": 5
     }
   ],
-  "commentHotels": [
-    {
-      "userId": 3,
-      "userName": "minh",
-      "hotelId": 1,
-      "comment": "khách sạn đẹp",
-      "rate": 4.5,
-      "creatDate": "08/06/2021",
-      "id": 1
-    }
-  ],
+  "commentHotels": [],
   "commentTours": [
     {
       "userName": "Huu Dung",
@@ -1054,69 +855,6 @@
       "rate": 5,
       "creatDate": "24/05/2021",
       "id": 2
-    },
-    {
-      "userName": "Huu Dung",
-      "userId": 1,
-      "tourId": 1,
-      "comment": "sdfsdf",
-      "rate": 5,
-      "creatDate": "24/05/2021",
-      "id": 3
-    },
-    {
-      "userName": "Huu Dung",
-      "userId": 1,
-      "tourId": 1,
-      "comment": "jk;jl;jjk;;",
-      "rate": 3.5,
-      "creatDate": "24/05/2021",
-      "id": 4
-    },
-    {
-      "userName": "Huu Dung",
-      "userId": 1,
-      "tourId": 1,
-      "comment": "dfddddddd",
-      "rate": 5,
-      "creatDate": "24/05/2021",
-      "id": 5
-    },
-    {
-      "userName": "Huu Dung",
-      "userId": 1,
-      "tourId": 1,
-      "comment": "sdfsfsfsdf",
-      "rate": 4,
-      "creatDate": "24/05/2021",
-      "id": 6
-    },
-    {
-      "userName": "Hoàng Hữu Dũng",
-      "userId": 1,
-      "tourId": 2,
-      "comment": "456",
-      "rate": 4,
-      "creatDate": "07/06/2021",
-      "id": 13
-    },
-    {
-      "userName": "Hoàng Hữu Dũng",
-      "userId": 1,
-      "tourId": 2,
-      "comment": "123",
-      "rate": 3,
-      "creatDate": "07/06/2021",
-      "id": 14
-    },
-    {
-      "userName": "Hoàng Hữu Dũng",
-      "userId": 1,
-      "tourId": 2,
-      "comment": "67867",
-      "rate": 3.5,
-      "creatDate": "07/06/2021",
-      "id": 15
     }
   ],
   "profiles": []

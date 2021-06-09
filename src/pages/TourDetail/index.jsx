@@ -172,7 +172,7 @@ function TourDetailPage({
                 </span>
                 <span>| 1 đánh giá </span>
                 <span style={{padding: "0px 5px", color:"blue", fontWeight:600}}>
-                {customerRemain != 0 && " ( Số khách còn lại: " + customerRemain + " )"}
+                {customerRemain != 0 && " ( Số khách còn lại có thể đặt: " + customerRemain + " )"}
                 </span>
           </Row>
           <Row span={24} gutter={24}>

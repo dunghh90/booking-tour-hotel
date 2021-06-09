@@ -21,6 +21,7 @@ function TourHomePage({ getTourList, tourList, getTopicTourList, topicTourList }
     getTopicTourList();
   }, []);
   
+  // const [keySearchLocation, setKeySearchLocation] = useState({});
   const [keySearchLocation, setKeySearchLocation] = useState('');
 
   let filterTourList = tourList.data.filter((item) => {

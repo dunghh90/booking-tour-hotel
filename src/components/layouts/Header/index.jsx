@@ -54,7 +54,7 @@ function renderInfoUser(userInfo, logout) {
 
 
 function HeaderPage(props) {
-    const [seachKey,setSeachkey]= useState('')
+  
     const { userInfo, logout } = props;
 
     const menu = (
@@ -98,7 +98,7 @@ function HeaderPage(props) {
                             <Col xxl={5} xl={6} md={9} sm={20} xs={24}>
                                     <div>
                                         { 
-                                        userInfo.data.id 
+                                        userInfo.data?.id 
                                             ? (
                                                 <Dropdown overlay={menu} >
                                                      <div style={{ display:'flex', alignItems:"center", color:"white"}}>
