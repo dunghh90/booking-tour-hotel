@@ -29,7 +29,7 @@ function TourListPage({
   // const [keySearchLocation, setKeySearchLocation] = useState(match.params.keySearch?match.params.keySearch:'');
   const [keySearchLocation, setKeySearchLocation] = useState(location.state?.location?location.state.location:'');
   const [keySearchFrom, setKeySearchFrom] = useState(location.state?.from?location.state.from:'');
-  const [dateBookingSelected, setDateBookingSelected ] = useState(location.state?.date?location.state.date:moment(currentDate).format("DD/MM/YYYY"));
+  const [dateBookingSelected, setDateBookingSelected ] = useState(location.state?.date?location.state.date:moment(new Date()).format("DD/MM/YYYY"));
 
   
 
