@@ -1,5 +1,5 @@
 import {
-  Form, Input, Button, Checkbox, Space,Radio,DatePicker
+  Form, Input, Button, Checkbox, Space,Radio,DatePicker, Alert
 } from 'antd';
 import { connect } from 'react-redux';
 import { FacebookOutlined, GooglePlusOutlined,InstagramOutlined } from '@ant-design/icons';
@@ -47,7 +47,7 @@ function LoginPage(props) {
     history.push('/');
   };
 
-  const { login, register, location } = props;
+  const { login, register, location, userInfo } = props;
 
   return (
     <>
@@ -74,7 +74,17 @@ function LoginPage(props) {
                       const newVal = location.state?.prevPath?{...values, prevPath: location.state.prevPath}:values;
                       login(newVal);
                     }}
+                    onFinishFailed={(errorInfo) => alert("Sai mật khẩu" + errorInfo)}
                   >
+                    <div style={{display:"flex", justifyContent:'flex-end'}}>
+                    {userInfo.error && (
+                    <Alert
+                      message={userInfo.error}
+                      type="error"
+                      showIcon
+                      style={{width:300, marginTop:10, marginBottom:10}}
+                    />)}
+                    </div>
                     <Form.Item
                       label={<label >Email</label>}
                       name="email"
@@ -95,6 +105,8 @@ function LoginPage(props) {
 
                       <Checkbox >Remember me</Checkbox>
                     </Form.Item>
+
+                    
 
                     <Form.Item {...tailLayout}>
                       <Space>
@@ -252,6 +264,14 @@ function LoginPage(props) {
   );
 }
 
+const mapStateToProps = (state) => {
+console.log("🚀 ~ file: index.jsx ~ line 261 ~ mapStateToProps ~ userReducer", state.userReducer)
+  const { userInfo } = state.userReducer;
+  return {
+    userInfo,
+  }
+};
+
 const mapDispatchToProps = (dispatch) => {
   return {
     login: (params) => dispatch(loginAction(params)),
@@ -259,4 +279,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 }
 
-export default connect(null, mapDispatchToProps)(LoginPage);
+export default connect(mapStateToProps, mapDispatchToProps)(LoginPage);

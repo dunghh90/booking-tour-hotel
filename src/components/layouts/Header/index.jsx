@@ -13,6 +13,7 @@ import { ROUTERS } from '../../../constants/router';
 import history from '../../../utils/history';
 import { logoutAction } from '../../../redux/actions';
 import { createFromIconfontCN,ImportOutlined } from '@ant-design/icons';
+import logoUser from '../../../img/user-48.png';
 
 const IconFont = createFromIconfontCN({
   scriptUrl: '//at.alicdn.com/t/font_8d5l8fzk5b87iudi.js',
@@ -102,7 +103,8 @@ function HeaderPage(props) {
                                             ? (
                                                 <Dropdown overlay={menu} >
                                                      <div style={{ display:'flex', alignItems:"center", color:"white"}}>
-                                                     <VscAccount size={26} />
+                                                     {/* <VscAccount size={26} /> */}
+                                                     <img src={logoUser}/>
                                                      <a style={{fontSize:16, paddingLeft:10, color:"white"}} onClick={e => e.preventDefault()}>
                                                       {userInfo.data.name} <DownOutlined />
                                                      </a>

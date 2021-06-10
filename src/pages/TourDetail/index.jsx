@@ -198,6 +198,42 @@ function TourDetailPage({
               <div style={{ backgroundColor: "white", padding: "10px 30px 30px 30px", textAlign: "justify" }}>
                 <div dangerouslySetInnerHTML={{ __html: tourDetail.data.information }}></div>
               </div>
+
+              <div style={{borderTop:'1px solid #f0f0f0', backgroundColor: "white", padding: "10px 30px 30px 30px", textAlign: "justify" }}>
+                <h3 id="tour-rule" className="tourDetailheadLine vcolor-primary">Chính sách phụ thu</h3>
+                <div >
+                  <p>- Phụ thu phòng đơn: 1.100.000 vnđ/khách/tour.&nbsp;</p>
+                  <p>- Trẻ em từ đủ 10 tuổi trở lên tiêu chuẩn như người lớn.</p>
+                  <p>- Từ đủ 5 đến dưới 10 tuổi: Tiêu chuẩn ăn ½ suất, ngồi 1 ghế ô tô, ngủ ghép chung với bố mẹ.</p>
+                  <p>- Từ đủ 2 đến dưới 5 tuổi: Giá tour chỉ bao gồm vé máy bay, bảo hiểm, nước uống. Các chi phí ăn uống, vé thắng cảnh nếu phát sinh, cha mẹ sẽ tự lo cho bé.</p>
+                  <p>- Dưới 2 tuổi: Giá tour chỉ bao gồm chỗ ngồi trên máy bay theo quy định của hàng không, bảo hiểm, nước uống.</p>
+                </div>
+                <h3 className="tourDetailheadLine vcolor-primary">Điều khoản</h3>
+                <div >
+                  <p><span style={{textDecoration: "underline"}}>Vận chuyển</span>:</p>
+                  <p>- Xe máy lạnh đời mới vận chuyển theo lịch trình tại Quảng Ngãi – Lý Sơn.</p>
+                  <p>- Xe đón/tiễn sân bay Nội Bài.</p>
+                  <p>-&nbsp;Vé máy bay khứ hồi Hà Nội – Chu Lai – Hà Nội (VietNam Airlines) gồm 12kg xách tay + 23kg ký gửi. Vé máy bay Đoàn không hoàn không hủy của hàng không QG Việt Nam.</p>
+                  <p>- Xe điện hoặc xe ôm di chuyển trên Đảo Bé Lý Sơn.</p>
+                  <p>- Cano siêu tốc từ Sa Kỳ đi Lý Sơn và ngược lại.</p>
+                  <p>- Cano cao tốc đi từ Đảo Bé khứ hồi.</p>
+                  <p><span style={{textDecoration: "underline"}}>Lưu Trú</span>:</p>
+                  <p>- Phòng khách sạn tiêu chuẩn lựa chọn (02 khách/phòng, trường hợp lẻ nghỉ 3 khách/phòng) hoặc các khách sạn tương đương.</p>
+                  <p>+ Khách sạn 3 sao Lý Sơn Central hoặc khách sạn tương đương.</p>
+                  <p>+ Khách sạn 4 sao Thiên Ấn Hotel Quảng Ngãi&nbsp;hoặc khách sạn tương đương.</p>
+                  <p><span style={{textDecoration: "underline"}}>Khác</span>:</p>
+                  <p>- Ăn uống theo lịch trình tham quan.&nbsp;</p>
+                  <p>- HDV đón/tiễn sân bay Nội Bài.</p>
+                  <p>- HDV nhiệt tình, kinh nghiệm theo đoàn suốt tuyến tại Quảng Ngãi – Lý Sơn.</p>
+                  <p>- Bảo hiểm du lịch suốt tuyến (mức đền bù tối đa 20.000.000đ/vụ).</p>
+                  <p>- Phí thắng cảnh các điểm vào cửa theo chương trình.</p>
+                  <p>- Nước uống 1 chai/khách/ngày</p>
+                  <p>- Mũ du lịch.</p>
+                </div>
+              </div>
+
+              
+
               <div style={{backgroundColor:"white", padding:16, marginTop:16}}>
                 <CommentPage tourId={tourId} />
               </div>
@@ -226,14 +262,14 @@ function TourDetailPage({
                   </Row> */}
                 </div>
                 <div style={{minWidth:400, borderRadius:4}}>
-                  <List
+                  {/* <List
                     size="small"
                     // header={<h4 style={{fontSize:18, color:"#333", borderColor: "#ddd"}}></h4>}
                     bordered
                     dataSource={[
                       "CHƯƠNG TRÌNH TOUR",
-                      "TRẢI NGHIỆM THEO CÁCH CỦA BẠN",
-                      "ĐIỀU KHOẢN QUY ĐỊNH"
+                      "ĐIỀU KHOẢN QUY ĐỊNH",
+                      "ĐÁNH GIÁ TOUR"
                     ]}
                     renderItem={(item) => (
                       <List.Item
@@ -244,7 +280,18 @@ function TourDetailPage({
                         <a style={{color:"gray"}} href="#tour-program">{item}</a>
                       </List.Item>
                     )}
-                  />
+                  /> */}
+                  <List size="small" bordered >
+                    <List.Item className ="moveLocation" >
+                      <a style={{color:"gray"}} href="#tour-program">CHƯƠNG TRÌNH TOUR</a>
+                    </List.Item>
+                    <List.Item className ="moveLocation" >
+                      <a style={{color:"gray"}} href="#tour-rule">ĐIỀU KHOẢN QUY ĐỊNH</a>
+                    </List.Item>
+                    <List.Item className ="moveLocation" >
+                      <a style={{color:"gray"}} href="#tour-comment">ĐÁNH GIÁ TOUR</a>
+                    </List.Item>
+                  </List>
                 </div>
               </div>
             </Col>
