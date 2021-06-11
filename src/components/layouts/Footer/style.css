@@ -8,7 +8,20 @@
 }
 .keyword{
     display: block;
+    width: 230px;
 }
 .content{
     display: block;
+}
+.noteFooter{
+    width: 100%;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.iconMXH{
+    font-size: 60px;
+    color: blue;
+}
+.chuaicon{
+    display: flex;
 }

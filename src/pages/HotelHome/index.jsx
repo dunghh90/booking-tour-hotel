@@ -1,7 +1,8 @@
-import { Row, Col, List } from 'antd';
+import { Row, Col, Button,BackTop } from 'antd';
 import history from '../../utils/history';
 import { connect } from 'react-redux';
-import { AiFillCheckCircle } from 'react-icons/ai';
+import { AiFillCheckCircle} from 'react-icons/ai';
+import { ArrowUpOutlined } from '@ant-design/icons';
 import SearchTour from '../../components/SearchTour';
 import { getLocationListAction } from '../../redux/actions';
 import { useEffect,useState } from 'react';
@@ -11,16 +12,26 @@ import "./Home.css"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-function HomePage({ getLocationList, locationList }) {
+function HomePage({ getLocationList, locationList,match }) {
+  const style = {
+    height: 40,
+    width: 40,
+    lineHeight: '40px',
+    borderRadius: 4,
+    backgroundColor: '#1088e9',
+    color: '#fff',
+    textAlign: 'center',
+    fontSize: 14,
+  };
 
   const [keySearchLocation, setKeySearchLocation] = useState('');
 
   useEffect(() => {
-    // getLocationList({
-    //   page: 1,
-    //   limit: 10
-    // });
-    getLocationList();
+    getLocationList({
+      page: 1,
+      limit: 12
+    });
+    // getLocationList();
 
   }, []);
 
@@ -30,8 +41,19 @@ function HomePage({ getLocationList, locationList }) {
   // console.log("🚀 ~ file: index.jsx ~ line 31 ~ filterListLocation ~ filterListLocation", filterListLocation)
   
 
-
-
+  // const locationId = match.params.id;
+  function loadmoreLocaltion() {
+  console.log("🚀 ~ file: index.jsx ~ line 35 ~ loadmoreLocaltion ~ loadmoreLocaltion", loadmoreLocaltion)
+  
+    getLocationList({
+      more: true,
+      // page: page + 1,
+      page: locationList.page + 1,
+      limit: 12,
+      // id: locationId,
+    });
+    
+  }
   function renderLocationList() {
     if (locationList.load) return <p>Loading...</p>;
     return locationList.data.map((item, index) => {
@@ -67,12 +89,19 @@ function HomePage({ getLocationList, locationList }) {
             <div className="localHeadLine">Chọn Điểm Du Lịch </div>
           <Row gutter={[12,12]} align="bottom" >
          {renderLocationList()}
+         <Row>
+                <BackTop className="backtop">
+                  <div style={style}><ArrowUpOutlined /></div>
+                </BackTop>
+              </Row>
+          {locationList.data.length % 12 === 0 && (
+            <Button onClick={() =>  loadmoreLocaltion()}>Xem thêm khách sạn</Button>
+            )
+          }
           </Row>
         </div>
       </div>
       </>
-
-
 
   );
 

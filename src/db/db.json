@@ -422,6 +422,81 @@
       "id": 11,
       "name": "Cà Mau",
       "img": "//cdn1.ivivu.com/iVivu/2017/01/23/11/khu-nghi-duong-the-graden-house-phu-quoc-374x280.png"
+    }, 
+    {
+      "id": 11,
+      "name": "Ninh Bình",
+      "img": "https://cuongdulich.com/assets/posts/1582375851-huong-dan-di-du-lich-ninh-binh-9.JPG"
+    },
+    {
+      "id": 12,
+      "name": "Lý Sơn",
+      "img": "https://image.bnews.vn/MediaUpload/Org/2019/05/11/090037_ttxvnlyson.jpg"
+    },
+    {
+      "id": 13,
+      "name": "Khánh Hòa",
+      "img": "https://ict-khanhhoa.vn/wp-content/uploads/2021/01/nhatrang-15822619640591150029635.jpg"
+    },
+    {
+      "id": 14,
+      "name": "Thanh Hóa",
+      "img": "https://anh.24h.com.vn/upload/4-2018/images/2018-10-22/Ngam-Thanh-pho-Thanh-Hoa-dang-1-1540177203-208-width640height338.jpg"
+    },
+    {
+      "id": 15,
+      "name": "Gia Lai",
+      "img": "https://mytourcdn.com/upload_images/Image/Location/11_8_2015/Danh-lam-thang-canh-gia-lai-mytour-1.jpg"
+    },
+    {
+      "id": 16,
+      "name": "Đak Lak",
+      "img": "https://daklak24h.com.vn/images/news/2013/5/6/nga%206.jpg"
+    },
+    {
+      "id": 17,
+      "name": "Ninh Thuận",
+      "img": "https://1.bp.blogspot.com/-W8F4lbhc3cs/W37wYTnCEVI/AAAAAAAAXf4/5YPjYpiCyCoN4Yb6u2cmfNtwUpT2NBNDACLcBGAs/s1600/diem-du-lich-ninh-thuan-63.jpg"
+    },
+    {
+      "id": 18,
+      "name": "TP.Hồ Chí Minh",
+      "img": "https://hinhanhvietnam.com/wp-content/uploads/2015/12/sai-gon-ve-dem.jpg"
+    },
+    {
+      "id": 19,
+      "name": "Trà Vinh",
+      "img": "https://thamhiemmekong.com/wp-content/uploads/2020/06/thienvientruclamtravinh-1.jpg"
+    },
+    {
+      "id": 20,
+      "name": "Vĩnh Long",
+      "img": "https://media.dalatcity.org/Images/VLG/superadminportal.vlg/Tin%20t%E1%BB%A9c/H%C3%ACnh%20%E1%BA%A2nh/1-nganh-cong-nghiep-van-hoa.jpg_636705214837322183.jpg"
+    },
+    {
+      "id": 21,
+      "name": "Bình Dương",
+      "img": "https://www.thuvienbinhduong.org.vn/Resources/Images/2015/jpg/20151012-23.jpg"
+    },
+    {
+      "id": 22,
+      "name": "Kom Tum",
+      "img": "https://vietnamtourism.gov.vn/images/2019/CNMN/25.7._Kon_Tum_phat_dong_cuoc_thi_anh.jpg"
+    }, 
+    {
+      "id": 23,
+      "name": "Cần Thơ",
+      "img": "https://lh3.googleusercontent.com/proxy/1KojnyZceP_Jmf0m0fvEgXC0pQBA4mznsezhkfw8bv_NvKpILDTQKKIJDCHxAWEuMfWNBir9L6q_lteGSnA-e_W4la_-GZ74EU4msMzLQJUG2ieW4X23ScAo"
+    },
+    {
+      "id": 24,
+      "name": "Tây Ninh",
+      "img": "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2017/08/Toa-Thanh-Tay-Ninh-2.jpg"
+    },
+    {
+      "id": 25,
+      "name": "Long An",
+      "img": "https://camnangkhoinghiep.vn/wp-content/uploads/2019/03/085481.jpg"
     }
   ],
   "topicTours": [
@@ -1046,6 +1121,15 @@
       "numberChild": 2,
       "totalPrice": 10380000,
       "id": 36
+    },
+    {
+      "userId": 6,
+      "tourId": 2,
+      "startDate": "10/06/2021",
+      "numberAdults": 1,
+      "numberChild": 0,
+      "totalPrice": 4690000,
+      "id": 37
     }
   ],
   "bookingHotels": [
@@ -1066,9 +1150,46 @@
       "endDate": "2021/06/15",
       "totalPrice": 34300000,
       "id": 2
+    },
+    {
+      "userId": 6,
+      "hotelId": 1,
+      "roomId": 2,
+      "startDate": "2021/06/01",
+      "endDate": "2021/06/03",
+      "totalPrice": 9800000,
+      "id": 3
+    },
+    {
+      "userId": 6,
+      "hotelId": 1,
+      "roomId": 2,
+      "startDate": "2021/07/01",
+      "endDate": "2021/07/03",
+      "totalPrice": 9800000,
+      "id": 4
+    },
+    {
+      "userId": 6,
+      "hotelId": 1,
+      "roomId": 3,
+      "startDate": "2021/07/01",
+      "endDate": "2021/07/03",
+      "totalPrice": 9800000,
+      "id": 5
     }
   ],
-  "commentHotels": [],
+  "commentHotels": [
+    {
+      "userId": 6,
+      "userName": "nho minh",
+      "hotelId": 1,
+      "comment": "KHACH sanj dejp qua",
+      "rate": 3.5,
+      "creatDate": "11/06/2021",
+      "id": 1
+    }
+  ],
   "commentTours": [
     {
       "userName": "Huu Dung",

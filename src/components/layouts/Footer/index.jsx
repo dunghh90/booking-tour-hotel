@@ -1,7 +1,7 @@
 
 import 'antd/dist/antd.css';
 import './style.css';
-import { IeOutlined } from "@ant-design/icons";
+import {FacebookOutlined,IeOutlined,TwitterOutlined  } from "@ant-design/icons";
 import { Row, Col } from 'antd';
 
 
@@ -14,8 +14,7 @@ function FooterPage() {
                         <IeOutlined style={{ fontSize: '20px', color: 'red' }} />
                     </div> */}
                     <div className="keyword">
-
-                        <h2>Thông tin địa điểm</h2>
+                        <h2 className="noteFooter">Thông tin địa điểm</h2>
                         <div>
                             <span>Khu vực</span>
                         </div>
@@ -31,7 +30,7 @@ function FooterPage() {
 
                     </div>
                     <div className="keyword">
-                        <h2>Thông tin cần biết</h2>
+                        <h2 className="noteFooter">Thông tin cần biết</h2>
                         <div>
                             <div>
 
@@ -49,24 +48,42 @@ function FooterPage() {
                         </div>
                     </div>
                     <div className="keyword">
-                        <h2>Thông tin cần biết</h2>
+                        <h2 className="noteFooter">Đối tác</h2>
                         <div>
                             <div>
 
-                            <span>Khách sạn 5 sao</span>
+                            <span>Quy chế bảo hiểm</span>
                             </div>
                             <div>
 
-                            <span>Khách sạn 4 sao</span>
+                            <span>Yêu cầu bồi thường</span>
                             </div>
                             <div>
 
-                            <span>Khách sạn 3 sao</span>
+                            <span>Quy chế trả góp</span>
                             </div>
                             <span>Resort</span>
                         </div>
                     </div>
+              {/* <div>
+                    <h1 style={{marginBottom: 10, fontWeight: 700}}>Các trang mạng xã hội</h1>
+                    <div className="chuaicon">
+                <div>
+                    <a href="https://facebook.com/iVIVU"></a>
+                    <FacebookOutlined className="iconMXH" style={{marginRight: 50}}/>
                 </div>
+                <div>
+                    <a href=""></a>
+                    <IeOutlined  className="iconMXH" style={{marginRight: 50}}/>
+                </div>
+                <div>
+                    <a href=""></a>
+                     <TwitterOutlined className="iconMXH" style={{marginRight: 50}}/>
+                </div>
+              </div> */}
+              {/* </div> */}
+                </div>
+                
             </Col>
         </Row>
     )
