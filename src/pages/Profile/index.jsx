@@ -251,8 +251,7 @@ function ProfilePage({
         ...item,
         hotelName: item.hotel.name,
         roomName: item.room.title,
-        // Chỗ này a để tạm, sau này fix data thì bỏ vào
-        price: item.totalPrice + " VNĐ",
+        price: item.totalPrice.toLocaleString() + " VNĐ",
         date: `${item.startDate} - ${item.endDate}`,
         key: item.id,
       }

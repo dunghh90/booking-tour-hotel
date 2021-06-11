@@ -832,6 +832,15 @@
       "numberChild": 2,
       "totalPrice": 10380000,
       "id": 36
+    },
+    {
+      "userId": 6,
+      "tourId": 2,
+      "startDate": "10/06/2021",
+      "numberAdults": 1,
+      "numberChild": 0,
+      "totalPrice": 4690000,
+      "id": 37
     }
   ],
   "bookingHotels": [

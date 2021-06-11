@@ -6,6 +6,7 @@ function* getLocationListSaga(action) {
     const result = yield axios({
       method: 'GET',
       url: 'http://localhost:3002/locations'
+      
     });
     yield put({
       type: "GET_LOCATION_LIST_SUCCESS",
