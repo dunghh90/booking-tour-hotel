@@ -66,6 +66,7 @@ function ProfilePage({
       ...values,
       id: userInfo.data.id,
     }
+    console.log("🚀 ~ file: index.jsx ~ line 65 ~ changePassword ~ values", newValues)
     updateUser(newValues);
   }
 
@@ -208,6 +209,14 @@ function ProfilePage({
               required: true,
               message: 'Xác nhận mật khẩu chưa được nhập!',
             },
+            ({ getFieldValue }) => ({
+              validator(_, value) {
+                if (!value || getFieldValue('passwordNew') === value) {
+                  return Promise.resolve();
+                }
+                return Promise.reject(new Error('Nhập confirm password không trùng khớp!'));
+              },
+            }),
           ]}
         >
           <Input.Password />

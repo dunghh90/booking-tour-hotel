@@ -96,31 +96,78 @@ function* getUserInfoSaga(action) {
 function* updateProfileSaga(action) {
   
   try {
-    const { id, email, name, birthday, gender, phone, passwordNew } = action.payload;
+    const { id, email, name, birthday, gender, phone, passwordNew, password } = action.payload;
     
-    const result = passwordNew?
-      yield axios({
-        method: 'PATCH',
-        url: `http://localhost:3002/users/${id}`,
-        data: { password: passwordNew },
-      }) :
-      yield axios({
+    if (passwordNew) {
+      
+      const result = yield axios.get(`http://localhost:3002/users?id=${id}&password=${password}`);
+      
+      if (result.data.length == 0) { 
+        yield put({
+          type: "UPDATE_PROFILE_FAIL",
+          payload: {
+            error: 'mật khẩu hiện tại không đúng'
+          },
+        });
+        alert("Nhập mật khẩu hiện tại không đúng");
+
+      }  else {
+        const result = yield axios({
           method: 'PATCH',
           url: `http://localhost:3002/users/${id}`,
-          data: { email, name,birthday,gender,phone},
+          data: { password: passwordNew },
+        })   
+
+
+        yield localStorage.setItem('userInfo', JSON.stringify(result.data));
+      
+        yield notification.open({
+          message: 'cập nhật thông tin thành công',
+          // description: `Bạn đã đặt tour ngày`,
+        });
+        yield put({
+          type: "UPDATE_PROFILE_SUCCESS",
+          payload: {
+            data: result.data,
+          },
+        });
+
+
+      } 
+    } else {
+
+
+        const result = yield axios({
+            method: 'PATCH',
+            url: `http://localhost:3002/users/${id}`,
+            data: { email, name,birthday,gender,phone},
+        });
+
+      
+        // const result = passwordNew?
+        // yield axios({
+        //   method: 'PATCH',
+        //   url: `http://localhost:3002/users/${id}`,
+        //   data: { password: passwordNew },
+        // }) :
+        // yield axios({
+        //     method: 'PATCH',
+        //     url: `http://localhost:3002/users/${id}`,
+        //     data: { email, name,birthday,gender,phone},
+        // });
+      yield localStorage.setItem('userInfo', JSON.stringify(result.data));
+      
+      yield notification.open({
+        message: 'cập nhật thông tin thành công',
+        // description: `Bạn đã đặt tour ngày`,
       });
-    yield localStorage.setItem('userInfo', JSON.stringify(result.data));
-    
-    yield notification.open({
-      message: 'cập nhật thông tin thành công',
-      // description: `Bạn đã đặt tour ngày`,
-    });
-    yield put({
-      type: "UPDATE_PROFILE_SUCCESS",
-      payload: {
-        data: result.data,
-      },
-    });
+      yield put({
+        type: "UPDATE_PROFILE_SUCCESS",
+        payload: {
+          data: result.data,
+        },
+      });
+  }
   } catch(e) {
     yield put({
       type: "UPDATE_PROFILE_FAIL",
