@@ -37,7 +37,6 @@ function* getListHotelSaga(action) {
     const { id,more,page,limit,rate,address } = action.payload;
     const result = yield axios({
       method: 'GET',
-
       url: 'http://localhost:3002/hotels',
       params: {
         _page: page,

@@ -38,15 +38,39 @@ const initialState = {
         }
       }
       case 'GET_LOCATION_LIST_SUCCESS': {
-        const { data } = action.payload;
-        return {
-          ...state,
+        const { data, page, more  } = action.payload;
+        if (more) {
+          return {
+            ...state,
           locationList: {
-            ...state.locationList,
-            data: data,
-            load: false,
-          },
+              ...state.locationList,
+              data: [
+                ...state.locationList.data,
+                ...data,
+              ],
+              page: page,
+              load: false,
+            },
+          }
+        } else {
+          return {
+            ...state,
+          locationList: {
+              ...state.locationList,
+              data: data,
+              page: page,
+              load: false,
+            },
+          }
         }
+        // return {
+        //   ...state,
+        //   locationList: {
+        //     ...state.locationList,
+        //     data: data,
+        //     load: false,
+        //   },
+        // }
       }
       case 'GET_LOCATION_LIST_FAIL': {
         const { error } = action.payload;

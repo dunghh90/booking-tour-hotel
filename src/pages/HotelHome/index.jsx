@@ -1,7 +1,8 @@
-import { Row, Col, Button } from 'antd';
+import { Row, Col, Button,BackTop } from 'antd';
 import history from '../../utils/history';
 import { connect } from 'react-redux';
-import { AiFillCheckCircle } from 'react-icons/ai';
+import { AiFillCheckCircle} from 'react-icons/ai';
+import { ArrowUpOutlined } from '@ant-design/icons';
 import SearchTour from '../../components/SearchTour';
 import { getLocationListAction } from '../../redux/actions';
 import { useEffect,useState } from 'react';
@@ -12,6 +13,16 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 function HomePage({ getLocationList, locationList,match }) {
+  const style = {
+    height: 40,
+    width: 40,
+    lineHeight: '40px',
+    borderRadius: 4,
+    backgroundColor: '#1088e9',
+    color: '#fff',
+    textAlign: 'center',
+    fontSize: 14,
+  };
 
   const [keySearchLocation, setKeySearchLocation] = useState('');
 
@@ -41,6 +52,7 @@ function HomePage({ getLocationList, locationList,match }) {
       limit: 12,
       // id: locationId,
     });
+    
   }
   function renderLocationList() {
     if (locationList.load) return <p>Loading...</p>;
@@ -77,6 +89,11 @@ function HomePage({ getLocationList, locationList,match }) {
             <div className="localHeadLine">Chọn Điểm Du Lịch </div>
           <Row gutter={[12,12]} align="bottom" >
          {renderLocationList()}
+         <Row>
+                <BackTop className="backtop">
+                  <div style={style}><ArrowUpOutlined /></div>
+                </BackTop>
+              </Row>
           {locationList.data.length % 12 === 0 && (
             <Button onClick={() =>  loadmoreLocaltion()}>Xem thêm khách sạn</Button>
             )
@@ -85,8 +102,6 @@ function HomePage({ getLocationList, locationList,match }) {
         </div>
       </div>
       </>
-
-
 
   );
 
