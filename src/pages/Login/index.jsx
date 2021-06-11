@@ -49,6 +49,7 @@ function LoginPage(props) {
   };
 
   const { login, register, location, userInfo } = props;
+  const vnf_reg = /^(0?)(3[2-9]|5[6|8|9]|7[0|6-9]|8[0-6|8|9]|9[0-4|6-9])[0-9]{7}$/;
 
   return (
     <>
@@ -194,6 +195,19 @@ function LoginPage(props) {
                 required: true,
                 message: 'Số điện thoại chưa được nhập!',
               },
+              
+                ({ getFieldValue }) => ({
+                  validator(_, valuesField) {
+                    // debugger
+                    // console.log("tessstt " + vnf_reg.test(valuesField))
+                    if (!valuesField || vnf_reg.test(parseInt(valuesField)) == true) {
+                      return Promise.resolve();
+                    } else {
+                      return Promise.reject(new Error('Số điện thoại không đúng định dạng'));
+                    }
+                  },
+                }),
+              
             ]}
             hasFeedback
           >

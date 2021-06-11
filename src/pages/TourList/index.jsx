@@ -113,7 +113,7 @@ function TourListPage({
                 <Form.Item
                   name="location"
                 >
-                  <Input labelFontSize={100} fontSize={100} prefix={<EnvironmentOutlined />} style={{padding: '10px 50px', height:50, borderRadius:4, backgroundColor:"white"}} placeholder="Bạn muốn đi đâu?" />
+                  <Input  fontSize={100} prefix={<EnvironmentOutlined />} style={{padding: '10px 50px', height:50, borderRadius:4, backgroundColor:"white"}} placeholder="Bạn muốn đi đâu?" />
                 </Form.Item>
               </Col>
             <Col span={7}>

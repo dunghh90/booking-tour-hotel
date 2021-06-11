@@ -57,11 +57,11 @@ function ListRoomPage({
     getListRoom({ id: hotelId });
   }, [])
 
-  useEffect(() => {
-    if (listRoom.data.id) {
-      setRoomSelected(listRoom.data.rooms[0] || {})
-    }
-  }, [listRoom.data])
+  // useEffect(() => {
+  //   if (listRoom.data.id) {
+  //     setRoomSelected(listRoom.data.rooms[0] || {})
+  //   }
+  // }, [listRoom.data])
   console.log("🚀 ~ file: index.jsx ~ line 62 ~ listRoom.data", listRoom.data)
 
   const filterListRoom = listRoom.data.rooms.filter((item) => 
@@ -403,7 +403,7 @@ function ListRoomPage({
                 name="userNum"
               >
                 <Input
-                  labelFontSize={100}
+                  
                   fontSize={100} prefix={<SendOutlined />}
                   style={{
                     padding: '10px 50px', height: 50,

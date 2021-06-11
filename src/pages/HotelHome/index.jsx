@@ -31,14 +31,15 @@ function HomePage({ getLocationList, locationList,match }) {
       page: 1,
       limit: 12
     });
+    console.log("🚀 ~ file: index.jsx ~ line 34 ~ filterListLocation ~ locationList.data", locationList)
     // getLocationList();
 
   }, []);
 
-  // const filterListLocation = locationList.data.filter((item)=>{
-  //   return  item.name.toString().indexOf(keySearchLocation.name.trim()) !== -1
-  // })
-  // console.log("🚀 ~ file: index.jsx ~ line 31 ~ filterListLocation ~ filterListLocation", filterListLocation)
+  const filterListLocation = locationList.data.filter((item)=>{
+    return  item.name.trim().indexOf(keySearchLocation.trim()) !== -1
+  })
+  console.log("🚀 ~ file: index.jsx ~ line 41 ~ filterListLocation ~ locationList.data", locationList.data)
   
 
   // const locationId = match.params.id;
