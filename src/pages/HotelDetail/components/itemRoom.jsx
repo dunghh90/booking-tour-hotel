@@ -1,11 +1,7 @@
-
-import { Row, Col, Card, Image, Space } from 'antd';
-
-
-
+import { Row, Col, Card, Image, Space } from "antd";
 
 function ItemRoom(props) {
-  const {  description } = props;
+  const { description } = props;
 
   // const [isEdit, setIsEdit] = useState(false);
   // const [isShowDescription, setIsShowDescription] = useState(false);
@@ -15,20 +11,13 @@ function ItemRoom(props) {
   function renderItem() {
     return description.map((item, index) => {
       return (
-        <ul>
-          <li>
-            <a style={{ color: "#00C1DE" }}>{item}</a>
-          </li>
-        </ul>
-      )
-    })
-
+        <li>
+          <a style={{ color: "#00C1DE" }}>{item}</a>
+        </li>
+      );
+    });
   }
-  return (
-      <Col>
-          {renderItem()}  
-      </Col>
-  );
+  return <ul style={{ paddingLeft: 20, marginBottom: 0 }}>{renderItem()}</ul>;
 }
 
 export default ItemRoom;

@@ -1,14 +1,13 @@
-import { Button, Card, Col, Row } from 'antd';
+import { Button, Card, Col, Row, Space, Divider, Tag } from 'antd';
 
 import { connect } from 'react-redux';
-import { getListHotelAction } from '../../redux/actions';
+import { getListHotelAction, getLocationListAction } from '../../redux/actions';
 import { useEffect, useState } from 'react';
 import history from '../../utils/history';
 import { Rate, BackTop } from 'antd';
 import './styles.css';
 import { EnvironmentOutlined, TeamOutlined, ArrowUpOutlined } from '@ant-design/icons';
 import Slipder from '../../components/slickHotel';
-import Header from '../../components/layouts/Header';
 import Siderba from '../../components/Siderba';
 
 
@@ -25,130 +24,153 @@ const style = {
 function ListHotelPage({
   listHotel,
   getListHotel,
-  match,
+  location,
+  getLocationList,
+  locationList,
 }) {
-  const locationId = match.params.id;
-  const [roomSelected, setRoomSelected] = useState({});
+  const locationId = location.state?.locationId;
 
+  const [locationSelected, setLocationSelected] = useState(undefined);
+  const [rateSelected, setRateSelected] = useState(undefined);
 
   useEffect(() => {
-
+    getLocationList();
     getListHotel({
       page: 1,
       limit: 10,
-      id: locationId
+      ...locationSelected >= 0 & { id: locationSelected }
     });
-  }, [])
+  }, []);
 
   useEffect(() => {
-    if (listHotel.data.id) {
-      setRoomSelected(listHotel.data.hotels[0] || {})
-    }
-  }, [listHotel.data])
+    if (locationId) setLocationSelected(locationId)
+  }, [locationId])
 
+  function handleFilterLocation(id) {
+    setLocationSelected(id);
+    getListHotel({
+      page: 1,
+      limit: 10,
+      id,
+      rate: rateSelected,
+    });
+  }
 
+  function handleFilterRate(rate) {
+    setRateSelected(rate);
+    getListHotel({
+      page: 1,
+      limit: 10,
+      id: locationSelected,
+      rate,
+    });
+  }
 
   function loadmoreHotel() {
-    console.log("🚀 ~ file: index.jsx ~ line 42 ~ loadmoreHotel ~ loadmoreHotel", loadmoreHotel)
     getListHotel({
       more: true,
-      // page: page + 1,
       page: listHotel.page + 1,
       limit: 10,
-      id: locationId,
+      id: locationSelected,
+      rate: rateSelected,
     });
   }
 
   function renderListHotel() {
     if (listHotel.load) return <p>Loading...</p>;
+    if (listHotel.data.length === 0) return <p style={{ textAlign: 'center' }}>Không có dữ liệu</p>;
     return listHotel.data.map((item, index) => {
       return (
-        <>
-          <Row gutter={[12, 12]}>
-            <Col span={24}>
-              <Card
-                hoverable
-                title={item.area}
-                cover={<div alt="example" src="" />}
-                style={{ marginTop: 16 }}
-                onClick={() => history.push(`/hotels/${item.id}`)}
-
-              >
-                <Row>
-                  <div className="optiondetail">
-                    <img className="imgAll" src={item.img} alt="" />
-                    <div className="option">
-                      <h2 className="name" > {item.name} </h2>
-                      <Rate disabled value={item.rate} />
-                      <h5 className="adr"><EnvironmentOutlined />.{item.address}</h5>
-                      {/* <button>{item.note}</button> */}
-                      <div
-                        dangerouslySetInnerHTML={{
-                          __html: item.note
-                        }}>
-                      </div>
-                      <h4 className="comment12"><TeamOutlined />.{item.comment}</h4>
-                      <div className="priceandnote">
-                      
-                          <div className="pricerenhat">Giá 1 đêm của khách sạn từ:</div>
-                        <div className="price1">{item.Price.toLocaleString()} VND</div>
-                        <div className="pricerenhat12" > Lưu ý: Giá của khách sạn cao theo số người và chất lượng phòng  </div>
-                      </div>
-                    </div>
-                  </div>
-                </Row>
-              </Card>
-            </Col>
-          </Row>
-        </>
+        <Card
+          key={`hotel-${index}`}
+          hoverable
+          // title={item.area}
+          cover={<div alt="example" src="" />}
+          style={{ marginTop: 16, border: 'none' }}
+          onClick={() => history.push(`/hotel/${item.id}`)}
+        >
+          <div className="optiondetail">
+            <img className="imgAll" src={item.img} alt="" />
+            <div className="option">
+              <h1 className="name" > {item.name} </h1>
+              <div>
+                <Rate disabled value={item.rate} />
+              </div>
+              <Tag color="#87d068" style={{ margin: '4px 0 6px' }}>{item.area}</Tag>
+              <Space>
+                <EnvironmentOutlined />
+                <div>{item.address}</div>
+              </Space>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: item.note
+                }}>
+              </div>
+              <Space style={{ marginTop: 16 }}>
+                <TeamOutlined />
+                <div>{item.comment}</div>
+              </Space>
+              <div className="priceandnote">
+                <div className="pricerenhat">Giá 1 đêm của khách sạn từ</div>
+                <div className="price1">{item.Price.toLocaleString()} VND</div>
+                <div>Lưu ý: Giá của khách sạn cao theo số người và chất lượng phòng</div>
+              </div>
+            </div>
+          </div>
+        </Card>
       )
     });
   }
 
   return (
-    <>
-      <div className="allList">
-        <Header />
+    <div className="allList">
+      <div>
         <div>
-          <div>
-            < Slipder />
-            <h1 className="hotel">Khách sạn</h1>
-            <span className="hotro">Cần hỗ trợ liên hệ: 0702321494</span>
-            <Row gutter={[8, 8]} justify="center">
-              <Col span={7}>
-                < Siderba locationId={locationId} />
-              </Col>
-              <Col span={17}>
-                {renderListHotel()}
-              </Col>
-              <Row>
-                <BackTop className="backtop">
-                  <div style={style}><ArrowUpOutlined /></div>
-                </BackTop>
-              </Row>
-              {listHotel.data.length % 10 === 0 && (
-                <Button onClick={() => loadmoreHotel()}>Xem thêm khách sạn</Button>
-              )
-              }
+          < Slipder />
+          <Divider orientation="left" style={{ fontSize: 24, color: '#003c71' }}>Danh sách Khách sạn</Divider>
+          {/* <span className="hotro">Cần hỗ trợ liên hệ: 0702321494</span> */}
+          <Row gutter={[16, 16]} justify="center">
+            <Col span={7}>
+              <Siderba
+                locationList={locationList}
+                handleFilterLocation={handleFilterLocation}
+                handleFilterRate={handleFilterRate}
+                locationSelected={locationSelected}
+                rateSelected={rateSelected}
+              />
+            </Col>
+            <Col span={17}>
+              {renderListHotel()}
+              {listHotel.data.length !== 0 && listHotel.data.length % 10 === 0 && (
+                <Row justify="center" style={{ marginTop: 16 }}>
+                  <Button onClick={() => loadmoreHotel()}>Xem thêm khách sạn</Button>
+                </Row>
+              )}
+            </Col>
+            <Row>
+              <BackTop className="backtop">
+                <div style={style}><ArrowUpOutlined /></div>
+              </BackTop>
             </Row>
-          </div>
+          </Row>
         </div>
       </div>
-
-    </>
+    </div>
   );
 }
 
 const mapStateToProps = (state) => {
-  const { listHotel } = state.hotelReducer;
+  const { listHotel, locationList } = state.hotelReducer;
   return {
     listHotel,
+    locationList,
   }
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     getListHotel: (params) => dispatch(getListHotelAction(params)),
+    getLocationList: (params) => dispatch(getLocationListAction(params)),
   };
 }
 

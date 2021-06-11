@@ -1666,6 +1666,15 @@
       "endDate": "2021/06/17",
       "totalPrice": 7800000,
       "id": 2
+    },
+    {
+      "userId": 1,
+      "hotelId": 1,
+      "roomId": 1,
+      "startDate": "2021/06/11",
+      "endDate": "2021/06/12",
+      "totalPrice": 2900000,
+      "id": 3
     }
   ],
   "commentHotels": [

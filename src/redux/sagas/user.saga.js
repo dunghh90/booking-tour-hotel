@@ -28,6 +28,10 @@ function* loginSaga(action) {
       
       yield history.push(prevPath?prevPath:'/');
     } else {
+      yield notification.error({
+        message: 'Đăng nhập thất bại',
+        description: 'Email hoặc mật khẩu không đúng!',
+      });
       yield put({
         type: "LOGIN_FAIL",
         payload: {
@@ -48,37 +52,33 @@ function* loginSaga(action) {
 function* registerSaga(action) {
   try {
     const { email, password, name,birthday,gender,phone } = action.payload;
-
-    let result = yield axios.get(`http://localhost:3002/users?email=${email}`);
-
-    if (result.data.length != 0) {
-      alert("Email đã được sử dụng. Hãy dùng email khác");
-      yield put({
-        type: "REGISTER_FAIL",
-        payload: {
-          error: 'email đã sử dụng'
-        },
+    const emailCheckResult = yield axios({
+      method: 'GET',
+      url: 'http://localhost:3002/users',
+      params: {
+        email,
+      }
+    });
+    if (emailCheckResult.data.length > 0) {
+      yield notification.error({
+        message: 'Email đăng kí đã tồn tại!',
       });
     } else {
-    
-
-    result = yield axios({
-      method: 'POST',
-      url: 'http://localhost:3002/users',
-      data: { email, password, name, birthday: moment(birthday).format("DD/MM/YYYY"), gender, phone }
-    });
-    yield put({
-      type: "REGISTER_SUCCESS",
-      payload: {
-        data: result.data[0],
-      },
-    });
-    
-    yield Modal.success({
-      content: 'Bạn đã đăng ký thành công',
-    });
-    window.location.reload();
-      
+      const result = yield axios({
+        method: 'POST',
+        url: 'http://localhost:3002/users',
+        data: { email, password, name, birthday: moment(birthday).format("DD/MM/YYYY"), gender, phone }
+      });
+      yield put({
+        type: "REGISTER_SUCCESS",
+        payload: {
+          data: result.data[0],
+        },
+      });    
+      yield Modal.success({
+        content: 'Bạn đã đăng ký thành công',
+      });
+      history.push('/login')
     }
   } catch(e) {
     yield put({
@@ -175,7 +175,6 @@ function* updateProfileSaga(action) {
       
       yield notification.open({
         message: 'cập nhật thông tin thành công',
-        // description: `Bạn đã đặt tour ngày`,
       });
       yield put({
         type: "UPDATE_PROFILE_SUCCESS",
