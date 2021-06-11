@@ -9,7 +9,8 @@ function* getLocationListSaga(action) {
       url: 'http://localhost:3002/locations',
       params:{
         _page: page,
-        _limit: limit
+        _limit: limit,
+        ...more && {more: more},
       }
       
     });

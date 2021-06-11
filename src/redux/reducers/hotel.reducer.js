@@ -28,61 +28,9 @@ const initialState = {
   
   export default function hotelReducer(state = initialState, action) {
     switch (action.type) {
-      case 'GET_LOCATION_LIST_REQUEST': {
-        return {
-          ...state,
-          locationList: {
-            ...state.locationList,
-            load: true,
-          },
-        }
-      }
-      case 'GET_LOCATION_LIST_SUCCESS': {
-        const { data, page, more  } = action.payload;
-        if (more) {
-          return {
-            ...state,
-          locationList: {
-              ...state.locationList,
-              data: [
-                ...state.locationList.data,
-                ...data,
-              ],
-              page: page,
-              load: false,
-            },
-          }
-        } else {
-          return {
-            ...state,
-          locationList: {
-              ...state.locationList,
-              data: data,
-              page: page,
-              load: false,
-            },
-          }
-        }
-        // return {
-        //   ...state,
-        //   locationList: {
-        //     ...state.locationList,
-        //     data: data,
-        //     load: false,
-        //   },
-        // }
-      }
-      case 'GET_LOCATION_LIST_FAIL': {
-        const { error } = action.payload;
-        return {
-          ...state,
-          locationList: {
-            ...state.locationList,
-            load: false,
-            error: error,
-          },
-        }
-      }
+      
+      
+     
       
       case 'GET_LIST_HOTEL_REQUEST': {
         return {
@@ -175,17 +123,41 @@ const initialState = {
           },
         }
       }
-      
+
       case 'GET_LOCATION_LIST_SUCCESS': {
-        const { data } = action.payload;
-        return {
-          ...state,
+        const { data, page, more  } = action.payload;
+        if (more) {
+          return {
+            ...state,
           locationList: {
-            ...state.locationList,
-            data: data,
-            load: false,
-          },
+              ...state.locationList,
+              data: [
+                ...state.locationList.data,
+                ...data,
+              ],
+              page: page,
+              load: false,
+            },
+          }
+        } else {
+          return {
+            ...state,
+          locationList: {
+              ...state.locationList,
+              data: data,
+              page: page,
+              load: false,
+            },
+          }
         }
+        // return {
+        //   ...state,
+        //   locationList: {
+        //     ...state.locationList,
+        //     data: data,
+        //     load: false,
+        //   },
+        // }
       }
       
       case 'GET_LOCATION_LIST_FAIL': {
@@ -199,6 +171,8 @@ const initialState = {
           },
         }
       }
+
+
       // case 'GET_RATE_LIST_REQUEST': {
       //   return {
       //     ...state,

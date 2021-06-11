@@ -48,7 +48,21 @@ function* loginSaga(action) {
 function* registerSaga(action) {
   try {
     const { email, password, name,birthday,gender,phone } = action.payload;
-    const result = yield axios({
+
+    let result = yield axios.get(`http://localhost:3002/users?email=${email}`);
+
+    if (result.data.length != 0) {
+      alert("Email đã được sử dụng. Hãy dùng email khác");
+      yield put({
+        type: "REGISTER_FAIL",
+        payload: {
+          error: 'email đã sử dụng'
+        },
+      });
+    } else {
+    
+
+    result = yield axios({
       method: 'POST',
       url: 'http://localhost:3002/users',
       data: { email, password, name, birthday: moment(birthday).format("DD/MM/YYYY"), gender, phone }
@@ -64,6 +78,8 @@ function* registerSaga(action) {
       content: 'Bạn đã đăng ký thành công',
     });
     window.location.reload();
+      
+    }
   } catch(e) {
     yield put({
       type: "REGISTER_FAIL",

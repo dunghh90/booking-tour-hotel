@@ -37,7 +37,11 @@ function TourListPage({
   // const newVal = location.state?.prevPath?{...values,prevPath: location.state.prevPath}:values;
   
   useEffect(() => {
-    getLocationList();
+    getLocationList({
+      page: 1,
+      limit: 15
+    }
+    );
     getTopicTourList();
     getTourList({
       page: 1,

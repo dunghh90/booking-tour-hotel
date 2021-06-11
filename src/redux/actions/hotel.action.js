@@ -1,4 +1,5 @@
 export function getLocationListAction(params) {
+    console.log("🚀 ~ file: hotel.action.js ~ line 2 ~ getLocationListAction ~ params", params)
     return {
       type: 'GET_LOCATION_LIST_REQUEST',
       payload: params,
