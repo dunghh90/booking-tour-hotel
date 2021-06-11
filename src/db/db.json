@@ -62,6 +62,42 @@
       "gender": "male",
       "phone": "0975631600",
       "id": 7
+    },
+    {
+      "email": "nhominh190@gmail.com",
+      "password": "1234",
+      "name": "đây là Minh",
+      "birthday": "01/06/2021",
+      "gender": "male",
+      "phone": "0702321494",
+      "id": 8
+    },
+    {
+      "email": "nhominh190@gmail.com",
+      "password": "1234",
+      "name": "minh123",
+      "birthday": "08/06/2021",
+      "gender": "male",
+      "phone": "0702321494",
+      "id": 9
+    },
+    {
+      "email": "nhominh190@gmail.com",
+      "password": "1234",
+      "name": "nho minh",
+      "birthday": "01/06/2021",
+      "gender": "male",
+      "phone": "1234",
+      "id": 10
+    },
+    {
+      "email": "nhominh190@gmail.com",
+      "password": "1234",
+      "name": "đây là minh",
+      "birthday": "01/06/2021",
+      "gender": "male",
+      "phone": "0702321494",
+      "id": 11
     }
   ],
   "tours": [
@@ -819,7 +855,7 @@
     },
     {
       "id": 17,
-      "locationId": 4,
+      "locationId": 2,
       "img": "https://cdn.huongnghiepaau.com/wp-content/uploads/2019/10/khach-san-pullman-ha-noi.jpg",
       "src": [
         "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
@@ -836,7 +872,7 @@
     },
     {
       "id": 18,
-      "locationId": 4,
+      "locationId": 2,
       "img": "https://pix10.agoda.net/hotelImages/4885116/0/3ec7a573097742323e2f976670239467.jpg?s=1024x768",
       "src": [
         "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
@@ -853,7 +889,7 @@
     },
     {
       "id": 19,
-      "locationId": 4,
+      "locationId": 2,
       "img": "https://toquoc.mediacdn.vn/2019/2/28/my-trieu-summit-15513252506751703394469.jpg",
       "src": [
         "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
@@ -869,7 +905,7 @@
     },
     {
       "id": 20,
-      "locationId": 4,
+      "locationId": 2,
       "name": "Hotel Mường Thanh",
       "img": "https://cf.bstatic.com/images/hotel/max1024x768/863/86327330.jpg",
       "src": [
@@ -885,7 +921,7 @@
     },
     {
       "id": 21,
-      "locationId": 4,
+      "locationId": 2,
       "img": "https://cdnimg.vietnamplus.vn/uploaded/fsmsr/2015_11_26/movenpickhanoi.jpg",
       "src": [
         "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
@@ -901,7 +937,7 @@
     },
     {
       "id": 22,
-      "locationId": 4,
+      "locationId": 2,
       "img": "https://bazantravel.com/cdn/medias/uploads/30/30991-khach-san-sheraton-hanoi.jpg",
       "src": [
         "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
@@ -917,7 +953,7 @@
     },
     {
       "id": 23,
-      "locationId": 4,
+      "locationId": 2,
       "img": "https://ik.imagekit.io/tvlk/apr-asset/TzEv3ZUmG4-4Dz22hvmO9NUDzw1DGCIdWl4oPtKumOg=/hotels/1000000/530000/523600/523534/246b00cd_z.jpg?tr=q-40,c-at_max,w-740,h-500&_src=imagekit",
       "src": [
         "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
@@ -933,6 +969,419 @@
     },
     {
       "id": 24,
+      "locationId": 2,
+      "img": "https://ik.imagekit.io/tvlk/apr-asset/TzEv3ZUmG4-4Dz22hvmO9NUDzw1DGCIdWl4oPtKumOg=/hotels/1000000/530000/523600/523534/246b00cd_z.jpg?tr=q-40,c-at_max,w-740,h-500&_src=imagekit",
+      "src": [
+        "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
+        "https://img.lovepik.com/photo/50065/5248.jpg_wh860.jpg",
+        "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/10/Intercontinental-Westlake-review1.jpeg",
+        "http://vinatel.com.vn/public/media/file/files/blog/Giai-phap-hotel-tv-cho-khach-san-5-sao-1.jpg"
+      ],
+      "rate": 3,
+      "name": "Hotel Linh Dương",
+      "address": "Đường Trần Phú",
+      "Price": 3900000,
+      "area": "Wifi miễn phí"
+    },
+    {
+      "id": 25,
+      "locationId": 3,
+      "img": "//cdn1.ivivu.com/iVivu/2019/09/18/16/sa-pa-370x190.png",
+      "src": [
+        "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
+        "https://img.lovepik.com/photo/50065/5248.jpg_wh860.jpg",
+        "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/10/Intercontinental-Westlake-review1.jpeg",
+        "http://vinatel.com.vn/public/media/file/files/blog/Giai-phap-hotel-tv-cho-khach-san-5-sao-1.jpg"
+      ],
+      "rate": 5,
+      "name": "Hotel Hà Nội Godel",
+      "address": "270 Võ Nguyên Giáp, Phường Mỹ An,Thành phố SaPa,Tỉnh Lào Cai, Việt Nam",
+      "Price": 4900000,
+      "area": "Thành Phố SaPa-Tỉnh Lào Cai",
+      "comment": "Được khách đánh giá cao-90% sẽ giới thiệu",
+      "note": "<div class='tongHotelList'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
+    },
+    {
+      "id": 26,
+      "locationId": 3,
+      "img": "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/12/3-khach-san-5-sao-tai-Sapa-1.jpg",
+      "src": [
+        "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
+        "https://img.lovepik.com/photo/50065/5248.jpg_wh860.jpg",
+        "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/10/Intercontinental-Westlake-review1.jpeg",
+        "http://vinatel.com.vn/public/media/file/files/blog/Giai-phap-hotel-tv-cho-khach-san-5-sao-1.jpg"
+      ],
+      "rate": 4,
+      "name": "Hotel Royal",
+      "address": "273 Võ Nguyên Giáp, Phường Mỹ An,Thành phố SaPa,Tỉnh Lào Cai, Việt Nam",
+      "Price": 3900000,
+      "area": "Thành Phố SaPa-Tỉnh Lào Cai",
+      "comment": "Được khách đánh giá cao-90% sẽ giới thiệu",
+      "note": "<div class='tongHotelList'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
+    },
+    {
+      "id": 27,
+      "locationId": 3,
+      "img": "https://travelreview.vn/wp-content/uploads/2018/10/Kha%CC%81ch-sa%CC%A3n-2-sao-%C6%A1%CC%89-Sapa-2.jpg",
+      "src": [
+        "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
+        "https://img.lovepik.com/photo/50065/5248.jpg_wh860.jpg",
+        "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/10/Intercontinental-Westlake-review1.jpeg",
+        "http://vinatel.com.vn/public/media/file/files/blog/Giai-phap-hotel-tv-cho-khach-san-5-sao-1.jpg"
+      ],
+      "rate": 4,
+      "name": "Hotel BatMan ",
+      "address": "270 Hàng Đẩy, Phường Mỹ An,Thành phố SaPa,Tỉnh Lào Cai, Việt Nam",
+      "Price": 3900000,
+      "area": "Thành Phố SaPa-Tỉnh Lào Cai",
+      "comment": "Được khách đánh giá cao-90% sẽ giới thiệu",
+      "note": "<div class='tongHotelList'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
+    },
+    {
+      "id": 28,
+      "locationId": 3,
+      "name": "Hotel Mường Thanh",
+      "img": "https://cf.bstatic.com/images/hotel/max1024x768/210/210656131.jpg",
+      "src": [
+        "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
+        "https://img.lovepik.com/photo/50065/5248.jpg_wh860.jpg",
+        "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/10/Intercontinental-Westlake-review1.jpeg",
+        "http://vinatel.com.vn/public/media/file/files/blog/Giai-phap-hotel-tv-cho-khach-san-5-sao-1.jpg"
+      ],
+      "rate": 5,
+      "address": "279 Nguyễn Văn Linh, Phường Mỹ An,Thành phố SaPa,Tỉnh Lào Cai, Việt Nam",
+      "Price": 4900000,
+      "area": "Thành Phố SaPa-Tỉnh Lào Cai",
+      "comment": "Được khách đánh giá cao-90% sẽ giới thiệu",
+      "note": "<div class='tongHotelList'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
+    },
+    {
+      "id": 29,
+      "locationId": 3,
+      "name": "Hotel Supper Godel",
+      "img": "https://pix10.agoda.net/hotelImages/626432/-1/4e377e4b246a20370ac4a9fb2e4850be.jpg?s=1024x768",
+      "src": [
+        "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
+        "https://img.lovepik.com/photo/50065/5248.jpg_wh860.jpg",
+        "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/10/Intercontinental-Westlake-review1.jpeg",
+        "http://vinatel.com.vn/public/media/file/files/blog/Giai-phap-hotel-tv-cho-khach-san-5-sao-1.jpg"
+      ],
+      "rate": 5,
+      "address": "279 Hàng Đẩy, Phường Mỹ An,Thành phố SaPa,Tỉnh Lào Cai, Việt Nam",
+      "Price": 4900000,
+      "area": "Thành Phố SaPa-Tỉnh Lào Cai",
+      "comment": "Được khách đánh giá cao-90% sẽ giới thiệu",
+      "note": "<div class='tongHotelList'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
+    },
+    {
+      "id": 30,
+      "locationId": 3,
+      "img": "https://pix10.agoda.net/hotelImages/5649846/-1/ab54b6f91c343b2e68002618cdffa496.jpg?s=1024x768",
+      "src": [
+        "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
+        "https://img.lovepik.com/photo/50065/5248.jpg_wh860.jpg",
+        "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/10/Intercontinental-Westlake-review1.jpeg",
+        "http://vinatel.com.vn/public/media/file/files/blog/Giai-phap-hotel-tv-cho-khach-san-5-sao-1.jpg"
+      ],
+      "rate": 3,
+      "name": "Hotel VinGroup",
+      "address": "280 Hàng Đẩy, Phường Mỹ An,Thành phố SaPa,Tỉnh Lào Cai, Việt Nam",
+      "Price": 2900000,
+      "area": "Thành Phố SaPa-Tỉnh Lào Cai",
+      "comment": "Được khách đánh giá cao-90% sẽ giới thiệu",
+      "note": "<div class='tongHotelList'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
+    },
+    {
+      "id": 31,
+      "locationId": 3,
+      "img": "https://cdn3.ivivu.com/2017/11/khach-san-sapa-ivivu-20.jpg",
+      "src": [
+        "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
+        "https://img.lovepik.com/photo/50065/5248.jpg_wh860.jpg",
+        "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/10/Intercontinental-Westlake-review1.jpeg",
+        "http://vinatel.com.vn/public/media/file/files/blog/Giai-phap-hotel-tv-cho-khach-san-5-sao-1.jpg"
+      ],
+      "rate": 3,
+      "name": "Hotel Jude Hill",
+      "address": "290 Hàng Đẩy, Phường Mỹ An,Thành phố SaPa,Tỉnh Lào Cai, Việt Nam",
+      "Price": 4900000,
+      "area": "Thành Phố SaPa-Tỉnh Lào Cai",
+      "comment": "Được khách đánh giá cao-90% sẽ giới thiệu",
+      "note": "<div class='tongHotelList'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
+    },
+    {
+      "id": 32,
+      "locationId": 3,
+      "img": "https://dulichkhampha24.com/wp-content/uploads/2019/05/ban-cong-khach-san-paos-sapa.jpeg",
+      "src": [
+        "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
+        "https://img.lovepik.com/photo/50065/5248.jpg_wh860.jpg",
+        "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/10/Intercontinental-Westlake-review1.jpeg",
+        "http://vinatel.com.vn/public/media/file/files/blog/Giai-phap-hotel-tv-cho-khach-san-5-sao-1.jpg"
+      ],
+      "rate": 2,
+      "name": "Hotel Royal",
+      "address": "250 Hàng Đẩy, Phường Mỹ An,Thành phố SaPa,Tỉnh Lào Cai, Việt Nam",
+      "Price": 1900000,
+      "area": "Thành Phố SaPa-Tỉnh Lào Cai",
+      "comment": "Được khách đánh giá cao-90% sẽ giới thiệu",
+      "note": "<div class='tongHotelList'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
+    },
+    {
+      "id": 33,
+      "locationId": 3,
+      "img": "https://cdn.huongnghiepaau.com/wp-content/uploads/2019/10/khach-san-pullman-ha-noi.jpg",
+      "src": [
+        "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
+        "https://img.lovepik.com/photo/50065/5248.jpg_wh860.jpg",
+        "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/10/Intercontinental-Westlake-review1.jpeg",
+        "http://vinatel.com.vn/public/media/file/files/blog/Giai-phap-hotel-tv-cho-khach-san-5-sao-1.jpg"
+      ],
+      "rate": 5,
+      "name": "Hotel Korae Godel",
+      "address": "60 Hàng Đẩy, Phường Mỹ An,Thành phố SaPa,Tỉnh Lào Cai, Việt Nam",
+      "Price": 4900000,
+      "area": "Thành Phố SaPa-Tỉnh Lào Cai",
+      "comment": "Được khách đánh giá cao-90% sẽ giới thiệu",
+      "note": "<div class='tongHotelList'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
+    },
+    {
+      "id": 34,
+      "locationId": 3,
+      "img": "https://pix10.agoda.net/hotelImages/4885116/0/3ec7a573097742323e2f976670239467.jpg?s=1024x768",
+      "src": [
+        "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
+        "https://img.lovepik.com/photo/50065/5248.jpg_wh860.jpg",
+        "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/10/Intercontinental-Westlake-review1.jpeg",
+        "http://vinatel.com.vn/public/media/file/files/blog/Giai-phap-hotel-tv-cho-khach-san-5-sao-1.jpg"
+      ],
+      "rate": 4,
+      "name": "Hotel Japan Pro",
+      "address": "240 Hàng Đẩy, Phường Mỹ An,Thành phố SaPa,Tỉnh Lào Cai, Việt Nam",
+      "Price": 3900000,
+      "area": "Thành Phố SaPa-Tỉnh Lào Cai",
+      "comment": "Được khách đánh giá cao-90% sẽ giới thiệu",
+      "note": "<div class='tongHotelList'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
+    },
+    {
+      "id": 35,
+      "locationId": 3,
+      "img": "https://toquoc.mediacdn.vn/2019/2/28/my-trieu-summit-15513252506751703394469.jpg",
+      "src": [
+        "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
+        "https://img.lovepik.com/photo/50065/5248.jpg_wh860.jpg",
+        "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/10/Intercontinental-Westlake-review1.jpeg",
+        "http://vinatel.com.vn/public/media/file/files/blog/Giai-phap-hotel-tv-cho-khach-san-5-sao-1.jpg"
+      ],
+      "rate": 4,
+      "name": "Hotel Royal ",
+      "address": "276 Hàng Đẩy, Phường Mỹ An,Thành phố SaPa,Tỉnh Lào Cai, Việt Nam",
+      "Price": 3900000,
+      "area": "Khu vực SaPa-Tỉnh Lào Cai",
+      "comment": "Được khách đánh giá cao-90% sẽ giới thiệu",
+      "note": "<div class='tongHotelList'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
+    },
+    {
+      "id": 36,
+      "locationId": 3,
+      "name": "Hotel Mường Thanh",
+      "img": "https://cf.bstatic.com/images/hotel/max1024x768/863/86327330.jpg",
+      "src": [
+        "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
+        "https://img.lovepik.com/photo/50065/5248.jpg_wh860.jpg",
+        "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/10/Intercontinental-Westlake-review1.jpeg",
+        "http://vinatel.com.vn/public/media/file/files/blog/Giai-phap-hotel-tv-cho-khach-san-5-sao-1.jpg"
+      ],
+      "rate": 3,
+      "address": "Đường Âu Cơ",
+      "Price": 2900000,
+      "area": "Wifi miễn phí",
+      "note": "<div class='tongHotelList'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
+    },
+    {
+      "id": 37,
+      "locationId": 3,
+      "img": "https://cdnimg.vietnamplus.vn/uploaded/fsmsr/2015_11_26/movenpickhanoi.jpg",
+      "src": [
+        "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
+        "https://img.lovepik.com/photo/50065/5248.jpg_wh860.jpg",
+        "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/10/Intercontinental-Westlake-review1.jpeg",
+        "http://vinatel.com.vn/public/media/file/files/blog/Giai-phap-hotel-tv-cho-khach-san-5-sao-1.jpg"
+      ],
+      "rate": 5,
+      "name": "Hotel Minh Toàn",
+      "address": "Đường Thác Bạc Thị ",
+      "Price": 4900000,
+      "area": "Wifi miễn phí",
+      "note": "<div class='tongHotelList'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
+    },
+    {
+      "id": 38,
+      "locationId": 4,
+      "img": "https://bazantravel.com/cdn/medias/uploads/30/30991-khach-san-sheraton-hanoi.jpg",
+      "src": [
+        "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
+        "https://img.lovepik.com/photo/50065/5248.jpg_wh860.jpg",
+        "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/10/Intercontinental-Westlake-review1.jpeg",
+        "http://vinatel.com.vn/public/media/file/files/blog/Giai-phap-hotel-tv-cho-khach-san-5-sao-1.jpg"
+      ],
+      "rate": 5,
+      "name": "Hotel GaLaXy",
+      "address": "Đường Hai Bà Trưng",
+      "Price": 4900000,
+      "area": "Wifi miễn phí",
+      "note": "<div class='tongHotelList'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
+    },
+    {
+      "id": 39,
+      "locationId": 4,
+      "img": "https://ik.imagekit.io/tvlk/apr-asset/TzEv3ZUmG4-4Dz22hvmO9NUDzw1DGCIdWl4oPtKumOg=/hotels/1000000/530000/523600/523534/246b00cd_z.jpg?tr=q-40,c-at_max,w-740,h-500&_src=imagekit",
+      "src": [
+        "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
+        "https://img.lovepik.com/photo/50065/5248.jpg_wh860.jpg",
+        "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/10/Intercontinental-Westlake-review1.jpeg",
+        "http://vinatel.com.vn/public/media/file/files/blog/Giai-phap-hotel-tv-cho-khach-san-5-sao-1.jpg"
+      ],
+      "rate": 3,
+      "name": "Hotel Linh Dương",
+      "address": "Đường Trần Phú",
+      "Price": 4900000,
+      "area": "Wifi miễn phí",
+      "note": "<div class='tongHotelList'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
+    },
+    {
+      "id": 40,
+      "locationId": 4,
+      "img": "https://baogialai.com.vn/dataimages/202009/original/images2927238_logo_img20191128112544_1_15991305286161571887111.jpg",
+      "src": [
+        "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
+        "https://img.lovepik.com/photo/50065/5248.jpg_wh860.jpg",
+        "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/10/Intercontinental-Westlake-review1.jpeg",
+        "http://vinatel.com.vn/public/media/file/files/blog/Giai-phap-hotel-tv-cho-khach-san-5-sao-1.jpg"
+      ],
+      "rate": 2,
+      "name": "Hotel Lõ Hưng",
+      "address": "Đường Phạm Hưng",
+      "Price": 1900000,
+      "area": "Wifi miễn phí",
+      "note": "<div class='tongHotelList'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
+    },
+    {
+      "id": 41,
+      "locationId": 4,
+      "img": "https://cdn.huongnghiepaau.com/wp-content/uploads/2019/10/khach-san-pullman-ha-noi.jpg",
+      "src": [
+        "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
+        "https://img.lovepik.com/photo/50065/5248.jpg_wh860.jpg",
+        "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/10/Intercontinental-Westlake-review1.jpeg",
+        "http://vinatel.com.vn/public/media/file/files/blog/Giai-phap-hotel-tv-cho-khach-san-5-sao-1.jpg"
+      ],
+      "rate": 5,
+      "name": "Hotel Hà Nội Godel",
+      "address": "Đường Trần Duy Hưng",
+      "Price": 4900000,
+      "area": "Wifi miễn phí",
+      "note": "<div class='tongHotelList'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
+    },
+    {
+      "id": 42,
+      "locationId": 4,
+      "img": "https://pix10.agoda.net/hotelImages/4885116/0/3ec7a573097742323e2f976670239467.jpg?s=1024x768",
+      "src": [
+        "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
+        "https://img.lovepik.com/photo/50065/5248.jpg_wh860.jpg",
+        "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/10/Intercontinental-Westlake-review1.jpeg",
+        "http://vinatel.com.vn/public/media/file/files/blog/Giai-phap-hotel-tv-cho-khach-san-5-sao-1.jpg"
+      ],
+      "rate": 4,
+      "name": "Hotel Matcha",
+      "address": "Đường Phạm Hùng",
+      "Price": 3900000,
+      "area": "Wifi miễn phí",
+      "note": "<div class='tongHotelList'><span class='note'>Tiện ích</span ><span  class='note'>Thoáng mát</span ><span class='note'>Gần gủi thiên nhiên</span ></div>"
+    },
+    {
+      "id": 43,
+      "locationId": 4,
+      "img": "https://toquoc.mediacdn.vn/2019/2/28/my-trieu-summit-15513252506751703394469.jpg",
+      "src": [
+        "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
+        "https://img.lovepik.com/photo/50065/5248.jpg_wh860.jpg",
+        "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/10/Intercontinental-Westlake-review1.jpeg",
+        "http://vinatel.com.vn/public/media/file/files/blog/Giai-phap-hotel-tv-cho-khach-san-5-sao-1.jpg"
+      ],
+      "rate": 4,
+      "name": "Hotel Royal ",
+      "address": "Đường Hùng Vương",
+      "Price": 3900000,
+      "area": "Wifi miễn phí"
+    },
+    {
+      "id": 44,
+      "locationId": 4,
+      "name": "Hotel Mường Thanh",
+      "img": "https://cf.bstatic.com/images/hotel/max1024x768/863/86327330.jpg",
+      "src": [
+        "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
+        "https://img.lovepik.com/photo/50065/5248.jpg_wh860.jpg",
+        "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/10/Intercontinental-Westlake-review1.jpeg",
+        "http://vinatel.com.vn/public/media/file/files/blog/Giai-phap-hotel-tv-cho-khach-san-5-sao-1.jpg"
+      ],
+      "rate": 3,
+      "address": "Đường Âu Cơ",
+      "Price": 2900000,
+      "area": "Wifi miễn phí"
+    },
+    {
+      "id": 45,
+      "locationId": 4,
+      "img": "https://cdnimg.vietnamplus.vn/uploaded/fsmsr/2015_11_26/movenpickhanoi.jpg",
+      "src": [
+        "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
+        "https://img.lovepik.com/photo/50065/5248.jpg_wh860.jpg",
+        "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/10/Intercontinental-Westlake-review1.jpeg",
+        "http://vinatel.com.vn/public/media/file/files/blog/Giai-phap-hotel-tv-cho-khach-san-5-sao-1.jpg"
+      ],
+      "rate": 5,
+      "name": "Hotel Minh Toàn",
+      "address": "Đường Thác Bạc Thị ",
+      "Price": 4900000,
+      "area": "Wifi miễn phí"
+    },
+    {
+      "id": 46,
+      "locationId": 4,
+      "img": "https://bazantravel.com/cdn/medias/uploads/30/30991-khach-san-sheraton-hanoi.jpg",
+      "src": [
+        "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
+        "https://img.lovepik.com/photo/50065/5248.jpg_wh860.jpg",
+        "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/10/Intercontinental-Westlake-review1.jpeg",
+        "http://vinatel.com.vn/public/media/file/files/blog/Giai-phap-hotel-tv-cho-khach-san-5-sao-1.jpg"
+      ],
+      "rate": 3,
+      "name": "Hotel GaLaXy",
+      "address": "Đường Hai Bà Trưng",
+      "Price": 2900000,
+      "area": "Wifi miễn phí"
+    },
+    {
+      "id": 47,
+      "locationId": 4,
+      "img": "https://ik.imagekit.io/tvlk/apr-asset/TzEv3ZUmG4-4Dz22hvmO9NUDzw1DGCIdWl4oPtKumOg=/hotels/1000000/530000/523600/523534/246b00cd_z.jpg?tr=q-40,c-at_max,w-740,h-500&_src=imagekit",
+      "src": [
+        "https://vcdn-dulich.vnecdn.net/2017/08/21/2-2245-1503291190.jpg",
+        "https://img.lovepik.com/photo/50065/5248.jpg_wh860.jpg",
+        "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/10/Intercontinental-Westlake-review1.jpeg",
+        "http://vinatel.com.vn/public/media/file/files/blog/Giai-phap-hotel-tv-cho-khach-san-5-sao-1.jpg"
+      ],
+      "rate": 3,
+      "name": "Hotel Linh Dương",
+      "address": "Đường Trần Phú",
+      "Price": 2900000,
+      "area": "Wifi miễn phí"
+    },
+    {
+      "id": 48,
       "locationId": 4,
       "img": "https://ik.imagekit.io/tvlk/apr-asset/TzEv3ZUmG4-4Dz22hvmO9NUDzw1DGCIdWl4oPtKumOg=/hotels/1000000/530000/523600/523534/246b00cd_z.jpg?tr=q-40,c-at_max,w-740,h-500&_src=imagekit",
       "src": [
@@ -1092,6 +1541,150 @@
       "combo": "2N2D + Buffet + Đưa đón sân bay",
       "name": "Hotel Hà Nội Godel",
       "rate": 5
+    },
+    {
+      "id": 10,
+      "hotelId": 2,
+      "img": "https://www.hotelgrandsaigon.com/wp-content/uploads/sites/227/2017/12/GRAND_SEDK_01.jpg",
+      "title": "Phòng 2 Người",
+      "price": 2900000,
+      "isNew": true,
+      "description": [
+        "Full options",
+        "View đẹp",
+        "Hiện đại"
+      ],
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "name": "Hotel Hà Nội Godel",
+      "rate": 5
+    },
+    {
+      "id": 11,
+      "hotelId": 2,
+      "img": "https://www.vietnambooking.com/wp-content/uploads/2018/06/co-nhung-loai-phong-khach-san-nao-02-06-18-3.jpg",
+      "title": "Phòng 4 Người",
+      "price": 3900000,
+      "isNew": true,
+      "description": [
+        "Full options",
+        "Rộng rãi thoáng mát",
+        "View đẹp sống ảo"
+      ],
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "name": "Hotel Hà Nội Godel",
+      "rate": 5
+    },
+    {
+      "id": 12,
+      "hotelId": 2,
+      "img": "https://www.hotelgrandsaigon.com/wp-content/uploads/sites/227/2017/12/GRAND_SEDK_01.jpg",
+      "title": "Phòng 1 Người",
+      "price": 1900000,
+      "isNew": true,
+      "description": [
+        "Không full options",
+        "View đẹp",
+        "Có xông hơi"
+      ],
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "name": "Hotel Hà Nội Godel",
+      "rate": 5
+    },
+    {
+      "id": 13,
+      "hotelId": 2,
+      "img": "https://ezcloud.vn/wp-content/uploads/2019/05/tripple-room.jpg",
+      "title": "Phòng 5 Người",
+      "price": 4900000,
+      "isNew": true,
+      "description": [
+        "Full options",
+        "Rộng rãi thoáng mát",
+        "View đẹp sống ảo"
+      ],
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "name": "Hotel Hà Nội Godel",
+      "rate": 5
+    },
+    {
+      "id": 14,
+      "hotelId": 2,
+      "img": "https://pix10.agoda.net/hotelImages/109/10981/10981_19052410360074693721.jpg?s=1024x768",
+      "title": "Phòng 2 Người",
+      "isNew": true,
+      "price": 2900000,
+      "description": [
+        "Không full options",
+        "View đẹp",
+        "Có xông hơi"
+      ],
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "name": "Hotel Hà Nội Godel",
+      "rate": 5
+    },
+    {
+      "id": 15,
+      "hotelId": 2,
+      "img": "https://cdn.galaxy.tf/unit-media/tc-default/uploads/images/room_photo/001/557/713/deluxe-room-dbl-bed-op-standard.jpg",
+      "title": "Phòng 4 Người",
+      "price": 4900000,
+      "isNew": true,
+      "description": [
+        "Không full options",
+        "Rộng rãi thoáng mát",
+        "View đẹp"
+      ],
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "name": "Hotel Hà Nội Godel",
+      "rate": 5
+    },
+    {
+      "id": 16,
+      "hotelId": 2,
+      "img": "https://cf.bstatic.com/images/hotel/max1024x768/280/28038759.jpg",
+      "title": "Phòng 1 Người",
+      "price": 1900000,
+      "isNew": false,
+      "description": [
+        "Rộng rãi thoáng mát",
+        "Hiện đại",
+        "Full options"
+      ],
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "name": "Hotel Hà Nội Godel",
+      "rate": 5
+    },
+    {
+      "id": 17,
+      "hotelId": 2,
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMDtOJgNtr9_KuF-DoKQac9J9ESMiuefNrdw&usqp=CAU",
+      "title": "Phòng 5 Người",
+      "isNew": false,
+      "price": 4900000,
+      "description": [
+        "Full options",
+        "Rộng rãi thoáng mát",
+        "View đẹp sống ảo"
+      ],
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "name": "Hotel Hà Nội Godel",
+      "rate": 5
+    },
+    {
+      "id": 18,
+      "hotelId": 2,
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMDtOJgNtr9_KuF-DoKQac9J9ESMiuefNrdw&usqp=CAU",
+      "title": "Phòng 5 Người",
+      "isNew": false,
+      "price": 4900000,
+      "description": [
+        "Full options",
+        "Rộng rãi thoáng mát",
+        "View đẹp sống ảo"
+      ],
+      "combo": "2N2D + Buffet + Đưa đón sân bay",
+      "name": "Hotel Hà Nội Godel",
+      "rate": 5
     }
   ],
   "bookingTours": [
@@ -1146,96 +1739,10 @@
       "userId": 6,
       "hotelId": 1,
       "roomId": 2,
-      "startDate": "2021/06/07",
-      "endDate": "2021/06/09",
-      "totalPrice": 7800000,
-      "id": 2
-    },
-    {
-      "userId": 6,
-      "hotelId": 1,
-      "roomId": 1,
       "startDate": "2021/06/15",
       "endDate": "2021/06/17",
-      "totalPrice": 5800000,
-      "id": 3
-    },
-    {
-      "userId": 6,
-      "hotelId": 1,
-      "roomId": 2,
-      "startDate": "2021/06/01",
-      "endDate": "2021/06/03",
       "totalPrice": 7800000,
-      "id": 4
-    },
-    {
-      "userId": 6,
-      "hotelId": 1,
-      "startDate": "2021/06/08",
-      "endDate": "2021/06/15",
-      "id": 5
-    },
-    {
-      "userId": 6,
-      "hotelId": 1,
-      "startDate": "2021/06/08",
-      "endDate": "2021/06/15",
-      "id": 6
-    },
-    {
-      "userId": 6,
-      "hotelId": 1,
-      "roomId": 3,
-      "startDate": "2021/06/14",
-      "endDate": "2021/06/18",
-      "totalPrice": 7600000,
-      "id": 7
-    },
-    {
-      "userId": 6,
-      "hotelId": 1,
-      "roomId": 5,
-      "startDate": "2021/06/14",
-      "endDate": "2021/06/18",
-      "totalPrice": 11600000,
-      "id": 8
-    },
-    {
-      "userId": 6,
-      "hotelId": 1,
-      "roomId": 3,
-      "startDate": "2021/06/08",
-      "endDate": "2021/06/10",
-      "totalPrice": 3800000,
-      "id": 9
-    },
-    {
-      "userId": 6,
-      "hotelId": 1,
-      "roomId": 1,
-      "startDate": "2021/06/08",
-      "endDate": "2021/06/10",
-      "totalPrice": 5800000,
-      "id": 10
-    },
-    {
-      "userId": 6,
-      "hotelId": 1,
-      "roomId": 4,
-      "startDate": "2021/06/02",
-      "endDate": "2021/06/03",
-      "totalPrice": 4900000,
-      "id": 11
-    },
-    {
-      "userId": 6,
-      "hotelId": 1,
-      "roomId": 2,
-      "startDate": "2021/06/15",
-      "endDate": "2021/06/16",
-      "totalPrice": 3900000,
-      "id": 12
+      "id": 2
     }
   ],
   "commentHotels": [
@@ -1247,6 +1754,33 @@
       "rate": 3.5,
       "creatDate": "11/06/2021",
       "id": 1
+    },
+    {
+      "userId": 6,
+      "userName": "nho minh",
+      "hotelId": 1,
+      "comment": "đẹp lắm",
+      "rate": 3.5,
+      "creatDate": "11/06/2021",
+      "id": 2
+    },
+    {
+      "userId": 6,
+      "userName": "nho minh",
+      "hotelId": 1,
+      "comment": "đẹp",
+      "rate": 3.5,
+      "creatDate": "11/06/2021",
+      "id": 3
+    },
+    {
+      "userId": 6,
+      "userName": "nho minh",
+      "hotelId": 1,
+      "comment": "ok ",
+      "rate": 4,
+      "creatDate": "11/06/2021",
+      "id": 4
     }
   ],
   "commentTours": [
