@@ -65,6 +65,24 @@ function TourDetailPage({
     return item.topicTourId == tourDetail.data.topicTourId;
   })
 
+
+  var mybutton = document.getElementById("myBtn");
+
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
+
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+
   // function setMoneyAdults(values) {
   //   setMoney(tourDetail.data.price * values + tourDetail.data.price * countChild * 0.5);
   // }
@@ -183,15 +201,14 @@ function TourDetailPage({
                   height:390,
                   backgroundRepeat: "no-repeat",
                   backgroundSize:"cover",
-                  backgroundImage: "url('https://cdn2.ivivu.com/2020/01/15/17/ivivu-nam-dao-phu-quoc-750x390.gif')"
+                  backgroundImage: `url(${tourDetail.data.urlTitleDetail})`
                   
                 }}>
-
                 </div>
               </Row>
               <Row style={{padding: "10px 10px", backgroundColor:"#d9d9d9"}}>
-                  <Col span={6}><EnvironmentOutlined /> Phú Quốc</Col>
-                  <Col span={6}><HistoryOutlined /> 3 ngày 2 đêm</Col>
+                  <Col span={6}><EnvironmentOutlined /> {tourDetail.data.location.name}</Col>
+                  <Col span={6}><HistoryOutlined /> {tourDetail.data.time}</Col>
                   <Col span={6}><DingtalkOutlined /> Phương tiện</Col>
                   <Col span={6} align="right">Mã tour: TO516</Col>
               </Row>
@@ -239,7 +256,7 @@ function TourDetailPage({
               </div>
             </Col>
             <Col span={8} xl={{ order: 2 }} lg={{ order: 2 }} md={{ order: 1 }} sm={{ order: 1 }} xs={{ order: 1 }}>
-              <div style={{position:"sticky", top:0}}>
+              <div style={{position:"sticky", top:65}}>
                 <div className="order-form-container">
                   <BookingTourPage 
                     customerRemain={customerRemain} 
@@ -340,6 +357,8 @@ function TourDetailPage({
                   </Row>
               </Card>
           </Row>
+          <Button onClick={() => topFunction()} id="myBtn" title="Di chuyển lên đầu">Top</Button>
+          {/* <button onClick onclick="topFunction()" id="myBtn" title="Go to top">Top</button> */}
         </div>
       </Content>
     </>

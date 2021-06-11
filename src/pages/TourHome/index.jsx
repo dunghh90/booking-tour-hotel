@@ -16,7 +16,7 @@ function TourHomePage({ getTourList, tourList, getTopicTourList, topicTourList }
   useEffect(() => {
     getTourList({
       page: 1,
-      limit: 10,
+      limit: 20,
     });
     getTopicTourList();
   }, []);
