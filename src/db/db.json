@@ -208,6 +208,26 @@
       "id": 10,
       "name": "Cà Mau",
       "img": "//cdn1.ivivu.com/iVivu/2017/01/23/11/khu-nghi-duong-the-graden-house-phu-quoc-374x280.png"
+    }, 
+    {
+      "id": 11,
+      "name": "Bình Dương",
+      "img": "//cdn1.ivivu.com/iVivu/2018/09/14/14/vungtau_2-370x395.jpg"
+    },
+    {
+      "id": 12,
+      "name": "Cà Mau",
+      "img": "//cdn1.ivivu.com/iVivu/2017/01/23/11/khu-nghi-duong-the-graden-house-phu-quoc-374x280.png"
+    },
+    {
+      "id": 13,
+      "name": "Bình Dương",
+      "img": "//cdn1.ivivu.com/iVivu/2018/09/14/14/vungtau_2-370x395.jpg"
+    },
+    {
+      "id": 14,
+      "name": "Cà Mau",
+      "img": "//cdn1.ivivu.com/iVivu/2017/01/23/11/khu-nghi-duong-the-graden-house-phu-quoc-374x280.png"
     }
   ],
   "topicTours": [
@@ -861,9 +881,46 @@
       "endDate": "2021/06/15",
       "totalPrice": 34300000,
       "id": 2
+    },
+    {
+      "userId": 6,
+      "hotelId": 1,
+      "roomId": 2,
+      "startDate": "2021/06/01",
+      "endDate": "2021/06/03",
+      "totalPrice": 9800000,
+      "id": 3
+    },
+    {
+      "userId": 6,
+      "hotelId": 1,
+      "roomId": 2,
+      "startDate": "2021/07/01",
+      "endDate": "2021/07/03",
+      "totalPrice": 9800000,
+      "id": 4
+    },
+    {
+      "userId": 6,
+      "hotelId": 1,
+      "roomId": 3,
+      "startDate": "2021/07/01",
+      "endDate": "2021/07/03",
+      "totalPrice": 9800000,
+      "id": 5
     }
   ],
-  "commentHotels": [],
+  "commentHotels": [
+    {
+      "userId": 6,
+      "userName": "nho minh",
+      "hotelId": 1,
+      "comment": "KHACH sanj dejp qua",
+      "rate": 3.5,
+      "creatDate": "11/06/2021",
+      "id": 1
+    }
+  ],
   "commentTours": [
     {
       "userName": "Huu Dung",

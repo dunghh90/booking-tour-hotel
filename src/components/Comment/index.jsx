@@ -160,7 +160,7 @@ function CommentPage(props) {
             </Form>
             )}
             {/* <Col span={24}> */}
-            <p><h3>Đánh giá gần đây</h3></p>
+            <p id='tour-comment'><h3>Đánh giá khánh hàng về Tour</h3></p>
             {renderComment()}
             {/* </Col> */}
         </>

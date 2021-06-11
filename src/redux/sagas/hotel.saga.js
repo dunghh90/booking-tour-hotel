@@ -3,15 +3,22 @@ import axios from 'axios';
 
 function* getLocationListSaga(action) {
   try {
+    const { page,limit,more } = action.payload;
     const result = yield axios({
       method: 'GET',
-      url: 'http://localhost:3002/locations'
+      url: 'http://localhost:3002/locations',
+      params:{
+        _page: page,
+        _limit: limit
+      }
       
     });
     yield put({
       type: "GET_LOCATION_LIST_SUCCESS",
       payload: {
-        data: result.data
+        data: result.data,
+        more,
+        page
       },
     });
   } catch (e) {

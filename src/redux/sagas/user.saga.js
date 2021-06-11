@@ -31,7 +31,7 @@ function* loginSaga(action) {
       yield put({
         type: "LOGIN_FAIL",
         payload: {
-          error: 'Email hoặc mật khẩu không đúng',
+          error: 'Tên tài khoản của bạn hoặc Mật khẩu không đúng, vui lòng thử lại',
         },
       });
     }

@@ -145,11 +145,17 @@ function ListRoomPage({
                 <img className="img2" src={listRoom.data.src[1]} alt="" />
               </Row>
               <Row gutter={[8, 8]}>
-                <Col span={12}>
+                <Col span={12} style={{paddingRight: 0}}>
+              
+
                   <img className="img3" src={listRoom.data.src[2]} alt="" />
+               
                 </Col>
-                <Col span={12}>
+                <Col span={12} style={{paddingLeft: 0}}>
+                
+
                   <img className="img3" src={listRoom.data.src[3]} alt="" />
+                 
                 </Col>
               </Row>
             </Col>

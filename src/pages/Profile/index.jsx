@@ -4,7 +4,9 @@ import { Space, Card, InputNumber, Button, Row, Col, Radio, Menu, Form, Input, D
 import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons';
 import history from '../../utils/history';
 import { Redirect } from 'react-router-dom';
+import logoUser from '../../img/user-48.png';
 import moment from 'moment';
+import './style.css';
 import {
   getBookingHotelsAction,
   getBookingTourAction,
@@ -70,6 +72,7 @@ function ProfilePage({
   function renderUserInfo(){
       return (
         <>
+        <div className='localProfileLine' style={{width:'100%'}}>Quản lý thông tin hồ sơ để bảo mật tài khoản</div>
         <Form
           // form={form}
           {...layout}
@@ -164,6 +167,8 @@ function ProfilePage({
 
   function renderChangePass() {
     return (
+      <>
+      <div className='localProfileLine' style={{width:'100%'}}>Đổi Mật Khẩu</div>
       <Form
         {...layout}
         name="changePassword"
@@ -216,31 +221,32 @@ function ProfilePage({
           </Col>
         </Row>
       </Form>
+      </>
     );
   }
 
   function renderHistoryBookingHotel() {
     const tableColumn = [
       {
-        title: 'Tên khách sạn',
+        title: 'TÊN KHÁCH SẠN',
         dataIndex: 'hotelName',
         key: 'hotelName',
         with: 230,
       },
       {
-        title: 'Loại phòng',
+        title: 'LOẠI PHÒNG',
         dataIndex: 'roomName',
         key: 'roomName',
         with: 230,
       },
       {
-        title: 'Giá',
+        title: 'GIÁ',
         dataIndex: 'price',
         key: 'price',
         with: 230,
       },
       {
-        title: 'Ngày đặt',
+        title: 'NGÀY ĐẶT',
         dataIndex: 'date',
         key: 'date',
         with: 230,
@@ -256,7 +262,7 @@ function ProfilePage({
         key: item.id,
       }
     });
-    return <Table columns={tableColumn} dataSource={tableData} pagination={false} />
+    return <Table style={{width:'100%'}} columns={tableColumn} dataSource={tableData} pagination={false} />
  
   }
   function renderHistoryBookingTour() {
@@ -300,18 +306,19 @@ function ProfilePage({
         key: item.id,
       }
     });
-    return <Table columns={tableColumn} dataSource={tableData} pagination={false} />
+    return <Table style={{width:'100%'}} columns={tableColumn} dataSource={tableData} pagination={false} />
   }
 
   function renderHistory() {
     return (
       <div>
-        <div style={{fontWeight:600, fontSize:16}}>Lịch sử book khách sạn</div>
+        <div className='localProfileLine' style={{width:'100%'}}>Lịch sử đặt tour và khách sạn</div>
+        <div style={{fontWeight:600, fontSize:16, padding:'0 0 10px'}}>Khách sạn đã đặt</div>
         <Row>
 
         {renderHistoryBookingHotel()}
         </Row>
-        <div style={{fontWeight:600, fontSize:16}}>Lịch sử book tour</div>
+        <div style={{fontWeight:600, fontSize:16, padding:'10px 0'}}>Tour đã đặt</div>
         <Row>
 
         {renderHistoryBookingTour()}
@@ -332,42 +339,52 @@ function ProfilePage({
   }
 
   return (
-
-    <Row  gutter={16} style={{ padding: '16px 16px 0',marginTop: 50 }}>
-      <Col span={4}>
-        <Menu
-          mode="inline"
-          defaultSelectedKeys={['1']}
-          defaultOpenKeys={['sub1']}
-          style={{ height: '100%' }}
-        >
-          {/* <Menu.ItemGroup key="userInfo" icon={<UserOutlined />} title="Thông tin của tôi"> */}
-          <Menu.SubMenu key="userInfo" icon={<UserOutlined />} title="Thông tin của tôi">
-          {/* <Menu.ItemGroup key="g1" title={<><UserOutlined /> <span>Thông tin của tôi</span></>}> */}
-            <Menu.Item key="1"
-              onClick={() => setSelectObject(1)}
-            >Tài khoản</Menu.Item>
-            <Menu.Item key="2"
-              onClick={() => setSelectObject(2)}
-            >Đổi mật khẩu</Menu.Item>
-          {/* </Menu.ItemGroup> */}
-          </Menu.SubMenu>
-          <Menu.Item key="userHistory" icon={<LaptopOutlined />}
-            onClick={() => setSelectObject(3)}
+    <>
+    <Row  gutter={16} style={{ padding: '16px 16px 0',marginTop: 50, minHeight:800 }}>
+      <Col span={6}>
+        <div style={{ height: '100%', backgroundColor:'white' }}>
+          <div style={{padding:'15px 10px 0px 10px'}}>
+            <div className='localProfileLine' style={{padding:10, width:'90%'}}>
+              <img src={logoUser}/>
+              {userInfo.data.name}
+            </div>
+          </div>
+          <Menu
+            mode="inline"
+            defaultSelectedKeys={['1']}
+            defaultOpenKeys={['sub1']}
           >
-            Lịch sử booking
-          </Menu.Item>
-          {/* <Menu.ItemGroup key="g2" > */}
-          {/* </Menu.ItemGroup> */}
-        </Menu>
-
+            {/* <Menu.ItemGroup key="userInfo" icon={<UserOutlined />} title="Thông tin của tôi"> */}
+            <Menu.SubMenu key="userInfo" icon={<UserOutlined />} title="Thông tin của tôi">
+            {/* <Menu.ItemGroup key="g1" title={<><UserOutlined /> <span>Thông tin của tôi</span></>}> */}
+              <Menu.Item key="1"
+                onClick={() => setSelectObject(1)}
+              >Tài khoản</Menu.Item>
+              <Menu.Item key="2"
+                onClick={() => setSelectObject(2)}
+              >Đổi mật khẩu</Menu.Item>
+            {/* </Menu.ItemGroup> */}
+            </Menu.SubMenu>
+            <Menu.Item key="userHistory" icon={<LaptopOutlined />}
+              onClick={() => setSelectObject(3)}
+            >
+              Lịch sử booking
+            </Menu.Item>
+            {/* <Menu.ItemGroup key="g2" > */}
+            {/* </Menu.ItemGroup> */}
+          </Menu>
+        </div>
       </Col>
-      <Col span={20}>
-        <Row style={{ backgroundColor: "white", padding: 20 }}>
-          {renderContent()}
-        </Row>
+      <Col span={18}>
+          <div style={{ backgroundColor: "white", padding: 20, height: "100%" }}>
+          <Row>
+            {renderContent()}
+
+          </Row>
+          </div>
       </Col>
     </Row>
+    </>
   );
 }
 
