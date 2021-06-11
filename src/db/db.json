@@ -208,7 +208,7 @@
       "id": 10,
       "name": "Cà Mau",
       "img": "//cdn1.ivivu.com/iVivu/2017/01/23/11/khu-nghi-duong-the-graden-house-phu-quoc-374x280.png"
-    }, 
+    },
     {
       "id": 11,
       "name": "Ninh Bình",
@@ -268,7 +268,7 @@
       "id": 22,
       "name": "Kom Tum",
       "img": "https://vietnamtourism.gov.vn/images/2019/CNMN/25.7._Kon_Tum_phat_dong_cuoc_thi_anh.jpg"
-    }, 
+    },
     {
       "id": 23,
       "name": "Cần Thơ",
@@ -963,6 +963,24 @@
       "endDate": "2021/07/03",
       "totalPrice": 9800000,
       "id": 5
+    },
+    {
+      "userId": 6,
+      "hotelId": 1,
+      "roomId": 4,
+      "startDate": "2021/06/15",
+      "endDate": "2021/06/18",
+      "totalPrice": 14700000,
+      "id": 6
+    },
+    {
+      "userId": 6,
+      "hotelId": 1,
+      "roomId": 7,
+      "startDate": "2021/06/07",
+      "endDate": "2021/06/15",
+      "totalPrice": 39200000,
+      "id": 7
     }
   ],
   "commentHotels": [
