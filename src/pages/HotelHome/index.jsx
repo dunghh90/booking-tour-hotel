@@ -2,7 +2,7 @@ import { Row, Col, Button,BackTop } from 'antd';
 import history from '../../utils/history';
 import { connect } from 'react-redux';
 import { AiFillCheckCircle} from 'react-icons/ai';
-import { ArrowUpOutlined } from '@ant-design/icons';
+import { EnvironmentOutlined, TeamOutlined, ArrowUpOutlined } from '@ant-design/icons';
 import SearchTour from '../../components/SearchTour';
 import { getLocationListAction } from '../../redux/actions';
 import { useEffect,useState } from 'react';
@@ -14,15 +14,15 @@ import "slick-carousel/slick/slick-theme.css";
 
 function HomePage({ getLocationList, locationList,match }) {
   const style = {
-    height: 40,
-    width: 40,
-    lineHeight: '40px',
-    borderRadius: 4,
-    backgroundColor: '#1088e9',
-    color: '#fff',
-    textAlign: 'center',
-    fontSize: 14,
-  };
+  height: 40,
+  width: 40,
+  lineHeight: '40px',
+  borderRadius: 4,
+  backgroundColor: '#1088e9',
+  color: '#fff',
+  textAlign: 'center',
+  fontSize: 14,
+};
 
   const [keySearchLocation, setKeySearchLocation] = useState('');
 

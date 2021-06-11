@@ -35,18 +35,21 @@ function ListRoomPage({
   getListRoom,
   match,
   bookingHotelRoom,
+  userInfo
 }) {
+  console.log("🚀 ~ file: index.jsx ~ line 40 ~ userInfo", userInfo)
   const hotelId = match.params.id;
   const [roomSelected, setRoomSelected] = useState({});
-  const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+  // const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+  
   const [dateSelected, setDateSelected] = useState();
   // const [totalPrice, setTotalPrice] = useState(0);
-  const isNew = true;
+  
   const currentDate = new Date();
 
   const [searchKey, setSearchKey] = useState({ userNum: '', price: '' });
 
-  
+  let numDate = 1;
 
   let totalPrice = 0;
 
@@ -113,19 +116,21 @@ function ListRoomPage({
   //     },
   //   });
   // }
-  function handleBookingHotel(id) {
-    if (!userInfo) {
+  function handleBookingHotel(id,price,numDate) {
+    if (!userInfo.data.id) {
       alert('Bạn cần đăng nhập!');
     } else if (!dateSelected) {
       alert('Cần chọn ngày đặt phòng!');
     } else {
       bookingHotelRoom({
-        userId: userInfo.id,
+        userId: userInfo.data.id,
         hotelId: parseInt(hotelId),
         roomId: id,
         startDate: dateSelected[0],
         endDate: dateSelected[1],
-        totalPrice: totalPrice
+        totalPrice: price * numDate,
+       
+
       })
     }
   }
@@ -300,7 +305,7 @@ function ListRoomPage({
           }
         })
         // const numDate = moment(dateSelected[1]).day() - moment(dateSelected[0]).day();
-        const numDate = moment.duration(moment(dateSelected[1], 'YYYY/MM/DD').diff(moment(dateSelected[0], 'YYYY/MM/DD'))).asDays();
+        numDate = moment.duration(moment(dateSelected[1], 'YYYY/MM/DD').diff(moment(dateSelected[0], 'YYYY/MM/DD'))).asDays();
         console.log("🚀 ~ file: index.jsx ~ line 253 ~ returnfilterListRoom.map ~ numDate", numDate)
         totalPrice = numDate * item.price;
         // console.log("🚀 ~ file: index.jsx ~ line 241 ~ returnfilterListRoom.map ~ item.price", item.price)
@@ -352,7 +357,7 @@ function ListRoomPage({
                         <Button type="primary" disabled className="book" >Hết Phòng</Button>
                       )}
                       {!isDisabled && (
-                        <Button type="primary" className="book" onClick={() => handleBookingHotel(item.id, item.price)}>Đặt Phòng</Button>
+                        <Button type="primary" className="book" onClick={() => handleBookingHotel(item.id, item.price,numDate)}>Đặt Phòng</Button>
                       )}
 
 
@@ -646,8 +651,10 @@ function ListRoomPage({
 
 const mapStateToProps = (state) => {
   const { listRoom } = state.hotelReducer;
+  const {userInfo} = state.userReducer;
   return {
     listRoom,
+    userInfo
   }
 };
 
