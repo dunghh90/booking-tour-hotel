@@ -48,7 +48,7 @@ function BookingTourPage(props) {
   }
 
   function updatePrice(values) {
-    setDateSelected(values.dateStartBooking.format("DD/MM/YYYY"));
+    setDateSelected(values.dateStartBooking?values.dateStartBooking.format("DD/MM/YYYY"):'');
     const listBooking = tourDetail.data.bookingTours.filter((item) => {
       return moment(values.dateStartBooking).format("DD/MM/YYYY").trim().toLowerCase().indexOf(item.startDate.trim().toLowerCase()) !== -1;
     })

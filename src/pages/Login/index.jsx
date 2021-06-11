@@ -6,6 +6,7 @@ import { FacebookOutlined, GooglePlusOutlined,InstagramOutlined } from '@ant-des
 import history from '../../utils/history';
 import { loginAction, registerAction } from '../../redux/actions';
 import './styleLogin.css';
+import backgroundLogin from '../../img/register-bg.jpg';
 
 
 import { Tabs } from 'antd';
@@ -51,7 +52,7 @@ function LoginPage(props) {
 
   return (
     <>
-      <div class="register-bg-container" style={{backgroundImage: ''}}>
+      <div class="register-bg-container" style={{backgroundImage: `url(${backgroundLogin})`}}>
       
         
             <div className="loginNote">
