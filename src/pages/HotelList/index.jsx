@@ -34,7 +34,12 @@ function ListHotelPage({
   const [rateSelected, setRateSelected] = useState(undefined);
 
   useEffect(() => {
-    getLocationList();
+    getLocationList(
+      {
+        page: 1,
+        limit: 10,
+      }
+    );
     getListHotel({
       page: 1,
       limit: 10,

@@ -34,6 +34,9 @@ function ItemTour(props) {
         hoverable
         onClick={() => history.push(`/tours/${id}`)}
       >
+        {
+          rate > 4 ? <div className="isHot">Tour bán chạy</div> : null
+        }
         <Row gutter={24}>
           <Col span={6}>
             {/* <img src={link} style={{width:"100%", cursor:"pointer"}}/> */}

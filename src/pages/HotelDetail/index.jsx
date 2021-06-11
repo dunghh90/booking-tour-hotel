@@ -199,7 +199,7 @@ function ListRoomPage({ listRoom, getListRoom, match, bookingHotelRoom, userInfo
             }
             style={{ height: 400 }}
           >
-            <h2 style={{ marginBottom: 8, fontWeight: 600, color: '#003c71' }}>{item.title} </h2>
+            <h2 style={{ marginBottom: 8, fontWeight: 600, color: '#003c71', width: '100%' }}>{item.title} </h2>
             <ItemRoom key={index} description={item.description} />
             {!isDisabled
               ? (

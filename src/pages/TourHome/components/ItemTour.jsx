@@ -2,6 +2,7 @@
 import { Col, Card, Row } from 'antd';
 
 import history from '../../../utils/history';
+import '../styleTour.css'
 
 function ItemTour(props) {
   const { title, link, description, rate, price, id, key } = props;
@@ -33,6 +34,9 @@ function ItemTour(props) {
         >
           {/* <Meta title="Europe Street beat" description="www.instagram.com" /> */}
           <div>
+          {
+          rate > 4 ? <div className="isHot">Tour bán chạy</div> : null
+          }
             <Row>
               <div className="tourItemName" style={{fontWeight:600, height:76}}>
                 <a>
