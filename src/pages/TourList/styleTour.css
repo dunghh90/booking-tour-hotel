@@ -64,5 +64,19 @@ height: 77px;
 position: fixed;
 top: 64px;
 width: 100%;
-z-index: 99;
+z-index: 9999;
+}
+
+.isHot {
+  position: absolute;
+  top: 20px;
+  left: -12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 30px;
+  color: white;
+  background-color: brown;
+  z-index: 99;
 }

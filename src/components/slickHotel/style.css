@@ -1,23 +1,18 @@
 .slid{
     height: 300px;
     width: 100%;
-    padding: 0 20px;
     object-fit: cover;
     cursor: pointer;
 }
 .tong{
-    margin: 30px auto 50px;
-}
-.slick-list{
-    width: 1131px;
-    margin-left: 132px;
+    margin: 16px auto;
 }
 .title{
     border: none;
     margin-top: 67px;
-    margin-left: 19px;
+    padding-top: 16px;
     font-weight: 700;
 }
-.des{
-    margin-left: 19px;
+.slick-container {
+    padding: 0 8px;
 }

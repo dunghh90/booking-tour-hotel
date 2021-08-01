@@ -1,21 +1,41 @@
-import { Breadcrumb, Card, Col, Row, Form, Input, Button, DatePicker, Space, InputNumber, Modal, List} from "antd";
+import {
+  Breadcrumb,
+  Card,
+  Col,
+  Row,
+  Form,
+  Input,
+  Button,
+  DatePicker,
+  Space,
+  InputNumber,
+  Modal,
+  List,
+} from "antd";
 import { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import history from '../../utils/history';
+import history from "../../utils/history";
 
-import { EnvironmentOutlined , HistoryOutlined, DingtalkOutlined } from '@ant-design/icons';
+import {
+  EnvironmentOutlined,
+  HistoryOutlined,
+  DingtalkOutlined,
+} from "@ant-design/icons";
 
-import { getTourDetailAction, getTourListAction, bookingTourAction } from "../../redux/actions";
-import { HomeOutlined, ExclamationCircleOutlined } from '@ant-design/icons';
-import CommentPage from '../../components/Comment'
-import moment from 'moment';
+import {
+  getTourDetailAction,
+  getTourListAction,
+  bookingTourAction,
+} from "../../redux/actions";
+import { HomeOutlined, ExclamationCircleOutlined } from "@ant-design/icons";
+import CommentPage from "../../components/Comment";
+import moment from "moment";
 
-import './style.css'
+import "./style.css";
 
 import { Content } from "antd/lib/layout/layout";
 import BookingTourPage from "./components/bookingTour";
-import ItemTour  from "../TourHome/components/ItemTour";
-
+import ItemTour from "../TourHome/components/ItemTour";
 
 function TourDetailPage({
   tourDetail,
@@ -26,6 +46,7 @@ function TourDetailPage({
   userInfo,
   match,
 }) {
+  console.log('🚀 ~ file: index.jsx ~ line 49 ~ tourDetail', tourDetail);
   const [orderTourForm] = Form.useForm();
   const { TextArea } = Input;
   const tourId = match.params.id;
@@ -35,27 +56,27 @@ function TourDetailPage({
   const [countAdults, setCountAdults] = useState(1);
   const [countChild, setCountChild] = useState(0);
   var d = new Date();
-  const [dateSelected, setDateSelected] = useState(moment(d).format('DD/MM/YYYY'));
-  const [customerRemain, setCustomerRemain ] = useState(0);
+  const [dateSelected, setDateSelected] = useState(
+    moment(d).format("DD/MM/YYYY")
+  );
+  const [customerRemain, setCustomerRemain] = useState(0);
 
   const [rateTourForm] = Form.useForm();
 
-  
-  
   useEffect(() => {
     getTourDetail({ id: tourId });
     getTourList({
       page: 1,
       limit: 10,
     });
-  }, [])
-  
-  const dateFormat = 'DD/MM/YYYY';
+  }, []);
+
+  const dateFormat = "DD/MM/YYYY";
   useEffect(() => {
     if (tourDetail.data.id) {
       setMoney(tourDetail.data.price);
     }
-  }, [tourDetail.data])
+  }, [tourDetail.data]);
   // useEffect(() => {
   //   getTourDetail({ id: tourId });
   //   console.log("🚀 ~ file: index.jsx ~ line 50 ~ test")
@@ -63,7 +84,7 @@ function TourDetailPage({
   // }, [customerRemain])
   const filterTourListByTopic = tourList.data.filter((item) => {
     return item.topicTourId == tourDetail.data.topicTourId;
-  })
+  });
 
 
   var mybutton = document.getElementById("myBtn");
@@ -164,7 +185,16 @@ function TourDetailPage({
 
   return (
     <>
-      <Content className="site-layout" style={{ padding: '0 50px', display: "flex",marginTop:65, justifyContent: "center", alignItems: "center" }}>
+      <Content
+        className="site-layout"
+        style={{
+          padding: "0 50px",
+          display: "flex",
+          marginTop: 65,
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
         <div style={{ maxWidth: 1300, width: "100%" }}>
           {/* <Row >
               <ul className="listPath" >
@@ -175,26 +205,52 @@ function TourDetailPage({
           </Row> */}
           <Row>
             <Breadcrumb>
-              <Breadcrumb.Item><HomeOutlined  /> Trang chủ</Breadcrumb.Item>
-              <Breadcrumb.Item><a href="">Đà Nẵng</a></Breadcrumb.Item>
-              <Breadcrumb.Item><a href="">Tour Đà Nẵng 4N3D: TP. HCM - Đà Nẵng - Bà Nà - Hội An - Huế - Quảng Bình</a></Breadcrumb.Item>
+              <Breadcrumb.Item>
+                <HomeOutlined /> Trang chủ
+              </Breadcrumb.Item>
+              <Breadcrumb.Item>
+                <a href="">Đà Nẵng</a>
+              </Breadcrumb.Item>
+              <Breadcrumb.Item>
+                <a href="">
+                  Tour Đà Nẵng 4N3D: TP. HCM - Đà Nẵng - Bà Nà - Hội An - Huế -
+                  Quảng Bình
+                </a>
+              </Breadcrumb.Item>
             </Breadcrumb>
           </Row>
-          <Row style={{fontSize:37, fontWeight:600, color:"#10239e", fontFamily:"'Helvetica Neue',Helvetica,Arial,sans-serif"}}>
+          <Row
+            style={{
+              fontSize: 37,
+              fontWeight: 600,
+              color: "#10239e",
+              fontFamily: "'Helvetica Neue',Helvetica,Arial,sans-serif",
+            }}
+          >
             {tourDetail.data.name}
           </Row>
-          <Row justify="start" style={{margin:"10px 0"}}>
-                <span className="score-container">
-                  <span className="score">{tourDetail.data.rate}.0</span>
-                  <span className="score-description">Tuyệt vời</span>
-                </span>
-                <span>| 1 đánh giá </span>
-                <span style={{padding: "0px 5px", color:"blue", fontWeight:600}}>
-                {customerRemain != 0 && " ( Số khách còn lại có thể đặt: " + customerRemain + " )"}
-                </span>
+          <Row justify="start" style={{ margin: "10px 0" }}>
+            <span className="score-container">
+              <span className="score">{tourDetail.data.rate}.0</span>
+              <span className="score-description">Tuyệt vời</span>
+            </span>
+            <span>| 1 đánh giá </span>
+            <span
+              style={{ padding: "0px 5px", color: "blue", fontWeight: 600 }}
+            >
+              {customerRemain != 0 &&
+                " ( Số khách còn lại có thể đặt: " + customerRemain + " )"}
+            </span>
           </Row>
           <Row span={24} gutter={24}>
-            <Col span={16} xl={{ order: 1 }} lg={{ order: 1 }} md={{ order: 2 }} sm={{ order: 2 }} xs={{ order: 2 }}>
+            <Col
+              span={16}
+              xl={{ order: 1 }}
+              lg={{ order: 1 }}
+              md={{ order: 2 }}
+              sm={{ order: 2 }}
+              xs={{ order: 2 }}
+            >
               <Row>
                 <div style={{
                   width:"100%",
@@ -212,8 +268,18 @@ function TourDetailPage({
                   <Col span={6}><DingtalkOutlined /> Phương tiện</Col>
                   <Col span={6} align="right">Mã tour: TO516</Col>
               </Row>
-              <div style={{ backgroundColor: "white", padding: "10px 30px 30px 30px", textAlign: "justify" }}>
-                <div dangerouslySetInnerHTML={{ __html: tourDetail.data.information }}></div>
+              <div
+                style={{
+                  backgroundColor: "white",
+                  padding: "10px 30px 30px 30px",
+                  textAlign: "justify",
+                }}
+              >
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: tourDetail.data.information,
+                  }}
+                ></div>
               </div>
 
               <div style={{borderTop:'1px solid #f0f0f0', backgroundColor: "white", padding: "10px 30px 30px 30px", textAlign: "justify" }}>
@@ -258,11 +324,11 @@ function TourDetailPage({
             <Col span={8} xl={{ order: 2 }} lg={{ order: 2 }} md={{ order: 1 }} sm={{ order: 1 }} xs={{ order: 1 }}>
               <div style={{position:"sticky", top:65}}>
                 <div className="order-form-container">
-                  <BookingTourPage 
-                    customerRemain={customerRemain} 
-                    setCustomerRemain={setCustomerRemain} 
+                  <BookingTourPage
+                    customerRemain={customerRemain}
+                    setCustomerRemain={setCustomerRemain}
                     tourId={tourId}
-                    />
+                  />
                   {/* <Row span={24} gutter={[10, 10]}>
                     <Col span={10}>Chọn ngày khởi hành:</Col>
                     <Col span={14}><DatePicker defaultValue={moment(d)} format={dateFormat} onChange={(value) => setDateSelected(moment(value).format("DD/MM/YYYY"))} /></Col>
@@ -292,9 +358,11 @@ function TourDetailPage({
                       <List.Item
                         // onClick={() => handleFilterLocaiton(item.id)}
                         // style={{color: locationSelected === item.id ? 'red': 'black' }}
-                        className ="moveLocation"
+                        className="moveLocation"
                       >
-                        <a style={{color:"gray"}} href="#tour-program">{item}</a>
+                        <a style={{ color: "gray" }} href="#tour-program">
+                          {item}
+                        </a>
                       </List.Item>
                     )}
                   /> */}
@@ -312,27 +380,32 @@ function TourDetailPage({
                 </div>
               </div>
             </Col>
-
           </Row>
           <Row>
-            <Card title={`Tours du lịch ${tourDetail.data.location.name} liên quan`} extra={<a className="loadMore" href="#">XEM TẤT CẢ </a>} style={{width: "100%", marginTop:16}}>
-                  <Row gutter={[28,28]}>
-                  {
-                    filterTourListByTopic.map((item, index) => {
-                      return (
-                        <ItemTour
-                          key={index}
-                          id={item.id}
-                          title={item.name}
-                          link={item.link}
-                          description={item.description}
-                          price={item.price}
-                          rate={item.rate}
-                        />
-                      )
-                    })
-                  }
-                    {/* <Col span={8}>
+            <Card
+              title={`Tours du lịch ${tourDetail.data.location.name} liên quan`}
+              extra={
+                <a className="loadMore" href="#">
+                  XEM TẤT CẢ{" "}
+                </a>
+              }
+              style={{ width: "100%", marginTop: 16 }}
+            >
+              <Row gutter={[28, 28]}>
+                {filterTourListByTopic.map((item, index) => {
+                  return (
+                    <ItemTour
+                      key={index}
+                      id={item.id}
+                      title={item.name}
+                      link={item.link}
+                      description={item.description}
+                      price={item.price}
+                      rate={item.rate}
+                    />
+                  );
+                })}
+                {/* <Col span={8}>
                       <Card 
                         hoverable
                         cover={<img alt="Phú Quốc" src="https://cdn2.ivivu.com/2020/07/10/17/ivivu-phu-quoc-bia-360x225.gif" />}
@@ -354,8 +427,8 @@ function TourDetailPage({
 
                       </Card>
                     </Col> */}
-                  </Row>
-              </Card>
+              </Row>
+            </Card>
           </Row>
           <Button onClick={() => topFunction()} id="myBtn" title="Di chuyển lên đầu">Top</Button>
           {/* <button onClick onclick="topFunction()" id="myBtn" title="Go to top">Top</button> */}
@@ -363,9 +436,6 @@ function TourDetailPage({
       </Content>
     </>
   );
-
-
-
 }
 
 const mapStateToProps = (state) => {
@@ -374,8 +444,8 @@ const mapStateToProps = (state) => {
   return {
     tourDetail,
     tourList,
-    userInfo
-  }
+    userInfo,
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {
@@ -384,6 +454,6 @@ const mapDispatchToProps = (dispatch) => {
     getTourList: (params) => dispatch(getTourListAction(params)),
     bookingTour: (params) => dispatch(bookingTourAction(params)),
   };
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(TourDetailPage);

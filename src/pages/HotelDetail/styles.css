@@ -1,12 +1,12 @@
 
 .bodyHotelDetail{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: #ecf0f5;
 }
 .bodyHotelDetail2{
     max-width: 1400px;
     width: 100%;
+    padding: 0 16px;
+    margin: 0 auto;
 }
 .ALLROOM{
     display: flex;  
@@ -79,21 +79,19 @@ h2{
 }
 
 .content-header{
-    height: 35px;
+    height: 48px;
     margin-top: 10px;
-    margin-left: -11px;
 }
 .iconTime{
-    font-size: 80px;
+    font-size: 64px;
     padding-left: 23px;
     padding: 5px;
 }
 .HotelDetailName{
-    
-    font-size: 23px;
+    font-size: 32px;
     font-weight: 700;
-    height: 13px;
     margin-top: 5px;
+    color: #003a8c;
 }
 .combo{
     background-color: rgba(132, 240, 60, 0.7);
@@ -162,11 +160,12 @@ h2{
     padding-top: 10px;
 }
 .itemnote{
-    margin-top: 3px;
+    margin-bottom: 0;
+    padding-left: 20px;
 }
 .itemnote1{
     margin-top: 3px;
-    color: blue;
+    color: green;
 }
 .allthongtin{
     display: flex;
@@ -180,9 +179,10 @@ h2{
     padding-left: 23px;
 }
 .diemnoibat{
-    border-bottom: solid 0.5px rgba(186, 196, 196, 0.9);
-    padding-top: 10px;
-    padding-bottom: 5px;
+    margin: 0;
+    border-bottom: 1px solid #cccccc;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
 }
 .icondiemnoibat{
     font-size: 30px;
@@ -223,7 +223,7 @@ h2{
     font-weight: 700;
 }
 .note14{
-    color: rgba(185, 23, 23, 0.7);
+    color: green;
 }
 .ant-layout-content{
     margin-top: 10px;
@@ -235,19 +235,12 @@ h2{
   position: fixed;
   top: 64px;
   width: 100%;
-  z-index: 99;
+  z-index: 999;
 
 }
-/* .timkiem::before{
-    display: table;
-    content: "";
-}
-.timkiem:after{
-    clear: both;
-} */
+
 
 .detailTrangchu{
-    margin-top: 40px;
     margin-top: 134px;
 }
 .backtop{
@@ -312,7 +305,7 @@ h2{
     display: flex;
 }
 .notethongbaocon{
-    padding-top: 7px;
+    padding-top: 6px;
     color: red;
 }
 /* .ant-tabs-nav{
